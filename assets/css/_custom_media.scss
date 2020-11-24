@@ -35,4 +35,24 @@
     padding: 10px;
     font-size: 16px;
   }
+
+  .single {
+    border-radius: 0;
+  }
+
+  .wrapper {
+    main {
+      .container {
+        padding: 0;
+      }
+    }
+  }
+
+  .home[posts] {
+    .summary {
+      border-left: none;
+      border-right: none;
+    }
+  }
+
 }

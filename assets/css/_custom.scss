@@ -3,7 +3,6 @@
 // 自定义样式
 // ==============================
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
-@import "_custom_media";
 
 .single {
   .content {
@@ -59,3 +58,5 @@ article {
 #header-desktop {
   line-height: 3.2rem;
 }
+
+@import "_custom_media";
