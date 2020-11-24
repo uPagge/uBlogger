@@ -106,10 +106,10 @@ other = "Поделиться в"
 other = "Содержание"
 
 [publishedOnDate]
-other = "Опубликовано {{ .Date }}"
+other = "{{ .Date }}"
 
 [includedInCategories]
-other = "включен в {{ .Categories }}"
+other = "{{ .Categories }}"
 
 [wordCount]
 one = "Одно слово"
@@ -138,7 +138,7 @@ other = "Назад"
 other = "Домой"
 
 [readMore]
-other = "Читать больше"
+other = "Читать дальше ➜"
 # === posts/single.html ===
 
 # === 404.html ===

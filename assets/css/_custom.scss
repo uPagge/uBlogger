@@ -2,10 +2,60 @@
 // Custom style
 // 自定义样式
 // ==============================
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import "_custom_media";
+
+.single {
+  .content {
+    p {
+      margin: 1.2rem 0;
+    }
+  }
+}
+
 .header-logo {
   color: #2c678d;
   font-family: Lobster;
   font-size: 1.8rem;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+article {
+  background: white;
+  border-radius: 30px;
+
+  [theme=dark] & {
+    background: #1B1B1C;
+  }
+}
+
+.page {
+  max-width: 900px;
+  width: 100%;
+  min-width: 200px;
+  box-sizing: border-box;
+
+  [header-desktop] & {
+    margin-top: 5rem;
+    padding-top: 2rem;
+  }
+}
+
+.archive-item {
+  padding: 10px 20px;
+}
+
+.home[posts] {
+  .summary {
+    padding-bottom: 2rem;
+    margin-bottom: 3rem;
+    border: 1px solid #ddd;
+
+    [theme=dark] & {
+      border: 1px solid #a9a9b3;
+    }
+  }
+}
+
+#header-desktop {
+  line-height: 3.2rem;
+}
