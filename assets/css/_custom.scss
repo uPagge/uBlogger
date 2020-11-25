@@ -59,4 +59,40 @@ article {
   line-height: 3.2rem;
 }
 
+.single {
+  .content {
+
+    h2 {
+      font-size: 2rem;
+      margin-top: 5rem;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    a {
+      border-bottom: dashed 1px;
+    }
+
+    a[class="header-mark"] {
+      border-bottom: none;
+    }
+
+    blockquote {
+      background: none;
+      border: none;
+      display: block;
+      text-align: center;
+      font-size: 160%;
+      width: 90%;
+      padding: 20px;
+      box-sizing: border-box;
+      font-weight: 400;
+      line-height: 2rem;
+      text-transform: uppercase;
+    }
+  }
+}
+
 @import "_custom_media";
