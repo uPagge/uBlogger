@@ -25,7 +25,7 @@ article {
 
   [theme=dark] & {
     background: #1B1B1C;
-    box-shadow: (0 0 40px rgba(94,104,125,.3));
+    box-shadow: (0 0 40px rgba(94, 104, 125, .3));
   }
 }
 
@@ -35,11 +35,13 @@ article {
 
     &:hover {
       @include box-shadow(0 0 1.5rem 0 rgba(0, 0, 0, .1));
+      @include transition(all 0.3s ease-out);
     }
 
     [theme=dark] & {
       &:hover {
-        @include box-shadow(0 0 40px rgba(94,104,125,.3));
+        @include box-shadow(0 0 40px rgba(94, 104, 125, .3));
+        @include transition(all 0.3s ease-out);
       }
     }
   }
@@ -76,7 +78,7 @@ article {
           &:hover {
             position: relative;
             @include transform(translateY(-.75rem));
-            box-shadow: (0 0 40px rgba(94,104,125,.3));
+            box-shadow: (0 0 40px rgba(94, 104, 125, .3));
           }
         }
       }
@@ -157,7 +159,49 @@ article {
   box-shadow: (0 0 1.5rem 0 rgba(0, 0, 0, .1));
 
   [theme=dark] & {
-    box-shadow: (0 0 40px rgba(94,104,125,.3));
+    box-shadow: (0 0 40px rgba(94, 104, 125, .3));
+  }
+}
+
+.footer-post-author {
+  margin: 20px 0 0 0;
+  padding: 20px;
+  background-color: #ececec;
+  color: black;
+  border-radius: 10px;
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+
+  [theme=dark] & {
+    background-color: white;
+  }
+}
+
+.author-avatar {
+  width: 105px;
+  padding: 0 25px 0 0;
+  vertical-align: middle;
+  box-sizing: border-box;
+  display: inline-block;
+
+  img {
+    display: block;
+    width: 100%;
+    border-radius: 100%;
+  }
+}
+
+.author-info {
+  vertical-align: middle;
+  display: inline-block;
+  box-sizing: border-box;
+
+  .name {
+    color: #121319;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
   }
 }
 
