@@ -21,9 +21,27 @@
 article {
   background: white;
   border-radius: 30px;
+  box-shadow: (0 0 1.5rem 0 rgba(0, 0, 0, .1));
 
   [theme=dark] & {
     background: #1B1B1C;
+    box-shadow: (0 0 40px rgba(94,104,125,.3));
+  }
+}
+
+.page {
+  article {
+    box-shadow: none;
+
+    &:hover {
+      @include box-shadow(0 0 1.5rem 0 rgba(0, 0, 0, .1));
+    }
+
+    [theme=dark] & {
+      &:hover {
+        @include box-shadow(0 0 40px rgba(94,104,125,.3));
+      }
+    }
   }
 }
 
@@ -41,6 +59,29 @@ article {
 
 .archive-item {
   padding: 10px 20px;
+}
+
+.home {
+  .home-profile {
+    .home-avatar {
+      img {
+
+        &:hover {
+          box-shadow: (0 0 40px rgba(0, 0, 0, .1));
+        }
+
+        [theme=dark] & {
+          box-shadow: (0 0 0 .3618em #a9a9b3);
+
+          &:hover {
+            position: relative;
+            @include transform(translateY(-.75rem));
+            box-shadow: (0 0 40px rgba(94,104,125,.3));
+          }
+        }
+      }
+    }
+  }
 }
 
 .home[posts] {
@@ -80,17 +121,24 @@ article {
     }
 
     blockquote {
+      margin: auto;
       background: none;
       border: none;
       display: block;
       text-align: center;
       font-size: 160%;
       width: 90%;
-      padding: 20px;
+      padding: 40px 20px;
       box-sizing: border-box;
       font-weight: 400;
       line-height: 2rem;
       text-transform: uppercase;
+
+      [theme="dark"] & {
+        background: none;
+        border: none;
+      }
+
     }
   }
 }
@@ -106,6 +154,11 @@ article {
   border-radius: 30px;
   background: white;
   margin-top: 3rem;
+  box-shadow: (0 0 1.5rem 0 rgba(0, 0, 0, .1));
+
+  [theme=dark] & {
+    box-shadow: (0 0 40px rgba(94,104,125,.3));
+  }
 }
 
 @import "_custom_media";
