@@ -95,7 +95,7 @@
             {{- if $telegram.outlined -}}
                 {{- $attr = printf `%v data-outlined="1"` $attr -}}
             {{- end -}}
-            {{- dict "Source" "https://comments.app/js/widget.js?2" "Defer" true "Attr" $attr | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
+        <script type="text/javascript" src="https://comments.app/js/widget.js?3" {{ with $attr }} {{ . | safeHTMLAttr }}{{ end }}></script>
             <noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://comments.app/">Telegram Comments</a>.
             </noscript>
