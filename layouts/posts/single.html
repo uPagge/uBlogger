@@ -1,4 +1,4 @@
-{{- define "title" }}{{ .Title }} | {{ .Site.Params.PostTitle }}{{ end -}}
+{{- define "title" }}{{ .Title }} | {{ .Site.Params.Title }}{{ end -}}
 
 {{- define "content" -}}
     {{- $params := .Scratch.Get "params" -}}
