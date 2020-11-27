@@ -104,7 +104,7 @@
         {{- /* Remark42 Comments System */ -}}
         {{- $remark42 := $comment.remark42 | default dict -}}
         {{- if $remark42.enable -}}
-            <div id="remark42-comments" class="comment"></div>
+            <div id="remark42" class="comment"></div>
             <script>
                 var remark_config = {
                     host: 'https://comments.upagge.ru',
