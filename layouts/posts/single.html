@@ -101,11 +101,10 @@
         {{- partial "single/footer.html" . -}}
     </article>
 
-{{- $comment := .Scratch.Get "comment" | default dict -}}
-{{- if $comment.enable -}}
+
     <div class="page single comments">
         {{- /* Comment */ -}}
         {{- partial "comment.html" . -}}
     </div>
-{{- end -}}
+
 {{- end -}}
