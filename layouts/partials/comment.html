@@ -108,11 +108,11 @@
             <script>
                 var remark_config = {
                     host: '{{ $remark42.host }}',
-                    site_id: 'dolboblog',
+                    site_id: '{{ $remark42.site }}',
                     components: ['embed'],
-                    theme: 'dark',
-                    locale: 'en',
-                    show_email_subscription: false
+                    theme: '{{ $remark42.theme }}',
+                    locale: '{{ $remark42.locale }}',
+                    show_email_subscription: '{{ $remark42.emailSubscribe }}'
                 };
 
                 (function(c) {
