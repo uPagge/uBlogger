@@ -31,6 +31,9 @@
 
             <div class="post-title">
                 <div class="post-all-meta">
+
+        {{- end -}}
+                <div class="post-all-meta">
                     <h1 class="single-title animated flipInX">{{ $.Title }}</h1>
                     {{- /* Meta */ -}}
                     <div class="post-meta">
@@ -60,9 +63,13 @@
                         </div>
                     </div>
                 </div>
+        {{- with $image -}}
+                </div>
             </div>
         </div>
         {{- end -}}
+
+
 
         <div class="post">
 
