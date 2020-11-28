@@ -27,49 +27,51 @@
         {{- $image = .RelPermalink -}}
         {{- end -}}
         {{- with $image -}}
-        <div class="featured-image">
-            {{- dict "Src" . "Title" $.Description "Resources" $.Resources | partial "plugin/image.html" -}}
+        <div class="featured-image" style="background-image: url('{{ $image }}');">
+
+            <div class="post-title">
+                <div class="post-all-meta">
+                    <h1 class="single-title animated flipInX">{{ $.Title }}</h1>
+                    {{- /* Meta */ -}}
+                    <div class="post-meta">
+                        <div class="post-meta-line">
+                            {{- $categories := slice -}}
+                            {{- range $.Params.categories -}}
+                            {{- $category := partialCached "function/path.html" . . | printf "/categories/%v" | $.Site.GetPage -}}
+                            {{- $categories = $categories | append (printf `<a href="%v"><i class="far fa-folder fa-fw"></i>&nbsp;%v</a>` $category.RelPermalink $category.Title) -}}
+                            {{- end -}}
+                            {{- with delimit $categories "&nbsp;" -}}
+                            <span class="post-category">
+                        {{- dict "Categories" . | T "includedInCategories" | safeHTML -}}
+                    </span>
+                            {{- end -}}
+
+                            {{- with $.Site.Params.dateformat | default "2006-01-02" | $.PublishDate.Format -}}
+                            &nbsp;&#183;&nbsp;<i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="{{ . }}">{{ . }}</time>
+                            {{- end -}}
+                            &nbsp;&#183;&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;{{ T "wordCount" $.WordCount }}
+                            &nbsp;&#183;&nbsp;<i class="far fa-clock fa-fw"></i>&nbsp;{{ T "readingTime" $.ReadingTime }}
+                            {{- $comment := $.Scratch.Get "comment" | default dict -}}
+                            {{- if $comment.enable | and $comment.valine.enable | and $comment.valine.visitor -}}
+                            <span id="{{ .RelPermalink }}" class="leancloud_visitors" data-flag-title="{{ .Title }}">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;{{ T "views" }}
+                    </span>&nbsp;
+                            {{- end -}}
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         {{- end -}}
 
         <div class="post">
 
-            {{- /* Title */ -}}
-            <h1 class="single-title animated flipInX">{{ .Title }}</h1>
 
             {{- /* Subtitle */ -}}
             {{- with $params.subtitle -}}
             <h2 class="single-subtitle">{{ . }}</h2>
             {{- end -}}
 
-            {{- /* Meta */ -}}
-            <div class="post-meta">
-                <div class="post-meta-line">
-                    {{- $categories := slice -}}
-                    {{- range .Params.categories -}}
-                    {{- $category := partialCached "function/path.html" . . | printf "/categories/%v" | $.Site.GetPage -}}
-                    {{- $categories = $categories | append (printf `<a href="%v"><i class="far fa-folder fa-fw"></i>&nbsp;%v</a>` $category.RelPermalink $category.Title) -}}
-                    {{- end -}}
-                    {{- with delimit $categories "&nbsp;" -}}
-                    <span class="post-category">
-                        {{- dict "Categories" . | T "includedInCategories" | safeHTML -}}
-                    </span>
-                    {{- end -}}
-
-                    {{- with .Site.Params.dateformat | default "2006-01-02" | .PublishDate.Format -}}
-                    &nbsp;&#183;&nbsp;<i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="{{ . }}">{{ . }}</time>
-                    {{- end -}}
-                    &nbsp;&#183;&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;{{ T "wordCount" .WordCount }}
-                    &nbsp;&#183;&nbsp;<i class="far fa-clock fa-fw"></i>&nbsp;{{ T "readingTime" .ReadingTime }}
-                    {{- $comment := .Scratch.Get "comment" | default dict -}}
-                    {{- if $comment.enable | and $comment.valine.enable | and $comment.valine.visitor -}}
-                    <span id="{{ .RelPermalink }}" class="leancloud_visitors" data-flag-title="{{ .Title }}">
-                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;{{ T "views" }}
-                    </span>&nbsp;
-                    {{- end -}}
-                </div>
-
-            </div>
 
             {{- /* Static TOC */ -}}
             {{- if ne $toc.enable false -}}
