@@ -52,6 +52,15 @@
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;{{ T "views" }}
                     </span>&nbsp;
                 {{- end -}}
+
+                {{- $comment := .Site.Params.Page.Comment -}}
+                {{- $remark42 := $comment.remark42 | default dict -}}
+                {{- if $remark42.enable -}}
+                &nbsp;&#183;&nbsp;<i class="far fa-eye fa-fw"></i>
+                <span class="remark42__counter" data-url="{{ .Permalink }}">
+
+            </span>
+                {{- end -}}
             </div>
 
         </div>
