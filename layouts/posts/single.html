@@ -101,10 +101,12 @@
         {{- partial "single/footer.html" . -}}
     </article>
 
-
+    {{- $comment := .Site.Params.Page.Comment -}}
+    {{- if $comment.enable -}}
     <div class="page single comments">
         {{- /* Comment */ -}}
         {{- partial "comment.html" . -}}
     </div>
+    {{- end -}}
 
 {{- end -}}
