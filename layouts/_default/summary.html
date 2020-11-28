@@ -16,69 +16,70 @@
             </a>
         </div>
     {{- end -}}
+    <div class="article-text">
+        {{- /* Title */ -}}
+        <h1 class="single-title" itemprop="name headline">
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </h1>
 
-    {{- /* Title */ -}}
-    <h1 class="single-title" itemprop="name headline">
-        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-    </h1>
-
-    {{- /* Meta */ -}}
-    <div class="post-meta">
-        {{- $author := $params.author | default .Site.Author.name | default (T "author") -}}
-        {{- $authorLink := $params.authorlink | default .Site.Author.link | default .Site.Home.RelPermalink -}}
-        <span class="post-author">
+        {{- /* Meta */ -}}
+        <div class="post-meta">
+            {{- $author := $params.author | default .Site.Author.name | default (T "author") -}}
+            {{- $authorLink := $params.authorlink | default .Site.Author.link | default .Site.Home.RelPermalink -}}
+            <span class="post-author">
             {{- $options := dict "Class" "author" "Destination" $authorLink "Title" "Author" "Rel" "author" "Icon" (dict "Class" "fas fa-user-circle fa-fw") "Content" $author -}}
             {{- partial "plugin/link.html" $options -}}
         </span>
 
-        {{- with .Site.Params.dateFormat | default "2006-01-02" | .PublishDate.Format -}}
-        &nbsp;&#183;&nbsp;<span class="post-publish"><i class="far fa-clock fa-fw"></i>
+            {{- with .Site.Params.dateFormat | default "2006-01-02" | .PublishDate.Format -}}
+            &nbsp;&#183;&nbsp;<span class="post-publish"><i class="far fa-clock fa-fw"></i>
                 {{- printf `<time datetime="%v">%v</time>` . . | dict "Date" | T "publishedOnDate" | safeHTML -}}
          </span>
-        {{- end -}}
+            {{- end -}}
 
-        {{- $categories := slice -}}
-        {{- range .Params.categories -}}
+            {{- $categories := slice -}}
+            {{- range .Params.categories -}}
             {{- $category := partialCached "function/path.html" . . | printf "/categories/%v" | $.Site.GetPage -}}
             {{- $categories = $categories | append (printf `<a href="%v"><i class="far fa-folder fa-fw"></i>%v</a>` $category.RelPermalink $category.Title) -}}
-        {{- end -}}
-        {{- with delimit $categories "&nbsp;" -}}
-        &nbsp;&#183;&nbsp;<span class="post-category">
+            {{- end -}}
+            {{- with delimit $categories "&nbsp;" -}}
+            &nbsp;&#183;&nbsp;<span class="post-category">
                 {{- dict "Categories" . | T "includedInCategories" | safeHTML -}}
             </span>
-        {{- end -}}
+            {{- end -}}
 
-        {{- $comment := .Site.Params.Page.Comment -}}
-        {{- $remark42 := $comment.remark42 | default dict -}}
-        {{- if $remark42.enable -}}
-        &nbsp;&#183;&nbsp;<i class="far fa-comment fa-fw"></i>
-        <span class="remark42__counter" data-url="{{ .Permalink }}">
+            {{- $comment := .Site.Params.Page.Comment -}}
+            {{- $remark42 := $comment.remark42 | default dict -}}
+            {{- if $remark42.enable -}}
+            &nbsp;&#183;&nbsp;<i class="far fa-comment fa-fw"></i>
+            <span class="remark42__counter" data-url="{{ .Permalink }}">
 
             </span>
-        {{- end -}}
-    </div>
+            {{- end -}}
+        </div>
 
-    {{- /* Summary content */ -}}
-    <div class="content">
-        {{- with .Summary -}}
+        {{- /* Summary content */ -}}
+        <div class="content">
+            {{- with .Summary -}}
             {{- dict "Content" . "Ruby" $params.ruby "Fraction" $params.fraction "Fontawesome" $params.fontawesome | partial "function/content.html" | safeHTML -}}
-        {{- else -}}
+            {{- else -}}
             {{- .Description | safeHTML -}}
-        {{- end -}}
-    </div>
+            {{- end -}}
+        </div>
 
-    {{- /* Footer */ -}}
-    <div class="post-footer">
-        <a href="{{ .RelPermalink }}">{{ T "readMore" }}</a>
-        {{- with .Params.tags -}}
+        {{- /* Footer */ -}}
+        <div class="post-footer">
+            <a href="{{ .RelPermalink }}">{{ T "readMore" }}</a>
+            {{- with .Params.tags -}}
             <div class="post-tags">
                 <i class="fas fa-tags fa-fw"></i>&nbsp;
                 {{- range $index, $value := . -}}
-                    {{- if gt $index 0 }},&nbsp;{{ end -}}
-                    {{- $tag := partialCached "function/path.html" $value $value | printf "/tags/%v" | $.Site.GetPage -}}
-                    <a href="{{ $tag.RelPermalink }}">{{ $tag.Title }}</a>
+                {{- if gt $index 0 }},&nbsp;{{ end -}}
+                {{- $tag := partialCached "function/path.html" $value $value | printf "/tags/%v" | $.Site.GetPage -}}
+                <a href="{{ $tag.RelPermalink }}">{{ $tag.Title }}</a>
                 {{- end -}}
             </div>
-        {{- end -}}
+            {{- end -}}
+        </div>
     </div>
 </article>
