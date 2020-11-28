@@ -52,7 +52,7 @@
         {{- $remark42 := $comment.remark42 | default dict -}}
         {{- if $remark42.enable -}}
         &nbsp;&#183;&nbsp;<i class="far fa-eye fa-fw"></i>
-        <span class="remark42__counter" data-url="{{ .Permalink }}">
+        <span class="remark42__counter" data-url="{{ $.RelPermalink }}">
 
             </span>
         {{- end -}}
@@ -69,7 +69,7 @@
 
     {{- /* Footer */ -}}
     <div class="post-footer">
-        <a href="{{ $.RelPermalink }}">{{ T "readMore" }}</a>
+        <a href="{{ .RelPermalink }}">{{ T "readMore" }}</a>
         {{- with .Params.tags -}}
             <div class="post-tags">
                 <i class="fas fa-tags fa-fw"></i>&nbsp;
