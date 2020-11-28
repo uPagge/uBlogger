@@ -85,7 +85,13 @@ class Theme {
             $themeSwitch.addEventListener('click', () => {
                 if (document.body.getAttribute('theme') === 'dark') document.body.setAttribute('theme', 'light');
                 else document.body.setAttribute('theme', 'dark');
-                if (document.body.getAttribute('theme') === 'dark') document.getElementsByClassName("root_theme_light")[0].setAttribute('class', 'root_theme_dark');
+                if (document.body.getAttribute('theme') === 'dark') {
+                    const $iframe = $("iframe");
+                    $iframe.on('load', function(){
+                        const iFrameDOM = $iframe.contents();
+                        iFrameDOM.getElementsByClassName("root_theme_light")[0].setAttribute('class', 'root_theme_dark');
+                    });
+                }
                 else document.body.setAttribute('theme', 'dark');
                 this.isDark = !this.isDark;
                 window.localStorage && localStorage.setItem('theme', this.isDark ? 'dark' : 'light');
