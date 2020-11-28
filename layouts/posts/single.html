@@ -57,7 +57,7 @@
                 {{- $remark42 := $comment.remark42 | default dict -}}
                 {{- if $remark42.enable -}}
                 &nbsp;&#183;&nbsp;<i class="far fa-eye fa-fw"></i>
-                <span class="remark42__counter" data-url="{{ .Permalink }}"></span>
+                <span class="remark42__counter" data-url="{{ .Permalink }}" data-target="comments-counter.number"></span>
                 {{- end -}}
             </div>
 
