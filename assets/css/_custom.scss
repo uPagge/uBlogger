@@ -46,6 +46,16 @@ article {
     background: #1B1B1C;
     box-shadow: (0 0 40px rgba(94, 104, 125, .3));
   }
+
+  em {
+    background: yellow;
+    padding: 4px;
+    font-style: inherit;
+
+    [theme=dark] & {
+      background: #AE8029;
+    }
+  }
 }
 
 .page {
@@ -281,6 +291,10 @@ article {
 .post-info-share {
   text-align: center;
   padding: 40px 0 40px 0;
+
+  a.share-icon {
+    color: white;
+  }
 
   a.share-icon:hover {
     padding: 3px 8px;;
