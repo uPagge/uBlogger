@@ -1,5 +1,7 @@
 User-agent: *
 
+Allow: /index.xml
+
 Disallow: /images/
 Disallow: /js/
 Disallow: /css/
