@@ -8,6 +8,10 @@ body {
   line-height: 1.9rem;
 }
 
+.post-footer {
+  margin-top: 2rem;
+}
+
 .single {
   .content {
     p {
@@ -113,6 +117,7 @@ article {
 
     .featured-image-preview {
       margin: 0 auto;
+
       &:hover {
         transform: none;
       }
@@ -189,16 +194,29 @@ article {
 .footer-post-author {
   margin: 20px 0 0 0;
   padding: 20px;
-  background-color: #ececec;
+  background-color: #f5f6f8;
   color: black;
-  border-radius: 10px;
+  border-radius: 10px 10px 0 0;
   display: inline-block;
   width: 100%;
   box-sizing: border-box;
+  border: solid 2px #ececec;
+  border-bottom: none;
 
   [theme=dark] & {
     background-color: white;
   }
+}
+
+.footer-donate {
+  border: solid 2px #ececec;
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #f5f6f8;
+  color: black;
+  border-radius: 0 0 10px 10px;
+  padding: 10px;
 }
 
 .author-avatar {
@@ -258,6 +276,65 @@ article {
   a {
     color: #DDD;
   }
+}
+
+.post-info-share {
+  text-align: center;
+  padding: 40px 0 40px 0;
+
+  a.share-icon:hover {
+    padding: 3px 8px;;
+    background: white;
+    color: #2c678d;
+    border: solid 2px #2c678d;
+    @include transition(all 0.4s ease);
+  }
+}
+
+.share-icon {
+  color: white;
+  padding: 3px 8px;
+  margin-right: 3px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.share-telegram {
+  background: #2CA5E0;
+  border: solid 2px #2CA5E0;
+}
+
+.share-twitter {
+  background: #1DA1F2;
+  border: solid 2px #1DA1F2;
+}
+
+.share-vk {
+  background: #4680C2;
+  border: solid 2px #4680C2;
+}
+
+.share-facebook {
+  background: #1877F2;
+  border: solid 2px #1877F2;
+}
+
+.share-whatsapp {
+  background: #25D366;
+  border: solid 2px #25D366;
+}
+
+.share-pocket {
+  background: #EF3F56;
+  border: solid 2px #EF3F56;
+}
+
+.donate-link:after {
+  padding-left: 6px;
+  content: "\01F37A";
+}
+.donate-link:hover::after {
+  content: "\01F37B";
 }
 
 @import "_custom_media";
