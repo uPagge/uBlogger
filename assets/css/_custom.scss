@@ -39,7 +39,7 @@ body {
 
 article {
   background: white;
-  border-radius: 30px;
+  border-radius: 32px;
   box-shadow: (0 0 1.5rem 0 rgba(0, 0, 0, .1));
 
   [theme=dark] & {
@@ -119,15 +119,20 @@ article {
     padding-top: 0;
     padding-bottom: 2rem;
     margin-bottom: 3rem;
-    border: 1px solid #ddd;
+    border: 2px solid #ddd;
 
     [theme=dark] & {
-      border: 1px solid #a9a9b3;
+      border: 2px solid #a9a9b3;
+    }
+
+    [theme=dark] &:hover {
+      border: 2px solid #1B1B1C;
+      transform: none;
+      @include transition(all 0.4s ease);
     }
 
     .featured-image-preview {
       margin: 0 auto;
-
       &:hover {
         transform: none;
       }
@@ -354,10 +359,32 @@ article {
 .author-comment {
   padding: 20px 0;
 
+  .name {
+    color: #121319;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+  }
+
   .author-comment-text {
     color: black;
     font-size: 24px;
   }
+}
+
+.post-nav {
+  padding: 0.3rem 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+
+  a[rel="next"] {
+    text-align: right;
+  }
+}
+
+footer {
+  padding: 2rem 0;
 }
 
 @import "_custom_media";
