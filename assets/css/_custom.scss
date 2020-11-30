@@ -351,4 +351,13 @@ article {
   content: "\01F37B";
 }
 
+.author-comment {
+  padding: 20px 0;
+
+  .author-comment-text {
+    color: black;
+    font-size: 24px;
+  }
+}
+
 @import "_custom_media";

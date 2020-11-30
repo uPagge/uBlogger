@@ -3,7 +3,7 @@
 
 {{- if not .Site.Params.app.noFavicon -}}
     {{- with .Site.Params.app.svgFavicon -}}
-        <link rel="icon" href="{{ . }}">
+        <link rel="icon" href="{{ . }}" type="image/x-icon">
     {{- else -}}
         <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
