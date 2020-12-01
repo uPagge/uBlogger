@@ -78,7 +78,7 @@
 
 @media only screen and (max-width: 680px) {
   .page {
-    [header-desktop] & {
+    [data-header-desktop] & {
       margin-top: 3rem;
     }
   }
@@ -110,7 +110,7 @@
     }
   }
 
-  .home[posts] {
+  .home[data-home=posts] {
     .summary {
       border-left: none;
       border-right: none;

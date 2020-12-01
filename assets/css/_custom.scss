@@ -65,7 +65,7 @@ article {
   min-width: 200px;
   box-sizing: border-box;
 
-  [header-desktop] & {
+  [data-header-desktop] & {
     margin-top: 6rem;
     padding-top: 0rem;
   }
@@ -114,7 +114,7 @@ article {
   }
 }
 
-.home[posts] {
+.home[data-home=posts] {
   .summary {
     padding-top: 0;
     padding-bottom: 2rem;
@@ -141,7 +141,7 @@ article {
   }
 }
 
-#header-desktop {
+#data-header-desktop {
   line-height: 3.2rem;
 }
 
@@ -161,7 +161,7 @@ article {
       border-bottom: dashed 1px;
     }
 
-    a[class="header-mark"] {
+    a[class="data-header-mark"] {
       border-bottom: none;
     }
 
