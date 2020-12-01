@@ -1,10 +1,16 @@
-{{- if .Title -}}
-    <figure>
-        {{- dict "Src" .Destination "Title" .Text "Caption" .Title "Linked" true "Resources" .Page.Resources | partial "plugin/image.html" -}}
-        <figcaption class="image-caption">
-            {{- .Title | safeHTML -}}
-        </figcaption>
-    </figure>
+{{ $figcap := or .Title .Text }}
+{{ $caption := or .Text " " }}
+{{- if eq $figcap $caption -}}
+{{ $caption = " " }}
+{{- end -}}
+
+{{- if $figcap -}}
+<figure>
+    {{- dict "Src" .Destination "Title" $figcap "Caption" $caption "Linked" true "Resources" .Page.Resources | partial "plugin/image.html" -}}
+    <figcaption class="image-caption">
+        {{- $figcap | safeHTML -}}
+    </figcaption>
+</figure>
 {{- else -}}
-    {{- dict "Src" .Destination "Title" .Text "Resources" .Page.Resources | partial "plugin/image.html" -}}
+{{- dict "Src" .Destination "Title" (path.Base .Destination) "Resources" .Page.Resources | partial "plugin/image.html" -}}
 {{- end -}}
