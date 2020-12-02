@@ -1,8 +1,10 @@
 <div id="breadcrumbs">
-    <a href="/">Home</a>
-    {{ range (split .RelPermalink "/") }}
-    {{ if gt (len . ) 0 }}
-    / <a href="/{{ . }}">{{ humanize (replace . "posts" "blog") }}</a>
-    {{ end }}
-    {{ end }}
+    <a href="/">Home</a> /
+    {{- $categories := index ($.Params.categories) 0 -}}
+    {{- $category := partialCached "function/path.html" $categories $categories | printf "/categories/%v" | $.Site.GetPage -}}
+    {{- $categories = (printf ` <a href="%v">%v</a> ` $category.RelPermalink $category.Title) -}}
+    {{- with $categories -}}
+    {{- dict "Categories" . | T "includedInCategories" | safeHTML -}}
+    {{- end -}}
+    / <a href="/"> {{ .Title }} </a>
 </div>
