@@ -1,0 +1,8 @@
+<div id="breadcrumbs">
+    <a href="/">Home</a>
+    {{ range (split .RelPermalink "/") }}
+    {{ if gt (len . ) 0 }}
+    / <a href="/{{ . }}">{{ humanize (replace . "posts" "blog") }}</a>
+    {{ end }}
+    {{ end }}
+</div>

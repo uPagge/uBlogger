@@ -78,6 +78,7 @@
             <h2 class="single-subtitle">{{ . }}</h2>
             {{- end -}}
 
+            {{ partial "breadcrumbs.html" . | safeHTML }}
 
             {{- /* Static TOC */ -}}
             {{- if ne $toc.enable false -}}
