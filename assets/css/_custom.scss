@@ -153,6 +153,16 @@ article {
       margin-top: 5rem;
     }
 
+    > h2[id^=u-],
+    > h3[id^=u-],
+    > h4[id^=u-],
+    > h5[id^=u-],
+    > h6[id^=u-] {
+      > .header-mark::before {
+        content: none;
+      }
+    }
+
     h3 {
       font-size: 1.5rem;
     }
@@ -183,7 +193,6 @@ article {
         background: none;
         border: none;
       }
-
     }
   }
 }
