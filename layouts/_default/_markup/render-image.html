@@ -1,16 +1,17 @@
-{{ $figcap := or .Title .Text }}
+{{ $figcap := or .Title }}
 {{ $caption := or .Text " " }}
+{{ $alt := or .Text $figcap }}
 {{- if eq $figcap $caption -}}
 {{ $caption = " " }}
 {{- end -}}
 
 {{- if $figcap -}}
 <figure>
-    {{- dict "Src" .Destination "Title" $figcap "Caption" $caption "Linked" true "Resources" .Page.Resources | partial "plugin/image.html" -}}
+    {{- dict "Src" .Destination "Title" $figcap "Alt" $alt "Caption" $caption "Linked" true "Resources" .Page.Resources | partial "plugin/image.html" -}}
     <figcaption class="image-caption">
         {{- $figcap | safeHTML -}}
     </figcaption>
 </figure>
 {{- else -}}
-{{- dict "Src" .Destination "Title" (path.Base .Destination) "Resources" .Page.Resources | partial "plugin/image.html" -}}
+{{- dict "Src" .Destination "Title" (path.Base .Destination) "Alt" $alt "Resources" .Page.Resources | partial "plugin/image.html" -}}
 {{- end -}}
