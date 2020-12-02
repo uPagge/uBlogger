@@ -1,10 +1,15 @@
 <div id="breadcrumbs">
     <a href="/">Home</a> /
-    {{- $categories := index ($.Params.categories) 0 -}}
-    {{- $category := partialCached "function/path.html" $categories $categories | printf "/categories/%v" | $.Site.GetPage -}}
-    {{- $categories = (printf ` <a href="%v">%v</a> ` $category.RelPermalink $category.Title) -}}
-    {{- with $categories -}}
+    {{- $categories := slice -}}
+    {{- range $.Params.categories -}}
+    {{- $category := partialCached "function/path.html" . . | printf "/categories/%v" | $.Site.GetPage -}}
+    {{- $categories = $categories | append (printf `<a href="%v">&nbsp;%v</a> ` $category.RelPermalink $category.Title) -}}
+    {{- end -}}
+    {{- with delimit $categories "&nbsp;" -}}
+    {{ $first := index ($categories) 0 }}
+    {{- with $first -}}
     {{- dict "Categories" . | T "includedInCategories" | safeHTML -}}
+    {{- end -}}
     {{- end -}}
     / <a href="/"> {{ .Title }} </a>
 </div>
