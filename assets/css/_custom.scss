@@ -262,6 +262,14 @@ article {
   display: inline-block;
   box-sizing: border-box;
 
+  a {
+    color: black;
+
+    &:hover {
+      color: $global-link-hover-color;
+    }
+  }
+
   .name {
     color: #121319;
     font-weight: 700;

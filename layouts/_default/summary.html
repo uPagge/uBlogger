@@ -24,12 +24,15 @@
 
         {{- /* Meta */ -}}
         <div class="post-meta">
-            {{- $author := $params.author | default .Site.Author.name | default (T "author") -}}
-            {{- $authorLink := $params.authorlink | default .Site.Author.link | default .Site.Home.RelPermalink -}}
+            {{- $authorName := $params.author | default .Site.Author.name | default " " -}}
+            {{- if not (eq $authorName " ") -}}
+            {{ $author := index .Site.Data.authors $authorName }}
+            {{- $authorLink := $author.link | default .Site.Home.RelPermalink -}}
             <span class="post-author">
-            {{- $options := dict "Class" "author" "Destination" $authorLink "Title" "Author" "Rel" "author" "Icon" (dict "Class" "fas fa-user-circle fa-fw") "Content" $author -}}
+            {{- $options := dict "Class" "author" "Destination" $authorLink "Title" "Author" "Rel" "author" "Icon" (dict "Class" "fas fa-user-circle fa-fw") "Content" $author.nickname -}}
             {{- partial "plugin/link.html" $options -}}
-        </span>
+            </span>
+            {{- end -}}
 
             {{- with .Site.Params.dateFormat | default "2006-01-02" | .PublishDate.Format -}}
             &nbsp;&#183;&nbsp;<span class="post-publish"><i class="far fa-clock fa-fw"></i>
