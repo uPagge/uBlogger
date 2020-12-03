@@ -119,7 +119,7 @@
 
     {{- $comment := .Site.Params.Page.Comment -}}
     {{- if $comment.enable -}}
-    <div class="page single comments">
+    <div class="{{ if $toc.keepStatic }} page single comments {{ else }} page single comments page-toc {{ end }}">
         {{- $authorComment := $params.authorComment -}}
         {{- $authorName := $params.author | default .Site.Author.name | default " " -}}
         {{- if not (eq $authorName " ") -}}
