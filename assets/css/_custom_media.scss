@@ -27,6 +27,14 @@
 }
 
 @media only screen and (max-width: 1200px) {
+  #toc-auto {
+    display: none;
+  }
+
+  #toc-static {
+    display: block;
+  }
+
   .page {
     width: 100%;
   }

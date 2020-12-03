@@ -9,16 +9,18 @@
 
 {{ $author := index .Site.Data.authors (.Params.author | default "default") }}
 {{- if $author -}}
-<div class="footer-post-author">
+<div class="footer-post-author" {{- if not $author.ps -}} style="border-radius: 10px" {{- end -}}>
     <div class="author-avatar"><a href="{{ with $author.site }} {{- . | safeHTML -}}{{ end }}" target="_blank"><img alt="" src="{{ with $author.avatar }} {{- . | safeHTML -}}{{ end }}" border="0"></a></div>
     <div class="author-info">
         <div class="name">{{ $author.name }}</div>
         <div class="number-posts">{{ $author.bio }}</span></div>
     </div>
 </div>
+{{- if $author.ps -}}
 <div class="footer-donate">
-    <div>Статья оказалась полезной? Делай репост &#128070; или <a class="donate-link" href="https://www.tinkoff.ru/sl/NSGSK7FgEI" target="_blank" style="border-bottom: dashed 1px;color: #2c678d"> налей пива</a></div>
+    <div>{{- $author.ps | safeHTML -}}</div>
 </div>
+{{- end -}}
 {{- end -}}
 
 <div class="post-footer" id="post-footer">
