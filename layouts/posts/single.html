@@ -19,7 +19,7 @@
         </div>
     {{- end -}}
 
-    <article class="{{- if or .Site.Params.page.toc.keepStatic (not .Site.Params.page.toc.enable) -}}page single {{- else -}}page single page-toc{{- end -}}">
+    <article class="{{ if $toc.keepStatic }}page single {{ else }}page single page-toc{{ end }}">
 
         {{- /* Featured image */ -}}
         {{- $image := $params.featuredimage -}}
