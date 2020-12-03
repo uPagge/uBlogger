@@ -2,7 +2,7 @@
 <header class="desktop" id="header-desktop">
     <div class="header-wrapper">
         <div class="header-title">
-            <a href="{{ .Site.Home.RelPermalink }}" title="{{ .Site.Title }}" class="header-logo" style="margin: 0 .5rem;"></a>
+            <a href="{{ .Site.Home.RelPermalink }}" title="{{ .Site.Title }}" class="header-logo">
                 {{- with .Site.Params.header.title -}}
                     {{- with .logo -}}
                         {{- dict "Src" . "Class" "logo" | partial "plugin/image.html" -}}
@@ -23,7 +23,7 @@
                 {{- else -}}
                     {{- .Site.Title -}}
                 {{- end -}}
-
+            </a>
         </div>
         <div class="menu">
             <div class="menu-inner">
@@ -149,10 +149,10 @@
                 <i class="fas fa-adjust fa-fw"></i>
             </a>
             {{- if .Site.IsMultiLingual -}}
-                <a href="javascript:void(0);" class="menu-item" title="{{ T "selectLanguage" }}"></a>
+                <a href="javascript:void(0);" class="menu-item" title="{{ T "selectLanguage" }}">
                     {{- .Language.LanguageName -}}
                     <i class="fas fa-chevron-right fa-fw"></i>
-                    <select class="language-select" onchange="location = this.value;" style="margin: 0 .5rem;">
+                    <select class="language-select" onchange="location = this.value;">
                         {{- if eq .Kind "404" -}}
                             {{- range .Sites -}}
                                 {{- $link := printf "%v/404.html" .LanguagePrefix -}}
@@ -168,7 +168,7 @@
                             {{- end -}}
                         {{- end -}}
                     </select>
-
+                </a>
             {{- end -}}
         </div>
     </div>
