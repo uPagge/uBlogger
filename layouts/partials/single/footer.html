@@ -6,7 +6,6 @@
     </span>
 </div>
 
-
 {{- $authorName := $params.author | default .Site.Author.name | default " " -}}
 {{- if not (eq $authorName " ") -}}
 {{ $author := index .Site.Data.authors $authorName }}

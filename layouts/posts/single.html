@@ -19,21 +19,27 @@
         </div>
     {{- end -}}
 
-    <article class="{{ if $toc.keepStatic }}page single {{ else }}page single page-toc{{ end }}">
+    {{- $pageTheme := $params.page.theme | default .Site.Params.Page.theme | default "classic" -}}
+    <article class="{{ if $toc.keepStatic }}page single {{ else }}page single page-toc{{ end }} theme-{{ $pageTheme }}">
+
 
         {{- /* Featured image */ -}}
         {{- $image := $params.featuredimage -}}
         {{- with .Resources.GetMatch "featured-image" -}}
         {{- $image = .RelPermalink -}}
         {{- end -}}
+
+        {{- if eq $pageTheme "full" -}}
         {{- with $image -}}
         <div class="featured-image" style="background-image: url('{{ $image }}');">
 
             <div class="post-title">
 
         {{- end -}}
-                <div class="post-all-meta {{ if $image }} {{ else }} padding-article {{ end }}">
+        {{- end -}}
 
+                <div class="post-all-meta {{ if and $image (eq $pageTheme "full") }} {{ else }} padding-article {{ end }}">
+                {{ partial "breadcrumbs.html" . | safeHTML }}
                     <h1 class="single-title animated flipInX">{{ $.Title }}</h1>
                     {{- /* Meta */ -}}
                     <div class="post-meta">
@@ -63,22 +69,28 @@
                         </div>
                     </div>
                 </div>
+        {{- if eq $pageTheme "full" -}}
         {{- with $image -}}
             </div>
         </div>
         {{- end -}}
-
+        {{- end -}}
 
 
         <div class="post">
-
 
             {{- /* Subtitle */ -}}
             {{- with $params.subtitle -}}
             <h2 class="single-subtitle">{{ . }}</h2>
             {{- end -}}
 
-            {{ partial "breadcrumbs.html" . | safeHTML }}
+            {{- if or (eq $pageTheme "classic") (eq $pageTheme "wide") -}}
+            {{- with $image -}}
+            <div class="image-theme-{{ $pageTheme }}">
+                <img src="{{ $image }}" style="width: 100%">
+            </div>
+            {{- end -}}
+            {{- end -}}
 
             {{- /* Static TOC */ -}}
             {{- if ne $toc.enable false -}}
