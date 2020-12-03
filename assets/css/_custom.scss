@@ -310,61 +310,6 @@ article {
   }
 }
 
-.post-info-share {
-  text-align: center;
-  padding: 40px 0 40px 0;
-
-  a.share-icon {
-    color: white;
-  }
-
-  a.share-icon:hover {
-    padding: 3px 8px;;
-    background: white;
-    color: #2c678d;
-    border: solid 2px #2c678d;
-    @include transition(all 0.4s ease);
-  }
-}
-
-.share-icon {
-  color: white;
-  padding: 3px 8px;
-  margin-right: 3px;
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-.share-telegram {
-  background: #2CA5E0;
-  border: solid 2px #2CA5E0;
-}
-
-.share-twitter {
-  background: #1DA1F2;
-  border: solid 2px #1DA1F2;
-}
-
-.share-vk {
-  background: #4680C2;
-  border: solid 2px #4680C2;
-}
-
-.share-facebook {
-  background: #1877F2;
-  border: solid 2px #1877F2;
-}
-
-.share-whatsapp {
-  background: #25D366;
-  border: solid 2px #25D366;
-}
-
-.share-pocket {
-  background: #EF3F56;
-  border: solid 2px #EF3F56;
-}
-
 .donate-link:after {
   padding-left: 6px;
   content: "\01F37A";
@@ -412,4 +357,5 @@ footer {
   line-height: 1.5rem;
 }
 
+@import "_partial/share-icon";
 @import "_custom_media";

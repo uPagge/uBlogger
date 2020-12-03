@@ -1,0 +1,164 @@
+.post-info-share {
+  text-align: center;
+  padding: 40px 0 40px 0;
+
+  a.share-icon {
+    color: white;
+  }
+
+  a.share-icon:hover {
+    padding: 3px 8px;;
+    background: white;
+    color: #2c678d;
+    border: solid 2px #2c678d;
+    @include transition(all 0.4s ease);
+  }
+}
+
+.share-icon {
+  color: white;
+  padding: 3px 8px;
+  margin-right: 3px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.share-telegram {
+  background: #2CA5E0;
+  border: solid 2px #2CA5E0;
+}
+
+.share-twitter {
+  background: #1DA1F2;
+  border: solid 2px #1DA1F2;
+}
+
+.share-vk {
+  background: #4680C2;
+  border: solid 2px #4680C2;
+}
+
+.share-facebook {
+  background: #1877F2;
+  border: solid 2px #1877F2;
+}
+
+.share-whatsapp {
+  background: #25D366;
+  border: solid 2px #25D366;
+}
+
+.share-pocket {
+  background: #EF3F56;
+  border: solid 2px #EF3F56;
+}
+
+.share-linkedin {
+  background: #0077B5;
+  border: solid 2px #0077B5;
+}
+
+.share-viber {
+  background: #665CAC;
+  border: solid 2px #665CAC;
+}
+
+.share-pinterest {
+  background: #BD081C;
+  border: solid 2px #BD081C;
+}
+
+.share-tumblr {
+  background: #36465D;
+  border: solid 2px #36465D;
+}
+
+.share-reddit {
+  background: #FF4500;
+  border: solid 2px #FF4500;
+}
+
+.share-buffer {
+  background: #168EEA;
+  border: solid 2px #168EEA;
+}
+
+.share-xing {
+  background: #006567;
+  border: solid 2px #006567;
+}
+
+.share-line {
+  background: #00C300;
+  border: solid 2px #00C300;
+}
+
+.share-instapaper {
+  background: #1F1F1F;
+  border: solid 2px #1F1F1F;
+}
+
+.share-digg {
+  background: #000000;
+  border: solid 2px #000000;
+}
+
+.share-stumbleupon {
+  background: #FD8235;
+  border: solid 2px #FD8235;
+}
+
+.share-flipboard {
+  background: #E12828;
+  border: solid 2px #E12828;
+}
+
+.share-weibo {
+  background: #20B8E5;
+  border: solid 2px #20B8E5;
+}
+
+.share-renren {
+  background: #217DC6;
+  border: solid 2px #217DC6;
+}
+
+.share-myspace {
+  background: #030303;
+  border: solid 2px #030303;
+}
+
+.share-blogger {
+  background: #FF5722;
+  border: solid 2px #FF5722;
+}
+
+.share-baidu {
+  background: #2319DC;
+  border: solid 2px #2319DC;
+}
+
+.share-ok {
+  background: #EE8208;
+  border: solid 2px #EE8208;
+}
+
+.share-evernote {
+  background: #00A82D;
+  border: solid 2px #00A82D;
+}
+
+.share-skype {
+  background: #00AFF0;
+  border: solid 2px #00AFF0;
+}
+
+.share-trello {
+  background: #0079BF;
+  border: solid 2px #0079BF;
+}
+
+.share-mix {
+  background: #FF8126;
+  border: solid 2px #FF8126;
+}
