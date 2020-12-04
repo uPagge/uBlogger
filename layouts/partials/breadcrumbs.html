@@ -1,5 +1,5 @@
 <div id="breadcrumbs" class="breadcrumbs">
-    <a href="/">Home</a> /
+    <a href="{{ .Site.Home.RelPermalink }}">{{ T "home" }}</a> /
     {{- $categories := slice -}}
     {{- range $.Params.categories -}}
     {{- $category := partialCached "function/path.html" . . | printf "/categories/%v" | $.Site.GetPage -}}
