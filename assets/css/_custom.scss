@@ -81,6 +81,10 @@ article {
   }
 }
 
+.page.home {
+  max-width: 800px;
+}
+
 .archive-item {
   padding: 10px 20px;
 }
@@ -339,6 +343,7 @@ article {
 
 footer {
   padding: 2rem 0;
+  margin-top: 3rem;
 }
 
 .page-toc {
