@@ -106,7 +106,7 @@
             {{- end -}}
 
             {{- /* Content */ -}}
-            <div class="content" id="content">
+            <div class="content" id="content" style="padding-top: 20px">
                 {{- with .Site.Params.dateformat | default "2006-01-02" | .Lastmod.Format -}}
                 {{- if not (eq  . ($.Site.Params.dateformat | default "2006-01-02" | $.PublishDate.Format)) -}}
                 <div class="post-update">

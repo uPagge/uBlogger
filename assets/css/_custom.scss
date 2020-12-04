@@ -400,5 +400,45 @@ footer {
 
 }
 
+.post-navigation {
+  display: flex;
+  margin-bottom: 2rem;
+
+  .post-nav-box {
+    flex: none;
+    width: 48%;
+    display: block;
+  }
+
+  .nav-box-next {
+    margin-left: 5px;
+  }
+
+  .nav-box-prev {
+    margin-right: 5px;
+  }
+
+  .nav-box {
+    justify-content: space-between;
+    align-items: center;
+    display: flex !important;
+    justify-content:space-between;
+    border-radius: 6px;
+    box-shadow: 0 0 1em 0 rgba(10,10,10,.1),0 0 0 1px rgba(10,10,10,.02);
+    color: #4a4a4a;padding: 1.25rem;
+  }
+
+  .nav-icon {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  .nav-text-h {
+    font-size: .75rem;
+  }
+
+
+}
+
 @import "_partial/share-icon";
 @import "_custom_media";
