@@ -380,5 +380,20 @@ footer {
   }
 }
 
+.post-update {
+  border-radius: 10px;
+  padding: 10px;
+  margin: 20px 0 20px 0;
+  background-color: #bfbfbf;
+  color: black;
+
+  b {
+    [theme=dark] & {
+      color: black !important;
+    }
+  }
+
+}
+
 @import "_partial/share-icon";
 @import "_custom_media";

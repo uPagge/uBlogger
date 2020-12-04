@@ -107,6 +107,21 @@
 
             {{- /* Content */ -}}
             <div class="content" id="content">
+                {{- with .Site.Params.dateformat | default "2006-01-02" | .Lastmod.Format -}}
+                {{- if not (eq  . ($.Site.Params.dateformat | default "2006-01-02" | $.PublishDate.Format)) -}}
+                <div class="post-update">
+                    <b>{{- dict "Date" . | T "updatedOnDate" -}}:</b> {{ $params.upd }}
+                    {{- if $.Site.Params.gitRepo -}}
+                        {{- with $.GitInfo -}}
+                            &nbsp;<a class="git-hash" href="{{ printf `%v/commit/%v` $.Site.Params.gitRepo .Hash }}" target="_blank" title="commit by {{ .AuthorName }}({{ .AuthorEmail }}) {{ .Hash }}: {{ .Subject }}">
+                                <i class="fas fa-hashtag fa-fw"></i>{{- .AbbreviatedHash -}}
+                            </a>
+                        {{- end -}}
+                    {{- end -}}
+                </div>
+                {{- end -}}
+                {{- end -}}
+
                 {{- dict "Content" .Content "Ruby" $params.ruby "Fraction" $params.fraction "Fontawesome" $params.fontawesome | partial "function/content.html" | safeHTML -}}
             </div>
 

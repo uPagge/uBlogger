@@ -26,20 +26,6 @@
 <div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
-            <div class="post-info-mod">
-                <span>
-                    {{- with .Site.Params.dateformat | default "2006-01-02" | .Lastmod.Format -}}
-                        {{- dict "Date" . | T "updatedOnDate" -}}
-                        {{- if $.Site.Params.gitRepo -}}
-                            {{- with $.GitInfo -}}
-                                &nbsp;<a class="git-hash" href="{{ printf `%v/commit/%v` $.Site.Params.gitRepo .Hash }}" target="_blank" title="commit by {{ .AuthorName }}({{ .AuthorEmail }}) {{ .Hash }}: {{ .Subject }}">
-                                    <i class="fas fa-hashtag fa-fw"></i>{{- .AbbreviatedHash -}}
-                                </a>
-                            {{- end -}}
-                        {{- end -}}
-                    {{- end -}}
-                </span>
-            </div>
             {{- with $params.license | string -}}
             <div class="post-info-license">
                 <span>
