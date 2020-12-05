@@ -13,6 +13,12 @@ other = "Погледај Коментаре"
 # === Post ===
 [posts]
 other = "Постови"
+
+[navNext]
+other = "Следећи чланак"
+
+[navPrev]
+other = "Претходни чланак"
 # === Post ===
 
 # === Taxonomy ===
@@ -101,12 +107,6 @@ other = "Подели на"
 # === posts/single.html ===
 [contents]
 other = "Садржаји"
-
-[publishedOnDate]
-other = "објављено {{ .Date }}"
-
-[includedInCategories]
-other = "укључено {{ .Categories }}"
 
 [wordCount]
 one = "Једна реч"

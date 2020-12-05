@@ -36,7 +36,7 @@
 
             {{- with .Site.Params.dateFormat | default "2006-01-02" | .PublishDate.Format -}}
             &nbsp;&#183;&nbsp;<span class="post-publish"><i class="far fa-clock fa-fw"></i>
-                {{- printf `<time datetime="%v">%v</time>` . . | dict "Date" | T "publishedOnDate" | safeHTML -}}
+                {{- printf `<time datetime="%v">%v</time>` . . | safeHTML -}}
          </span>
             {{- end -}}
 
@@ -47,7 +47,7 @@
             {{- end -}}
             {{- with delimit $categories "&nbsp;" -}}
             &nbsp;&#183;&nbsp;<span class="post-category">
-                {{- dict "Categories" . | T "includedInCategories" | safeHTML -}}
+                {{ . }}
             </span>
             {{- end -}}
 

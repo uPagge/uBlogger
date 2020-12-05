@@ -13,6 +13,12 @@ other = "Vizualizare Comentarii"
 # === Post ===
 [posts]
 other = "Articole"
+
+[navNext]
+other = "Următorul articol"
+
+[navPrev]
+other = "Articolul anterior"
 # === Post ===
 
 # === Taxonomy ===
@@ -104,12 +110,6 @@ other = "Distribuie pe"
 # === posts/single.html ===
 [contents]
 other = "Cuprins"
-
-[publishedOnDate]
-other = "publicat la {{ .Date }}"
-
-[includedInCategories]
-other = "inclus în {{ .Categories }}"
 
 [wordCount]
 one = "Un cuvânt"

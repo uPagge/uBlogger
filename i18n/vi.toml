@@ -12,6 +12,12 @@ other = "Xem bình luận"
 # === Post ===
 [posts]
 other = "Bài viết"
+
+[navNext]
+other = "Bài tiếp theo"
+
+[navPrev]
+other = "bài báo trước"
 # === Post ===
 
 # === Taxonomy ===
@@ -103,12 +109,6 @@ other = "Chia sẻ trên"
 # === posts/single.html ===
 [contents]
 other = "Nội dung"
-
-[publishedOnDate]
-other = "đăng ngày {{ .Date }}"
-
-[includedInCategories]
-other = "trong {{ .Categories }}"
 
 [wordCount]
 one = "One word"

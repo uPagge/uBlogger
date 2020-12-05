@@ -13,6 +13,12 @@ other = "Vedi commenti"
 # === Post ===
 [posts]
 other = "Articoli"
+
+[navNext]
+other = "Prossimo articolo"
+
+[navPrev]
+other = "Articolo precedente"
 # === Post ===
 
 # === Taxonomy ===
@@ -104,12 +110,6 @@ other = "Condividi su"
 # === posts/single.html ===
 [contents]
 other = "Contenuti"
-
-[publishedOnDate]
-other = "pubblicato su {{ .Date }}"
-
-[includedInCategories]
-other = "incluso in {{ .Categories }}"
 
 [wordCount]
 one = "Una parola"

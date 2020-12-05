@@ -13,6 +13,12 @@ other = "查看评论"
 # === Post ===
 [posts]
 other = "文章"
+
+[navNext]
+other = "下一篇"
+
+[navPrev]
+other = "上一篇"
 # === Post ===
 
 # === Taxonomy ===
@@ -107,12 +113,6 @@ other = "分享到"
 # === posts/single.html ===
 [contents]
 other = "目录"
-
-[publishedOnDate]
-other = "发布于 {{ .Date }}"
-
-[includedInCategories]
-other = "收录于 {{ .Categories }}"
 
 [wordCount]
 other = "约 {{ .Count }} 字"

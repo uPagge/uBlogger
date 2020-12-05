@@ -13,6 +13,12 @@ other = "Посмотреть комментарии"
 # === Post ===
 [posts]
 other = "Статьи"
+
+[navNext]
+other = "Следующая статья"
+
+[navPrev]
+other = "Предыдущая статья"
 # === Post ===
 
 # === Taxonomy ===
@@ -104,12 +110,6 @@ other = "Поделиться в"
 # === posts/single.html ===
 [contents]
 other = "Содержание"
-
-[publishedOnDate]
-other = "{{ .Date }}"
-
-[includedInCategories]
-other = "{{ .Categories }}"
 
 [wordCount]
 one = "Одно слово"
