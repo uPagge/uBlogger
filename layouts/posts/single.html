@@ -109,9 +109,15 @@
             <div class="content" id="content" style="padding-top: 20px">
                 {{- with .Site.Params.dateformat | default "2006-01-02" | .Lastmod.Format -}}
                 {{- if not (eq  . ($.Site.Params.dateformat | default "2006-01-02" | $.PublishDate.Format)) -}}
+                {{- with $params.upd -}}
                 <div class="post-update">
                     <b>{{- dict "Date" . | T "updatedOnDate" -}}:</b> {{ $params.upd }}
                 </div>
+                {{- else -}}
+                <span class="post-update">
+                    <b>{{- dict "Date" . | T "updatedOnDate" -}}</b>
+                </span>
+                {{- end -}}
                 {{- end -}}
                 {{- end -}}
 
