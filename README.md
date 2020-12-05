@@ -23,7 +23,17 @@ The main emphasis is on the convenience of reading content, because we have a bl
 
 > While there is no demo site, you can see how the template looks on [my blog](https://blog.upagge.ru).
 
-* Now the article page can have three views, and in combination with the positioning of content you have the flexibility to change the format of displaying the article.
+* I rethought the design of the articles and the display of the articles on the main page. 
+    * Now the article page can have three views, and in combination with the positioning of content you have the flexibility to change the format of displaying the article.
+    * Counter of comments to the article. Available from Remark42 only.
+    * Changing the mechanism for reporting article updates
+    * Disabling characters in headers, allows e.g. using smileys instead of '#'.
+    * Big changes at the bottom of the article
+        ![footer article](images/footer.jpg 'footer article')
+        * New display of the author of the article.
+        * New type of buttons to share
+        * Changed the navigation type between next and previous article
+        * New way to display article tags
 * I took the changes in their PRs that fixed the bugs: [#558](https://github.com/dillonzq/LoveIt/pull/558/files), [#544](https://github.com/dillonzq/LoveIt/pull/544/files), [#522](https://github.com/dillonzq/LoveIt/pull/522), [#521](https://github.com/dillonzq/LoveIt/pull/521), [#519](https://github.com/dillonzq/LoveIt/pull/519), [#461](https://github.com/dillonzq/LoveIt/pull/461/files), [#433](https://github.com/dillonzq/LoveIt/pull/433/files), [#425](https://github.com/dillonzq/LoveIt/pull/425)
 * Added breadcrumbs support for OpenGraph
 * Support for [Remark 42](https://github.com/umputun/remark42/) comments. Ooo is a great project and I strongly recommend using this commenting system for your site. Soon I will write an article why it is the best commenting system and how to set it up. Personally, I use it in [my blog](https://blog.upagge.ru).
