@@ -17,7 +17,7 @@ math:
 [![GitHub forks](https://img.shields.io/github/forks/upagge/uBlogger?style=social)](https://github.com/upagge/uBlogger/fork)
 {{< /style >}}
 
-> [:(far fa-kiss-wink-heart fa-fw): uBlogger](https://github.com/upagge/uBlogger) is a **clean**, **elegant** but **advanced** blog theme for [Hugo](https://gohugo.io/) developed by [Dillon](https://dillonzq.com).
+> [:(far fa-kiss-wink-heart fa-fw): uBlogger](https://github.com/upagge/uBlogger) is a **clean**, **elegant** but **advanced** blog theme for [Hugo](https://gohugo.io/) developed by [uPagge](https://upagge.ru).
 >
 > It is based on the original [LeaveIt Theme](https://github.com/liuzc/LeaveIt) and [KeepIt Theme](https://github.com/Fastbyte01/KeepIt).
 

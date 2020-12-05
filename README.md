@@ -5,11 +5,19 @@
 [![License](https://img.shields.io/github/license/upagge/uBlogger?style=flat-square)](https://github.com/upagge/uBlogger/blob/master/LICENSE)
 > **uBlogger** is a **clean**, **elegant** but **advanced** blog theme for [Hugo](https://gohugo.io/).
 
-## :warning: Information for those who move with LoveIt theme
+
+It is based on the original [LoveIt Theme](https://github.com/dillonzq/LoveIt).
+
+Since the three themes have a similar look, if you have questions about their differences,
+read [Why choose uBlogger](#why-choose-ublogger) so that you can choose the one that works best for you.
+
+![Hugo Theme uBlogger](https://github.com/upagge/uBlogger/raw/master/images/Apple-Devices-Preview.png)
+
+## :warning: Information for those who move with LoveIt theme :warning:
 
 > Skip to the next section if you do not know about LoveIt
 
-If you have used the LoveIt theme, I have a [message for you, make sure to read it.](CHANGE.md)
+**If you have used the LoveIt theme, I have a [message for you, make sure to read it.](CHANGE.md)**
 
 ## [Demo Site](https://blog.upagge.ru/)
 
@@ -59,6 +67,7 @@ I hope you will uBlogger ❤️!
 * Optimized SEO performance with a correct **SEO SCHEMA** based on JSON-LD
 * **[Google Analytics](https://analytics.google.com/analytics)** supported
 * **[Fathom Analytics](https://usefathom.com/)** supported
+* **[Yandex.Metrica](https://metrica.yandex.com)** supported
 * Search engine **verification** supported (Google, Bind, Yandex and Baidu)
 * **CDN** for third-party libraries supported
 * Automatically converted images with **Lazy Load** by [lazysizes](https://github.com/aFarkas/lazysizes)
@@ -79,6 +88,7 @@ I hope you will uBlogger ❤️!
 * Local **Avatar** supported
 * Up to **64** social links supported
 * Up to **28** share sites supported
+* **Remark42** comment system sypported by [Remark42](https://github.com/umputun/remark42/). I recommend using it.
 * **Disqus** comment system supported by [Disqus](https://disqus.com)
 * **Gitalk** comment system supported by [Gitalk](https://github.com/gitalk/gitalk)
 * **Valine** comment system supported by [Valine](https://valine.js.org/)
@@ -171,15 +181,16 @@ Thanks to the authors of following resources included in the theme:
 * [Gitalk](https://github.com/gitalk/gitalk)
 * [Valine](https://valine.js.org/)
 * [cookieconsent](https://github.com/osano/cookieconsent)
+* [Remark42](https://github.com/umputun/remark42/)
 
 ## Author
 
-[Dillon](https://dillonzq.com)
+[uPagge](https://uPagge.ru)
 
 ## Sponsor
 
-If you enjoy the theme, please consider buying me a coffee ☕️.
+If you enjoy the theme, please set the star for the project or/and consider buying me a coffee ☕️.
 
 * [PaiPal](https://paypal.me/upagge)
 
-Thanks! ❤️
+Thanks! ❤️❤️❤️

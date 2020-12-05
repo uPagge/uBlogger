@@ -1,4 +1,4 @@
-# Hello
+# Hello :wave:
 
 Too bad, but the developer of LoveIt hasn't responded to my messages for many weeks, and his last activity at GitHub was in May.
 
@@ -16,9 +16,28 @@ The main emphasis is on the convenience of reading content, because we have a bl
 
 * I rethought the design of the articles and the display of the articles on the main page. 
     * Now the article page can have three views, and in combination with the positioning of content you have the flexibility to change the format of displaying the article.
+        * mini post
+            ![mini-post](images/mini_posts.jpg)
+        * theme post and toc enable:
+            * classic
+                ![classic_theme_toc](images/theme_classic_toc.jpg)
+            * wide
+                ![wide_theme_toc](images/theme_wide_toc.jpg)
+            * full
+                ![full_theme_toc](images/theme_full_toc.jpg)
+        * theme and toc disable or static
+            * classic
+                ![theme_classic](images/theme_classic.jpg)
+            * wide
+                ![theme_wide](images/theme_wide.jpg)
+            * full
+                ![theme_full](images/theme_full.jpg)
+    * Author's comment, according to the plan, should encourage readers to discuss.
+        ![author comment](images/comments_author.jpg 'author comment')
     * Counter of comments to the article. Available from Remark42 only.
     * Changing the mechanism for reporting article updates
     * Disabling characters in headers, allows e.g. using smileys instead of '#'.
+        ![emoji](images/h-emoji.jpg)
     * Big changes at the bottom of the article
         ![footer article](images/footer.jpg 'footer article')
         * New display of the author of the article.
@@ -40,12 +59,3 @@ If you have ideas or suggestions, or if you find bugs, please report them to the
 1. The `em` tag is no longer slanted, it is now a marker selection.
 
 2. The quote is no longer a quote, but a focus on important aspects.
-
-## Info about theme
-
-It is based on the original [LoveIt Theme](https://github.com/dillonzq/LoveIt).
-
-Since the three themes have a similar look, if you have questions about their differences,
-read [Why choose uBlogger](#why-choose-ublogger) so that you can choose the one that works best for you.
-
-![Hugo Theme uBlogger](https://github.com/upagge/uBlogger/raw/master/images/Apple-Devices-Preview.png)
