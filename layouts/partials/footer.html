@@ -17,16 +17,16 @@
                 </div>
             {{- end -}}
 
-            <div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork">
+            <div class="footer-line">
                 {{- /* Copyright year */ -}}
                 {{- if ne .Site.Params.footer.copyright false -}}
                     <i class="far fa-copyright fa-fw"></i>
                     {{- with .Site.Params.footer.since -}}
-                        <span itemprop="copyrightYear">
+                        <span>
                             {{- if lt . now.Year }}{{ . }} - {{ end }}{{ now.Year -}}
                         </span>
                     {{- else -}}
-                        <span itemprop="copyrightYear">{{ now.Year }}</span>
+                        <span>{{ now.Year }}</span>
                     {{- end -}}
                 {{- end -}}
 

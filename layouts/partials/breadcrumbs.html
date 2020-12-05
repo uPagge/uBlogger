@@ -1,15 +1,9 @@
 <div id="breadcrumbs" class="breadcrumbs">
-    <a href="{{ .Site.Home.RelPermalink }}">{{ T "home" }}</a> /
-    {{- $categories := slice -}}
-    {{- range $.Params.categories -}}
-    {{- $category := partialCached "function/path.html" . . | printf "/categories/%v" | $.Site.GetPage -}}
-    {{- $categories = $categories | append (printf `<a href="%v">&nbsp;%v</a> ` $category.RelPermalink $category.Title) -}}
-    {{- end -}}
-    {{- with delimit $categories "&nbsp;" -}}
-    {{ $first := index ($categories) 0 }}
-    {{- with $first -}}
-    {{- dict "Categories" . | T "includedInCategories" | safeHTML -}}
-    {{- end -}}
+    <a href="{{ .Site.Home.RelPermalink }}">{{ T "home" }} </a>
+    {{- $category := index ($.Params.categories) 0 -}}
+    {{- with $category -}}
+    {{- $category = partialCached "function/path.html" . . | printf "/categories/%v" | $.Site.GetPage -}}
+    / <a href="{{ $category.RelPermalink }}">{{ $category.Title }} </a>
     {{- end -}}
     / <a href="/"> {{ .Title }} </a>
 </div>

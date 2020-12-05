@@ -150,4 +150,33 @@
         "description": {{ .Description | safeHTML }}
     }
     </script>
+
+{{- $category := index ($.Params.categories) 0 -}}
+{{- with $category -}}
+{{- $category = partialCached "function/path.html" . . | printf "/categories/%v" | $.Site.GetPage -}}
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "{{ T "home" }}",
+            "item": "{{ $.Site.BaseURL | safeHTML }}"
+        },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": {{ $category.Title }},
+            "item": {{ $category.Permalink }}
+        },{
+                "@type": "ListItem",
+                "position": 3,
+                "name": "{{ $.Title | safeHTML }}"
+            }]
+    }
+</script>
+{{- end -}}
+
+
 {{- end -}}
