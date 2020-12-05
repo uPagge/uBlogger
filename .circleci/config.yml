@@ -3,7 +3,7 @@ jobs:
   build-check:
     docker:
       - image: cibuilds/hugo:0.62
-    working_directory: ~/LoveIt
+    working_directory: ~/uBlogger
     steps:
       - checkout
       - run: git submodule sync
