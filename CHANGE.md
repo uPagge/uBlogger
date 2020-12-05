@@ -36,6 +36,7 @@ The main emphasis is on the convenience of reading content, because we have a bl
         ![author comment](images/comments_author.jpg 'author comment')
     * Counter of comments to the article. Available from Remark42 only.
     * Changing the mechanism for reporting article updates
+        ![update](images/update-info.jpg)
     * Disabling characters in headers, allows e.g. using smileys instead of '#'.
         ![emoji](images/h-emoji.jpg)
     * Big changes at the bottom of the article
