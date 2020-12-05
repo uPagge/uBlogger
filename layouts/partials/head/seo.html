@@ -151,7 +151,8 @@
     }
     </script>
 
-{{- $category := index ($.Params.categories) 0 -}}
+{{- with $.Params.categories -}}
+{{- $category := index . 0 -}}
 {{- with $category -}}
 {{- $category = partialCached "function/path.html" . . | printf "/categories/%v" | $.Site.GetPage -}}
 
@@ -177,6 +178,6 @@
     }
 </script>
 {{- end -}}
-
+{{- end -}}
 
 {{- end -}}

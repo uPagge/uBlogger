@@ -1,9 +1,11 @@
 <div id="breadcrumbs" class="breadcrumbs">
     <a href="{{ .Site.Home.RelPermalink }}">{{ T "home" }} </a>
-    {{- $category := index ($.Params.categories) 0 -}}
+    {{- with $.Params.categories -}}
+    {{- $category := index . 0 -}}
     {{- with $category -}}
     {{- $category = partialCached "function/path.html" . . | printf "/categories/%v" | $.Site.GetPage -}}
     / <a href="{{ $category.RelPermalink }}">{{ $category.Title }} </a>
+    {{- end -}}
     {{- end -}}
     / <a href="/"> {{ .Title }} </a>
 </div>

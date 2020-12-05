@@ -408,6 +408,10 @@ footer {
     flex: none;
     width: 48%;
     display: block;
+
+    :hover {
+      color: $single-link-hover-color
+    }
   }
 
   .nav-box-next {
@@ -425,7 +429,13 @@ footer {
     justify-content:space-between;
     border-radius: 6px;
     box-shadow: 0 0 1em 0 rgba(10,10,10,.1),0 0 0 1px rgba(10,10,10,.02);
-    color: #4a4a4a;padding: 1.25rem;
+    color: #4a4a4a;
+    padding: 1.25rem;
+
+    [theme=dark] & {
+      background-color: #f5f6f8;
+      box-shadow: 0 0 20px 2px rgba(94,104,125,0.3);
+    }
   }
 
   .nav-icon {
