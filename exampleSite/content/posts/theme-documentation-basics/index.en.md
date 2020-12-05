@@ -146,6 +146,10 @@ Feel free to edit the post file by adding some sample content and replacing the 
 By default all posts and pages are created as a draft. If you want to render these pages, remove the property `draft: true` from the metadata, set the property `draft: false` or add `-D`/`--buildDrafts` parameter to `hugo` command.
 {{< /admonition >}}
 
+{{< admonition type=info title="Archetypes" open=true >}}
+You can copy /uBlogger/archetypes/default.md to your archetypes folder to create a pre-configured post.
+{{< /admonition >}}
+
 ### 2.5 Launching the Website Locally
 
 Launch by using the following command:

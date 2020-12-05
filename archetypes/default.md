@@ -5,11 +5,16 @@ date: {{ .Date }}
 lastmod: {{ .Date }}
 draft: true
 author: ""
-authorLink: ""
 description: ""
 
-tags: []
-categories: []
+page:
+    theme: "wide"
+
+upd: ""
+authorComment: ""
+
+tags: [""]
+categories: [""]
 
 hiddenFromHomePage: false
 hiddenFromSearch: false

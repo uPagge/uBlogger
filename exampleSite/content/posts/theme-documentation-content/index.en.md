@@ -81,11 +81,15 @@ description: ""
 license: ""
 images: []
 
+# {{< version 1.0.0 new >}} Article Update Information
+upd: ""
+
+# {{< version 1.0.0 new >}} Author's comment, is shown above all comments
+authorComment: ""
+
 page:
-    # theme {{< version 1.0.0 new >}}
-    theme:
-
-
+    # {{< version 1.0.0 new >}} article design theme
+    theme: ""
 
 tags: []
 categories: []
