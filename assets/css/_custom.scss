@@ -447,7 +447,30 @@ footer {
     font-size: .75rem;
   }
 
+}
 
+.post-tags {
+  max-width: 900px;
+  width: 100%;
+  min-width: 200px;
+  box-sizing: border-box;
+  text-align: center;
+  margin-top: 1rem;
+
+  .tag {
+    margin-top: 3px;
+    margin-right: 10px;
+    padding: 5px 10px 5px 10px;
+    background: #2c678d;
+    border-radius: 4px;
+    color: white;
+    display: inline-block;
+
+    [theme=dark] & {
+      background-color: #f5f6f8;
+      color: black;
+    }
+  }
 }
 
 @import "_partial/share-icon";

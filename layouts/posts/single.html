@@ -132,6 +132,15 @@
 
     </article>
 
+{{- with .Params.tags -}}
+    <div class="post-tags">
+            {{- range $index, $value := . -}}
+                {{- $tag := partialCached "function/path.html" $value $value | printf "/tags/%v" | $.Site.GetPage -}}
+                <a href="{{ $tag.RelPermalink }}" class="tag">{{ $tag.Title }}</a>
+            {{- end -}}
+    </div>
+{{- end -}}
+
     {{- $comment := .Site.Params.Page.Comment -}}
     {{- if $comment.enable -}}
     <div class="{{ if $toc.keepStatic }} page single comments {{ else }} page single comments page-toc {{ end }}">
