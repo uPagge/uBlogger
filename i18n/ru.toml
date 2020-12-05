@@ -114,10 +114,13 @@ other = "Содержание"
 [wordCount]
 one = "Одно слово"
 other = "{{ .Count }} слов"
+few = "{{ .Count }} слов"
+many = "{{ .Count }} слов"
 
 [readingTime]
 one = "Одна минута"
 other = "{{ .Count }} минут"
+many = "{{ .Count }} минут"
 
 [views]
 other = "просмотров"

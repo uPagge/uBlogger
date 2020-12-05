@@ -32,7 +32,7 @@ The main emphasis is on the convenience of reading content, because we have a bl
 
 If you have ideas or suggestions, or if you find bugs, please report them to the [issue](https://github.com/uPagge/uBlogger/issues).
 
-If you liked the topic, I would be glad if you gave a :star2: star to this project. Well, either throw me a coffee via [PayPal](https://paypal.me/upagge)
+**If you liked the topic, I would be glad if you gave a :star2: star to this project. Well, either throw me a coffee via [PayPal](https://paypal.me/upagge)**
 
 ### Change the markdown design
 
