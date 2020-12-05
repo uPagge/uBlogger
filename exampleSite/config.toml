@@ -11,7 +11,7 @@ themesDir = "../.."
 
 # website title
 # 网站标题
-title = "LoveIt"
+title = "uBlog"
 
 # whether to use robots.txt
 # 是否使用 robots.txt
@@ -651,10 +651,10 @@ enableEmoji = true
       logo = ""
       # title name
       # 标题名称
-      name = "LoveIt"
+      name = "uBlog"
       # you can add extra information before the name (HTML format is supported), such as icons
       # 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标
-      pre = "<i class='far fa-kiss-wink-heart fa-fw'></i>"
+      pre = "<i class='fas fa-pencil-alt fa-fw'></i>"
       # you can add extra information after the name (HTML format is supported), such as icons
       # 你可以在名称 (允许 HTML 格式) 之后添加其他信息, 例如图标
       post = ""
@@ -1072,7 +1072,7 @@ enableEmoji = true
 # Author config
 # 作者配置
 [author]
-  name = "default"
+  name = "upagge.en"
 
 # Sitemap config
 # 网站地图配置

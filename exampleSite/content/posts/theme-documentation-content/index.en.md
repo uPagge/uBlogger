@@ -1,11 +1,7 @@
 ---
-weight: 2
 title: "Theme Documentation - Content"
 date: 2020-03-05T15:58:26+08:00
 lastmod: 2020-03-05T15:58:26+08:00
-draft: false
-author: "Dillon"
-authorLink: "https://dillonzq.com"
 description: "Find out how to create and organize your content quickly and intuitively in LoveIt theme."
 resources:
 - name: "featured-image"
@@ -13,6 +9,9 @@ resources:
 
 tags: ["content", "Markdown"]
 categories: ["documentation"]
+
+page:
+    theme: full
 
 lightgallery: true
 
@@ -74,11 +73,19 @@ subtitle: ""
 date: 2020-03-04T15:58:26+08:00
 lastmod: 2020-03-04T15:58:26+08:00
 draft: true
+# author {{< version 1.0.0 changed >}}
 author: ""
+# authorLink {{< version 1.0.0 deleted >}} 
 authorLink: ""
 description: ""
 license: ""
 images: []
+
+page:
+    # theme {{< version 1.0.0 new >}}
+    theme:
+
+
 
 tags: []
 categories: []
@@ -135,8 +142,8 @@ seo:
 * **date**: the datetime assigned to this page, which is usually fetched from the `date` field in front matter, but this behaviour is configurabl in the [site configuration](../theme-documentation-basics#site-configuration).
 * **lastmod**: the datetime at which the content was last modified.
 * **draft**: if `true`, the content will not be rendered unless the `--buildDrafts`/`-D` flag is passed to the `hugo` command.
-* **author**: the author for the content.
-* **authorLink**: the link of the author.
+* **author**: {{< version 1.0.0 changed >}} the author for the content.
+* **authorLink**: {{< version 1.0.0 deleted >}} the link of the author.
 * **description**: the description for the content.
 * **license**: the special lisence for this content.
 * **images**: page images for Open Graph and Twitter Cards.
@@ -181,6 +188,65 @@ resources:
   src: featured-image-preview.jpg
 ```
 {{< /admonition >}}
+
+### Theme 
+{{< version 1.0.0 new >}}
+
+You can choose one of three topics for an article. The differences between them are in the location of the image and the title of the article with metadata.
+
+All themes are adaptable to any screen size.
+
+Available values: `classic`, `wide`, `full`. This page uses design - full.
+
+{{< admonition type=tip title="Idea" open=true >}}
+If you combine them with toc, you can get even more styling options.
+{{< /admonition >}}
+
+#### classic
+
+![Theme classic](theme-classic.jpg 'Theme classic')
+
+#### wide
+
+![Theme wide](theme-wide.jpg 'Theme wide')
+
+#### full
+
+![Theme full](theme-full.jpg 'Theme full')
+
+### Author {#author}
+{{< version 1.0.0 changed >}}
+
+Many authors are now supported - you can write more than one article.
+
+For your convenience, author data is stored as json in the data/authors folder. Don't forget to create it.
+
+{{< admonition type=example title="Example" open=true >}}
+You can see the author's example at the end of this article.
+{{< /admonition >}}
+
+Format JSON:
+
+```json
+{
+  "name": "Struchkov Mark",
+  "nickname": "uPagge",
+  "about": "Trusted user pc",
+  "avatar": "https://upagge.ru/img/ava.jpg",
+  "link": "https://uPagge.ru",
+  "email": "me@upagge.ru",
+  "ps": "If you like this topic, put an asterisk in GitHub, it will be a pleasure for me"
+}
+```
+
+### :baguette_bread: Breadcrumbs {#u-breadcrumbs}
+{{< version 1.0.0 new >}}
+
+[This is quite](https://developers.google.com/search/docs/data-types/breadcrumb) a useful chip for SEO optimization, it is implemented in all three themes. _Support for opengraph._
+
+Traditionally, Breadcrumbs are placed above the header.
+
+They contain a path by sections to the current page, with links to sections. For posts it is the main page of the site, then the category of the post and the name of the post without a link.
 
 ## 3 Content Summaries
 

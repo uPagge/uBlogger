@@ -1,12 +1,16 @@
 ---
-weight: 1
 title: "Theme Documentation - Basics"
 date: 2020-03-06T21:29:01+08:00
-lastmod: 2020-03-06T21:29:01+08:00
-description: "Discover what the Hugo - LoveIt theme is all about and the core-concepts behind it."
+lastmod: 2020-12-05T18:55:56+03:00
+description: "Discover what the Hugo - uBlog theme is all about and the core-concepts behind it."
 resources:
 - name: "featured-image"
   src: "featured-image.jpg"
+  
+upd: "Since the template began to support uPagge, you can not do without names. You can find the changes by tag 1.0.0."
+  
+page:
+    theme: "wide"
 
 tags: ["installation", "configuration"]
 categories: ["documentation"]
@@ -15,9 +19,10 @@ lightgallery: true
 
 toc:
   auto: false
+  
 ---
 
-Discover what the Hugo - **LoveIt** theme is all about and the core-concepts behind it.
+Discover what the Hugo - **uBlog** theme is all about and the core-concepts behind it.
 
 <!--more-->
 
@@ -400,6 +405,8 @@ Please open the code block below to view the complete sample configuration :(far
 
   # {{< version 0.2.0 changed >}} Page config
   [params.page]
+    # {{< version 1.0.0 new >}} main subject for articles, by default classic. {{< link "/theme-documentation-content/#theme" "more on themes" >}}}
+    theme = "classic"
     # {{< version 0.2.0 >}} whether to hide a page from home page
     hiddenFromHomePage = false
     # {{< version 0.2.0 >}} whether to hide a page from search results
@@ -494,6 +501,20 @@ Please open the code block below to view the complete sample configuration :(far
     # {{< version 0.2.0 changed >}} Comment config
     [params.page.comment]
       enable = true
+      # {{< version 1.0.0 new >}}
+      # {{< link "https://github.com/umputun/remark42/" Remark42 >}} comment config
+      [params.page.comment.remark42]
+        enable = false
+        # the location of your server with Remark42
+        host = "https://remark.example.com"
+        # remark42 supports comments for several sites at once, this identifier indicates which site to display comments for.
+        site = "you_site_key"
+        # design theme
+        theme = "light"
+        # language
+        locale = "en"
+        # enable or disable smiley support
+        emailSubscribe = "true"
       # {{< link "https://disqus.com/" Disqus >}} comment config
       [params.page.comment.disqus]
         # {{< version 0.1.1 >}}
@@ -618,6 +639,11 @@ Please open the code block below to view the complete sample configuration :(far
       id = ""
       # server url for your tracker if you're self hosting
       server = ""
+    # {{< version 1.0.0 new >}}
+    # Yandex.Metrika
+    [params.analytics.yandex]
+      # your meter number
+      id = ""
 
   # {{< version 0.2.7 >}} Cookie consent config
   [params.cookieconsent]
@@ -674,10 +700,9 @@ Please open the code block below to view the complete sample configuration :(far
     endLevel = 6
 
 # Author config
+# {{< version 1.0.0 changed >}}
 [author]
   name = "xxxx"
-  email = ""
-  link = ""
 
 # Sitemap config
 [sitemap]
