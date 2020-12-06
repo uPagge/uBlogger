@@ -90,13 +90,20 @@
 }
 
 @media only screen and (max-width: 680px) {
-  .page {
+  article.page {
     [data-header-desktop] & {
       margin-top: 3rem;
     }
   }
   .featured-image {
     height: 100vh;
+  }
+
+  .theme-wide {
+    .image-theme-wide {
+      margin-right: -10px;
+      margin-left: -10px;
+    }
   }
 
   article.page {
@@ -115,13 +122,13 @@
     border-radius: 0;
   }
 
-  .wrapper {
-    main {
-      .container {
-        padding: 0;
-      }
-    }
-  }
+  //.wrapper {
+  //  main {
+  //    .container {
+  //      padding: 0;
+  //    }
+  //  }
+  //}
 
   .home[data-home=posts] {
     .summary {
