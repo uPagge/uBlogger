@@ -137,8 +137,6 @@ other = "Înapoi"
 [home]
 other = "Acasă"
 
-[readMore]
-other = "Citește mai mult"
 # === posts/single.html ===
 
 # === 404.html ===

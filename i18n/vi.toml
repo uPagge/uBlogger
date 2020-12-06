@@ -136,8 +136,6 @@ other = "Quay lại"
 [home]
 other = "Trang chủ"
 
-[readMore]
-other = "Đọc thêm"
 # === posts/single.html ===
 
 # === 404.html ===

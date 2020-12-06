@@ -137,8 +137,6 @@ other = "Retour"
 [home]
 other = "Accueil"
 
-[readMore]
-other = "En savoir plus"
 # === posts/single.html ===
 
 # === 404.html ===

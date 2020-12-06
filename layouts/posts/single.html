@@ -111,9 +111,9 @@
                 {{- $updateDate := . -}}
                 {{- if not (eq  . ($.Site.Params.dateformat | default "2006-01-02" | $.PublishDate.Format)) -}}
                 {{- with $params.upd -}}
-                <div class="post-update">
+                <p class="is-style-explanation">
                     <b>{{- dict "Date" $updateDate | T "updatedOnDate" -}}:</b> {{ $params.upd }}
-                </div>
+                </p>
                 {{- else -}}
                 <span class="post-update">
                     <b>{{- dict "Date" . | T "updatedOnDate" -}}</b>

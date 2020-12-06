@@ -73,6 +73,7 @@ article {
 
   article {
     box-shadow: none;
+    @include transition(all 0.3s ease-out);
 
     &:hover {
       @include box-shadow(0 0 1.5rem 0 rgba(0, 0, 0, .1));
@@ -482,6 +483,49 @@ footer {
 
 .home[data-home=posts] .home-profile {
   padding-bottom: 2rem;
+}
+
+.is-style-explanation {
+  padding: .75rem 1rem .75rem 4rem;
+  font-size: 1rem;
+  position: relative;
+  margin: 0 0 1.5rem;
+  border-left: 1px solid $global-color-accent;
+  background: linear-gradient(90deg,$global-color-accent,$global-background-secondary-color);
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+
+  [theme=dark] & {
+    background: linear-gradient(90deg,$global-color-accent,$global-background-secondary-color-dark);
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+  }
+
+  :after {
+    content:"";
+    position:absolute;
+    bottom:0;
+    left:0;
+    height:1px;
+    width:25%;
+    background:linear-gradient(90deg,$global-color-accent,$global-background-secondary-color);
+
+    [theme=dark] & {
+      background:linear-gradient(90deg,$global-color-accent,$global-background-secondary-color-dark);
+    }
+  }
+
+  :before {
+    content: "Hey!";
+    font-style: italic;
+    font-weight: 700;
+    color: $global-color-accent;
+    position: absolute;
+    top: .75rem;
+    left: 1rem;
+  }
 }
 
 @import "_partial/share-icon";

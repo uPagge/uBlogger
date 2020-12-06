@@ -137,8 +137,6 @@ other = "Voltar"
 [home]
 other = "Home"
 
-[readMore]
-other = "Leia mais"
 # === posts/single.html ===
 
 # === 404.html ===
