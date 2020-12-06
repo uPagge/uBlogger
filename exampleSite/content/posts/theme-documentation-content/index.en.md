@@ -252,6 +252,14 @@ Traditionally, Breadcrumbs are placed above the header.
 
 They contain a path by sections to the current page, with links to sections. For posts it is the main page of the site, then the category of the post and the name of the post without a link.
 
+### Disable content for H1-H2
+
+You can disable default characters '#', '|' by setting the correct id. It must start with 'u-'.
+
+You can use this to set emoji or partition number.
+
+![Example with Emoji](h-emoji.jpg 'Example with Emoji')
+
 ## 3 Content Summaries
 
 **uBlogger** theme uses the summary of the content to display abstract information in the home page. Hugo can generate summaries of your content.
