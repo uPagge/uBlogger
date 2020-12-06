@@ -9,9 +9,17 @@ $global-font-size: 16px;
 $global-font-weight: 400;
 $global-line-height: 1.5rem;
 
+$global-color-accent: #2c678d;
+
 // Color of the background
 $global-background-color: #fff !default;
-$global-background-color-dark: #292a2d !default;
+$global-background-color-dark: #282c35 !default;
+
+$global-background-secondary-color: #eee;
+$global-background-secondary-color-dark: #1B1B1C;
+
+$global-secondary-color: #DDD;
+$global-secondary-color-dark: #a9a9b3;
 
 // Color of the text
 $global-font-color: #161209 !default;
@@ -31,7 +39,7 @@ $global-link-hover-color-dark: #fff !default;
 
 // Color of the border
 $global-border-color: #2c678d !default;
-$global-border-color-dark: #363636 !default;
+$global-border-color-dark: #a9a9b3 !default;
 // ========== Global ========== //
 
 // ========== Scrollbar ========== //
@@ -70,6 +78,8 @@ $search-background-color-dark: #363636 !default;
 // ========== Header ========== //
 
 // ========== Single Content ========== //
+$article-border-radius: 32px;
+
 // Font size of the TOC
 $toc-title-font-size: 1.2rem !default;
 $toc-content-font-size: 1rem !default;
@@ -364,3 +374,9 @@ $admonition-background-color-map: (
 // ========== Admonition ========== //
 
 $MAX_LENGTH: 12000px;
+
+// ========== uBlogger ============ //
+
+
+
+// ========== uBlogger ============ //

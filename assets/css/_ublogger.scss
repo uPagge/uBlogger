@@ -25,18 +25,18 @@ body {
 }
 
 .header-logo {
-  color: #2c678d;
+  color: $global-color-accent;
   font-family: Lobster;
   font-size: 1.8rem;
 }
 
 article {
-  background: white;
-  border-radius: 32px;
+  background: $global-background-color;
+  border-radius: $article-border-radius;
   box-shadow: (0 0 1.5rem 0 rgba(0, 0, 0, .1));
 
   [theme=dark] & {
-    background: #1B1B1C;
+    background: $global-background-secondary-color-dark;
     box-shadow: (0 0 40px rgba(94, 104, 125, .3));
   }
 
@@ -60,7 +60,7 @@ article {
 
   [data-header-desktop] & {
     margin-top: 6rem;
-    padding-top: 0rem;
+    padding-top: 0;
   }
 
   article {
@@ -116,14 +116,14 @@ article {
     padding-top: 0;
     padding-bottom: 2rem;
     margin-bottom: 6rem;
-    border: 2px solid #ddd;
+    border: 2px solid $global-secondary-color;
 
     [theme=dark] & {
-      border: 2px solid #a9a9b3;
+      border: 2px solid $global-secondary-color-dark;
     }
 
     [theme=dark] &:hover {
-      border: 2px solid #1B1B1C;
+      border: 2px solid $global-background-secondary-color-dark;
       transform: none;
       @include transition(all 0.4s ease);
     }
@@ -216,13 +216,13 @@ article {
 .footer-post-author {
   margin: 20px 0 0 0;
   padding: 20px;
-  background-color: #f5f6f8;
+  background-color: $global-background-secondary-color;
   color: black;
   border-radius: 10px 10px 0 0;
   display: inline-block;
   width: 100%;
   box-sizing: border-box;
-  border: solid 2px #ececec;
+  border: solid 2px $global-secondary-color;
   border-bottom: none;
 
   [theme=dark] & {
@@ -231,11 +231,11 @@ article {
 }
 
 .footer-donate {
-  border: solid 2px #ececec;
+  border: solid 2px $global-secondary-color;
   display: inline-block;
   width: 100%;
   box-sizing: border-box;
-  background-color: #f5f6f8;
+  background-color: $global-background-secondary-color;
   color: black;
   border-radius: 0 0 10px 10px;
   padding: 10px;
@@ -269,10 +269,10 @@ article {
   }
 
   .name {
-    color: #121319;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 28px;
+    a {
+      color: $global-font-color;
+      font-weight: 700;
+    }
   }
 }
 
@@ -294,7 +294,7 @@ article {
 .post-title {
   position: absolute;
   bottom: 0;
-  background: #000; /* Цвет фона */
+  background: #000;
   opacity: 0.7;
   width: 100%;
   color: #DDD;
@@ -317,14 +317,14 @@ article {
   padding: 20px 0;
 
   .name {
-    color: #121319;
+    color: $global-font-color;
     font-weight: 700;
     font-size: 18px;
     line-height: 28px;
   }
 
   .author-comment-text {
-    color: black;
+    color: $global-font-color;
     font-size: 24px;
   }
 }
@@ -360,7 +360,7 @@ footer {
 .theme-full {
   .post-title {
     a {
-      color: #DDDDDD;
+      color: $global-font-secondary-color;
     }
   }
 }
@@ -388,8 +388,8 @@ footer {
   border-radius: 10px;
   padding: 10px;
   margin: 20px 0 20px 0;
-  background-color: #bfbfbf;
-  color: black;
+  background-color: $global-font-secondary-color;
+  color: $global-font-color;
 
   b {
     [theme=dark] & {
@@ -424,11 +424,11 @@ footer {
     justify-content:space-between;
     border-radius: 6px;
     box-shadow: 0 0 1em 0 rgba(10,10,10,.1),0 0 0 1px rgba(10,10,10,.02);
-    color: #4a4a4a;
+    color: $single-link-color;
     padding: 1.25rem;
 
     [theme=dark] & {
-      background-color: #f5f6f8;
+      background-color: $global-font-color-dark;
       box-shadow: 0 0 20px 2px rgba(94,104,125,0.3);
     }
   }
@@ -456,13 +456,13 @@ footer {
     margin-top: 3px;
     margin-right: 10px;
     padding: 5px 10px 5px 10px;
-    background: #2c678d;
+    background: $global-color-accent;
     border-radius: 4px;
     color: white;
     display: inline-block;
 
     [theme=dark] & {
-      background-color: #f5f6f8;
+      background-color: $global-font-color-dark;
       color: black;
     }
   }
