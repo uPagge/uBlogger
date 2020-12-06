@@ -1,7 +1,7 @@
 {{- define "title" }}{{ .Title }} | {{ .Site.Params.Title }}{{ end -}}
 
-{{- define "content" -}}
-
+{{- define "no-content" -}}
+<div class="container content-article">
     {{- $params := .Scratch.Get "params" -}}
 
     {{- $toc := $params.toc -}}
@@ -160,5 +160,5 @@
         {{- partial "comment.html" . -}}
     </div>
     {{- end -}}
-
+</div>
 {{- end -}}

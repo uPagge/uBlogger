@@ -24,33 +24,6 @@
 {{- end -}}
 
 <div class="post-footer" id="post-footer">
-<!--    <div class="post-info">-->
-<!--        <div class="post-info-line">-->
-<!--            {{- with $params.license | string -}}-->
-<!--            <div class="post-info-license">-->
-<!--                <span>-->
-<!--                    {{- . | safeHTML -}}-->
-<!--                </span>-->
-<!--            </div>-->
-<!--            {{- end -}}-->
-<!--        </div>-->
-<!--        <div class="post-info-line">-->
-<!--            <div class="post-info-md">-->
-<!--                {{- if $params.linktomarkdown -}}-->
-<!--                    {{- with .OutputFormats.Get "markdown" -}}-->
-<!--                        <span>-->
-<!--                            <a class="link-to-markdown" href="{{ .RelPermalink }}" target="_blank">-->
-<!--                                {{- T "readMarkdown" -}}-->
-<!--                            </a>-->
-<!--                        </span>-->
-<!--                    {{- end -}}-->
-<!--                {{- end -}}-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-
-
-
     {{- if or .PrevInSection .NextInSection -}}
     <div class="post-navigation">
         {{- if .PrevInSection -}}
@@ -65,5 +38,4 @@
         {{- end -}}
     </div>
     {{- end -}}
-
 </div>
