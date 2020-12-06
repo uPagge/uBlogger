@@ -1,6 +1,6 @@
 {{- $params := .Params | merge .Site.Params.page -}}
 
-<article class="single summary" itemscope itemtype="http://schema.org/Article">
+<article onclick="location.href='{{ $.RelPermalink }}'" class="single summary article-mini" itemscope itemtype="http://schema.org/Article">
     {{- /* Featured image */ -}}
     {{- $image := $params.featuredimagepreview | default $params.featuredimage -}}
     {{- with .Resources.GetMatch "featured-image" -}}
@@ -11,15 +11,13 @@
     {{- end -}}
     {{- with $image -}}
         <div class="featured-image-preview">
-            <a href="{{ $.RelPermalink }}">
-                {{- dict "Src" . "Title" $.Description "Resources" $.Resources | partial "plugin/image.html" -}}
-            </a>
+            {{- dict "Src" . "Title" $.Description "Resources" $.Resources | partial "plugin/image.html" -}}
         </div>
     {{- end -}}
     <div class="article-text">
         {{- /* Title */ -}}
         <h2 class="single-title" itemprop="name headline">
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            {{ .Title }}
         </h2>
 
         {{- /* Meta */ -}}
@@ -35,7 +33,7 @@
             {{- end -}}
 
             {{- with .Site.Params.dateFormat | default "2006-01-02" | .PublishDate.Format -}}
-            &nbsp;&#183;&nbsp;<span class="post-publish"><i class="far fa-clock fa-fw"></i>
+            &nbsp;&nbsp;&nbsp;<span class="post-publish"><i class="far fa-clock fa-fw"></i>
                 {{- printf `<time datetime="%v">%v</time>` . . | safeHTML -}}
          </span>
             {{- end -}}
@@ -46,7 +44,7 @@
             {{- $categories = $categories | append (printf `<a href="%v"><i class="far fa-folder fa-fw"></i>%v</a>` $category.RelPermalink $category.Title) -}}
             {{- end -}}
             {{- with delimit $categories "&nbsp;" -}}
-            &nbsp;&#183;&nbsp;<span class="post-category">
+            &nbsp;&nbsp;&nbsp;<span class="post-category">
                 {{ . }}
             </span>
             {{- end -}}
@@ -54,7 +52,7 @@
             {{- $comment := .Site.Params.Page.Comment -}}
             {{- $remark42 := $comment.remark42 | default dict -}}
             {{- if $remark42.enable -}}
-            &nbsp;&#183;&nbsp;<i class="far fa-comment fa-fw"></i>
+            &nbsp;&nbsp;&nbsp;<i class="far fa-comment fa-fw"></i>
             <span class="remark42__counter" data-url="{{ .Permalink }}">
 
             </span>
@@ -71,18 +69,17 @@
         </div>
 
         {{- /* Footer */ -}}
-        <div class="post-footer">
-            <a href="{{ .RelPermalink }}">{{ T "readMore" }}</a>
-            {{- with .Params.tags -}}
-            <div class="post-tags-summary">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;
-                {{- range $index, $value := . -}}
-                {{- if gt $index 0 }},&nbsp;{{ end -}}
-                {{- $tag := partialCached "function/path.html" $value $value | printf "/tags/%v" | $.Site.GetPage -}}
-                <a href="{{ $tag.RelPermalink }}">{{ $tag.Title }}</a>
-                {{- end -}}
-            </div>
-            {{- end -}}
-        </div>
+<!--        <div class="post-footer">-->
+<!--            {{- with .Params.tags -}}-->
+<!--            <div class="post-tags-summary">-->
+<!--                <i class="fas fa-tags fa-fw"></i>&nbsp;-->
+<!--                {{- range $index, $value := . -}}-->
+<!--                {{- if gt $index 0 }},&nbsp;{{ end -}}-->
+<!--                {{- $tag := partialCached "function/path.html" $value $value | printf "/tags/%v" | $.Site.GetPage -}}-->
+<!--                <a href="{{ $tag.RelPermalink }}">{{ $tag.Title }}</a>-->
+<!--                {{- end -}}-->
+<!--            </div>-->
+<!--            {{- end -}}-->
+<!--        </div>-->
     </div>
 </article>

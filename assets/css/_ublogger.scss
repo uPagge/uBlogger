@@ -51,6 +51,10 @@ article {
   }
 }
 
+.article-mini {
+  cursor: pointer;
+}
+
 .page {
 
   max-width: 900px;
@@ -470,6 +474,10 @@ footer {
 
 .post-tags-toc {
   margin: 1rem 0;
+}
+
+.home[data-home=posts] .home-profile {
+  padding-bottom: 2rem;
 }
 
 @import "_partial/share-icon";
