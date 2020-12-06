@@ -91,10 +91,21 @@
 
 @media only screen and (max-width: 680px) {
   article.page {
+    font-size: 16px;
+
+    .post {
+      padding: 10px;
+    }
+
+    .featured-image {
+      border-radius: 0;
+    }
+
     [data-header-desktop] & {
       margin-top: 3rem;
     }
   }
+
   .featured-image {
     height: 100vh;
   }
@@ -106,29 +117,9 @@
     }
   }
 
-  article.page {
-    font-size: 16px;
-
-    .post {
-      padding: 10px;
-    }
-
-    .featured-image {
-      border-radius: 0;
-    }
-  }
-
   .single {
     border-radius: 0;
   }
-
-  //.wrapper {
-  //  main {
-  //    .container {
-  //      padding: 0;
-  //    }
-  //  }
-  //}
 
   .home[data-home=posts] {
     .summary {
@@ -151,6 +142,20 @@
 
   .author-comment-text {
     font-size: 18px;
+  }
+
+  .post-navigation {
+    display: inline-block;
+    width: 100%;
+
+    .nav-box-prev {
+      margin-right: 0;
+    }
+
+    .post-nav-box {
+      width: 100%;
+      padding-top: 10px;
+    }
   }
 
 }

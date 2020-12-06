@@ -405,7 +405,7 @@ footer {
 
   .post-nav-box {
     flex: none;
-    width: 48%;
+    width: 49%;
     display: block;
 
     :hover {
@@ -413,12 +413,8 @@ footer {
     }
   }
 
-  .nav-box-next {
-    margin-left: 5px;
-  }
-
   .nav-box-prev {
-    margin-right: 5px;
+    margin-right: 16px;
   }
 
   .nav-box {
