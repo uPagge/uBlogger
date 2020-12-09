@@ -33,11 +33,6 @@ class Theme {
         this.config = window.config;
         this.data = this.config.data;
         this.isDark = document.body.getAttribute('theme') === 'dark';
-        if (this.isDark) {
-            window.REMARK42.changeTheme('dark');
-        } else {
-            window.REMARK42.changeTheme('light');
-        }
         this.util = new Util();
         this.newScrollTop = this.util.getScrollTop();
         this.oldScrollTop = this.newScrollTop;
@@ -601,6 +596,13 @@ class Theme {
 
     initComment() {
         if (this.config.comment) {
+            if (this.config.comment.remark42) {
+                if (this.isDark) {
+                    window.REMARK42.changeTheme('dark');
+                } else {
+                    window.REMARK42.changeTheme('light');
+                }
+            }
             if (this.config.comment.gitalk) {
                 this.config.comment.gitalk.body = decodeURI(window.location.href);
                 const gitalk = new Gitalk(this.config.comment.gitalk);
