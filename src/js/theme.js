@@ -33,6 +33,11 @@ class Theme {
         this.config = window.config;
         this.data = this.config.data;
         this.isDark = document.body.getAttribute('theme') === 'dark';
+        if (this.isDark) {
+            window.REMARK42.changeTheme('dark');
+        } else {
+            window.REMARK42.changeTheme('light');
+        }
         this.util = new Util();
         this.newScrollTop = this.util.getScrollTop();
         this.oldScrollTop = this.newScrollTop;
