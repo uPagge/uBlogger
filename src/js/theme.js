@@ -41,6 +41,13 @@ class Theme {
         this.switchThemeEventSet = new Set();
         this.clickMaskEventSet = new Set();
         if (window.objectFitImages) objectFitImages();
+        document.addEventListener('readystatechange', event => {
+            if (event.target.readyState === "complete") {
+                if (this.isDark) {
+                    window.REMARK42.changeTheme('dark');
+                }
+            }
+        });
     }
 
     initSVGIcon() {
@@ -81,6 +88,7 @@ class Theme {
     }
 
     initSwitchTheme() {
+
         this.util.forEach(document.getElementsByClassName('theme-switch'), $themeSwitch => {
             $themeSwitch.addEventListener('click', () => {
                 if (document.body.getAttribute('theme') === 'dark') {
