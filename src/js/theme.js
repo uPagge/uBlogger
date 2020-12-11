@@ -41,13 +41,6 @@ class Theme {
         this.switchThemeEventSet = new Set();
         this.clickMaskEventSet = new Set();
         if (window.objectFitImages) objectFitImages();
-        document.addEventListener('readystatechange', event => {
-            if (event.target.readyState === "complete") {
-                if (this.isDark) {
-                    window.REMARK42.changeTheme('dark');
-                }
-            }
-        });
     }
 
     initSVGIcon() {
