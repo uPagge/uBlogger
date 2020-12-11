@@ -104,7 +104,7 @@
         {{- /* Remark42 Comments System */ -}}
         {{- $remark42 := $comment.remark42 | default dict -}}
         {{- if $remark42.enable -}}
-            <div id="remark42" class="comment"></div>
+            <div id="remark42" class="comment" style="padding-top: 1.5rem"></div>
             <script>
                 var themeRemark = document.body.getAttribute('theme')
                 var remark_config = {

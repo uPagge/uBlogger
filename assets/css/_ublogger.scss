@@ -218,6 +218,7 @@ article {
   box-shadow: (0 0 1.5rem 0 rgba(0, 0, 0, .1));
 
   [theme=dark] & {
+    background: $global-background-secondary-color-dark;
     box-shadow: (0 0 40px rgba(94, 104, 125, .3));
   }
 }
