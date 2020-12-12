@@ -147,6 +147,10 @@ article {
       border: 2px solid $global-secondary-color-dark;
     }
 
+    &:hover {
+      cursor: pointer;
+    }
+
     .featured-image-preview {
       margin: 0 auto;
 
