@@ -24,6 +24,15 @@ body {
   }
 }
 
+.mini-title {
+  margin: 0;
+}
+
+.mini-content {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 header {
   box-shadow: 0 0px 10px rgba(0,0,0,0.1);
 }
@@ -56,7 +65,30 @@ article {
 }
 
 .article-mini {
+  border-radius: $article-mini-border-radius;
   cursor: pointer;
+}
+
+.summary-animation {
+
+  box-shadow: none;
+  @include transition(all 0.4s ease-out);
+
+  &:hover {
+    @include box-shadow(0 0 40px 0 rgba(0, 0, 0, .1));
+    @include transition(all 0.4s ease-out);
+  }
+
+  [theme=dark] & {
+    box-shadow: none;
+  }
+
+  [theme=dark] &:hover {
+    border: 2px solid $global-background-secondary-color-dark;
+    transform: none;
+    @include transition(all 0.4s ease);
+    @include box-shadow(0 0 1.5rem rgba(94, 104, 125, .3));
+  }
 }
 
 .page {
@@ -71,22 +103,6 @@ article {
     padding-top: 0;
   }
 
-  article {
-    box-shadow: none;
-    @include transition(all 0.3s ease-out);
-
-    &:hover {
-      @include box-shadow(0 0 1.5rem 0 rgba(0, 0, 0, .1));
-      @include transition(all 0.3s ease-out);
-    }
-
-    [theme=dark] & {
-      &:hover {
-        @include box-shadow(0 0 40px rgba(94, 104, 125, .3));
-        @include transition(all 0.3s ease-out);
-      }
-    }
-  }
 }
 
 .page.home {
@@ -123,18 +139,12 @@ article {
 .home[data-home=posts] {
   .summary {
     padding-top: 0;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
     margin-bottom: 6rem;
     border: 2px solid $global-secondary-color;
 
     [theme=dark] & {
       border: 2px solid $global-secondary-color-dark;
-    }
-
-    [theme=dark] &:hover {
-      border: 2px solid $global-background-secondary-color-dark;
-      transform: none;
-      @include transition(all 0.4s ease);
     }
 
     .featured-image-preview {
@@ -153,6 +163,15 @@ article {
 }
 
 .single {
+
+  .mini-post-meta {
+    font-size: 0.8rem;
+
+    .author {
+      font-size: 0.8rem;
+    }
+  }
+
   .content {
 
     h2 {

@@ -1,3 +1,8 @@
+
+:root {
+  --test: 23px;
+}
+
 @media only screen and (min-width: 1201px) {
   .page {
     width: 100%;
@@ -13,10 +18,10 @@
   }
 
   .featured-image-preview, .featured-image {
-    border-radius: 30px 30px 0 0;
 
     img {
-      border-radius: 30px 30px 0 0;
+      border-top-left-radius:  $article-mini-image-border-radius;
+      border-top-right-radius: $article-mini-image-border-radius;
     }
   }
 

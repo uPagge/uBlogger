@@ -1,6 +1,6 @@
 {{- $params := .Params | merge .Site.Params.page -}}
 
-<article onclick="location.href='{{ $.RelPermalink }}'" class="single summary article-mini" itemscope itemtype="http://schema.org/Article">
+<article onclick="location.href='{{ $.RelPermalink }}'" class="single summary summary-animation" itemscope itemtype="http://schema.org/Article">
     {{- /* Featured image */ -}}
     {{- if not $params.mini.hiddenImage -}}
     {{- $image := $params.featuredimagepreview | default $params.featuredimage -}}
@@ -18,12 +18,23 @@
     {{- end -}}
     <div class="article-text">
         {{- /* Title */ -}}
-        <h2 class="single-title" itemprop="name headline">
+        <h2 class="mini-title" itemprop="name headline">
             {{ .Title }}
         </h2>
 
+        {{- /* Summary content */ -}}
+        {{- if not $params.mini.hiddenDescription -}}
+        <div class="content mini-content">
+            {{- with .Summary -}}
+            {{- dict "Content" . "Ruby" $params.ruby "Fraction" $params.fraction "Fontawesome" $params.fontawesome | partial "function/content.html" | safeHTML -}}
+            {{- else -}}
+            {{- .Description | safeHTML -}}
+            {{- end -}}
+        </div>
+        {{- end -}}
+
         {{- /* Meta */ -}}
-        <div class="post-meta">
+        <div class="post-meta mini-post-meta">
             {{- $authorName := $params.author | default .Site.Author.name | default " " -}}
             {{- if not (eq $authorName " ") -}}
             {{ $author := index .Site.Data.authors $authorName }}
@@ -37,7 +48,7 @@
             {{- with .Site.Params.dateFormat | default "2006-01-02" | .PublishDate.Format -}}
             &nbsp;&nbsp;&nbsp;<span class="post-publish"><i class="far fa-clock fa-fw"></i>
                 {{- printf `<time datetime="%v">%v</time>` . . | safeHTML -}}
-         </span>
+            </span>
             {{- end -}}
 
             {{- $categories := slice -}}
@@ -60,17 +71,6 @@
             </span>
             {{- end -}}
         </div>
-
-        {{- /* Summary content */ -}}
-        {{- if not $params.mini.hiddenDescription -}}
-        <div class="content">
-            {{- with .Summary -}}
-            {{- dict "Content" . "Ruby" $params.ruby "Fraction" $params.fraction "Fontawesome" $params.fontawesome | partial "function/content.html" | safeHTML -}}
-            {{- else -}}
-            {{- .Description | safeHTML -}}
-            {{- end -}}
-        </div>
-        {{- end -}}
 
         {{- /* Footer */ -}}
 <!--        <div class="post-footer">-->
