@@ -331,11 +331,19 @@ article {
     font-weight: 700;
     font-size: 18px;
     line-height: 28px;
+
+    [theme=dark] & {
+      color: #DDDDDD;
+    }
   }
 
   .author-comment-text {
     color: $global-font-color;
     font-size: 24px;
+
+    [theme=dark] & {
+      color: #DDDDDD;
+    }
   }
 }
 
