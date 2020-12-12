@@ -39,7 +39,7 @@
         {{- end -}}
     </div>
 
-    {{- $comment := .Site.Params.Page.Comment -}}
+    {{- $comment := .Site.Params.Comment -}}
     {{- $remark42 := $comment.remark42 | default dict -}}
     {{- if $remark42.enable -}}
     <script>

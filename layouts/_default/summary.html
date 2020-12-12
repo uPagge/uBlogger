@@ -51,7 +51,7 @@
             </span>
             {{- end -}}
 
-            {{- $comment := .Site.Params.Page.Comment -}}
+            {{- $comment := .Site.Params.Comment -}}
             {{- $remark42 := $comment.remark42 | default dict -}}
             {{- if $remark42.enable -}}
             &nbsp;&nbsp;&nbsp;<i class="far fa-comment fa-fw"></i>

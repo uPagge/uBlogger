@@ -141,7 +141,7 @@
     </div>
 {{- end -}}
 
-    {{- $comment := .Site.Params.Page.Comment -}}
+    {{- $comment := .Site.Params.Comment -}}
     {{- if $comment.enable -}}
     <div class="{{ if $toc.keepStatic }} page single comments {{ else }} page single comments page-toc {{ end }}">
         {{- $authorComment := $params.authorComment -}}
