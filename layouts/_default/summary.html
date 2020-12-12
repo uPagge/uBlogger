@@ -1,4 +1,4 @@
-{{- $params := .Params | merge .Site.Params.page -}}
+{{- $params := .Params | merge .Site.Params -}}
 
 <article onclick="location.href='{{ $.RelPermalink }}'" class="single summary summary-animation" itemscope itemtype="http://schema.org/Article">
     {{- /* Featured image */ -}}
@@ -33,6 +33,7 @@
         </div>
         {{- end -}}
 
+        {{- if not $params.mini.hiddenMeta -}}
         {{- /* Meta */ -}}
         <div class="post-meta mini-post-meta">
             {{- $authorName := $params.author | default .Site.Author.name | default " " -}}
@@ -71,6 +72,7 @@
             </span>
             {{- end -}}
         </div>
+        {{- end -}}
 
         {{- /* Footer */ -}}
 <!--        <div class="post-footer">-->
