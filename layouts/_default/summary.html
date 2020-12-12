@@ -2,6 +2,7 @@
 
 <article onclick="location.href='{{ $.RelPermalink }}'" class="single summary article-mini" itemscope itemtype="http://schema.org/Article">
     {{- /* Featured image */ -}}
+    {{- if not $params.mini.hiddenImage -}}
     {{- $image := $params.featuredimagepreview | default $params.featuredimage -}}
     {{- with .Resources.GetMatch "featured-image" -}}
         {{- $image = .RelPermalink -}}
@@ -13,6 +14,7 @@
         <div class="featured-image-preview">
             {{- dict "Src" . "Title" $.Description "Resources" $.Resources | partial "plugin/image.html" -}}
         </div>
+    {{- end -}}
     {{- end -}}
     <div class="article-text">
         {{- /* Title */ -}}
@@ -60,6 +62,7 @@
         </div>
 
         {{- /* Summary content */ -}}
+        {{- if not $params.mini.hiddenDescription -}}
         <div class="content">
             {{- with .Summary -}}
             {{- dict "Content" . "Ruby" $params.ruby "Fraction" $params.fraction "Fontawesome" $params.fontawesome | partial "function/content.html" | safeHTML -}}
@@ -67,6 +70,7 @@
             {{- .Description | safeHTML -}}
             {{- end -}}
         </div>
+        {{- end -}}
 
         {{- /* Footer */ -}}
 <!--        <div class="post-footer">-->

@@ -429,6 +429,11 @@ Please open the code block below to view the complete sample configuration :(far
     linkToMarkdown = true
     # {{< version 0.2.4 >}} whether to show the full text content in RSS
     rssFullText = false
+    # {{< version 1.1.0 new >}} Post display settings on the page
+    [params.page.mini]
+      # {{< version 1.1.0 new >}} Display previews on the page of posts
+      hiddenImage = false
+      hiddenDescription = false
     # {{< version 0.2.0 >}} Table of the contents config
     [params.page.toc]
       # whether to enable the table of the contents

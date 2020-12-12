@@ -91,6 +91,11 @@ page:
     # {{< version 1.0.0 new >}} article design theme
     theme: ""
 
+# {{< version 1.1.0 new >}} Post display settings on the page
+mini:
+    # {{< version 1.1.0 new >}} Display previews on the page of posts
+    hiddenImage: false
+    hiddenDescription: false
 tags: []
 categories: []
 featuredImage: ""
