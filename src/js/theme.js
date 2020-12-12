@@ -81,18 +81,16 @@ class Theme {
     }
 
     initSwitchTheme() {
-
         this.util.forEach(document.getElementsByClassName('theme-switch'), $themeSwitch => {
             $themeSwitch.addEventListener('click', () => {
                 if (document.body.getAttribute('theme') === 'dark') {
                     document.body.setAttribute('theme', 'light');
-                    window.REMARK42.changeTheme('light');
                 } else {
                     document.body.setAttribute('theme', 'dark');
-                    window.REMARK42.changeTheme('dark');
                 }
                 this.isDark = !this.isDark;
                 window.localStorage && localStorage.setItem('theme', this.isDark ? 'dark' : 'light');
+                window.REMARK42.changeTheme(document.body.getAttribute('theme') === 'dark' ? 'dark' : 'light');
                 for (let event of this.switchThemeEventSet) event();
             }, false);
         });
@@ -597,13 +595,6 @@ class Theme {
 
     initComment() {
         if (this.config.comment) {
-            if (this.config.comment.remark42) {
-                if (this.isDark) {
-                    window.REMARK42.changeTheme('dark');
-                } else {
-                    window.REMARK42.changeTheme('light');
-                }
-            }
             if (this.config.comment.gitalk) {
                 this.config.comment.gitalk.body = decodeURI(window.location.href);
                 const gitalk = new Gitalk(this.config.comment.gitalk);
