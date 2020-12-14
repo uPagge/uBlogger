@@ -91,6 +91,38 @@ article {
   }
 }
 
+.post-tags-summary-image {
+  position: absolute;
+  right: 13px;
+  top: 13px;
+  z-index: 1;
+}
+
+.post-tags-summary-under-footer {
+  margin-bottom: 6rem;
+  margin-top: 1rem;
+  text-align: right;
+}
+
+.post-tags-summary-footer {
+  margin-top: 1rem;
+  text-align: right;
+}
+
+a.post-tag-summary{
+  background: $global-color-accent;
+  opacity: 0.9;
+  padding: 8px;
+  border-radius: 5px;
+  margin-right: 5px;
+  color: white;
+  font-size: 14px;
+
+  &:hover {
+    color: white;
+  }
+}
+
 .page {
 
   max-width: 900px;
