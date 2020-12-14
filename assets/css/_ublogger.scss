@@ -62,6 +62,11 @@ article {
       background: #AE8029;
     }
   }
+
+  .featured-image {
+    border-top-left-radius: $article-border-radius;
+    border-top-right-radius: $article-border-radius;
+  }
 }
 
 .article-mini {
