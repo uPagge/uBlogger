@@ -572,7 +572,7 @@ enableEmoji = true
   [params.verification]
     google = ""
     bing = ""
-    yandex = "70532758"
+    yandex = ""
     pinterest = ""
     baidu = ""
 
@@ -607,6 +607,8 @@ enableEmoji = true
       # server url for your tracker if you're self hosting
       # 自行托管追踪器时的主机路径
       server = ""
+    [params.analytics.yandex]
+      id = "70532758"
 
   # Cookie consent config
   # Cookie 许可配置
