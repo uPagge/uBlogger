@@ -520,87 +520,6 @@ Please open the code block below to view the complete sample configuration :(far
       Skype = false
       Trello = false
       Mix = false
-    # {{< version 0.2.0 changed >}} Comment config
-    [params.page.comment]
-      enable = true
-      # {{< version 1.0.0 new >}}
-      # {{< link "https://github.com/umputun/remark42/" Remark42 >}} comment config
-      [params.page.comment.remark42]
-        enable = false
-        # the location of your server with Remark42
-        host = "https://remark.example.com"
-        # remark42 supports comments for several sites at once, this identifier indicates which site to display comments for.
-        site = "you_site_key"
-        # design theme
-        theme = "light"
-        # language
-        locale = "en"
-        # enable or disable smiley support
-        emailSubscribe = "true"
-      # {{< link "https://disqus.com/" Disqus >}} comment config
-      [params.page.comment.disqus]
-        # {{< version 0.1.1 >}}
-        enable = false
-        # Disqus shortname to use Disqus in posts
-        shortname = ""
-      # {{< link "https://github.com/gitalk/gitalk" Gitalk >}} comment config
-      [params.page.comment.gitalk]
-        # {{< version 0.1.1 >}}
-        enable = false
-        owner = ""
-        repo = ""
-        clientId = ""
-        clientSecret = ""
-      # {{< link "https://github.com/xCss/Valine" Valine >}} comment config
-      [params.page.comment.valine]
-        enable = false
-        appId = ""
-        appKey = ""
-        placeholder = ""
-        avatar = "mp"
-        meta= ""
-        pageSize = 10
-        lang = ""
-        visitor = true
-        recordIP = true
-        highlight = true
-        enableQQ = false
-        serverURLs = ""
-        # {{< version 0.2.6 >}} emoji data file name, default is "google.yml"
-        # ("apple.yml", "google.yml", "facebook.yml", "twitter.yml")
-        # located in "themes/uBlogger/assets/data/emoji/" directory
-        # you can store your own data files in the same path under your project:
-        # "assets/data/emoji/"
-        emoji = ""
-      # {{< link "https://developers.facebook.com/docs/plugins/comments" "Facebook comment" >}} config
-      [params.page.comment.facebook]
-        enable = false
-        width = "100%"
-        numPosts = 10
-        appId = ""
-        languageCode = ""
-      # {{< version 0.2.0 >}} {{< link "https://comments.app/" "Telegram comments" >}} config
-      [params.page.comment.telegram]
-        enable = false
-        siteID = ""
-        limit = 5
-        height = ""
-        color = ""
-        colorful = true
-        dislikes = false
-        outlined = false
-      # {{< version 0.2.0 >}} {{< link "https://commento.io/" "Commento" >}} comment config
-      [params.page.comment.commento]
-        enable = false
-      # {{< version 0.2.5 >}} {{< link "https://utteranc.es/" "Utterances" >}} comment config
-      [params.page.comment.utterances]
-        enable = false
-        # owner/repo
-        repo = ""
-        issueTerm = "pathname"
-        label = ""
-        lightTheme = "github-light"
-        darkTheme = "github-dark"
     # {{< version 0.2.7 >}} Third-party library config
     [params.page.library]
       [params.page.library.css]
@@ -621,6 +540,88 @@ Please open the code block below to view the complete sample configuration :(far
       [params.page.seo.publisher]
         name = ""
         logoUrl = ""
+  
+    # {{< version 1.1.0 changed >}} Comment config
+    [params.comment]
+      enable = true
+      # {{< version 1.0.0 new >}}
+      # {{< link "https://github.com/umputun/remark42/" Remark42 >}} comment config
+      [params.comment.remark42]
+        enable = false
+        # the location of your server with Remark42
+        host = "https://remark.example.com"
+        # remark42 supports comments for several sites at once, this identifier indicates which site to display comments for.
+        site = "you_site_key"
+        # design theme
+        theme = "light"
+        # language
+        locale = "en"
+        # enable or disable smiley support
+        emailSubscribe = "true"
+      # {{< link "https://disqus.com/" Disqus >}} comment config
+      [params.comment.disqus]
+        # {{< version 0.1.1 >}}
+        enable = false
+        # Disqus shortname to use Disqus in posts
+        shortname = ""
+      # {{< link "https://github.com/gitalk/gitalk" Gitalk >}} comment config
+      [params.comment.gitalk]
+        # {{< version 0.1.1 >}}
+        enable = false
+        owner = ""
+        repo = ""
+        clientId = ""
+        clientSecret = ""
+      # {{< link "https://github.com/xCss/Valine" Valine >}} comment config
+      [params.comment.valine]
+        enable = false
+        appId = ""
+        appKey = ""
+        placeholder = ""
+        avatar = "mp"
+        meta= ""
+        pageSize = 10
+        lang = ""
+        visitor = true
+        recordIP = true
+        highlight = true
+        enableQQ = false
+        serverURLs = ""
+        # {{< version 0.2.6 >}} emoji data file name, default is "google.yml"
+        # ("apple.yml", "google.yml", "facebook.yml", "twitter.yml")
+        # located in "themes/uBlogger/assets/data/emoji/" directory
+        # you can store your own data files in the same path under your project:
+        # "assets/data/emoji/"
+        emoji = ""
+      # {{< link "https://developers.facebook.com/docs/plugins/comments" "Facebook comment" >}} config
+      [params.comment.facebook]
+        enable = false
+        width = "100%"
+        numPosts = 10
+        appId = ""
+        languageCode = ""
+      # {{< version 0.2.0 >}} {{< link "https://comments.app/" "Telegram comments" >}} config
+      [params.comment.telegram]
+        enable = false
+        siteID = ""
+        limit = 5
+        height = ""
+        color = ""
+        colorful = true
+        dislikes = false
+        outlined = false
+      # {{< version 0.2.0 >}} {{< link "https://commento.io/" "Commento" >}} comment config
+      [params.comment.commento]
+        enable = false
+      # {{< version 0.2.5 >}} {{< link "https://utteranc.es/" "Utterances" >}} comment config
+      [params.comment.utterances]
+        enable = false
+        # owner/repo
+        repo = ""
+        issueTerm = "pathname"
+        label = ""
+        lightTheme = "github-light"
+        darkTheme = "github-dark"
 
   # {{< version 0.2.5 >}} TypeIt config
   [params.typeit]
