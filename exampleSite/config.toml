@@ -11,7 +11,7 @@ themesDir = "../.."
 
 # website title
 # 网站标题
-title = "uBlog"
+title = "uBlogger"
 
 # whether to use robots.txt
 # 是否使用 robots.txt
@@ -259,7 +259,7 @@ enableEmoji = true
       logo = ""
       # title name
       # 标题名称
-      name = "uBlog"
+      name = "uBlogger"
       # you can add extra information before the name (HTML format is supported), such as icons
       # 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标
       pre = "<i class='fas fa-pencil-alt fa-fw'></i>"
