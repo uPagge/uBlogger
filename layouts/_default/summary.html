@@ -1,10 +1,10 @@
 {{- $params := .Params | merge .Site.Params -}}
-{{- $tagsStyle := $params.mini.tags -}}
-{{- $tagsTheme := $params.mini.tags.theme | default "image" -}}
+{{- $tagsStyle := $params.summary.tags -}}
+{{- $tagsTheme := $params.summary.tags.theme | default "image" -}}
 
 <article onclick="location.href='{{ $.RelPermalink }}'" class="single summary summary-animation" itemscope itemtype="http://schema.org/Article" style="{{- if eq $tagsTheme "under-footer" -}}{{- with $.Params.tags -}}margin-bottom:0{{- end -}}{{- end -}}">
     {{- /* Featured image */ -}}
-    {{- if not $params.mini.hiddenImage -}}
+    {{- if not $params.summary.hiddenImage -}}
     {{- $image := $params.featuredimagepreview | default $params.featuredimage -}}
     {{- with .Resources.GetMatch "featured-image" -}}
         {{- $image = .RelPermalink -}}
@@ -30,13 +30,13 @@
     {{- end -}}
     <div class="article-text">
         {{- /* Title */ -}}
-        <h2 class="mini-title" itemprop="name headline">
+        <h2 class="summary-title" itemprop="name headline">
             {{ .Title }}
         </h2>
 
-        {{- if not $params.mini.hiddenMeta -}}
+        {{- if not $params.summary.hiddenMeta -}}
         {{- /* Meta */ -}}
-        <div class="post-meta mini-post-meta">
+        <div class="post-meta summary-post-meta">
             {{- $authorName := $params.author | default .Site.Author.name | default " " -}}
             {{- if not (eq $authorName " ") -}}
             {{ $author := index .Site.Data.authors $authorName }}
@@ -76,8 +76,8 @@
         {{- end -}}
 
         {{- /* Summary content */ -}}
-        {{- if not $params.mini.hiddenDescription -}}
-        <div class="content mini-content">
+        {{- if not $params.summary.hiddenDescription -}}
+        <div class="content summary-content">
             {{- with .Summary -}}
             {{- dict "Content" . "Ruby" $params.ruby "Fraction" $params.fraction "Fontawesome" $params.fontawesome | partial "function/content.html" | safeHTML -}}
             {{- else -}}

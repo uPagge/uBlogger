@@ -1,13 +1,13 @@
 ---
 title: "Theme Documentation - Basics"
 date: 2020-03-06T21:29:01+08:00
-lastmod: 2020-12-05T18:55:56+03:00
+lastmod: 2020-12-15T11:21:43+03:00
 description: "Discover what the Hugo - uBlog theme is all about and the core-concepts behind it."
 resources:
 - name: "featured-image"
   src: "featured-image.jpg"
   
-upd: "Since the template began to support uPagge, you can not do without names. You can find the changes by tag 1.0.0."
+upd: "Since the template began to support uPagge, you can not do without names. You can find the changes by tag 1.x.x."
   
 page:
     theme: "wide"
@@ -430,10 +430,23 @@ Please open the code block below to view the complete sample configuration :(far
     # {{< version 0.2.4 >}} whether to show the full text content in RSS
     rssFullText = false
     # {{< version 1.1.0 new >}} Post display settings on the page
-    [params.page.mini]
+    [params.summary]
       # {{< version 1.1.0 new >}} Display previews on the page of posts
       hiddenImage = false
+      # {{< version 1.1.0 new >}} Allows you to hide the description
       hiddenDescription = false
+      # {{< version 1.1.0 new >}} Allows you to hide the title
+      hiddenTitle = false
+    # {{< version 1.1.0 new >}} Tag display settings
+    [params.summary.tags]
+      # {{< version 1.1.0 new >}} One of the options for displaying tags
+      theme = "image"
+      # {{< version 1.1.0 new >}} Text color
+      color = "white"
+      # {{< version 1.1.0 new >}} Backing color
+      background = "black"
+      # {{< version 1.1.0 new >}} Tag transparency
+      transparency = 0.9
     # {{< version 0.2.0 >}} Table of the contents config
     [params.page.toc]
       # whether to enable the table of the contents

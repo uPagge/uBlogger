@@ -24,11 +24,11 @@ body {
   }
 }
 
-.mini-title {
+.summary-title {
   margin: 0;
 }
 
-.mini-content {
+.summary-content {
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -70,7 +70,7 @@ article {
 }
 
 .article-mini {
-  border-radius: $article-mini-border-radius;
+  border-radius: $article-summary-border-radius;
   cursor: pointer;
 }
 
@@ -205,7 +205,7 @@ a.post-tag-summary{
 
 .single {
 
-  .mini-post-meta {
+  .summary-post-meta {
     font-size: 0.8rem;
 
     .author {

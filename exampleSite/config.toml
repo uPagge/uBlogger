@@ -152,7 +152,7 @@ enableEmoji = true
           disclaimer = ""
         # Home page posts
         [languages.en.params.home.posts]
-          enable = true
+          enable = false
           # special amount of posts in each home posts page
           paginate = 6
       # Social config in home page

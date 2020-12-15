@@ -11,7 +11,7 @@ It is based on the original [LoveIt Theme](https://github.com/dillonzq/LoveIt).
 Since the three themes have a similar look, if you have questions about their differences,
 read [Why choose uBlogger](#why-choose-ublogger) so that you can choose the one that works best for you.
 
-![Hugo Theme uBlogger](https://github.com/upagge/uBlogger/raw/master/images/Apple-Devices-Preview.png)
+![Hugo Theme uBlogger](https://github.com/upagge/uBlogger/raw/master/images/Apple-Devices-Preview.jpg)
 
 ## :warning: Information for those who move with LoveIt theme :warning:
 

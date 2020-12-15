@@ -1,11 +1,13 @@
 ---
 title: "Theme Documentation - Content"
 date: 2020-03-05T15:58:26+08:00
-lastmod: 2020-03-05T15:58:26+08:00
+lastmod: 2020-03-15T11:26:13+08:00
 description: "Find out how to create and organize your content quickly and intuitively in uBlogger theme."
 resources:
 - name: "featured-image"
   src: "featured-image.jpg"
+  
+upd: "You can now customize the post preview design"
 
 tags: ["content", "Markdown"]
 categories: ["documentation"]
@@ -92,10 +94,22 @@ page:
     theme: ""
 
 # {{< version 1.1.0 new >}} Post display settings on the page
-mini:
+summary:
     # {{< version 1.1.0 new >}} Display previews on the page of posts
     hiddenImage: false
+    # {{< version 1.1.0 new >}} Allows you to hide the description
     hiddenDescription: false
+    # {{< version 1.1.0 new >}} Allows you to hide the title
+    hiddenTitle: true
+    tags:
+      # {{< version 1.1.0 new >}} One of the options for displaying tags
+      theme: "image"
+      # {{< version 1.1.0 new >}} Text color
+      color: "white"
+      # {{< version 1.1.0 new >}} Backing color
+      background: "black"
+      # {{< version 1.1.0 new >}} Tag transparency
+      transparency: 0.9
 tags: []
 categories: []
 featuredImage: ""
@@ -264,6 +278,38 @@ You can disable default characters '#', '|' by setting the correct id. It must s
 You can use this to set emoji or partition number.
 
 ![Example with Emoji](h-emoji.jpg 'Example with Emoji')
+
+### Summary display settings
+
+You can customize the summary view to your taste by changing the following parameters.
+
+```yaml
+summary:
+    hiddenImage: false
+    hiddenDescription: false
+    hiddenTitle: true
+    tags:
+      theme: "image"
+      color: "white"
+      background: "black"
+      transparency: 0.9
+```
+
+What kinds of tags are available:
+* image. Tags on the picture
+* footer. Tags in footer summary
+* under-footer. Tags under summary
+
+These parameters, together with the scss override, allow you to customize the display quite flexibly.
+
+```css
+$article-summary-border-radius: 32px;
+$article-summary-image-border-radius: 30px;
+```
+
+
+
+The global setting is, as always, available in the main configuration file
 
 ## 3 Content Summaries
 
