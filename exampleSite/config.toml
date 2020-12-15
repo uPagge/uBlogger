@@ -572,7 +572,7 @@ enableEmoji = true
   [params.verification]
     google = ""
     bing = ""
-    yandex = ""
+    yandex = "70532758"
     pinterest = ""
     baidu = ""
 
