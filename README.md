@@ -3,6 +3,7 @@
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/upagge/uBlogger?style=flat-square)](https://github.com/upagge/uBlogger/releases)
 [![Hugo](https://img.shields.io/badge/Hugo-%5E0.62.0-ff4088?style=flat-square&logo=hugo)](https://gohugo.io/)
 [![License](https://img.shields.io/github/license/upagge/uBlogger?style=flat-square)](https://github.com/upagge/uBlogger/blob/master/LICENSE)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/00c527bb-f8bc-4094-8da3-b37f28e4d81a/deploy-status)](https://app.netlify.com/sites/ublogger/deploys)
 > **uBlogger** is a **clean**, **elegant** but **advanced** blog theme for [Hugo](https://gohugo.io/).
 
 
@@ -19,9 +20,9 @@ read [Why choose uBlogger](#why-choose-ublogger) so that you can choose the one 
 
 **If you have used the LoveIt theme, I have a [message for you, make sure to read it.](CHANGE.md)**
 
-## [Demo Site](https://blog.upagge.ru/)
+## [Demo Site and Documentation](https://ublogger.netlify.app/)
 
-To see this theme in action, here is a live [demo site](https://blog.upagge.ru/) which is rendered with **uBlogger** theme.
+To see this theme in action, here is a live [demo site](https://ublogger.netlify.app/) which is rendered with **uBlogger** theme.
 
 ## Why choose uBlogger
 

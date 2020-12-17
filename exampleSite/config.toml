@@ -11,7 +11,7 @@ themesDir = "../.."
 
 # website title
 # 网站标题
-title = "uBlog"
+title = "uBlogger"
 
 # whether to use robots.txt
 # 是否使用 robots.txt
@@ -259,7 +259,7 @@ enableEmoji = true
       logo = ""
       # title name
       # 标题名称
-      name = "uBlog"
+      name = "uBlogger"
       # you can add extra information before the name (HTML format is supported), such as icons
       # 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标
       pre = "<i class='fas fa-pencil-alt fa-fw'></i>"
@@ -326,6 +326,11 @@ enableEmoji = true
   # 评论系统设置
   [params.comment]
     enable = true
+    [params.comment.remark42]
+      enable = true
+      host = "https://comments.upagge.ru"
+      site = "documentation"
+      locale = "en"
     # Disqus comment config (https://disqus.com/)
     # Disqus 评论系统设置 (https://disqus.com/)
     [params.comment.disqus]
@@ -344,7 +349,7 @@ enableEmoji = true
     # Valine comment config (https://github.com/xCss/Valine)
     # Valine 评论系统设置 (https://github.com/xCss/Valine)
     [params.comment.valine]
-      enable = true
+      enable = false
       appId = "QGzwQXOqs5JOhN4RGPOkR2mR-MdYXbMMI"
       appKey = "WBmoGyJtbqUswvfLh6L8iEBr"
       placeholder = ""
@@ -589,7 +594,7 @@ enableEmoji = true
   # Analytics config
   # 网站分析配置
   [params.analytics]
-    enable = false
+    enable = true
     # Google Analytics
     [params.analytics.google]
       # [UA-XXXXXXXX-X] google analytics code
@@ -607,6 +612,8 @@ enableEmoji = true
       # server url for your tracker if you're self hosting
       # 自行托管追踪器时的主机路径
       server = ""
+    [params.analytics.yandex]
+      id = "70532758"
 
   # Cookie consent config
   # Cookie 许可配置

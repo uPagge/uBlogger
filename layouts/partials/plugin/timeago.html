@@ -1,0 +1,19 @@
+{{- $fingerprint := .Scratch.Get "fingerprint" -}}
+{{- $timeAgoLang := .Site.Params.TimeAgo.Lang -}}
+{{- $timeAgoEnable := .Site.Params.TimeAgo.Enable -}}
+
+{{- if $timeAgoEnable }}
+{{- /* Timeago script */ -}}
+{{- dict "Source" "js/timeago.min.js" "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
+{{- $_ := (resources.Get "js/timeago.min.js.map").RelPermalink -}}
+
+{{- if $timeAgoLang }}
+{{- /* Timeago language script */ -}}
+{{- dict "Source" (printf "js/timeago/timeago.%v.min.js" $timeAgoLang) "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
+{{- $_ := (resources.Get (printf "js/timeago/timeago.%v.min.js.map" $timeAgoLang)).RelPermalink -}}
+{{- end -}}
+
+{{- /* Timeago starter script */ -}}
+{{- dict "Source" "js/timeago_starter.min.js" "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
+{{- $_ := (resources.Get "js/timeago_starter.min.js.map").RelPermalink -}}
+{{- end -}}
