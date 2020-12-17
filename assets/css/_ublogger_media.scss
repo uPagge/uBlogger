@@ -111,6 +111,10 @@
     }
   }
 
+  .comments {
+    padding: 10px 10px 10px;
+  }
+
   .featured-image {
     height: 100vh;
   }
@@ -124,13 +128,6 @@
 
   .single {
     border-radius: 0;
-  }
-
-  .home[data-home=posts] {
-    .summary {
-      border-left: none;
-      border-right: none;
-    }
   }
 
   .featured-image-preview, .featured-image {
@@ -168,6 +165,13 @@
       .container.content-article {
         padding: 0;
       }
+    }
+  }
+
+  .post-tags {
+    .tag {
+      padding: 2px 5px 2px 5px;
+      font-size: 14px;
     }
   }
 
