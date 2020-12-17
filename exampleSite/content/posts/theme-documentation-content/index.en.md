@@ -358,6 +358,16 @@ Because there are multiple ways in which a summary can be specified it is useful
 It is not recommended to include rich text block elements in the summary, which will cause typographic errors. Such as code blocks, pictures, tables, etc.
 {{< /admonition >}}
 
+### TimeAgo
+{{< version 1.2.0 new >}}
+
+TimeAgo allows you to display the date of publication of a post in the style of social networks, as opposed to the current time. For example, "4 minutes ago," "one day ago"
+
+---
+![time ago](time_ago.jpg 'Here is what it looks like')
+
+---
+
 ## 4 Basic Markdown Syntax
 
 This part is shown in the [basic markdown syntax page](../basic-markdown-syntax/).

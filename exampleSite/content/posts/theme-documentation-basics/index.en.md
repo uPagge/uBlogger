@@ -447,6 +447,10 @@ Please open the code block below to view the complete sample configuration :(far
       background = "black"
       # {{< version 1.1.0 new >}} Tag transparency
       transparency = 0.9
+    # {{< version 1.2.0 new >}} Fasting time display
+    [params.timeAgo]
+      enable = "false"
+      lang = "en"
     # {{< version 0.2.0 >}} Table of the contents config
     [params.page.toc]
       # whether to enable the table of the contents
