@@ -326,6 +326,11 @@ enableEmoji = true
   # 评论系统设置
   [params.comment]
     enable = true
+    [params.comment.remark42]
+      enable = true
+      host = "https://comments.upagge.ru"
+      site = "documentation"
+      locale = "en"
     # Disqus comment config (https://disqus.com/)
     # Disqus 评论系统设置 (https://disqus.com/)
     [params.comment.disqus]
@@ -344,7 +349,7 @@ enableEmoji = true
     # Valine comment config (https://github.com/xCss/Valine)
     # Valine 评论系统设置 (https://github.com/xCss/Valine)
     [params.comment.valine]
-      enable = true
+      enable = false
       appId = "QGzwQXOqs5JOhN4RGPOkR2mR-MdYXbMMI"
       appKey = "WBmoGyJtbqUswvfLh6L8iEBr"
       placeholder = ""
