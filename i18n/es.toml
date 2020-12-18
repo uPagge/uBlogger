@@ -45,7 +45,7 @@ other = "Más"
 
 # === partials/header.html ===
 [selectLanguage]
-other = "Selecciona el lenguage"
+other = "Selecciona el idioma"
 
 [switchTheme]
 other = "Cambia el tema"
