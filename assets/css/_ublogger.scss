@@ -607,5 +607,9 @@ footer {
   }
 }
 
+.archive-item {
+  box-shadow: none !important;
+}
+
 @import "_partial/share-icon";
 @import "ublogger_media";
