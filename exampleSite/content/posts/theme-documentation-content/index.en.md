@@ -307,8 +307,6 @@ $article-summary-border-radius: 32px;
 $article-summary-image-border-radius: 30px;
 ```
 
-
-
 The global setting is, as always, available in the main configuration file
 
 ## 3 Content Summaries
