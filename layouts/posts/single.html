@@ -56,7 +56,8 @@
                             {{- end -}}
 
                             {{- with $.Site.Params.dateformat | default "2006-01-02" | $.PublishDate.Format -}}
-                            &nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time class="timeago" datetime="{{ . }}">{{ . }}</time>
+                            {{- $timeAgoDate:= $.Site.Params.TimeAgo.DateFormat | default "2006-01-02" | $.PublishDate.Format -}}
+                            &nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time class="timeago" datetime="{{ $timeAgoDate }}">{{ . }}</time>
                             {{- end -}}
                             &nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;{{ T "wordCount" $.WordCount }}
                             &nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-clock fa-fw"></i>&nbsp;{{ T "readingTime" $.ReadingTime }}

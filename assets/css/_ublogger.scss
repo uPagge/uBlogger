@@ -217,9 +217,17 @@ a.post-tag-summary{
 
   .content {
 
+    p+ul {
+      margin-top: -1.2rem;
+    }
+
     h2 {
       font-size: 2rem;
       margin-top: 5rem;
+
+      code {
+        font-size: 90%;
+      }
     }
 
     > h2[id^=u-],

@@ -48,8 +48,9 @@
             {{- end -}}
 
             {{- with .Site.Params.dateFormat | default "2006-01-02" | .PublishDate.Format -}}
+            {{- $timeAgoDate:= $.Site.Params.TimeAgo.DateFormat | default "2006-01-02" | $.PublishDate.Format -}}
             &nbsp;&nbsp;&nbsp;<span class="post-publish"><i class="far fa-clock fa-fw"></i>
-                {{- printf `<time class="timeago" datetime="%v">%v</time>` . . | safeHTML -}}
+                {{- printf `<time class="timeago" datetime="%v">%v</time>` $timeAgoDate . | safeHTML -}}
             </span>
             {{- end -}}
 
