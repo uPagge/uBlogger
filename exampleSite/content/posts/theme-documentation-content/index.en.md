@@ -93,8 +93,8 @@ page:
     # {{< version 1.0.0 new >}} article design theme
     theme: ""
 
-# {{< version 1.1.0 new >}} Post display settings on the page
-summary:
+# {{< version 1.2.0 change >}} Post display settings on the page
+summaryStyle:
     # {{< version 1.1.0 new >}} Display previews on the page of posts
     hiddenImage: false
     # {{< version 1.1.0 new >}} Allows you to hide the description
@@ -284,7 +284,7 @@ You can use this to set emoji or partition number.
 You can customize the summary view to your taste by changing the following parameters.
 
 ```yaml
-summary:
+summaryStyle:
     hiddenImage: false
     hiddenDescription: false
     hiddenTitle: true
