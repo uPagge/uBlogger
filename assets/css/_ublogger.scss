@@ -207,7 +207,10 @@ a.post-tag-summary{
 
 .single {
 
-  figure.img-full {
+  div.img-full {
+    img {
+      width: 100%;
+    }
     margin-left: -60px;
     margin-right: -60px;
   }
@@ -221,6 +224,10 @@ a.post-tag-summary{
   }
 
   .content {
+
+    figure {
+      margin: 0;
+    }
 
     p+ul {
       margin-top: -1.2rem;
