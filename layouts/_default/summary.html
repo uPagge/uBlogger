@@ -2,7 +2,7 @@
 {{- $tagsStyle := $params.summaryStyle.tags -}}
 {{- $tagsTheme := $params.summaryStyle.tags.theme | default "image" -}}
 
-<article onclick="location.href='{{ $.RelPermalink }}'" class="single summary summary-animation" itemscope itemtype="http://schema.org/Article" style="{{- if eq $tagsTheme "under-footer" -}}{{- with $.Params.tags -}}margin-bottom:0{{- end -}}{{- end -}}">
+<article onclick="location.href='{{ $.RelPermalink }}'" class="single summary summary-animation" itemscope itemtype="http://schema.org/Article" style="margin-bottom:0">
     {{- /* Featured image */ -}}
     {{- if not $params.summaryStyle.hiddenImage -}}
     {{- $image := $params.featuredimagepreview | default $params.featuredimage -}}
@@ -100,13 +100,15 @@
 
     </div>
 </article>
-{{- if eq $tagsTheme "under-footer" -}}
+
 {{- with $.Params.tags -}}
 <div class="post-tags-summary-under-footer">
-    {{- range $index, $value := . -}}
-    {{- $tag := partialCached "function/path.html" $value $value | printf "/tags/%v" | $.Site.GetPage -}}
-    <a class="post-tag-summary" href="{{ $tag.RelPermalink }}" style="{{ with $tagsStyle.color }}color: {{ . }}; {{ end }}{{ with $tagsStyle.background }}background: {{ . }}; {{ end }}{{ with $tagsStyle.transparency }}opacity: {{ . }}; {{ end }}">{{ $tag.Title }}</a>
-    {{- end -}}
+    <div class="post-tags-summary-under-footer-display" {{- if eq $tagsTheme "under-footer" -}}style="display: inline-block;"{{- end -}}>
+        {{- range $index, $value := . -}}
+        {{- $tag := partialCached "function/path.html" $value $value | printf "/tags/%v" | $.Site.GetPage -}}
+        <a class="post-tag-summary" href="{{ $tag.RelPermalink }}" style="{{ with $tagsStyle.color }}color: {{ . }}; {{ end }}{{ with $tagsStyle.background }}background: {{ . }}; {{ end }}{{ with $tagsStyle.transparency }}opacity: {{ . }}; {{ end }}">{{ $tag.Title }}</a>
+        {{- end -}}
+    </div>
 </div>
 {{- end -}}
-{{- end -}}
+

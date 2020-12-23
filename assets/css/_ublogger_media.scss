@@ -32,7 +32,7 @@
   }
 
   .padding-article {
-    padding: 40px 60px 0 60px;
+    padding: 40px 60px 20px 60px;
   }
 
 }
@@ -70,8 +70,9 @@
   }
 
   .padding-article {
-    padding: 40px 60px 0 60px;
+    padding: 40px 60px 20px 60px;
   }
+
 }
 
 @media only screen and (max-width: 960px) {
@@ -96,8 +97,9 @@
   }
 
   .padding-article {
-    padding: 40px 60px 0 60px;
+    padding: 40px 60px 20px 60px;
   }
+
 }
 
 @media only screen and (max-width: 680px) {
@@ -184,6 +186,14 @@
       padding: 2px 5px 2px 5px;
       font-size: 14px;
     }
+  }
+
+  .post-tags-summary-image {
+    display: none;
+  }
+
+  .post-tags-summary-under-footer-display {
+    display: inline-block;
   }
 
 }

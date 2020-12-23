@@ -210,6 +210,7 @@ a.post-tag-summary{
   div.img-full {
     img {
       width: 100%;
+      padding-top: 10px;
     }
     margin-left: -60px;
     margin-right: -60px;
@@ -625,6 +626,10 @@ footer {
 
 .archive-item {
   box-shadow: none !important;
+}
+
+.post-tags-summary-under-footer-display {
+  display: none;
 }
 
 @import "_partial/share-icon";
