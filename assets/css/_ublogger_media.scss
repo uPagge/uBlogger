@@ -3,6 +3,12 @@
   --test: 23px;
 }
 
+@media only screen and (min-width: 1300px) {
+  article.page-toc {
+    margin: 0 auto;
+  }
+}
+
 @media only screen and (min-width: 1201px) {
   .page {
     width: 100%;
@@ -10,7 +16,6 @@
 
   article.page {
     font-size: 18px;
-    margin: 0 auto;
 
     .post {
       padding: 20px 60px 20px;
@@ -21,7 +26,7 @@
   .featured-image-preview, .featured-image {
 
     img {
-      border-top-left-radius:  $article-summary-image-border-radius;
+      border-top-left-radius: $article-summary-image-border-radius;
       border-top-right-radius: $article-summary-image-border-radius;
     }
   }
