@@ -25,6 +25,7 @@
 
         {{- /* Featured image */ -}}
         {{- $image := $params.featuredimage -}}
+        {{- $pageImageHidden := $params.imageHidden -}}
         {{- with .Resources.GetMatch "featured-image" -}}
         {{- $image = .RelPermalink -}}
         {{- end -}}
@@ -85,7 +86,7 @@
             <h2 class="single-subtitle">{{ . }}</h2>
             {{- end -}}
 
-            {{- if or (eq $pageTheme "classic") (eq $pageTheme "wide") -}}
+            {{- if and (or (eq $pageTheme "classic") (eq $pageTheme "wide")) (eq $pageImageHidden "true") -}}
             {{- with $image -}}
             <div class="image-theme-{{ $pageTheme }}">
                 <img src="{{ $image }}" style="width: 100%">
