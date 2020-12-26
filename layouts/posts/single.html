@@ -86,7 +86,7 @@
             <h2 class="single-subtitle">{{ . }}</h2>
             {{- end -}}
 
-            {{- if and (or (eq $pageTheme "classic") (eq $pageTheme "wide")) (eq $pageImageHidden "true") -}}
+            {{- if and (or (eq $pageTheme "classic") (eq $pageTheme "wide")) (not $pageImageHidden) -}}
             {{- with $image -}}
             <div class="image-theme-{{ $pageTheme }}">
                 <img src="{{ $image }}" style="width: 100%">
