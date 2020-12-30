@@ -86,7 +86,7 @@ enableEmoji = true
         pre = "<i class='fab fa-github fa-fw'></i>"
         post = ""
         name = ""
-        url = "https://github.com/upagge/dolboblog-theme"
+        url = "https://github.com/upagge/ublogger"
         title = "GitHub"
         weight = 6
     [languages.en.params]
