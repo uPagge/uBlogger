@@ -48,7 +48,7 @@ The following steps are here to help you initialize your new website. If you don
 
 Hugo provides a `new` command to create a new website:
 
-```bash
+```shell script
 hugo new site my_website
 cd my_website
 ```
@@ -61,13 +61,13 @@ You can download the [latest release :(far fa-file-archive fa-fw): .zip file](ht
 
 Alternatively, clone this repository to the `themes` directory:
 
-```bash
+```shell script
 git clone https://github.com/upagge/uBlogger.git themes/uBlogger
 ```
 
 Or, create an empty git repository and make this repository a submodule of your site directory:
 
-```bash
+```shell script
 git init
 git submodule add https://github.com/upagge/uBlogger.git themes/uBlogger
 ```
@@ -89,7 +89,7 @@ theme = "uBlogger"
 
 [params]
   # uBlogger theme version
-  version = "1.0.X"
+  version = "1.2.X"
 
 [menu]
   [[menu.main]]
@@ -136,7 +136,7 @@ When building the website, you can set a theme by using `--theme` option. Howeve
 
 Here is the way to create your first post:
 
-```bash
+```shell script
 hugo new posts/first_post.md
 ```
 
@@ -154,13 +154,11 @@ You can copy /uBlogger/archetypes/default.md to your archetypes folder to create
 
 Launch by using the following command:
 
-```bash
+```shell script
 hugo serve
 ```
 
 Go to `http://localhost:1313`.
-
-![Basic configuration preview](basic-configuration-preview.png "Basic configuration preview")
 
 {{< admonition tip >}}
 When you run `hugo serve`, when the contents of the files change, the page automatically refreshes with the changes.
@@ -170,7 +168,7 @@ When you run `hugo serve`, when the contents of the files change, the page autom
 Since the theme use `.Scratch` in Hugo to implement some features,
 it is highly recommended that you add `--disableFastRender` parameter to `hugo server` command for the live preview of the page you are editing.
 
-```bash
+```shell script
 hugo serve --disableFastRender
 ```
 {{< /admonition >}}
@@ -179,7 +177,7 @@ hugo serve --disableFastRender
 
 When your site is ready to deploy, run the following command:
 
-```bash
+```shell script
 hugo
 ```
 
@@ -201,7 +199,7 @@ Please open the code block below to view the complete sample configuration :(far
 ```toml
 [params]
   # {{< version 0.2.0 changed >}} uBlogger theme version
-  version = "1.0.X"
+  version = "1.2.X"
   # site description
   description = "This is My New Hugo Site"
   # site keywords
@@ -415,6 +413,8 @@ Please open the code block below to view the complete sample configuration :(far
     hiddenFromHomePage = false
     # {{< version 0.2.0 >}} whether to hide a page from search results
     hiddenFromSearch = false
+    # {{< version 1.2.0 new >}} Allows you to hide the preview image on the article page
+    hiddenFeaturedImage = false
     # {{< version 0.2.0 >}} whether to enable twemoji
     twemoji = false
     # whether to enable lightgallery
@@ -447,6 +447,10 @@ Please open the code block below to view the complete sample configuration :(far
       background = "black"
       # {{< version 1.1.0 new >}} Tag transparency
       transparency = 0.9
+    # {{< version 1.2.0 new >}} Fasting time display
+    [params.timeAgo]
+      enable = "false"
+      lang = "en"
     # {{< version 0.2.0 >}} Table of the contents config
     [params.page.toc]
       # whether to enable the table of the contents
@@ -825,8 +829,6 @@ Or You can set more options through a dict:
 The default data of all supported social links is located in `themes/uBlogger/assets/data/social.yaml`,
 which is you can refer to.
 {{< /admonition >}}
-
-![Complete configuration preview](complete-configuration-preview.png "Complete configuration preview")
 
 ### 3.2 Favicons, Browserconfig, Manifest
 

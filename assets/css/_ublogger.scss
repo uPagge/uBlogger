@@ -105,7 +105,7 @@ article {
 
 .post-tags-summary-under-footer {
   margin-bottom: 6rem;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   text-align: right;
 }
 
@@ -117,11 +117,13 @@ article {
 a.post-tag-summary{
   background: $global-color-accent;
   opacity: 0.9;
-  padding: 8px;
+  padding: 2px 6px 2px 6px;
   border-radius: 5px;
   margin-right: 5px;
   color: white;
   font-size: 14px;
+  display: inline-block;
+  margin-top: 5px;
 
   &:hover {
     color: white;
@@ -205,6 +207,15 @@ a.post-tag-summary{
 
 .single {
 
+  div.img-full {
+    img {
+      width: 100%;
+      padding-top: 10px;
+    }
+    margin-left: -60px;
+    margin-right: -60px;
+  }
+
   .summary-post-meta {
     font-size: 0.8rem;
 
@@ -215,9 +226,26 @@ a.post-tag-summary{
 
   .content {
 
+    figure {
+      margin: 0;
+    }
+
+    p+ul {
+      margin-top: -1.2rem;
+      margin-bottom: 1.2rem;
+    }
+
+    br+img {
+      margin-top: 1.2rem;
+    }
+
     h2 {
       font-size: 2rem;
       margin-top: 5rem;
+
+      code {
+        font-size: 90%;
+      }
     }
 
     > h2[id^=u-],
@@ -595,6 +623,14 @@ footer {
     top: .75rem;
     left: 1rem;
   }
+}
+
+.archive-item {
+  box-shadow: none !important;
+}
+
+.post-tags-summary-under-footer-display {
+  display: none;
 }
 
 @import "_partial/share-icon";
