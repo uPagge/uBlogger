@@ -89,7 +89,7 @@ theme = "uBlogger"
 
 [params]
   # uBlogger theme version
-  version = "1.0.X"
+  version = "1.2.X"
 
 [menu]
   [[menu.main]]
@@ -199,7 +199,7 @@ Please open the code block below to view the complete sample configuration :(far
 ```toml
 [params]
   # {{< version 0.2.0 changed >}} uBlogger theme version
-  version = "1.0.X"
+  version = "1.2.X"
   # site description
   description = "This is My New Hugo Site"
   # site keywords
