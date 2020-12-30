@@ -160,8 +160,6 @@ hugo serve
 
 Go to `http://localhost:1313`.
 
-![Basic configuration preview](basic-configuration-preview.png "Basic configuration preview")
-
 {{< admonition tip >}}
 When you run `hugo serve`, when the contents of the files change, the page automatically refreshes with the changes.
 {{< /admonition >}}
@@ -415,6 +413,8 @@ Please open the code block below to view the complete sample configuration :(far
     hiddenFromHomePage = false
     # {{< version 0.2.0 >}} whether to hide a page from search results
     hiddenFromSearch = false
+    # {{< version 1.2.0 new >}} Allows you to hide the preview image on the article page
+    hiddenFeaturedImage = false
     # {{< version 0.2.0 >}} whether to enable twemoji
     twemoji = false
     # whether to enable lightgallery
@@ -829,8 +829,6 @@ Or You can set more options through a dict:
 The default data of all supported social links is located in `themes/uBlogger/assets/data/social.yaml`,
 which is you can refer to.
 {{< /admonition >}}
-
-![Complete configuration preview](complete-configuration-preview.png "Complete configuration preview")
 
 ### 3.2 Favicons, Browserconfig, Manifest
 

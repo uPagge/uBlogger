@@ -19,13 +19,13 @@
         </div>
     {{- end -}}
 
-    {{- $pageTheme := $params.page.theme | default .Site.Params.Page.theme | default "classic" -}}
+    {{- $pageTheme := $params.Theme | default .Site.Params.Page.theme | default "classic" -}}
     <article class="{{ if $toc.keepStatic }}page single {{ else }}page single page-toc{{ end }} theme-{{ $pageTheme }}">
 
 
         {{- /* Featured image */ -}}
         {{- $image := $params.featuredimage -}}
-        {{- $pageImageHidden := $params.imageHidden -}}
+        {{- $pageImageHidden := $params.hiddenFeaturedImage -}}
         {{- with .Resources.GetMatch "featured-image" -}}
         {{- $image = .RelPermalink -}}
         {{- end -}}

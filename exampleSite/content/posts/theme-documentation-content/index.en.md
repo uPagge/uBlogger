@@ -89,9 +89,10 @@ upd: ""
 # {{< version 1.0.0 new >}} Author's comment, is shown above all comments
 authorComment: ""
 
-page:
-    # {{< version 1.0.0 new >}} article design theme
-    theme: ""
+# {{< version 1.2.0 change >}} article design theme
+theme: ""
+# {{< version 1.2.0 new >}} Allows you to hide the preview image on the article page
+hiddenFeaturedImage: false
 
 # {{< version 1.2.0 change >}} Post display settings on the page
 summaryStyle:
