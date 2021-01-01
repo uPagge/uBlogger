@@ -29,6 +29,13 @@
     <link rel="feed" href="{{ .RelPermalink }}" type="application/rss+xml" title="{{ $.Site.Title }}">
 {{- end -}}
 
+{{- /* Advertising */ -}}
+{{- if .Site.Params.Advertising.Enable -}}
+{{- with .Site.Params.Advertising.Google -}}
+<script data-ad-client="{{ . }}" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+{{- end -}}
+{{- end -}}
+
 {{- /* normalize.css */ -}}
 {{- $source := $cdn.normalizeCSS | default "lib/normalize/normalize.min.css" -}}
 {{- $style := dict "Source" $source "Fingerprint" $fingerprint -}}
@@ -49,3 +56,4 @@
 {{- $source := $cdn.animateCSS | default "lib/animate/animate.min.css" -}}
 {{- $style := dict "Source" $source "Fingerprint" $fingerprint -}}
 {{- partial "plugin/style.html" $style -}}
+

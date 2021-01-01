@@ -16,7 +16,7 @@
 
 {{- $alt := .Alt | default $src -}}
 {{- $loading := resources.Get "svg/loading.svg" | minify -}}
-<div {{ if in $alt "!" }} class="img-full" {{ end }}>
+<div {{ if in $alt "!" }} class="img-full" {{ end }} style="text-align: center">
 {{- if .Linked -}}
     <a target="_blank" class="lightgallery" href="{{ $large | safeURL }}" title="{{ .Title | default $alt }}" data-thumbnail="{{ $small | safeURL }}"{{ with .Caption }} data-sub-html="<h2>{{ . }}</h2>{{ with $.Title }}<p>{{ . }}</p>{{ end }}"{{ end }}{{ with .Rel }} rel="{{ . }}"{{ end }}>
         <img
