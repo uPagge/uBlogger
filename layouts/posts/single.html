@@ -42,6 +42,10 @@
                 <div class="post-all-meta {{ if and $image (eq $pageTheme "full") }} {{ else }} padding-article {{ end }}">
                 {{ partial "breadcrumbs.html" . | safeHTML }}
                     <h1 class="single-title animated flipInX">{{ $.Title }}</h1>
+                    {{- /* Subtitle */ -}}
+                    {{- with $params.subtitle -}}
+                    <h2 class="single-subtitle">{{ . }}</h2>
+                    {{- end -}}
                     {{- /* Meta */ -}}
                     <div class="post-meta">
                         <div class="post-meta-line">
@@ -80,11 +84,6 @@
 
 
         <div class="post">
-
-            {{- /* Subtitle */ -}}
-            {{- with $params.subtitle -}}
-            <h2 class="single-subtitle">{{ . }}</h2>
-            {{- end -}}
 
             {{- if and (or (eq $pageTheme "classic") (eq $pageTheme "wide")) (not $pageImageHidden) -}}
             {{- with $image -}}

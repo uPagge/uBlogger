@@ -53,6 +53,16 @@ article {
     box-shadow: (0 0 40px rgba(94, 104, 125, .3));
   }
 
+  .post {
+    a:visited {
+      color: #70a0b0;
+
+      [theme=dark] & {
+        color: #70a0b0;
+      }
+    }
+  }
+
   em {
     background: #fff3bc;
     padding-bottom: 1px;
@@ -393,9 +403,9 @@ a.post-tag-summary{
   position: absolute;
   bottom: 0;
   background: #000;
-  opacity: 0.7;
+  opacity: 0.75;
   width: 100%;
-  color: #DDD;
+  color: #ffffff;
 }
 
 .post-all-meta {

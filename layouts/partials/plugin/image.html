@@ -23,7 +23,7 @@
             class="lazyload{{ with .Class }} {{ . }}{{ end }}"
             src="{{ $loading.RelPermalink }}"
             data-src="{{ .Src | safeURL }}"
-            data-srcset="{{ $small | safeURL }}, {{ .Src | safeURL }} 1.5x, {{ $large | safeURL }} 0.1x"
+            data-srcset="{{ $small | safeURL }}, {{ .Src | safeURL }} 1.5x, {{ $large | safeURL }} 2x"
             data-sizes="auto"
             alt="{{ $alt }}"{{ with .Height }} height="{{ . }}"{{ end }}{{ with .Width }} width="{{ . }}"{{ end }} />
     </a>
@@ -32,7 +32,7 @@
         class="lazyload{{ with .Class }} {{ . }}{{ end }}"
         src="{{ $loading.RelPermalink }}"
         data-src="{{ .Src | safeURL }}"
-        data-srcset="{{ $small | safeURL }}, {{ .Src | safeURL }} 1.5x, {{ $large | safeURL }} 0.1x"
+        data-srcset="{{ $small | safeURL }}, {{ .Src | safeURL }} 1.5x, {{ $large | safeURL }} 2x"
         data-sizes="auto"
         alt="{{ $alt }}"
         title="{{ .Title | default $alt }}"{{ with .Height }} height="{{ . }}"{{ end }}{{ with .Width }} width="{{ . }}"{{ end }} />
