@@ -151,7 +151,7 @@ other = "抱歉，您要查找的頁面不存在。"
 
 # === shortcodes/admonition.html ===
 [note]
-other = "注意"
+other = "筆記"
 
 [abstract]
 other = "摘要"
