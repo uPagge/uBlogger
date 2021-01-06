@@ -4,8 +4,12 @@
 }
 
 @media only screen and (min-width: 1300px) {
-  article.page-toc {
+  .page-toc {
     margin: 0 auto;
+  }
+
+  .post-tags-toc {
+    margin: 1rem auto;
   }
 }
 
