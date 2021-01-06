@@ -66,7 +66,6 @@ article {
 
     [theme=dark] & {
       background: $global-background-secondary-color-dark;
-      box-shadow: (0 0 40px rgba(94, 104, 125, .3));
     }
   }
 
@@ -347,7 +346,6 @@ a.post-tag-summary {
 
   [theme=dark] & {
     background: $global-background-secondary-color-dark;
-    box-shadow: (0 0 40px rgba(94, 104, 125, .3));
   }
 }
 
@@ -452,7 +450,7 @@ a.post-tag-summary {
 }
 
 .author-comment {
-  padding: 20px 0;
+  padding: 40px 0;
 
   .name {
     color: $global-font-color;

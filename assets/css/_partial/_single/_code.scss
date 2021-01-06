@@ -48,7 +48,7 @@ code, pre, .highlight table, .highlight tr, .highlight td {
     > table tr,
     > table td {
       margin: 0;
-      padding: 0;
+      padding: 5px;
       border: none !important;
       white-space: nowrap;
     }
@@ -72,6 +72,7 @@ code, pre, .highlight table, .highlight tr, .highlight td {
       font-weight: bold;
       color: $code-info-color;
       background: darken($code-background-color, 8%);
+      border-radius: 6px 6px 0 0;
 
       [theme=dark] & {
         color: $code-info-color-dark;
@@ -159,6 +160,7 @@ code, pre, .highlight table, .highlight tr, .highlight td {
     .table-wrapper {
       max-height: 0;
       overflow-y: hidden;
+      border-radius: 0 0 6px 6px;
       @include details-transition-open;
     }
 
