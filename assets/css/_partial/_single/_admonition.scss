@@ -1,10 +1,19 @@
 .admonition {
+  border-radius: 6px;
   position: relative;
   margin: 1rem 0;
   padding: 0 .75rem;
   background-color: map-get($admonition-background-color-map, 'note');
   border-left: .25rem solid map-get($admonition-color-map, 'note');
   overflow: auto;
+
+  p:first-child {
+    margin-top: 0;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
 
   .admonition-title {
     font-weight: bold;
@@ -32,7 +41,7 @@
 
   i.details-icon {
     position: absolute;
-    top: .8rem;
+    top: .7rem;
     right: .3rem;
   }
 

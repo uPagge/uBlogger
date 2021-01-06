@@ -14,7 +14,7 @@
     {{- /* Auto TOC */ -}}
     {{- if ne $toc.enable false -}}
         <div class="toc" id="toc-auto">
-            <h2 class="toc-title">{{ T "contents" }}</h2>
+            <div class="toc-title">{{ T "contents" }}</div>
             <div class="toc-content{{ if eq $toc.auto false }} always-active{{ end }}" id="toc-content-auto"></div>
         </div>
     {{- end -}}
@@ -22,7 +22,7 @@
     {{- $pageTheme := $params.Theme | default .Site.Params.Page.theme | default "classic" -}}
     <article class="{{ if $toc.keepStatic }}page single {{ else }}page single page-toc{{ end }} theme-{{ $pageTheme }}">
 
-
+        <div class="content-block">
         {{- /* Featured image */ -}}
         {{- $image := $params.featuredimage -}}
         {{- $pageImageHidden := $params.hiddenFeaturedImage -}}
@@ -32,6 +32,7 @@
 
         {{- if eq $pageTheme "full" -}}
         {{- with $image -}}
+
         <div class="featured-image" style="background-image: url('{{ $image }}');">
 
             <div class="post-title">
@@ -107,7 +108,7 @@
             {{- end -}}
 
             {{- /* Content */ -}}
-            <div class="content" id="content" style="padding-top: 20px">
+            <div class="content" id="content">
                 {{- with .Site.Params.dateformat | default "2006-01-02" | .Lastmod.Format -}}
                 {{- $updateDate := . -}}
                 {{- if not (eq  . ($.Site.Params.dateformat | default "2006-01-02" | $.PublishDate.Format)) -}}
@@ -126,10 +127,14 @@
                 {{- dict "Content" .Content "Ruby" $params.ruby "Fraction" $params.fraction "Fontawesome" $params.fontawesome | partial "function/content.html" | safeHTML -}}
             </div>
 
-            {{- /* Footer Post */ -}}
-            {{- partial "single/footer.html" . -}}
-
         </div>
+
+            <div class="post">
+                {{- /* Footer Post */ -}}
+                {{- partial "single/footer.html" . -}}
+            </div>
+        </div>
+
 
     </article>
 
