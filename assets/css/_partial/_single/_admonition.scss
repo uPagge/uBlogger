@@ -7,11 +7,11 @@
   border-left: .25rem solid map-get($admonition-color-map, 'note');
   overflow: auto;
 
-  p:first-child {
+  p:first-child, ul:first-child {
     margin-top: 0;
   }
 
-  p:last-child {
+  p:last-child, ul:last-child {
     margin-bottom: 0;
   }
 
