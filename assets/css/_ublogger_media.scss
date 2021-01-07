@@ -28,7 +28,6 @@
   }
 
   .featured-image-preview, .featured-image {
-
     img {
       border-top-left-radius: $article-summary-image-border-radius;
       border-top-right-radius: $article-summary-image-border-radius;
@@ -93,10 +92,9 @@
   }
 
   .featured-image-preview, .featured-image {
-    border-radius: 30px 30px 0 0;
-
     img {
-      border-radius: 30px 30px 0 0;
+      border-top-left-radius: $article-summary-image-border-radius;
+      border-top-right-radius: $article-summary-image-border-radius;
     }
   }
 
@@ -152,10 +150,9 @@
   }
 
   .featured-image-preview, .featured-image {
-    border-radius: 0;
-
     img {
-      border-radius: 0;
+      border-top-left-radius: $article-summary-image-border-radius;
+      border-top-right-radius: $article-summary-image-border-radius;
     }
   }
 
