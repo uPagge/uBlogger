@@ -213,3 +213,66 @@
   }
 
 }
+
+@media print {
+
+  div.menu, .fixed-button, .toc, #toc-auto, .post-info-share,
+  .footer-donate, .post-footer, .comments, .post-tags, footer, .breadcrumbs {
+    display: none !important;
+  }
+
+  .footer-post-author {
+    border-radius: 6px;
+    border-bottom: solid 2px #DDD;
+  }
+
+  #header-desktop {
+    box-shadow: none;
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+    position: absolute;
+
+    .header-wrapper {
+      padding: 0;
+    }
+  }
+
+  .post-all-meta {
+    padding: 0;
+  }
+
+  .page {
+    [data-header-desktop] & {
+      margin-top: 0;
+    }
+  }
+
+  .single {
+    .post-meta {
+      display: none;
+    }
+
+    .content {
+      .admonition {
+        .details-icon {
+          display: none;
+        }
+      }
+    }
+  }
+
+  article {
+    .content-block {
+      box-shadow: none;
+    }
+
+    .content-block:first-child {
+      margin-top: 0;
+    }
+
+    .featured-image {
+      height: 0;
+    }
+  }
+
+}
