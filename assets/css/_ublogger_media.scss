@@ -241,6 +241,17 @@
     padding: 0;
   }
 
+  .single {
+    .content {
+      .admonition {
+        .admonition-title {
+          border-bottom-width: 5px;
+        }
+      }
+    }
+  }
+
+
   .page {
     [data-header-desktop] & {
       margin-top: 0;

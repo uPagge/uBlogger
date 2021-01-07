@@ -16,6 +16,24 @@ body {
     p {
       margin: 1.2rem 0;
     }
+
+    blockquote {
+      blockquote {
+        padding: 0;
+        width: 100%;
+        line-height: 3.5rem;
+        blockquote {
+          width: 100%;
+          padding: 0;
+          line-height: 6rem;
+          blockquote {
+            width: 100%;
+            padding: 0;
+            line-height: 8rem;
+          }
+        }
+      }
+    }
   }
 
   .single-title {
@@ -719,6 +737,7 @@ figure {
 .page.home {
   padding-top: 32px;
 }
+
 
 @import "_partial/share-icon";
 @import "ublogger_media";
