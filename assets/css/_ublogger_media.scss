@@ -205,11 +205,18 @@
     display: inline-block;
   }
 
-  .block-media_1 {
+  .block-media_column {
     .content-column {
       width: 100%;
       padding-bottom: 15px;
     }
+  }
+
+  .block-media_right {
+    width: 100%;
+    text-align: center;
+    float: none;
+    margin-left: 0;
   }
 
 }

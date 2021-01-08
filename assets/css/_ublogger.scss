@@ -689,7 +689,7 @@ footer {
   display: none;
 }
 
-.block-media_1 {
+.block-media_column {
 
   display: inline-block;
 
@@ -700,6 +700,15 @@ footer {
     border-right: solid 5px transparent;
     box-sizing: border-box;
   }
+
+}
+
+.block-media_right {
+  width: 50%;
+  float: right;
+  text-align: right;
+  padding-right: 0;
+  margin-left: 40px;
 }
 
 figure {
