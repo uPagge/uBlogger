@@ -1,5 +1,5 @@
 {{- $params := .Page.Params | merge .Site.Params.Page | merge (dict "author" .Site.Author.name) -}}
-<item turbo="true">
+<item>
     <title>
         {{- .Page.Title -}}
     </title>
@@ -15,7 +15,7 @@
     <guid>
         {{- .Page.Permalink -}}
     </guid>
-    <turbo:content>
+    <description>
         {{- "<![CDATA[" | safeHTML -}}
         {{- with $params.featuredimage -}}
             <div class="featured-image">
@@ -32,5 +32,5 @@
         {{- end -}}
         {{- $content | replaceRE `<figure[^>]*>.*</figure>` "" | replaceRE `<img[^>]*( /)?>` "" | safeHTML -}}
         {{- "]]>" | safeHTML -}}
-    </turbo:content>
+    </description>
 </item>
