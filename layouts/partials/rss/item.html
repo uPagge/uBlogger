@@ -1,5 +1,5 @@
 {{- $params := .Page.Params | merge .Site.Params.Page | merge (dict "author" .Site.Author.name) -}}
-<item>
+<item turbo="true">
     <title>
         {{- .Page.Title -}}
     </title>
