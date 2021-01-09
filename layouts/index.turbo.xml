@@ -1,4 +1,8 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<rss xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:yandex="http://news.yandex.ru"
+     xmlns:media="http://search.yahoo.com/mrss/"
+     xmlns:turbo="http://turbo.yandex.ru"
+     version="2.0">
     <channel>
         <title>
             {{- .Site.Title -}}
@@ -37,7 +41,7 @@
             {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
         {{ end }}
         {{- range where .Site.RegularPages "Type" "posts" | first (.Site.Params.home.rss | default 10) -}}
-            {{- dict "Page" . "Site" .Site | partial "rss/item.html" -}}
+            {{- dict "Page" . "Site" .Site | partial "rss/item-turbo.html" -}}
         {{- end -}}
     </channel>
 </rss>
