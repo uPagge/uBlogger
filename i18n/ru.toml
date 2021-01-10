@@ -23,7 +23,7 @@ other = "Предыдущая статья"
 
 # === Taxonomy ===
 [allSome]
-other = "Все {{ .Some }}"
+other = "Архив"
 
 [tag]
 other = "Тэг"

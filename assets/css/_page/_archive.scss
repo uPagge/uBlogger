@@ -3,9 +3,18 @@
     text-align: right;
   }
 
-  .group-title {
+  .group-title-year {
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .group-title-month {
     margin-top: 1.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 20px;
+    font-weight: 600;
   }
 
   @import "../_partial/_archive/terms";
