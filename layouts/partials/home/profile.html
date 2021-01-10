@@ -28,7 +28,7 @@
     {{- end -}}
 
     {{- with $profile.subtitle -}}
-        <div class="home-subtitle">
+        <h2 class="home-subtitle">
             {{- if $profile.typeit -}}
                 {{- $id := dict "Content" . "Scratch" $.Scratch | partial "function/id.html" -}}
                 <div id="{{ $id }}" class="typeit"></div>
@@ -36,7 +36,13 @@
             {{- else -}}
                 {{- . | safeHTML -}}
             {{- end -}}
-        </div>
+        </h2>
+    {{- end -}}
+
+    {{- with $profile.disclaimer -}}
+    <h3 class="home-disclaimer">
+        {{- . | safeHTML -}}
+    </h3>
     {{- end -}}
 
     {{- if $profile.social -}}
@@ -85,11 +91,5 @@
                 {{- partial "plugin/social.html" . -}}
             {{- end -}}
         </div>
-    {{- end -}}
-
-    {{- with $profile.disclaimer -}}
-        <h1 class="home-disclaimer">
-            {{- . | safeHTML -}}
-        </h1>
     {{- end -}}
 </div>
