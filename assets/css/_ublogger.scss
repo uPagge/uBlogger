@@ -39,8 +39,12 @@ body {
 }
 
 .summary-content {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  color: #a9a9b3;
+  display: inline;
+
+  p {
+    margin: 1rem 0;
+  }
 }
 
 header {
@@ -200,7 +204,7 @@ a.post-tag-summary {
   }
 }
 
-.page, .content-block-position {
+.page {
 
   max-width: 900px;
   width: 100%;
@@ -212,6 +216,13 @@ a.post-tag-summary {
     padding-top: 0;
   }
 
+}
+
+.content-block-position {
+  max-width: 900px;
+  width: 100%;
+  min-width: 200px;
+  box-sizing: border-box;
 }
 
 .page.home {
@@ -724,7 +735,7 @@ footer {
   margin: 1rem auto;
 
   .tag {
-    margin-top: 3px;
+    margin-top: 10px;
     margin-right: 10px;
     padding: 5px 10px 5px 10px;
     background: $global-color-accent;

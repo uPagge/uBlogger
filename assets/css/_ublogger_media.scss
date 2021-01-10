@@ -94,10 +94,11 @@
     article {
       margin-right: auto;
       margin-left: auto;
+    }
 
-      .content-block-position {
-        margin: 6rem auto;
-      }
+    .content-block-position {
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 
@@ -172,9 +173,14 @@
       border-radius: 0;
     }
 
-    [data-header-desktop] & {
-      margin-top: 3rem;
+    .content-block-position:first-child {
+      margin-top: 0;
     }
+  }
+
+  .header-post {
+    border-radius: 0;
+    margin-top: 0;
   }
 
   .comments {
@@ -189,6 +195,18 @@
     .image-theme-wide {
       margin-right: -10px;
       margin-left: -10px;
+    }
+  }
+
+  .theme-classic, .theme-wide, .theme-full {
+    .header-post {
+      margin-top: 3rem;
+    }
+  }
+
+  .theme-classic, .theme-wide, .theme-full, .theme-mega-full {
+    article {
+      margin-top: 0;
     }
   }
 
@@ -355,5 +373,7 @@
       height: 0;
     }
   }
+
+
 
 }
