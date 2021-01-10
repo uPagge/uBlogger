@@ -55,6 +55,17 @@ code, pre, .highlight table, .highlight tr, .highlight td {
   }
 }
 
+.gist {
+  .table-wrapper {
+    > table,
+    > table thead,
+    > table tr,
+    > table td {
+      white-space: pre;
+    }
+  }
+}
+
 .highlight {
   line-height: 1.4em;
   margin: .5rem 0;
