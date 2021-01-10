@@ -77,10 +77,6 @@ article {
     }
   }
 
-  .content-block-position {
-    margin-top: 40px;
-  }
-
   .content-block {
     border-radius: $article-border-radius;
     box-shadow: (0 0 1.5rem 0 rgba(0, 0, 0, .1));
@@ -103,6 +99,7 @@ article {
       font-size: 230%;
       padding-top: 90px;
       text-align: center;
+      line-height: 3rem;
 
       a.header-mark:before {
         content: none;
@@ -565,12 +562,22 @@ footer {
 .page-toc {
   margin: 0;
 
-  .content-block-position, .header-post {
+  .header-post {
     margin: 6rem 1rem 0;
   }
 
   .header-post {
     margin: 6rem 1rem 0;
+  }
+}
+
+.content-block-position {
+  margin-top: 3rem;
+}
+
+.page-toc {
+  .content-block-position {
+    margin-left: 1rem;
   }
 }
 
@@ -661,7 +668,7 @@ footer {
 }
 
 .theme-mega-full.page-toc {
-  .content-block-position {
+  .content-block-first {
     margin-top: 2rem;
   }
 }
