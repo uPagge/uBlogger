@@ -381,7 +381,7 @@ class Theme {
     }
 
     initTable() {
-        this.util.forEach(document.querySelectorAll('.content table'), $table => {
+        this.util.forEach(document.querySelectorAll('.single table'), $table => {
             const $wrapper = document.createElement('div');
             $wrapper.className = 'table-wrapper';
             $table.parentElement.replaceChild($wrapper, $table);
@@ -415,7 +415,7 @@ class Theme {
                 $tocContentAuto.appendChild($tocCore);
             }
             const $toc = document.getElementById('toc-auto');
-            const $page = document.getElementsByClassName('page')[0];
+            const $page = document.getElementsByClassName('content-block')[0];
             const rect = $page.getBoundingClientRect();
             $toc.style.left = `${rect.left + rect.width + 20}px`;
             $toc.style.maxWidth = `${$page.getBoundingClientRect().left - 20 + 314}px`;
@@ -429,7 +429,7 @@ class Theme {
             const minTocTop = $toc.offsetTop;
             const minScrollTop = minTocTop - TOP_SPACING + (headerIsFixed ? 0 : headerHeight);
             this._tocOnScroll = this._tocOnScroll || (() => {
-                const footerTop = document.getElementById('post-footer').offsetTop;
+                const footerTop = document.getElementById('toc-final').offsetTop;
                 const maxTocTop = footerTop - $toc.getBoundingClientRect().height;
                 const maxScrollTop = maxTocTop - TOP_SPACING + (headerIsFixed ? 0 : headerHeight);
                 if (this.newScrollTop < minScrollTop) {

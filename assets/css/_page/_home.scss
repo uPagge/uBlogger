@@ -118,7 +118,7 @@
       margin: 0 0;
     }
 
-    .content {
+    .single {
       @include box(vertical);
       -webkit-line-clamp: 3;
       margin-top: .3rem;
@@ -164,7 +164,7 @@
     }
 
     .post-footer {
-      margin-top: .4rem;
+      margin-top: 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;

@@ -1,11 +1,11 @@
 @media only screen and (max-width: 1440px) {
-  .page {
+  .page, .content-block-position {
     width: 56%;
   }
 }
 
 @media only screen and (max-width: 1200px) {
-  .page {
+  .page, .content-block-position {
     width: 52%;
   }
 
@@ -27,7 +27,7 @@
     display: block;
   }
 
-  .page {
+  .page, .content-block-position {
     width: 80%;
   }
 
@@ -49,7 +49,7 @@
     overflow: hidden;
   }
 
-  .page {
+  .page, .content-block {
     width: 100%;
 
     [data-header-mobile] & {
@@ -72,6 +72,7 @@
       .icp-splitter {
         display: none;
       }
+
       .icp-br {
         display: block;
       }

@@ -53,7 +53,7 @@ other = "Сменить Тему"
 
 # === partials/footer.html ===
 [poweredBySome]
-other = "Сделано {{ .Hugo }} | Тема - {{ .Theme }}"
+other = "Работает на {{ .Hugo }} | Тема - {{ .Theme }}"
 # === partials/footer.html ===
 
 # === partials/comment.html ===

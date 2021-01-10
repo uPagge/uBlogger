@@ -1,11 +1,38 @@
-
-:root {
-  --test: 23px;
-}
-
 @media only screen and (min-width: 1300px) {
   .page-toc {
-    margin: 0 auto;
+    article {
+      margin-right: auto;
+      margin-left: auto;
+
+      .content-block-position {
+        margin: 0 auto;
+      }
+    }
+  }
+
+  .theme-mega-full {
+    .content-block-first {
+      margin: 2rem auto;
+    }
+  }
+
+  .theme-classic.page-toc, .theme-wide.page-toc, .theme-full.page-toc {
+    .header-post {
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+
+  .theme-full {
+    .header-post {
+      .featured-image {
+        height: 40vh;
+      }
+    }
+  }
+
+  .page, .content-block-position {
+    width: 100%;
   }
 
   .post-tags-toc {
@@ -14,11 +41,11 @@
 }
 
 @media only screen and (min-width: 1201px) {
-  .page {
+  .page, .content-block-position {
     width: 100%;
   }
 
-  article.page {
+  article.single {
     font-size: 18px;
 
     .post {
@@ -49,16 +76,41 @@
     display: block;
   }
 
-  .page {
+  .page, .content-block-position {
     width: 100%;
   }
 
-  .page-toc {
-    margin: auto;
+  .theme-mega-full.page-toc {
+    .content-block-position {
+      margin: 2rem auto;
+    }
+
+    .content-break {
+      margin: 6rem auto;
+    }
   }
 
+  .page-toc {
+    article {
+      margin-right: auto;
+      margin-left: auto;
 
-  article.page {
+      .content-block-position {
+        margin: 6rem auto;
+      }
+    }
+  }
+
+  .theme-classic.page-toc, .theme-wide.page-toc, .theme-full.page-toc {
+    .header-post {
+      margin-top: 6rem;
+      margin-right: auto;
+      margin-bottom: 0;
+      margin-left: auto;
+    }
+  }
+
+  article.single {
     font-size: 18px;
 
     .post {
@@ -79,11 +131,11 @@
 }
 
 @media only screen and (max-width: 960px) {
-  .page {
+  .page, .content-block-position {
     width: 100%;
   }
 
-  article.page {
+  article.single {
     font-size: 18px;
 
     .post {
@@ -105,7 +157,7 @@
 }
 
 @media only screen and (max-width: 680px) {
-  article.page {
+  article.single {
     font-size: 16px;
 
     .post {
@@ -182,14 +234,6 @@
     }
   }
 
-  .wrapper {
-    main {
-      .container.content-article {
-        padding: 0;
-      }
-    }
-  }
-
   .post-tags {
     .tag {
       padding: 2px 5px 2px 5px;
@@ -228,6 +272,27 @@
     display: none !important;
   }
 
+  .content-block-first {
+    box-shadow: none;
+  }
+
+  .header-post {
+    box-shadow: none;
+    position: static;
+    height: auto;
+
+    .featured-image {
+      height: 0;
+    }
+
+    .post-title {
+      position: static;
+      display: block;
+      top: 0;
+    }
+
+  }
+
   .footer-post-author {
     border-radius: 6px;
     border-bottom: solid 2px #DDD;
@@ -249,17 +314,15 @@
   }
 
   .single {
-    .content {
-      .admonition {
-        .admonition-title {
-          border-bottom-width: 5px;
-        }
+    .admonition {
+      .admonition-title {
+        border-bottom-width: 5px;
       }
     }
   }
 
 
-  .page {
+  .page, .content-block-position {
     [data-header-desktop] & {
       margin-top: 0;
     }
@@ -270,7 +333,7 @@
       display: none;
     }
 
-    .content {
+    .post {
       .admonition {
         .details-icon {
           display: none;
@@ -284,7 +347,7 @@
       box-shadow: none;
     }
 
-    .content-block:first-child {
+    .content-block-position:first-child {
       margin-top: 0;
     }
 
