@@ -232,8 +232,29 @@ a.post-tag-summary {
 
 .home {
   .home-profile {
+
+    text-align: left;
+    padding-bottom: 4rem;
+
+    .home-meta {
+      display: inline-block;
+    }
+
+    .home-title{
+      font-size: 30px;
+    }
+
     .home-avatar {
+      vertical-align: top;
+      width: 120px;
+      display: inline-block;
+      box-sizing: border-box;
+      margin-right: 10px;
+
       img {
+
+        border-radius: 10px;
+        width: 7rem;
 
         &:hover {
           box-shadow: (0 0 40px rgba(0, 0, 0, .1));
@@ -761,10 +782,6 @@ footer {
   margin: 1rem 0;
 }
 
-.home[data-home=posts] .home-profile {
-  padding-bottom: 2rem;
-}
-
 .is-style-explanation {
   padding: .75rem 1rem .75rem 4rem;
   font-size: 1rem;
@@ -911,6 +928,16 @@ figure {
     .container.content-article {
       padding: 0;
     }
+  }
+}
+
+.split-post {
+  .code-header, .table-wrapper {
+    border-radius: 0 !important;
+  }
+
+  img {
+    width: 100%;
   }
 }
 
