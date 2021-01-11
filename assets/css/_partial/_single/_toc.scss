@@ -3,15 +3,30 @@
     font-size: $toc-title-font-size;
     font-weight: bold;
     text-transform: uppercase;
+    border-radius: 6px;
+    transition-property: border-radius;
+    transition-duration: 1.5s;
+  }
+
+  &.open {
+    .toc-title {
+      border-radius: 6px 6px 0 0;
+    }
   }
 
   .toc-content {
     font-size: $toc-content-font-size;
+    border-radius: 0 0 6px 6px;
 
     ul {
       text-indent: -0.85rem;
       padding-left: .8rem;
       list-style: none;
+      margin: 0;
+
+      a {
+        border-bottom: none;
+      }
 
       a:first-child::before {
         content: "|";
@@ -114,7 +129,7 @@
 
 #toc-static {
   display: none;
-  margin: .8rem 0;
+  margin: .8rem 0 2rem 0;
 
   &[data-kept=true] {
     display: block;
