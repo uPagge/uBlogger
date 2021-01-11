@@ -6,7 +6,7 @@
 {{- end -}}
 
 {{- if $figcap -}}
-<figure {{ if in $alt "!" }} class="img-full" {{ end }}>
+<figure>
     {{- dict "Src" .Destination "Title" $figcap "Alt" $alt "Caption" $caption "Linked" true "Resources" .Page.Resources | partial "plugin/image.html" -}}
     <figcaption class="image-caption">
         {{- $figcap | safeHTML -}}

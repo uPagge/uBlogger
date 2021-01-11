@@ -305,16 +305,6 @@ a.post-tag-summary {
 
 .single {
 
-  div.img-full {
-    img {
-      width: 100%;
-      padding-top: 10px;
-    }
-
-    margin-left: -60px;
-    margin-right: -60px;
-  }
-
   blockquote {
     margin: auto;
     background: none;
@@ -924,8 +914,12 @@ figure {
 }
 
 .split-post {
-  .code-header, .table-wrapper {
+  .code-header, .table-wrapper, .admonition {
     border-radius: 0 !important;
+  }
+
+  .details-icon {
+    display: none;
   }
 
   img {
