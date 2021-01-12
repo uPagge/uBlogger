@@ -141,11 +141,11 @@ enableEmoji = true
           # URL of avatar shown in home page
           avatarURL = "/images/avatar.png"
           # title shown in home page (HTML format is supported)
-          title = ""
+          title = "uBlogger | Hugo Theme"
           # subtitle shown in home page (HTML format is supported)
           subtitle = "A Clean, Elegant but Advanced Hugo Theme"
           # whether to use typeit animation for subtitle
-          typeit = true
+          typeit = false
           # whether to show social links
           social = true
           # disclaimer (HTML format is supported)
