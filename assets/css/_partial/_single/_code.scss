@@ -74,11 +74,6 @@ code, pre, .highlight table, .highlight tr, .highlight td {
       background: darken($code-background-color, 8%);
       border-radius: 6px;
 
-      [theme=dark] & {
-        color: $code-info-color-dark;
-        background: darken($code-background-color-dark, 6%);
-      }
-
       &:hover {
         cursor: pointer;
       }
