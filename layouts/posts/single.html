@@ -136,6 +136,19 @@
 
                 {{- dict "Content" .Content "Ruby" $params.ruby "Fraction" $params.fraction "Fontawesome" $params.fontawesome | partial "function/content.html" | safeHTML -}}
 
+            {{ $posts := where .Site.RegularPages "Section" "blog"}}
+            {{ $related :=  .Site.RegularPages.RelatedIndices . "tags" | first 3 }}
+            {{ if eq (len $related) 0 }}
+                {{ $related = $posts.ByDate | first 3 }}
+            {{ end }}
+            {{ with $related }}
+            <h3>Посмотрите также</h3>
+            <ul>
+                {{ range . }}
+                <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                {{ end }}
+            </ul>
+            {{ end }}
         </div>
 
             <div class="post">
