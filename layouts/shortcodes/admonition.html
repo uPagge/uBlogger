@@ -33,6 +33,9 @@
 {{- else -}}
     {{- $type := .Get 0 | default "note" -}}
     <div class="details admonition {{ $type }}{{ if .Get 2 | ne false }} open{{ end }}">
+        <div class="details-summary admonition-title" style="display: none">
+            <i class="icon {{ index $iconMap $type | default (index $iconMap "note") }}"></i>{{ .Get 1 | default (T $type) }}<i class="details-icon {{ $iconDetails }}"></i>
+        </div>
         <div class="details-content">
             <div class="admonition-content">
                 {{- $inner -}}

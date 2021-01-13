@@ -50,6 +50,7 @@ code, pre, .highlight table, .highlight tr, .highlight td {
       margin: 0;
       padding: 5px;
       border: none !important;
+      white-space: nowrap;
     }
   }
 }
@@ -71,7 +72,7 @@ code, pre, .highlight table, .highlight tr, .highlight td {
       font-weight: bold;
       color: $code-info-color;
       background: darken($code-background-color, 8%);
-      border-radius: 6px 6px 0 0;
+      border-radius: 6px;
 
       [theme=dark] & {
         color: $code-info-color-dark;
@@ -166,6 +167,7 @@ code, pre, .highlight table, .highlight tr, .highlight td {
     &.open {
       .code-header {
         background: darken($code-background-color, 3%);
+        border-radius: 6px 6px 0 0;
 
         [theme=dark] & {
           background: darken($code-background-color-dark, 3%);
