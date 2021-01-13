@@ -73,6 +73,8 @@ code, pre, .highlight table, .highlight tr, .highlight td {
       color: $code-info-color;
       background: darken($code-background-color, 8%);
       border-radius: 6px;
+      transition-property: background-color, color;
+      transition-duration: 0.5s;
 
       &:hover {
         cursor: pointer;
