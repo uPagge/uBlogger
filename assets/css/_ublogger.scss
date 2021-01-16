@@ -481,7 +481,7 @@ a.post-tag-summary {
     background-position: center 50%;
     background-repeat: no-repeat;
     background-size: cover;
-    border-radius: 10px 10px;
+    border-radius: 10px 10px 0px 0px;
 
     .post-title {
       position: absolute;
@@ -617,6 +617,7 @@ footer {
   .content-block-first {
     margin-top: 0 !important;
     box-shadow: 0 1.2rem 1.2rem 0 rgba(0,0,0,0.1);
+    border-radius: 0 0 $article-summary-border-radius $article-summary-border-radius;
   }
 }
 
@@ -637,7 +638,7 @@ footer {
   }
 }
 
-.theme-classic, .theme-wide, .theme-full {
+.theme-classic, .theme-wide {
   .header-post {
     margin-top: 6rem;
     margin-right: auto;
@@ -649,6 +650,8 @@ footer {
     margin-top: -20px;
   }
 }
+
+
 
 .theme-classic.page-toc, .theme-wide.page-toc, .theme-full.page-toc {
 
