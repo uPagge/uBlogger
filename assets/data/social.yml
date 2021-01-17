@@ -533,3 +533,11 @@ leanpub:
   Title: Leanpub
   Icon:
     Class: fab fa-leanpub fa-fw
+
+# 068: udemy
+udemy:
+  Weight: 68
+  Prefix: https://www.udemy.com/user/
+  Title: Udemy
+  Icon:
+    Src: svg/icons/udemy.svg
