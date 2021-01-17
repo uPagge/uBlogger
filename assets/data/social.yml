@@ -525,11 +525,3 @@ discord:
   Title: Discord
   Icon:
     Class: fab fa-discord fa-fw
-
-# 067: Spotify
-spotify:
-  Weight: 66
-  Prefix: https://open.spotify.com/show/
-  Title: Spotify
-  Icon:
-    Class: fab fa-spotify fa-fw
