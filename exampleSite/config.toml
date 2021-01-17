@@ -218,6 +218,7 @@ enableEmoji = true
         XMPP = ""
         Matrix = ""
         Bilibili = ""
+        DockerHub = ""
         Email = "xxxx@xxxx.com"
         RSS = true
         [languages.en.params.social.Mastodon]
