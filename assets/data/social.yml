@@ -510,10 +510,18 @@ rss:
   Icon:
     Class: fas fa-rss fa-fw
  
- # 065: DockerHub
+# 065: DockerHub
 dockerhub:
   Weight: 65
   Prefix: https://hub.docker.com/u/
   Title: DockerHub
   Icon:
     Class: fab fa-docker fa-fw
+ 
+# 066: Discord
+discord:
+  Weight: 66
+  Prefix: https://discord.gg/
+  Title: Discord
+  Icon:
+    Class: fab fa-discord fa-fw
