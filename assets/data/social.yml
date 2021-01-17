@@ -509,3 +509,11 @@ rss:
   Newtab: true
   Icon:
     Class: fas fa-rss fa-fw
+ 
+ # 065: DockerHub
+dockerhub:
+  Weight: 65
+  Prefix: https://hub.docker.com/u/
+  Title: DockerHub
+  Icon:
+    Class: fab fa-docker fa-fw
