@@ -493,51 +493,51 @@ bilibili:
   Icon:
     Src: svg/icons/bilibili.svg
 
-# 063: Email
-email:
-  Weight: 63
-  Template: mailto:%v
-  Title: Email
-  Icon:
-    Class: far fa-envelope fa-fw
-
-# 064: RSS
-rss:
-  Weight: 64
-  Url: /index.xml
-  Title: RSS
-  Newtab: true
-  Icon:
-    Class: fas fa-rss fa-fw
-
-# 065: DockerHub
+# 063: DockerHub
 dockerhub:
-  Weight: 65
+  Weight: 63
   Prefix: https://hub.docker.com/u/
   Title: DockerHub
   Icon:
     Class: fab fa-docker fa-fw
 
-# 066: Discord
+# 064: Discord
 discord:
-  Weight: 66
+  Weight: 64
   Prefix: https://discord.gg/
   Title: Discord
   Icon:
     Class: fab fa-discord fa-fw
 
-# 067: Leanpub
+# 065: Leanpub
 leanpub:
-  Weight: 67
+  Weight: 65
   Prefix: https://leanpub.com/u/
   Title: Leanpub
   Icon:
     Class: fab fa-leanpub fa-fw
 
-# 068: udemy
+# 066: udemy
 udemy:
-  Weight: 68
+  Weight: 66
   Prefix: https://www.udemy.com/user/
   Title: Udemy
   Icon:
     Src: svg/icons/udemy.svg
+
+# 067: Email
+email:
+  Weight: 67
+  Template: mailto:%v
+  Title: Email
+  Icon:
+    Class: far fa-envelope fa-fw
+
+# 068: RSS
+rss:
+  Weight: 68
+  Url: /index.xml
+  Title: RSS
+  Newtab: true
+  Icon:
+    Class: fas fa-rss fa-fw
