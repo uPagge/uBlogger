@@ -525,3 +525,11 @@ discord:
   Title: Discord
   Icon:
     Class: fab fa-discord fa-fw
+
+# 066: Leanpub
+leanpub:
+  Weight: 67
+  Prefix: https://leanpub.com/u/
+    Title: Leanpub
+  Icon:
+    Class: fab fa-discord fa-fw
