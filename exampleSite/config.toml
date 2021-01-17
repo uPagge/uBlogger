@@ -219,6 +219,9 @@ enableEmoji = true
         Matrix = ""
         Bilibili = ""
         Email = "xxxx@xxxx.com"
+        DockerHub = ""
+        Discord = "xxxxxxxxx"
+        Leanpub = ""
         RSS = true
         [languages.en.params.social.Mastodon]
           id = "@xxxx"
