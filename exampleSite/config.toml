@@ -220,6 +220,7 @@ enableEmoji = true
         Bilibili = ""
         DockerHub = ""
         Discord = ""
+        Spotify = ""
         Email = "xxxx@xxxx.com"
         RSS = true
         [languages.en.params.social.Mastodon]
