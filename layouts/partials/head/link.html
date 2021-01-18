@@ -31,7 +31,7 @@
 
 {{- /* Advertising */ -}}
 {{- if .Site.Params.Advertising.Enable -}}
-{{- with .Site.Params.Advertising.Google -}}
+{{- with .Site.Params.Advertising.Google.Client -}}
 <script data-ad-client="{{ . }}" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 {{- end -}}
 {{- end -}}
