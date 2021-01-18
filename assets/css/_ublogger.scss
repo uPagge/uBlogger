@@ -619,6 +619,11 @@ footer {
     box-shadow: 0 1.2rem 1.2rem 0 rgba(0,0,0,0.1);
     border-radius: 0 0 $article-summary-border-radius $article-summary-border-radius;
   }
+
+  .header-post{
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .theme-mega-full {
@@ -638,7 +643,7 @@ footer {
   }
 }
 
-.theme-classic, .theme-wide {
+.theme-classic, .theme-wide, .theme-full {
   .header-post {
     margin-top: 6rem;
     margin-right: auto;
