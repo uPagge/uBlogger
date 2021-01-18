@@ -10,7 +10,7 @@
     }
   }
 
-  .theme-mega-full {
+  .theme-mega-full, .theme-hero {
     .content-block-first {
       margin: 2rem auto;
     }
@@ -80,7 +80,7 @@
     width: 100%;
   }
 
-  .theme-mega-full.page-toc {
+  .theme-mega-full.page-toc, .theme-hero.page-toc {
     .content-block-position {
       margin: 2rem auto;
     }
@@ -215,7 +215,7 @@
     }
   }
 
-  .theme-classic, .theme-wide, .theme-full, .theme-mega-full {
+  .theme-classic, .theme-wide, .theme-full, .theme-mega-full, .theme-hero {
     article {
       margin-top: 0;
     }
