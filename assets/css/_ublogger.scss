@@ -1113,8 +1113,11 @@ figure {
 .cat-cit{
   margin-top: 4rem;
   margin-bottom: 4rem;
-  border: 2px dashed $global-color-accent;
+  border: 2.5px dashed $global-color-accent;
   padding: 10px;
+  [theme=dark] & {
+    background: #dddddd;
+  }
 }
 
 
