@@ -1,5 +1,5 @@
 {{ with cond $.IsNamedParams ($.Get "slot") "" | default $.Site.Params.Advertising.Google.Slot }}
-<div class="cat-cit">
+<div class="{{ if $.Get `circuit` | ne false }}cat-cit{{ end }}">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <ins class="adsbygoogle"
          style="display:block; text-align:center;"
