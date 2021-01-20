@@ -1113,25 +1113,9 @@ figure {
 .cat-cit{
   margin-top: 4rem;
   margin-bottom: 4rem;
+  border: 2px dashed $global-color-accent;
 }
 
-.cat-cit:after {
-  content: "";
-  display: block;
-  margin: 0 auto;
-  width: 40%;
-  padding-top: 30px;
-  border-bottom: 1px solid black;
-}
-
-.cat-cit:before {
-  content: "";
-  display: block;
-  margin: 0 auto;
-  width: 40%;
-  padding-bottom: 30px;
-  border-top: 1px solid black;
-}
 
 @import "_partial/share-icon";
 @import "ublogger_media";
