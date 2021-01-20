@@ -1113,8 +1113,6 @@ figure {
 .cat-cit{
   margin-top: 4rem;
   margin-bottom: 4rem;
-  padding-top: 30px;
-  padding-bottom: 30px;
 }
 
 .cat-cit:after, .cat-cit:before {
@@ -1122,6 +1120,7 @@ figure {
   display: block;
   margin: 0 auto;
   width: 30%;
+  padding-top: 20px;
   border-bottom: 1px solid black;
 }
 
