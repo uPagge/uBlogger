@@ -1115,13 +1115,22 @@ figure {
   margin-bottom: 4rem;
 }
 
-.cat-cit:after, .cat-cit:before {
+.cat-cit:after {
   content: "";
   display: block;
   margin: 0 auto;
   width: 30%;
   padding-top: 20px;
   border-bottom: 1px solid black;
+}
+
+.cat-cit:before {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  width: 30%;
+  padding-bottom: 20px;
+  border-top: 1px solid black;
 }
 
 @import "_partial/share-icon";
