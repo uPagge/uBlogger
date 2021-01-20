@@ -957,13 +957,6 @@ figure {
   }
 }
 
-
-@media screen and (min-width: 900px) {
-  .post-hero {
-    display: block;
-  }
-}
-
 .post-hero.mobile {
   display: block;
   padding-bottom: 32px;
@@ -971,12 +964,6 @@ figure {
 
 .post-hero.mobile .post-hero-grid {
   flex-direction: column;
-}
-
-@media screen and (min-width: 900px) {
-  .post-hero.mobile {
-    display: none;
-  }
 }
 
 .post-hero-grid {
@@ -1002,32 +989,6 @@ figure {
   justify-content: center;
 }
 
-@media screen and (min-width: 900px) {
-  .post-hero-grid {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 4rem 16px 0;
-  }
-
-  .hero-text-container {
-    padding: 0;
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .hero-text-container{
-    padding-top: 6rem;
-  }
-
-  .post-hero-grid .post-hero-logo {
-    display: none;
-  }
-
-  .post-hero-grid .post-hero-info {
-    margin-right: 0;
-  }
-}
-
 .hero-text-container .hero-text-description {
   margin-top: 24px;
   margin-bottom: 32px;
@@ -1042,39 +1003,11 @@ figure {
   margin-bottom: 0;
 }
 
-@media screen and (min-width: 900px) {
-  .hero-text-container span {
-    font-size: 13px;
-    letter-spacing: 1.35px;
-    line-height: 24px;
-  }
-}
-
 .hero-text-container h1 {
   font-weight: 400;
   color: #000000;
   letter-spacing: 0.2px;
   line-height: 32px;
-}
-
-@media screen and (min-width: 900px) {
-  .hero-text-container h1 {
-    opacity: 0.9;
-    font-weight: 500;
-    font-size: 40px;
-    letter-spacing: 0px;
-    line-height: 48px;
-    margin-bottom: 24px;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .hero-text-container h1 {
-    font-weight: 600;
-    font-size: 60px;
-    line-height: 72px;
-    letter-spacing: -1.35px;
-  }
 }
 
 .hero-text-container p {
@@ -1084,22 +1017,6 @@ figure {
   letter-spacing: 0.1px;
   text-align: left;
   line-height: 24px;
-}
-
-@media screen and (min-width: 900px) {
-  .hero-text-container p {
-    font-size: 24px;
-    color: #606060;
-    letter-spacing: 0.2px;
-    line-height: 32px;
-    margin-bottom: 16px;
-  }
-}
-
-@media screen and (min-width: 900px) {
-  .hero-author {
-    padding: 0;
-  }
 }
 
 .hero-author .hero-author-profile {
@@ -1151,15 +1068,6 @@ figure {
   margin: 0;
 }
 
-@media screen and (min-width: 900px) {
-  .hero-author h4 {
-    font-size: 16px;
-    color: #242424;
-    letter-spacing: -0.2px;
-    line-height: 24px;
-  }
-}
-
 .hero-author p {
   opacity: 0.7;
   font-weight: 400;
@@ -1169,15 +1077,6 @@ figure {
   text-align: left;
   line-height: 24px;
   margin: 0;
-}
-
-@media screen and (min-width: 900px) {
-  .hero-author p {
-    font-weight: 300;
-    font-size: 16px;
-    color: #606060;
-    letter-spacing: 0.1px;
-  }
 }
 
 .rendered {
@@ -1192,15 +1091,6 @@ figure {
   line-height: 24px;
 }
 
-@media screen and (min-width: 900px) {
-  .rendered {
-    font-weight: 300;
-    font-size: 16px;
-    color: #606060;
-    letter-spacing: 0.1px;
-  }
-}
-
 .hero-img {
   margin: 0;
   display: flex;
@@ -1209,27 +1099,6 @@ figure {
 
 .hero-img img {
   align-self: center;
-}
-
-@media screen and (min-width: 900px) {
-  .hero-img {
-    height: 528px;
-    width: 528px;
-  }
-}
-
-@media screen and (min-width: 400px) {
-  .hero-img {
-    height: 450px;
-    width: 450px;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .hero-img {
-    width: 588px;
-    height: 528px;
-  }
 }
 
 .hero-tags {
