@@ -198,6 +198,10 @@
 
 {{- partial "plugin/timeago.html" . -}}
 
+{{- /* Cat-cit script */ -}}
+{{- dict "Source" "js/cat-cit.min.js" "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
+{{- $_ := (resources.Get "js/cat-cit.min.js.map").RelPermalink -}}
+
 {{- with (.Scratch.Get "this").scriptArr -}}
     {{- delimit . "\n" | dict "Content" | dict "Scratch" $.Scratch "Data" | partial "scratch/script.html" -}}
 {{- end -}}
