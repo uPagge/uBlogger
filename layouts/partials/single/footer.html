@@ -6,7 +6,7 @@
     </span>
 </div>
 
-{{- $authorName := $params.author.name | default .Site.Author.name | default " " -}}
+{{- $authorName := $params.author | default .Site.Author.name | default " " -}}
 {{- if not (eq $authorName " ") -}}
 {{ $author := index .Site.Data.authors $authorName }}
 <div class="footer-post-author" {{- if not $author.ps -}} style="border-radius: 10px;border-bottom: solid 2px #ececec" {{- end -}}>

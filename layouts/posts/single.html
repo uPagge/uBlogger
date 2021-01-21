@@ -31,7 +31,7 @@
     {{- $image = .RelPermalink -}}
     {{- end -}}
 
-    {{- $authorName := $params.author.name | default .Site.Author.name | default " " -}}
+    {{- $authorName := $params.author | default .Site.Author.name | default " " -}}
     {{ $author := index .Site.Data.authors $authorName }}
 
     <div class="header-post">
@@ -51,7 +51,7 @@
                         <img class="hero-author-avatar" src="{{ with $author.avatar }} {{- . | safeHTML -}}{{ end }}" alt="Bruno Krebs">
                         <div class="profile-text-wrapper">
                             <h4 class="hero-author-profile-name">{{ $author.full_name }}</h4>
-                            <h4 class="hero-author-profile-title">{{ $params.author.short_about | default $author.short_about }}</h4>
+                            <h4 class="hero-author-profile-title">{{ $params.customAuthor.short_about | default $author.short_about }}</h4>
                         </div>
                     </a>
 
