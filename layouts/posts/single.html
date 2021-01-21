@@ -28,7 +28,7 @@
     {{- $image := $params.featuredimage -}}
     {{- $pageImageHidden := $params.hiddenFeaturedImage -}}
     {{- with .Resources.GetMatch "featured-image" -}}
-    {{- $image = .RelPermalink -}}
+    {{- $image = .Permalink -}}
     {{- end -}}
 
     {{- $authorName := $params.author | default .Site.Author.name | default " " -}}
@@ -41,8 +41,8 @@
             <div class="post-hero-info">
                 <div class="hero-text-container">
 
-                    <h1 itemprop="headline">{{ $.Title }}</h1>
-                    <p class="hero-text-description" itemprop="description">{{ $.Description }}</p>
+                    <h1>{{ $.Title }}</h1>
+                    <p class="hero-text-description">{{ $.Description }}</p>
                 </div>
 
                 <div class="hero-author">
@@ -61,11 +61,8 @@
 
             <div class="post-hero-logo">
 
-                <figure class="hero-img" itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject">
+                <figure class="hero-img">
                     <img src="{{ $image }}" alt="page.title">
-                    <meta itemprop="url" content="{{ $image }}">
-                    <meta itemprop="width" content="300">
-                    <meta itemprop="height" content="300">
                 </figure>
 
             </div>
