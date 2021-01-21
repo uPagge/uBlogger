@@ -288,7 +288,26 @@
   }
 
   .cat-cit {
-    padding: 0px;
+    padding: 0;
+    border: 0;
+  }
+
+  .cat-cit:after {
+    content: "";
+    width: 100%;
+    border: 2.5px dashed $global-color-accent;
+    padding-top: 10px;
+  }
+
+  .cat-cit:before {
+    content: "";
+    width: 100%;
+    border: 2.5px dashed $global-color-accent;
+    padding-bottom: 10px;
+  }
+
+  .cat-cit:before {
+    content: "";
   }
 
 }
