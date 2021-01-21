@@ -293,17 +293,17 @@
   }
 
   .cat-cit:after {
-    content: "";
     width: 100%;
-    border-top: 2.5px dashed $global-color-accent;
-    padding-top: 10px;
+    border-top: 3px dashed #2c678d;
+    margin-top: 20px;
+    display: block;
   }
 
   .cat-cit:before {
-    content: "";
     width: 100%;
-    border-bottom: 2.5px dashed $global-color-accent;
-    padding-bottom: 10px;
+    border-bottom: 3px dashed #2c678d;
+    margin-bottom: 20px;
+    display: block;
   }
 
   .cat-cit:before {
