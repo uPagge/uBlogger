@@ -295,14 +295,14 @@
   .cat-cit:after {
     content: "";
     width: 100%;
-    border: 2.5px dashed $global-color-accent;
+    border-top: 2.5px dashed $global-color-accent;
     padding-top: 10px;
   }
 
   .cat-cit:before {
     content: "";
     width: 100%;
-    border: 2.5px dashed $global-color-accent;
+    border-bottom: 2.5px dashed $global-color-accent;
     padding-bottom: 10px;
   }
 
