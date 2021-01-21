@@ -37,7 +37,7 @@
         {{- if not $params.summaryStyle.hiddenMeta -}}
         {{- /* Meta */ -}}
         <div class="post-meta summary-post-meta">
-            {{- $authorName := $params.author | default .Site.Author.name | default " " -}}
+            {{- $authorName := $params.name | default .Site.Author.name | default " " -}}
             {{- if not (eq $authorName " ") -}}
             {{ $author := index .Site.Data.authors $authorName }}
             {{- $authorLink := $author.link | default .Site.Home.RelPermalink -}}
