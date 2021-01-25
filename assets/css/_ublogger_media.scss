@@ -290,6 +290,9 @@
   .cat-cit {
     padding: 0;
     border: 0;
+    [theme=dark] & {
+      background: initial;
+    }
   }
 
   .cat-cit:before {

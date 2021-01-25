@@ -464,7 +464,7 @@ a.post-tag-summary {
   border-radius: 20px 20px 0 0;
 
   [theme=dark] & {
-    background: #1B1B1C;
+    background: $global-background-secondary-color-dark;
   }
 
   .single-title {
@@ -644,16 +644,7 @@ footer {
   }
 }
 
-.theme-hero {
-  .header-post {
-    max-width: none;
-    margin: 0 !important;
-    background: #FFFFFF;
-    display: block;
-    padding-bottom: 80px;
-    box-sizing: border-box;
-  }
-}
+
 
 .theme-classic, .theme-wide, .theme-full {
   .header-post {
@@ -950,10 +941,18 @@ figure {
 
 .theme-hero {
   .header-post {
+    max-width: none;
+    margin: 0 !important;
     border-bottom: 1px solid #CDD2D4;
     padding-bottom: 80px;
     background-color: #fff;
     position: relative;
+    display: block;
+    box-sizing: border-box;
+
+    [theme=dark] & {
+      background-color: $global-background-secondary-color-dark;
+    }
   }
 }
 
@@ -1008,6 +1007,10 @@ figure {
   color: #000000;
   letter-spacing: 0.2px;
   line-height: 32px;
+
+  [theme=dark] & {
+    color: $global-font-color-dark;
+  }
 }
 
 .hero-text-container p {
@@ -1032,6 +1035,10 @@ figure {
   letter-spacing: -0.2px;
   text-align: left;
   line-height: 24px;
+
+  [theme=dark] & {
+    color: $global-font-color-dark;
+  }
 }
 
 .hero-author .hero-author-profile .hero-author-profile-title {
@@ -1115,6 +1122,7 @@ figure {
   margin-bottom: 4rem;
   border: 2.5px dashed $global-color-accent;
   padding: 10px;
+
   [theme=dark] & {
     background: #dddddd;
   }
