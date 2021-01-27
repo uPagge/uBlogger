@@ -13,10 +13,11 @@ body {
 
 .summary-content {
   color: #a9a9b3;
-  display: inline;
+  display: block;
+  margin-top: 1rem;
 
   p {
-    margin: 1rem 0;
+    margin: 0;
   }
 }
 
