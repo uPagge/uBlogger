@@ -1,18 +1,17 @@
 {{- $params := .Scratch.Get "params" -}}
+{{- $pageTheme := $params.Theme | default .Site.Params.Page.theme | default "classic" -}}
 
 <div class="post-info-share">
-    <span>
-        {{- partial "plugin/share.html" . -}}
-    </span>
+    {{- partial "plugin/share.html" . -}}
 </div>
 
 {{- $authorName := $params.author | default .Site.Author.name | default " " -}}
-{{- if not (eq $authorName " ") -}}
+{{- if and (not (eq $authorName " ")) (not (eq $pageTheme "hero")) -}}
 {{ $author := index .Site.Data.authors $authorName }}
 <div class="footer-post-author" {{- if not $author.ps -}} style="border-radius: 10px;border-bottom: solid 2px #ececec" {{- end -}}>
     <div class="author-avatar"><a href="{{ with $author.link }} {{- . | safeHTML -}}{{ end }}" target="_blank"><img alt="" src="{{ with $author.avatar }} {{- . | safeHTML -}}{{ end }}" border="0"></a></div>
     <div class="author-info">
-        <div class="name"><a href="{{ with $author.link }} {{- . | safeHTML -}}{{ end }}" target="_blank">{{ $author.name }}</a></div>
+        <div class="name"><a href="{{ with $author.link }} {{- . | safeHTML -}}{{ end }}" target="_blank">{{ $author.full_name }}</a></div>
         <div class="number-posts">{{ $author.about }}</span></div>
     </div>
 </div>
@@ -24,7 +23,7 @@
 {{- end -}}
 
 <div class="post-footer" id="post-footer">
-    {{- if or .PrevInSection .NextInSection -}}
+    {{- if and (or .PrevInSection .NextInSection) $params.showPostNav -}}
     <div class="post-navigation">
         {{- if .PrevInSection -}}
         <div class="post-nav-box nav-box-prev">

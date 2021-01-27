@@ -1,7 +1,7 @@
 .admonition {
   border-radius: 6px;
   position: relative;
-  margin: 1rem 0;
+  margin: $margin-article;
   padding: 0 .75rem;
   background-color: map-get($admonition-background-color-map, 'note');
   border-left: .25rem solid map-get($admonition-color-map, 'note');

@@ -57,7 +57,7 @@ code, pre, .highlight table, .highlight tr, .highlight td {
 
 .highlight {
   line-height: 1.4em;
-  margin: .5rem 0;
+  margin: $margin-article;
 
   > .chroma {
     position: relative;

@@ -7,33 +7,6 @@ body {
   line-height: 1.9rem;
 }
 
-.single {
-
-  p {
-    margin: 1.2rem 0;
-  }
-
-  blockquote {
-    blockquote {
-      padding: 0;
-      width: 100%;
-      line-height: 3.5rem;
-
-      blockquote {
-        width: 100%;
-        padding: 0;
-        line-height: 6rem;
-
-        blockquote {
-          width: 100%;
-          padding: 0;
-          line-height: 8rem;
-        }
-      }
-    }
-  }
-}
-
 .summary-title {
   margin: 0;
 }
@@ -341,7 +314,7 @@ a.post-tag-summary {
 
   h2 {
     font-size: 2rem;
-    margin-top: 5rem;
+    margin-top: 7rem;
 
     code {
       font-size: 90%;

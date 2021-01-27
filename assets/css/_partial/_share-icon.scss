@@ -8,20 +8,33 @@
   }
 
   a.share-icon:hover {
-    padding: 3px 8px;;
     background: white;
     color: #2c678d;
     border: solid 2px #2c678d;
-    @include transition(all 0.4s ease);
+    @include transition(background 0.2s ease);
   }
+}
+
+.share-link {
+  margin-top: 15px;
+  margin-right: 8px;
+  font-size: 20px;
+  display: inline-block;
+}
+
+.share-text {
+  font-size: 30px;
+  margin-bottom: 10px;
 }
 
 .share-icon {
   color: white;
-  padding: 3px 8px;
-  margin-right: 3px;
-  border-radius: 5px;
-  font-size: 16px;
+  border-radius: 6px;
+  padding: 6px 6px 8px;
+
+  .fa-fw {
+    width: 2.25em;
+  }
 }
 
 .share-telegram {

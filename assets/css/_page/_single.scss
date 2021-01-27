@@ -96,7 +96,7 @@
   }
 
   p {
-    margin: .5rem 0;
+    margin: $margin-article;
   }
 
   b, strong {
@@ -275,6 +275,26 @@
   .version {
     height: 1.25em;
     vertical-align: text-bottom;
+  }
+
+  blockquote {
+    blockquote {
+      padding: 0;
+      width: 100%;
+      line-height: 3.5rem;
+
+      blockquote {
+        width: 100%;
+        padding: 0;
+        line-height: 6rem;
+
+        blockquote {
+          width: 100%;
+          padding: 0;
+          line-height: 8rem;
+        }
+      }
+    }
   }
 }
 
