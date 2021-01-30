@@ -254,4 +254,11 @@
         </a>
                                                         </div>
     {{- end -}}
+
+    {{- /* 029: Hacker News */ -}}
+    {{- if $share.Hackernews -}}
+    <a class="share-icon share-hackernews" href="javascript:void(0);" title="{{ T `shareOn` }} Hacker News" data-sharer="hackernews" data-url="{{ .Permalink }}" data-title="{{ .Title }}">
+        {{- dict "Class" "fab fa-hacker-news fa-fw" | partial "plugin/icon.html" -}}
+    </a>
+    {{- end -}}
 {{- end -}}
