@@ -13,8 +13,8 @@ page:
 upd: ""
 authorComment: ""
 
-tags: [""]
-categories: [""]
+tags: []
+categories: []
 
 hiddenFromHomePage: false
 hiddenFromSearch: false
