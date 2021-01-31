@@ -2,7 +2,7 @@
 {{- $tagsStyle := $params.summaryStyle.tags -}}
 {{- $tagsTheme := $params.summaryStyle.tags.theme | default "image" -}}
 
-<article onclick="location.href='{{ $.RelPermalink }}'" class="summary summary-animation" itemscope itemtype="http://schema.org/Article" style="margin-bottom:0">
+<article onclick="window.open('{{ $.RelPermalink }}')" class="summary summary-animation" itemscope itemtype="http://schema.org/Article" style="margin-bottom:0">
     {{- /* Featured image */ -}}
     {{- if not $params.summaryStyle.hiddenImage -}}
     {{- $image := $params.featuredimagepreview | default $params.featuredimage -}}

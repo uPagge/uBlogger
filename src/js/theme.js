@@ -57,7 +57,9 @@ class Theme {
                     if ($titleElements.length) $svg.removeChild($titleElements[0]);
                     $icon.parentElement.replaceChild($svg, $icon);
                 })
-                .catch(err => { console.error(err); });
+                .catch(err => {
+                    console.error(err);
+                });
         });
     }
 
@@ -167,7 +169,7 @@ class Theme {
                 autoselect: true,
                 dropdownMenuContainer: `#search-dropdown-${suffix}`,
                 clearOnSelected: true,
-                cssClasses: { noPrefix: true },
+                cssClasses: {noPrefix: true},
                 debug: true,
             }, {
                 name: 'search',
@@ -183,12 +185,12 @@ class Theme {
                         const search = () => {
                             if (lunr.queryHandler) query = lunr.queryHandler(query);
                             const results = {};
-                            this._index.search(query).forEach(({ ref, matchData: { metadata } }) => {
+                            this._index.search(query).forEach(({ref, matchData: {metadata}}) => {
                                 const matchData = this._indexData[ref];
-                                let { uri, title, content: context } = matchData;
+                                let {uri, title, content: context} = matchData;
                                 if (results[uri]) return;
                                 let position = 0;
-                                Object.values(metadata).forEach(({ content }) => {
+                                Object.values(metadata).forEach(({content}) => {
                                     if (content) {
                                         const matchPosition = content.position[0][0];
                                         if (matchPosition < position || position === 0) position = matchPosition;
@@ -207,9 +209,9 @@ class Theme {
                                 });
                                 results[uri] = {
                                     'uri': uri,
-                                    'title' : title,
-                                    'date' : matchData.date,
-                                    'context' : context,
+                                    'title': title,
+                                    'date': matchData.date,
+                                    'context': context,
                                 };
                             });
                             return Object.values(results).slice(0, maxResultLength);
@@ -222,10 +224,10 @@ class Theme {
                                     this._index = lunr(function () {
                                         if (searchConfig.lunrLanguageCode) this.use(lunr[searchConfig.lunrLanguageCode]);
                                         this.ref('objectID');
-                                        this.field('title', { boost: 50 });
-                                        this.field('tags', { boost: 20 });
-                                        this.field('categories', { boost: 20 });
-                                        this.field('content', { boost: 10 });
+                                        this.field('title', {boost: 50});
+                                        this.field('tags', {boost: 20});
+                                        this.field('categories', {boost: 20});
+                                        this.field('content', {boost: 10});
                                         this.metadataWhitelist = ['position'];
                                         data.forEach((record) => {
                                             indexData[record.objectID] = record;
@@ -235,9 +237,9 @@ class Theme {
                                     this._indexData = indexData;
                                     finish(search());
                                 }).catch(err => {
-                                    console.error(err);
-                                    finish([]);
-                                });
+                                console.error(err);
+                                finish([]);
+                            });
                         } else finish(search());
                     } else if (searchConfig.type === 'algolia') {
                         this._algoliaIndex = this._algoliaIndex || algoliasearch(searchConfig.algoliaAppID, searchConfig.algoliaSearchKey).initIndex(searchConfig.algoliaIndex);
@@ -250,9 +252,9 @@ class Theme {
                                 highlightPreTag: `<${highlightTag}>`,
                                 highlightPostTag: `</${highlightTag}>`,
                             })
-                            .then(({ hits }) => {
+                            .then(({hits}) => {
                                 const results = {};
-                                hits.forEach(({ uri, date, _highlightResult: { title }, _snippetResult: { content } }) => {
+                                hits.forEach(({uri, date, _highlightResult: {title}, _snippetResult: {content}}) => {
                                     if (results[uri] && results[uri].context.length > content.value) return;
                                     results[uri] = {
                                         uri: uri,
@@ -270,10 +272,10 @@ class Theme {
                     }
                 },
                 templates: {
-                    suggestion: ({ title, date, context }) => `<div><span class="suggestion-title">${title}</span><span class="suggestion-date">${date}</span></div><div class="suggestion-context">${context}</div>`,
-                    empty: ({ query }) => `<div class="search-empty">${searchConfig.noResultsFound}: <span class="search-query">"${query}"</span></div>`,
+                    suggestion: ({title, date, context}) => `<div><span class="suggestion-title">${title}</span><span class="suggestion-date">${date}</span></div><div class="suggestion-context">${context}</div>`,
+                    empty: ({query}) => `<div class="search-empty">${searchConfig.noResultsFound}: <span class="search-query">"${query}"</span></div>`,
                     footer: ({}) => {
-                        const { searchType, icon, href } = searchConfig.type === 'algolia' ? {
+                        const {searchType, icon, href} = searchConfig.type === 'algolia' ? {
                             searchType: 'algolia',
                             icon: '<i class="fab fa-algolia fa-fw"></i>',
                             href: 'https://www.algolia.com/',
@@ -282,7 +284,8 @@ class Theme {
                             icon: '',
                             href: 'https://lunrjs.com/',
                         };
-                        return `<div class="search-footer">Search by <a href="${href}" rel="noopener noreffer" target="_blank">${icon} ${searchType}</a></div>`;},
+                        return `<div class="search-footer">Search by <a href="${href}" rel="noopener noreffer" target="_blank">${icon} ${searchType}</a></div>`;
+                    },
                 },
             });
             autosearch.on('autocomplete:selected', (_event, suggestion, _dataset, _context) => {
@@ -299,7 +302,7 @@ class Theme {
             script.async = true;
             if (script.readyState) {
                 script.onreadystatechange = () => {
-                    if (script.readyState == 'loaded' || script.readyState == 'complete'){
+                    if (script.readyState == 'loaded' || script.readyState == 'complete') {
                         script.onreadystatechange = null;
                         initAutosearch();
                     }
@@ -398,6 +401,19 @@ class Theme {
         }
     }
 
+    initShareHeader() {
+        this.util.forEach(document.querySelectorAll('.content-break h2'), $header => {
+            $header.insertAdjacentHTML('afterend', `
+<div class="header-title-share">
+<a href="${document.URL}#${$header.id}" target="_blank">ссылка</a>
+<a href="https://t.me/share/url?url=${document.URL}#${$header.id}" target="_blank">telegram</a>
+<a href="https://vk.com/share.php?url=${document.URL}#${$header.id}" target="_blank">vk</a>
+<a href="https://twitter.com/intent/tweet?text=${document.URL}#${$header.id}" target="_blank">twitter</a>
+<a href="https://www.facebook.com/sharer/sharer.php?u=${document.URL}#${$header.id}">fb</a>
+</div>`);
+        });
+    }
+
     initToc() {
         const $tocCore = document.getElementById('TableOfContents');
         if ($tocCore === null) return;
@@ -443,8 +459,12 @@ class Theme {
                     $toc.style.top = `${TOP_SPACING}px`;
                 }
 
-                this.util.forEach($tocLinkElements, $tocLink => { $tocLink.classList.remove('active'); });
-                this.util.forEach($tocLiElements, $tocLi => { $tocLi.classList.remove('has-active'); });
+                this.util.forEach($tocLinkElements, $tocLink => {
+                    $tocLink.classList.remove('active');
+                });
+                this.util.forEach($tocLiElements, $tocLi => {
+                    $tocLi.classList.remove('has-active');
+                });
                 const INDEX_SPACING = 20 + (headerIsFixed ? headerHeight : 0);
                 let activeTocIndex = $headerLinkElements.length - 1;
                 for (let i = 0; i < $headerLinkElements.length - 1; i++) {
@@ -514,7 +534,7 @@ class Theme {
             mapboxgl.setRTLTextPlugin(this.config.mapbox.RTLTextPlugin);
             this._mapboxArr = this._mapboxArr || [];
             this.util.forEach(document.getElementsByClassName('mapbox'), $mapbox => {
-                const { lng, lat, zoom, lightStyle, darkStyle, marked, navigation, geolocate, scale, fullscreen } = this.data[$mapbox.id];
+                const {lng, lat, zoom, lightStyle, darkStyle, marked, navigation, geolocate, scale, fullscreen} = this.data[$mapbox.id];
                 const mapbox = new mapboxgl.Map({
                     container: $mapbox,
                     center: [lng, lat],
@@ -550,7 +570,7 @@ class Theme {
             this._mapboxOnSwitchTheme = this._mapboxOnSwitchTheme || (() => {
                 this.util.forEach(this._mapboxArr, mapbox => {
                     const $mapbox = mapbox.getContainer();
-                    const { lightStyle, darkStyle } = this.data[$mapbox.id];
+                    const {lightStyle, darkStyle} = this.data[$mapbox.id];
                     mapbox.setStyle(this.isDark ? darkStyle : lightStyle);
                     mapbox.addControl(new MapboxLanguage());
                 });
@@ -626,7 +646,11 @@ class Theme {
     }
 
     initSmoothScroll() {
-        if (SmoothScroll) new SmoothScroll('[href^="#"]', { speed: 300, speedAsDuration: true, header: '#header-desktop' });
+        if (SmoothScroll) new SmoothScroll('[href^="#"]', {
+            speed: 300,
+            speedAsDuration: true,
+            header: '#header-desktop'
+        });
     }
 
     initCookieconsent() {
@@ -652,7 +676,7 @@ class Theme {
                 if (scroll > ACCURACY) {
                     $header.classList.remove('fadeInDown');
                     this.util.animateCSS($header, ['fadeOutUp', 'faster'], true);
-                } else if (scroll < - ACCURACY) {
+                } else if (scroll < -ACCURACY) {
                     $header.classList.remove('fadeOutUp');
                     this.util.animateCSS($header, ['fadeInDown', 'faster'], true);
                 }
@@ -661,7 +685,7 @@ class Theme {
                 if (isMobile && scroll > ACCURACY) {
                     $fixedButtons.classList.remove('fadeIn');
                     this.util.animateCSS($fixedButtons, ['fadeOut', 'faster'], true);
-                } else if (!isMobile || scroll < - ACCURACY) {
+                } else if (!isMobile || scroll < -ACCURACY) {
                     $fixedButtons.style.display = 'block';
                     $fixedButtons.classList.remove('fadeOut');
                     this.util.animateCSS($fixedButtons, ['fadeIn', 'faster'], true);
@@ -711,6 +735,7 @@ class Theme {
             this.initHighlight();
             this.initTable();
             this.initHeaderLink();
+            this.initShareHeader();
             this.initSmoothScroll();
             this.initMath();
             this.initMermaid();

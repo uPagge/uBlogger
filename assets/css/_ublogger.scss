@@ -74,6 +74,7 @@ article {
       padding-top: 90px;
       text-align: center;
       line-height: 3rem;
+      margin-bottom: 0.5rem;
 
       a.header-mark:before {
         content: none;
@@ -1103,6 +1104,26 @@ figure {
 
   .no-adb {
     color: black;
+  }
+}
+
+.header-title-share{
+
+  text-align: center;
+
+  a {
+    font-size: 12px;
+    display: inline-block;
+    padding: 2px 7px;
+    border: solid 2px #555555;
+    border-radius: 15px;
+    color: #555555;
+    text-decoration: none;
+    margin-right: 4px;
+    line-height: 16px;
+    [theme=dark] & {
+      color: $global-font-color-dark;
+    }
   }
 }
 
