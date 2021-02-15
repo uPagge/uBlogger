@@ -10,7 +10,7 @@
     <div class="page archive">
         {{- /* Title */ -}}
         <h2 class="single-title animated pulse faster">
-            {{- .Params.Title | default (T $taxonomies) | default $taxonomies | dict "Some" | T "allSome" -}}
+            {{- .Params.Title | default (T $taxonomies) | dict "Some" | T $taxonomies -}}
         </h2>
 
         {{- /* Categories Page */ -}}
