@@ -27,6 +27,25 @@
             {{- else -}}
                 {{- $pages = where $pages "Params.hiddenfromhomepage" "!=" true -}}
             {{- end -}}
+
+            {{ $pinnedPostRelPermalinks := split .Site.Params.pinnedPost "," }}
+            {{ $pinnedPosts := where $pages "RelPermalink" "in" $pinnedPostRelPermalinks }}
+            {{ $pages := where $pages "RelPermalink" "not in" $pinnedPostRelPermalinks }}
+
+            {{ if .Site.Params.pinnedPost }}
+            {{ if (and .Site.Params.pinOnlyToFirstPage (ne $posts.paginate.PageNumber 1)) }}
+            {{/* Do nothing if the pinOnlyToFirstPage flag is set and we're not on page 1. */}}
+            {{else}}
+
+            {{ range $pinnedPosts }}
+            <div class="post-pinned">
+            {{- .Render "summary" -}}
+            </div>
+
+            {{end}}
+            {{end}}
+            {{end}}
+
             {{- with $posts.paginate | default .Site.Params.paginate -}}
                 {{- $pages = $.Paginate $pages . -}}
             {{- else -}}

@@ -596,7 +596,7 @@ footer {
     border-radius: 0 0 $article-summary-border-radius $article-summary-border-radius;
   }
 
-  .header-post{
+  .header-post {
     margin-left: auto;
     margin-right: auto;
   }
@@ -618,7 +618,6 @@ footer {
     }
   }
 }
-
 
 
 .theme-classic, .theme-wide, .theme-full {
@@ -1092,7 +1091,7 @@ figure {
   }
 }
 
-.cat-cit{
+.cat-cit {
   margin-top: 4rem;
   margin-bottom: 4rem;
   border: 2.5px dashed $global-color-accent;
@@ -1107,7 +1106,7 @@ figure {
   }
 }
 
-.header-title-share{
+.header-title-share {
 
   text-align: center;
 
@@ -1121,8 +1120,17 @@ figure {
     text-decoration: none;
     margin-right: 4px;
     line-height: 16px;
+
     [theme=dark] & {
       color: $global-font-color-dark;
+    }
+  }
+}
+
+.home[data-home=posts] {
+  .post-pinned {
+    .summary {
+      border: 3px solid $global-color-accent;
     }
   }
 }
