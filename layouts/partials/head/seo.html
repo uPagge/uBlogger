@@ -35,18 +35,20 @@
         {{- with .Site.Params.description -}}
             "description": {{ . | safeHTML }},
         {{- end -}}
-        {{- $image := .Site.Params.seo.image -}}
-        {{- with dict "Path" $image "Resources" .Resources | partial "function/resource.html" -}}
+        {{- $image := $params.featuredimagepreview | default $params.featuredimage -}}
+        {{- with .Resources.GetMatch "featured-image" -}}
+        {{- $image = .RelPermalink -}}
+        {{- end -}}
+        {{- with .Resources.GetMatch "featured-image-preview" -}}
+        {{- $image = .RelPermalink -}}
+        {{- end -}}
+        {{- with $image -}}
             "image": {
                 "@type": "ImageObject",
                 "url": "{{ .Permalink }}",
                 "width": {{ .Width }},
                 "height": {{ .Height }}
             },
-        {{- else -}}
-            {{- with $image -}}
-                "image": "{{ . | absURL }}",
-            {{- end -}}
         {{- end -}}
         {{- with .Site.Params.seo.thumbnailUrl -}}
             {{- with dict "Path" . "Resources" $.Resources | partial "function/resource.html" -}}
@@ -122,29 +124,26 @@
         {{- with .Site.Copyright -}}
             "license": {{ . | safeHTML }},
         {{- end -}}
-        {{- $publisher := .Params.author | default .Site.Author.name | default (T "author") | dict "name" -}}
-        {{- $publisher = $params.seo.publisher | default dict | merge $publisher -}}
+        {{- $publisherName := default .Site.Author.name | default " " -}}
+        {{ $publisher := index .Site.Data.authors $publisherName }}
         "publisher": {
-            "@type": "Organization",
-            "name": {{ $publisher.name | safeHTML }}
-            {{- $logo := $publisher.logoUrl -}}
-            {{- with dict "Path" $logo "Resources" .Resources | partial "function/resource.html" -}}
-                ,"logo": {
-                    "@type": "ImageObject",
-                    "url": "{{ .Permalink }}",
-                    "width": {{ .Width }},
-                    "height": {{ .Height }}
-                }
-            {{- else -}}
-                {{- with $logo -}}
-                    ,"logo": "{{ . | absURL }}"
-                {{- end -}}
+            "@type": "Person",
+            "name": {{ $publisher.full_name | safeHTML }}
+            {{- with $publisher.avatar -}}
+            , "image": [
+            {
+            "@type": "ImageObject",
+            "url": "{{ . }}"
+            }
+            ]
             {{- end -}}
         },
-        {{- with .Params.author | default .Site.Author.name | default (T "author") -}}
+        {{- $authorName := $params.author | default .Site.Author.name | default " " -}}
+        {{ $author := index .Site.Data.authors $authorName }}
+        {{- with $author -}}
             "author": {
                 "@type": "Person",
-                "name": {{ . | safeHTML }}
+                "name": {{ .full_name | safeHTML }}
             },
         {{- end -}}
         "description": {{ .Description | safeHTML }}
