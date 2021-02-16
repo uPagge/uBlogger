@@ -13,7 +13,13 @@
         {{- partial "head/meta.html" . -}}
         {{- partial "head/link.html" . -}}
         {{- partial "head/seo.html" . -}}
-        {{- block "dnsPrefetch" . }}{{ end -}}
+        {{- block "dnsPrefetch" . }}
+        {{- with $.Site.Params.Seo.dnsPrefetch -}}
+        {{- range $index, $value := . -}}
+        <link rel="dns-prefetch" href="{{ $value }}">
+        {{- end -}}
+        {{- end -}}
+        {{ end -}}
     </head>
     <body data-header-desktop="{{ .Site.Params.header.desktopMode }}" data-header-mobile="{{ .Site.Params.header.mobileMode }}">
         {{- /* Check theme isDark before body rendering */ -}}
