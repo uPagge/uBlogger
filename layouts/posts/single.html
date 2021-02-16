@@ -1,5 +1,19 @@
 {{- define "title" }}{{ .Title }} | {{ .Site.Params.Title }}{{ end -}}
 
+{{- define "dnsPrefetch" -}}
+{{- $params := .Scratch.Get "params" -}}
+{{- with $params.Seo.dnsPrefetch -}}
+{{- range $index, $value := . -}}
+<link rel="dns-prefetch" href="{{ $value }}">
+{{- end -}}
+{{- end -}}
+{{- with $.Site.Params.Seo.dnsPrefetch -}}
+{{- range $index, $value := . -}}
+<link rel="dns-prefetch" href="{{ $value }}">
+{{- end -}}
+{{- end -}}
+{{- end -}}
+
 {{- define "no-content" -}}
 
 {{- $params := .Scratch.Get "params" -}}
