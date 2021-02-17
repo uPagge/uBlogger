@@ -1134,6 +1134,19 @@ figure {
   }
 }
 
+.lazyload {
+  opacity: 0;
+}
+
+.lazyloading {
+  opacity: 1;
+  transition: opacity 300ms;
+  background: #f7f7f7 url("/loading.svg") no-repeat center;
+}
+
+img.lazyload:not([src]) {
+  visibility: hidden;
+}
 
 @import "_partial/share-icon";
 @import "ublogger_media";
