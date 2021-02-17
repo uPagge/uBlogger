@@ -7,10 +7,10 @@
     {{- if not $params.summaryStyle.hiddenImage -}}
     {{- $image := $params.featuredimagepreview | default $params.featuredimage -}}
     {{- with .Resources.GetMatch "featured-image" -}}
-        {{- $image = .RelPermalink -}}
+        {{- $image = (.Fill "796x238 Center q90").RelPermalink -}}
     {{- end -}}
     {{- with .Resources.GetMatch "featured-image-preview" -}}
-        {{- $image = .RelPermalink -}}
+        {{- $image = (.Fill "796x238 Center q90").RelPermalink -}}
     {{- end -}}
     {{- with $image -}}
         <div class="featured-image-preview">
