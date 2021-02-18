@@ -271,7 +271,7 @@
                 const response = JSON.parse(this.response);
                 const views = response.value;
                 if (views >= 1 && document.querySelector("#views_value") != null) {
-                    document.querySelector("#views_value").textContent = response.views.toLocaleString(undefined, {minimumFractionDigits: 0});
+                    document.querySelector("#views_value").textContent = response.value.toLocaleString(undefined, {minimumFractionDigits: 0});
                     document.querySelector("#views_container").style.display = '';
                 }
             } else {
