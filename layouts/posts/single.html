@@ -132,7 +132,7 @@
                             </span>
                             {{- end -}}
 
-                            <span id="views_container"><i class="fas fa-eye fa-fw"></i>&nbsp;<span id="views_value" style="margin-right: 0">Нет</span> просмотров</span>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span id="views_container"><i class="fas fa-eye fa-fw"></i>&nbsp;<span id="views_value" style="margin-right: 0">Нет</span> просмотров</span>
 
                             {{- with $.Site.Params.dateformat | default "2006-01-02" | $.PublishDate.Format -}}
                             {{- $timeAgoDate:= $.Site.Params.TimeAgo.DateFormat | default "2006-01-02" | $.PublishDate.Format -}}
