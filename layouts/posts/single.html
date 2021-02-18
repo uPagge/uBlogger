@@ -85,7 +85,7 @@
         </div>
 
         <div class="hero-tags">
-            <span class="rendered" id="views_container"><i class="fas fa-pencil-alt fa-fw"></i>&nbsp; <span id="views_value"></span></span>
+            <span class="rendered" id="views_container"><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;<span id="views_value">Нет просмотров</span></span>
 
             {{- with $.Site.Params.dateformat | default "2006-01-02" | $.PublishDate.Format -}}
             {{- $timeAgoDate:= $.Site.Params.TimeAgo.DateFormat | default "2006-01-02" | $.PublishDate.Format -}}
@@ -270,7 +270,7 @@
             if (this.status >= 200 && this.status < 400) {
                 const response = JSON.parse(this.response);
                 const views = response.views;
-                if (views >= 25 && document.querySelector("#views_value") != null) {
+                if (views >= 1 && document.querySelector("#views_value") != null) {
                     document.querySelector("#views_value").textContent = response.views.toLocaleString(undefined, {minimumFractionDigits: 0});
                     document.querySelector("#views_container").style.display = '';
                 }
