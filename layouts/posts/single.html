@@ -269,7 +269,7 @@
         request.onload = function () {
             if (this.status >= 200 && this.status < 400) {
                 const response = JSON.parse(this.response);
-                const views = response.views;
+                const views = response.value;
                 if (views >= 1 && document.querySelector("#views_value") != null) {
                     document.querySelector("#views_value").textContent = response.views.toLocaleString(undefined, {minimumFractionDigits: 0});
                     document.querySelector("#views_container").style.display = '';
