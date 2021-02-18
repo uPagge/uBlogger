@@ -260,7 +260,7 @@
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const host = '{{ $viewCounter.url }}';
-        const url = host + '/hits/{{ $viewCounter.key }}' + window.location.pathname;
+        const url = host + '/hit/{{ $viewCounter.key }}' + window.location.pathname;
         const request = new XMLHttpRequest();
         request.open('GET', url, true);
         request.onload = function () {
