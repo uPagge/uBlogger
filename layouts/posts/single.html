@@ -85,7 +85,7 @@
         </div>
 
         <div class="hero-tags">
-            <span class="rendered" id="views_container"><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;<span id="views_value">Нет просмотров</span></span>
+            <span class="rendered" id="views_container"><i class="fas fa-eye fa-fw"></i>&nbsp;<span id="views_value" style="margin-right: 0">Нет</span> просмотров</span>
 
             {{- with $.Site.Params.dateformat | default "2006-01-02" | $.PublishDate.Format -}}
             {{- $timeAgoDate:= $.Site.Params.TimeAgo.DateFormat | default "2006-01-02" | $.PublishDate.Format -}}
