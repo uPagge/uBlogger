@@ -26,7 +26,7 @@
 {{- end -}}
 
 {{- $pageTheme := $params.Theme | default .Site.Params.Page.theme | default "classic" -}}
-
+{{ $params.UniqueId }}
 <div class="container content-article {{ if eq $toc.keepStatic false }}page-toc{{ end }} theme-{{ $pageTheme }}">
 
     {{- /* Auto TOC */ -}}
@@ -260,12 +260,13 @@
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const host = '{{ $viewCounter.url }}';
-        const url = host + '/hit/{{ $viewCounter.key }}' + window.location.pathname;
+        const pathName = window.location.pathname.replaceAll('/', '_')
+        const url = host + '/hit/{{ $viewCounter.key }}/' + pathName.substring(1).slice(0, -1);
         const request = new XMLHttpRequest();
         request.open('GET', url, true);
         request.onload = function () {
             if (this.status >= 200 && this.status < 400) {
-                var response = JSON.parse(this.response);
+                const response = JSON.parse(this.response);
                 const views = response.views;
                 if (views >= 25 && document.querySelector("#views_value") != null) {
                     document.querySelector("#views_value").textContent = response.views.toLocaleString(undefined, {minimumFractionDigits: 0});
