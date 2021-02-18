@@ -254,4 +254,33 @@
     </div>
     {{- end -}}
 </div>
+
+{{ $viewCounter := .Site.Params.ViewCounter }}
+{{ if ne $viewCounter nil}}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const host = "{{ .Site.Params.ViewCounter.url }} ";
+        const url = host + "/hits/{{ .Site.Params.ViewCounter.url }}" + window.location.pathname;
+        const request = new XMLHttpRequest();
+        request.open('GET', url, true);
+        request.onload = function () {
+            if (this.status >= 200 && this.status < 400) {
+                var response = JSON.parse(this.response);
+                const views = response.views;
+                if (views >= 25 && document.querySelector("#views_value") != null) {
+                    document.querySelector("#views_value").textContent = response.views.toLocaleString(undefined, {minimumFractionDigits: 0});
+                    document.querySelector("#views_row").style.display = '';
+                }
+            } else {
+                console.log("Call to " + url + " failed with status code " + this.status + ".");
+            }
+        };
+        request.onerror = function () {
+            console.log("Call to " + url + " failed with a connection error of some sort.");
+        };
+        request.send();
+    });
+</script>
+{{- end -}}
+
 {{- end -}}

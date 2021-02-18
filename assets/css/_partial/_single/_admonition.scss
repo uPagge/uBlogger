@@ -23,6 +23,10 @@
     background-color: opacify(map-get($admonition-background-color-map, 'note'), 0.15);
   }
 
+  .admonition-title-none {
+    display: none;
+  }
+
   &.open .admonition-title {
     background-color: map-get($admonition-background-color-map, 'note');
   }

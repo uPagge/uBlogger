@@ -18,7 +18,7 @@
     {{- $type := .Get "type" | default "note" -}}
     <div class="details admonition {{ $type }}{{ if .Get `open` | ne false }} open{{ end }}">
 
-        <div class="details-summary admonition-title" {{- if not (.Get "title") -}}style="display:none"{{- end -}}>
+        <div class="details-summary admonition-title {{ if not (.Get `title`) }}admonition-title-none{{ end }}">
             {{- with (.Get "title") -}}
             <i class="icon {{ index $iconMap $type | default (index $iconMap "note") }}"></i>{{ . | default (T $type) }}<i class="details-icon  {{ $iconDetails }}"></i>
             {{- end -}}
