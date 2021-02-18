@@ -290,6 +290,7 @@
   .cat-cit {
     padding: 0;
     border: 0;
+
     [theme=dark] & {
       background: initial;
     }
@@ -404,6 +405,11 @@
     }
   }
 
+  .theme-full, .theme-classic, .theme-wide {
+    .content-block-first {
+      box-shadow: none;
+    }
+  }
 }
 
 @media screen and (min-width: 900px) {
@@ -480,7 +486,7 @@
 }
 
 @media screen and (max-width: 900px) {
-  .hero-text-container{
+  .hero-text-container {
     padding-top: 6rem;
   }
 
