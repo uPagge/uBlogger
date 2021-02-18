@@ -259,8 +259,8 @@
 {{ if ne $viewCounter nil}}
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        const host = "{{ .Site.Params.ViewCounter.url }} ";
-        const url = host + "/hits/{{ .Site.Params.ViewCounter.url }}" + window.location.pathname;
+        const host = '{{ $viewCounter.url }}';
+        const url = host + '/hits/{{ $viewCounter.key }}' + window.location.pathname;
         const request = new XMLHttpRequest();
         request.open('GET', url, true);
         request.onload = function () {
