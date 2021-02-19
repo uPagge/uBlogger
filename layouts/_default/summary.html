@@ -65,6 +65,10 @@
             </span>
             {{- end -}}
 
+            {{- with .Params.Views -}}
+            &nbsp;&nbsp;&nbsp;<i class="far fa-eye fa-fw"></i><span>{{ . }}</span>
+            {{- end -}}
+
             {{- $comment := .Site.Params.Comment -}}
             {{- $remark42 := $comment.remark42 | default dict -}}
             {{- if $remark42.enable -}}
