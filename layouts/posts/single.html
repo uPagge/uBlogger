@@ -83,12 +83,11 @@
 
             </div>
 
-
         </div>
 
         <div class="hero-tags">
             {{ if ne $viewCounter nil}}
-            <span class="rendered" id="views_container"><i class="fas fa-eye fa-fw"></i>&nbsp;<span id="views_value" style="margin-right: 0">Нет</span> просмотров</span>
+            <span class="rendered" id="views_container"><i class="fas fa-eye fa-fw"></i>&nbsp;<span id="views_value" style="margin-right: 0">{{ if ne $params.Views nil}} {{ $params.Views }} {{ else }} Нет просмотров {{ end }}</span></span>
             {{- end -}}
 
             {{- with $.Site.Params.dateformat | default "2006-01-02" | $.PublishDate.Format -}}
