@@ -32,8 +32,14 @@
             {{ $pinnedPosts := where $pages "RelPermalink" "in" $pinnedPostRelPermalinks }}
             {{ $pages := where $pages "RelPermalink" "not in" $pinnedPostRelPermalinks }}
 
+            {{- with $posts.paginate | default .Site.Params.paginate -}}
+                {{- $pages = $.Paginate $pages . -}}
+            {{- else -}}
+                {{- $pages = .Paginate $pages -}}
+            {{- end -}}
+
             {{ if .Site.Params.pinnedPost }}
-            {{ if (and .Site.Params.pinOnlyToFirstPage (ne $posts.paginate.PageNumber 1)) }}
+            {{ if (and .Site.Params.pinOnlyToFirstPage (ne $pages.PageNumber 1)) }}
             {{/* Do nothing if the pinOnlyToFirstPage flag is set and we're not on page 1. */}}
             {{else}}
 
@@ -46,11 +52,6 @@
             {{end}}
             {{end}}
 
-            {{- with $posts.paginate | default .Site.Params.paginate -}}
-                {{- $pages = $.Paginate $pages . -}}
-            {{- else -}}
-                {{- $pages = .Paginate $pages -}}
-            {{- end -}}
             {{- range $pages.Pages -}}
                 {{- .Render "summary" -}}
             {{- end -}}
