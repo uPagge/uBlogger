@@ -24,7 +24,7 @@
             </div>
             {{- end -}}
             {{- end -}}
-            {{- dict "Src" . "Title" $.Description "Resources" $.Resources | partial "plugin/image.html" -}}
+            {{- dict "Src" . "Title" $.Description "Resources" $.Resources "Height" 798 "Width" 238 | partial "plugin/image.html" -}}
         </div>
     {{- end -}}
     {{- end -}}
@@ -66,16 +66,14 @@
             {{- end -}}
 
             {{- with .Params.Views -}}
-            &nbsp;&nbsp;&nbsp;<i class="far fa-eye fa-fw"></i><span>{{ . }}</span>
+            &nbsp;&nbsp;&nbsp;<i class="far fa-eye fa-fw"></i><span>&nbsp;{{ . }}</span>
             {{- end -}}
 
             {{- $comment := .Site.Params.Comment -}}
             {{- $remark42 := $comment.remark42 | default dict -}}
             {{- if $remark42.enable -}}
             &nbsp;&nbsp;&nbsp;<i class="far fa-comment fa-fw"></i>
-            <span class="remark42__counter" data-url="{{ .Permalink }}">
-
-            </span>
+            <span class="remark42__counter" data-url="{{ .Permalink }}"></span>
             {{- end -}}
         </div>
         {{- end -}}

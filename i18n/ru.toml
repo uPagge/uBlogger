@@ -121,6 +121,7 @@ many = "{{ .Count }} слов"
 one = "Одна минута"
 other = "{{ .Count }} минут"
 many = "{{ .Count }} минут"
+few = "{{ .Count }} минут"
 
 [views]
 other = "просмотров"
