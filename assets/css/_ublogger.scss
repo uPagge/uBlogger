@@ -966,6 +966,10 @@ figure {
 .hero-text-container .hero-text-description {
   margin-top: 24px;
   margin-bottom: 32px;
+
+  [theme=dark] & {
+    color: $global-font-secondary-color-dark;
+  }
 }
 
 .hero-text-container span {
@@ -1023,6 +1027,10 @@ figure {
   letter-spacing: 0.1px;
   text-align: left;
   line-height: 24px;
+
+  [theme=dark] & {
+    color: $global-font-color-dark;
+  }
 }
 
 .hero-author .hero-author-profile:last-of-type {
@@ -1071,6 +1079,10 @@ figure {
   letter-spacing: 0.08px;
   text-align: left;
   line-height: 24px;
+
+  [theme=dark] & {
+    color: $global-font-color-dark;
+  }
 }
 
 .hero-img {
@@ -1089,6 +1101,10 @@ figure {
 
   span {
     margin-right: 3rem;
+  }
+
+  [theme=dark] & {
+    color: $global-font-color-dark;
   }
 }
 
