@@ -20,20 +20,16 @@
 <picture>
 {{- if .Linked -}}
     <a target="_blank" class="lightgallery" href="{{ $large | safeURL }}" title="{{ .Title | default $alt }}" data-thumbnail="{{ $small | safeURL }}"{{ with .Caption }} data-sub-html="<h2>{{ . }}</h2>{{ with $.Title }}<p>{{ . }}</p>{{ end }}"{{ end }}{{ with .Rel }} rel="{{ . }}"{{ end }}>
-        <img decoding="async"
+        <img
              class="lozad"
-             srcset="{{ .ImagePlug | safeURL }}"
-             src="{{ .Src | safeURL }}"
-             data-srcset="{{ .Src | safeURL }}"
+             data-src="{{ .Src | safeURL }}"
             alt="{{ $alt }}"{{ with .Height }} height="{{ . }}"{{ end }}{{ with .Width }} width="{{ . }}"{{ end }}
         />
     </a>
 {{- else -}}
-    <img decoding="async"
-         src="{{ .Src | safeURL }}"
+    <img
          class="lozad"
-         srcset="{{ .ImagePlug | safeURL }}"
-         data-srcset="{{ .Src | safeURL }}"
+         data-src="{{ .Src | safeURL }}"
          alt="{{ $alt }}"
          title="{{ .Title | default $alt }}"{{ with .Height }} height="{{ . }}"{{ end }}{{ with .Width }} width="{{ . }}"{{ end }}
     />

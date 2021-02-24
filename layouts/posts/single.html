@@ -294,7 +294,16 @@
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
 <script>
-    const observer = lozad();
+    var observer = lozad('.lozad', {
+        threshold: 0.1,
+        enableAutoReload: true,
+        load: function(el) {
+            el.src = el.getAttribute("data-src");
+            el.onload = function() {
+                toastr["success"](el.localName.toUpperCase() + " " + el.getAttribute("data-index") + " lazy loaded.")
+            }
+        }
+    })
     observer.observe();
 </script>
 {{- end -}}
