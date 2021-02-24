@@ -5,13 +5,27 @@
 {{ $caption = " " }}
 {{- end -}}
 
+{{ $imageOriginal := .Page.Resources.GetMatch (printf "%s" (.Destination | safeURL)) }}
+{{ $imagePlug := "" }}
+{{ with $imageOriginal }}
+{{ $imagePlug = .Resize "400x jpg q10" }}
+{{ end }}
+
 {{- if $figcap -}}
 <figure>
+    {{ if ne  $imageOriginal nil }}
+    {{- dict "Src" .Destination "Title" $figcap "Alt" $alt "Caption" $caption "Linked" true "Resources" .Page.Resources "ImagePlug" $imagePlug.RelPermalink | partial "plugin/image.html" -}}
+    {{ else }}
     {{- dict "Src" .Destination "Title" $figcap "Alt" $alt "Caption" $caption "Linked" true "Resources" .Page.Resources | partial "plugin/image.html" -}}
+    {{ end }}
     <figcaption class="image-caption">
         {{- $figcap | safeHTML -}}
     </figcaption>
 </figure>
 {{- else -}}
+{{ if ne $imageOriginal nil }}
+{{- dict "Src" .Destination "Title" (path.Base .Destination) "Alt" $alt "Resources" .Page.Resources "ImagePlug" $imagePlug.RelPermalink | partial "plugin/image.html" -}}
+{{ else }}
 {{- dict "Src" .Destination "Title" (path.Base .Destination) "Alt" $alt "Resources" .Page.Resources | partial "plugin/image.html" -}}
+{{ end }}
 {{- end -}}
