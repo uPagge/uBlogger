@@ -43,7 +43,9 @@
     {{- /* Featured image */ -}}
     {{- $image := $params.featuredimage -}}
     {{- $pageImageHidden := $params.hiddenFeaturedImage -}}
+    {{- $heroImage := "" -}}
     {{- with .Resources.GetMatch "featured-image" -}}
+    {{- $heroImage = (.Resize "1000x").Permalink -}}
     {{- $image = .Permalink -}}
     {{- end -}}
 
@@ -78,7 +80,7 @@
             <div class="post-hero-logo">
 
                 <figure class="hero-img">
-                    <img src="{{ $image }}" alt="page.title">
+                    {{- dict "Src" $heroImage "Title" .Title "Resources" .Resources | partial "plugin/image.html" -}}
                 </figure>
 
             </div>

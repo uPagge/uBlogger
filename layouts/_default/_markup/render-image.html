@@ -10,7 +10,7 @@
 {{ with $imageOriginal }}
 {{ $imagePlug = .Resize "900x jpg q5" }}
 {{ end }}
-
+<div style="text-align: center">
 {{- if $figcap -}}
 <figure>
     {{ if ne  $imageOriginal nil }}
@@ -29,3 +29,4 @@
 {{- dict "Src" .Destination "Title" (path.Base .Destination) "Alt" $alt "Resources" .Page.Resources | partial "plugin/image.html" -}}
 {{ end }}
 {{- end -}}
+</div>

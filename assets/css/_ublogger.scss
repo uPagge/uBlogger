@@ -1089,10 +1089,10 @@ figure {
   margin: 0;
   display: flex;
   justify-content: center;
-}
 
-.hero-img img {
-  align-self: center;
+  img {
+    align-self: center;
+  }
 }
 
 .hero-tags {
