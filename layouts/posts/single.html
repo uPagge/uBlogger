@@ -292,12 +292,9 @@
 </script>
 {{- end -}}
 
-<script type="text/javascript" src="https://murych.com/stuff/lazyload/lozad.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
 <script>
-    setTimeout(function() {
-        lozad('.demilazyload').observe();
-    });
+    const observer = lozad();
+    observer.observe();
 </script>
-
-
 {{- end -}}

@@ -21,7 +21,7 @@
 {{- if .Linked -}}
     <a target="_blank" class="lightgallery" href="{{ $large | safeURL }}" title="{{ .Title | default $alt }}" data-thumbnail="{{ $small | safeURL }}"{{ with .Caption }} data-sub-html="<h2>{{ . }}</h2>{{ with $.Title }}<p>{{ . }}</p>{{ end }}"{{ end }}{{ with .Rel }} rel="{{ . }}"{{ end }}>
         <img decoding="async"
-             class="demilazyload"
+             class="lozad"
              srcset="{{ .ImagePlug | safeURL }}"
              src="{{ .Src | safeURL }}"
              data-srcset="{{ .Src | safeURL }}"
@@ -31,7 +31,7 @@
 {{- else -}}
     <img decoding="async"
          src="{{ .Src | safeURL }}"
-         class="demilazyload"
+         class="lozad"
          srcset="{{ .ImagePlug | safeURL }}"
          data-srcset="{{ .Src | safeURL }}"
          alt="{{ $alt }}"

@@ -8,7 +8,7 @@
 {{ $imageOriginal := .Page.Resources.GetMatch (printf "%s" (.Destination | safeURL)) }}
 {{ $imagePlug := "" }}
 {{ with $imageOriginal }}
-{{ $imagePlug = .Resize "400x jpg q10" }}
+{{ $imagePlug = .Resize "900x jpg q5" }}
 {{ end }}
 
 {{- if $figcap -}}
