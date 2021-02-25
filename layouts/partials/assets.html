@@ -41,19 +41,6 @@
     {{- $config = dict "twemoji" true | merge $config -}}
 {{- end -}}
 
-{{- /* lightgallery.js */ -}}
-{{- if $params.lightgallery -}}
-    {{- $source := $cdn.lightgalleryCSS | default "lib/lightgallery/lightgallery.min.css" -}}
-    {{- dict "Source" $source "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/style.html" -}}
-    {{- $source := $cdn.lightgalleryJS | default "lib/lightgallery/lightgallery.min.js" -}}
-    {{- dict "Source" $source "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
-    {{- $source := $cdn.lightgalleryThumbnailJS | default "lib/lightgallery/lg-thumbnail.min.js" -}}
-    {{- dict "Source" $source "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
-    {{- $source := $cdn.lightgalleryZoomJS | default "lib/lightgallery/lg-zoom.min.js" -}}
-    {{- dict "Source" $source "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
-    {{- $config = dict "selector" ".lightgallery" "speed" 400 "hideBarsDelay" 2000 "thumbnail" true "exThumbImage" "data-thumbnail" "thumbWidth" 80 "thumbContHeight" 80 "actualSize" false | dict "lightGallery" | merge $config -}}
-{{- end -}}
-
 {{- $code := $params.code | default dict -}}
 {{- $config = cond (ne $code.maxShownLines nil) $code.maxShownLines 10 | dict "maxShownLines" | dict "code" | merge $config -}}
 
