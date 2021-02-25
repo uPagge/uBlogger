@@ -7,7 +7,7 @@
     {{- if $share.Telegram -}}
     <div class="share-link">
         <a class="share-icon share-telegram" href="javascript:void(0);" title="{{ T `shareOn` }} Telegram" data-sharer="telegram" data-url="{{ .Permalink }}" data-title="{{ .Title }}"{{ with .Site.Params.Social.Telegram }} data-via="{{ . }}"{{ end }}{{ with .Params.tags }} data-hashtags="{{ delimit . `,` }}"{{ end }}>
-            {{- dict "Class" "fab fa-telegram fa-fw" | partial "plugin/icon.html" -}}
+            {{- dict "Class" "svg-social-icon icon-telegram" | partial "plugin/icon.html" -}}
         </a>
     </div>
     {{- end -}}
@@ -16,7 +16,7 @@
     {{- if $share.Twitter -}}
 <div class="share-link">
         <a class="share-icon share-twitter" href="javascript:void(0);" title="{{ T `shareOn` }} Twitter" data-sharer="twitter" data-url="{{ .Permalink }}" data-title="{{ .Title }}"{{ with .Site.Params.Social.Twitter }} data-via="{{ . }}"{{ end }}{{ with .Params.tags }} data-hashtags="{{ delimit . `,` }}"{{ end }}>
-            {{- dict "Class" "fab fa-twitter fa-fw" | partial "plugin/icon.html" -}}
+            {{- dict "Class" "svg-social-icon icon-twitter" | partial "plugin/icon.html" -}}
         </a>
 </div>
     {{- end -}}
@@ -25,7 +25,7 @@
     {{- if $share.Facebook -}}
     <div class="share-link">
         <a class="share-icon share-facebook" href="javascript:void(0);" title="{{ T `shareOn` }} Facebook" data-sharer="facebook" data-url="{{ .Permalink }}"{{ with .Params.tags }} data-hashtag="{{ index . 0 }}"{{ end }}>
-            {{- dict "Class" "fab fa-facebook-square fa-fw" | partial "plugin/icon.html" -}}
+            {{- dict "Class" "svg-social-icon icon-facebook" | partial "plugin/icon.html" -}}
         </a>
     </div>
     {{- end -}}
@@ -34,7 +34,7 @@
     {{- if $share.Linkedin -}}
         <div class="share-link">
         <a class="share-icon share-linkedin" href="javascript:void(0);" title="{{ T `shareOn` }} Linkedin" data-sharer="linkedin" data-url="{{ .Permalink }}">
-            {{- dict "Class" "fab fa-linkedin fa-fw" | partial "plugin/icon.html" -}}
+            {{- dict "Class" "svg-social-icon icon-linkedin" | partial "plugin/icon.html" -}}
         </a>
         </div>
     {{- end -}}
@@ -43,7 +43,7 @@
     {{- if $share.Whatsapp -}}
             <div class="share-link">
         <a class="share-icon share-whatsapp" href="javascript:void(0);" title="{{ T `shareOn` }} WhatsApp" data-sharer="whatsapp" data-url="{{ .Permalink }}" data-title="{{ .Title }}" data-web>
-            {{- dict "Class" "fab fa-whatsapp fa-fw" | partial "plugin/icon.html" -}}
+            {{- dict "Class" "svg-social-icon icon-whatsapp" | partial "plugin/icon.html" -}}
         </a>
             </div>
     {{- end -}}
@@ -52,7 +52,7 @@
     {{- if $share.Viber -}}
                 <div class="share-link">
         <a class="share-icon share-viber" href="javascript:void(0);" title="{{ T `shareOn` }} Viber" data-sharer="viber" data-url="{{ .Permalink }}" data-title="{{ .Title }}">
-            {{- dict "Class" "fab fa-viber fa-fw" | partial "plugin/icon.html" -}}
+            {{- dict "Class" "svg-social-icon icon-viber" | partial "plugin/icon.html" -}}
         </a>
                 </div>
     {{- end -}}
@@ -61,7 +61,7 @@
     {{- if $share.Pinterest -}}
                     <div class="share-link">
         <a class="share-icon share-pinterest" href="javascript:void(0);" title="{{ T `shareOn` }} Pinterest" data-sharer="pinterest" data-url="{{ .Permalink }}"{{ with .Description }} data-description="{{ . }}"{{ end }}{{ with .Params.featuredImage }} data-image="{{ . }}"{{ end }}>
-            {{- dict "Class" "fab fa-pinterest fa-fw" | partial "plugin/icon.html" -}}
+            {{- dict "Class" "svg-social-icon icon-pinterest" | partial "plugin/icon.html" -}}
         </a>
                     </div>
     {{- end -}}
@@ -70,7 +70,7 @@
     {{- if $share.Tumblr -}}
                         <div class="share-link">
         <a class="share-icon share-tumblr" href="javascript:void(0);" title="{{ T `shareOn` }} Tumblr" data-sharer="tumblr" data-url="{{ .Permalink }}" data-title="{{ .Title }}"{{ with .Description }} data-caption="{{ . }}"{{ end }}{{ with .Params.tags }} data-tags="{{ delimit . `,` }}"{{ end }}>
-            {{- dict "Class" "fab fa-tumblr fa-fw" | partial "plugin/icon.html" -}}
+            {{- dict "Class" "svg-social-icon icon-tumblr" | partial "plugin/icon.html" -}}
         </a>
                         </div>
     {{- end -}}
@@ -79,7 +79,7 @@
     {{- if $share.Reddit -}}
                             <div class="share-link">
         <a class="share-icon share-reddit" href="javascript:void(0);" title="{{ T `shareOn` }} Reddit" data-sharer="reddit" data-url="{{ .Permalink }}">
-            {{- dict "Class" "fab fa-reddit fa-fw" | partial "plugin/icon.html" -}}
+            {{- dict "Class" "svg-social-icon icon-reddit" | partial "plugin/icon.html" -}}
         </a>
                             </div>
     {{- end -}}
@@ -88,7 +88,7 @@
     {{- if $share.VK -}}
                                 <div class="share-link">
         <a class="share-icon share-vk" href="javascript:void(0);" title="{{ T `shareOn` }} VK" data-sharer="vk" data-url="{{ .Permalink }}" data-title="{{ .Title }}"{{ with .Description }} data-caption="{{ . }}"{{ end }}{{ with .Params.featuredImage }} data-image="{{ . }}"{{ end }}>
-            {{- dict "Class" "fab fa-vk fa-fw" | partial "plugin/icon.html" -}}
+            {{- dict "Class" "svg-social-icon icon-vk" | partial "plugin/icon.html" -}}
         </a>
                                 </div>
     {{- end -}}
@@ -97,7 +97,7 @@
     {{- if $share.Buffer -}}
                                     <div class="share-link">
         <a class="share-icon share-buffer" href="javascript:void(0);" title="{{ T `shareOn` }} Buffer" data-sharer="buffer" data-url="{{ .Permalink }}" data-title="{{ .Title }}"{{ with .Site.Params.Social.Twitter }} data-via="{{ . }}"{{ end }}{{ with .Params.featuredImage }} data-picture="{{ . }}"{{ end }}>
-            {{- dict "Class" "fab fa-buffer fa-fw" | partial "plugin/icon.html" -}}
+            {{- dict "Class" "svg-social-icon icon-buffer" | partial "plugin/icon.html" -}}
         </a>
                                     </div>
     {{- end -}}
@@ -106,7 +106,7 @@
     {{- if $share.Xing -}}
                                         <div class="share-link">
         <a class="share-icon share-xing" href="javascript:void(0);" title="{{ T `shareOn` }} Xing" data-sharer="xing" data-url="{{ .Permalink }}" data-title="{{ .Title }}">
-            {{- dict "Class" "fab fa-xing fa-fw" | partial "plugin/icon.html" -}}
+            {{- dict "Class" "svg-social-icon icon-xing" | partial "plugin/icon.html" -}}
         </a>
                                         </div>
     {{- end -}}
@@ -133,7 +133,7 @@
     {{- if $share.Pocket -}}
     <div class="share-link">
         <a class="share-icon share-pocket" href="javascript:void(0);" title="{{ T `shareOn` }} Pocket" data-sharer="pocket" data-url="{{ .Permalink }}">
-            {{- dict "Class" "fab fa-get-pocket fa-fw" | partial "plugin/icon.html" -}}
+            {{- dict "Class" "svg-social-icon icon-pocket" | partial "plugin/icon.html" -}}
         </a>
     </div>
     {{- end -}}
@@ -142,7 +142,7 @@
     {{- if $share.Digg -}}
         <div class="share-link">
         <a class="share-icon share-digg" href="javascript:void(0);" title="{{ T `shareOn` }} Digg" data-sharer="digg" data-url="{{ .Permalink }}">
-            {{- dict "Class" "fab fa-digg fa-fw" | partial "plugin/icon.html" -}}
+            {{- dict "Class" "svg-social-icon icon-digg" | partial "plugin/icon.html" -}}
         </a>
         </div>
     {{- end -}}
@@ -151,7 +151,7 @@
     {{- if $share.Stumbleupon -}}
             <div class="share-link">
         <a class="share-icon share-stumbleupon" href="javascript:void(0);" title="{{ T `shareOn` }} StumbleUpon" data-sharer="stumbleupon" data-url="{{ .Permalink }}" data-title="{{ .Title }}">
-            {{- dict "Class" "fab fa-stumbleupon fa-fw" | partial "plugin/icon.html" -}}
+            {{- dict "Class" "svg-social-icon icon-stumbleupon" | partial "plugin/icon.html" -}}
         </a>
             </div>
     {{- end -}}
@@ -160,7 +160,7 @@
     {{- if $share.Flipboard -}}
                 <div class="share-link">
         <a class="share-icon share-flipboard" href="javascript:void(0);" title="{{ T `shareOn` }} Flipboard" data-sharer="flipboard" data-url="{{ .Permalink }}" data-title="{{ .Title }}">
-            {{- dict "Class" "fab fa-flipboard fa-fw" | partial "plugin/icon.html" -}}
+            {{- dict "Class" "svg-social-icon icon-flipboard" | partial "plugin/icon.html" -}}
         </a>
                 </div>
     {{- end -}}
@@ -169,7 +169,7 @@
     {{- if $share.Weibo -}}
                     <div class="share-link">
         <a class="share-icon share-weibo" href="javascript:void(0);" title="{{ T `shareOn` }} 微博" data-sharer="weibo" data-url="{{ .Permalink }}" data-title="{{ .Title }}"{{ with .Params.featuredImage }} data-image="{{ . }}"{{ end }}{{ with .Site.Params.Social.Weibo }} data-ralateuid="{{ . }}"{{ end }}>
-            {{- dict "Class" "fab fa-weibo fa-fw" | partial "plugin/icon.html" -}}
+            {{- dict "Class" "svg-social-icon icon-weibo" | partial "plugin/icon.html" -}}
         </a>
                     </div>
     {{- end -}}
@@ -178,7 +178,7 @@
     {{- if $share.Renren -}}
                         <div class="share-link">
         <a class="share-icon share-renren" href="javascript:void(0);" title="{{ T `shareOn` }} 人人" data-sharer="renren" data-url="{{ .Permalink }}">
-            {{- dict "Class" "fab fa-renren fa-fw" | partial "plugin/icon.html" -}}
+            {{- dict "Class" "svg-social-icon icon-renren" | partial "plugin/icon.html" -}}
         </a>
                         </div>
     {{- end -}}
@@ -196,7 +196,7 @@
     {{- if $share.Blogger -}}
                                 <div class="share-link">
         <a class="share-icon share-blogger" href="javascript:void(0);" title="{{ T `shareOn` }} Blogger" data-sharer="blogger" data-url="{{ .Permalink }}" data-title="{{ .Title }}" data-description="{{ .Description }}">
-            {{- dict "Class" "fab fa-blogger fa-fw" | partial "plugin/icon.html" -}}
+            {{- dict "Class" "svg-social-icon icon-blogger" | partial "plugin/icon.html" -}}
         </a>
                                 </div>
     {{- end -}}
@@ -214,7 +214,7 @@
     {{- if $share.Odnoklassniki -}}
                                         <div class="share-link">
         <a class="share-icon share-ok" href="javascript:void(0);" title="{{ T `shareOn` }} OK.RU" data-sharer="okru" data-url="{{ .Permalink }}" data-title="{{ .Title }}">
-            {{- dict "Class" "fab fa-odnoklassniki fa-fw" | partial "plugin/icon.html" -}}
+            {{- dict "Class" "svg-social-icon icon-odnoklassniki" | partial "plugin/icon.html" -}}
         </a>
                                         </div>
     {{- end -}}
@@ -223,7 +223,7 @@
     {{- if $share.Evernote -}}
                                             <div class="share-link">
         <a class="share-icon share-evernote" href="javascript:void(0);" title="{{ T `shareOn` }} Evernote" data-sharer="evernote" data-url="{{ .Permalink }}" data-title="{{ .Title }}">
-            {{- dict "Class" "fab fa-evernote fa-fw" | partial "plugin/icon.html" -}}
+            {{- dict "Class" "svg-social-icon icon-evernote" | partial "plugin/icon.html" -}}
         </a>
                                             </div>
     {{- end -}}
@@ -232,7 +232,7 @@
     {{- if $share.Skype -}}
                                                 <div class="share-link">
         <a class="share-icon share-skype" href="javascript:void(0);" title="{{ T `shareOn` }} Skype" data-sharer="skype" data-url="{{ .Permalink }}" data-title="{{ .Title }}">
-            {{- dict "Class" "fab fa-skype fa-fw" | partial "plugin/icon.html" -}}
+            {{- dict "Class" "svg-social-icon icon-skype" | partial "plugin/icon.html" -}}
         </a>
                                                 </div>
     {{- end -}}
@@ -241,7 +241,7 @@
     {{- if $share.Trello -}}
                                                     <div class="share-link">
         <a class="share-icon share-trello" href="javascript:void(0);" title="{{ T `shareOn` }} Trello" data-sharer="trello" data-url="{{ .Permalink }}" data-title="{{ .Title }}" data-description="{{ .Description }}">
-            {{- dict "Class" "fab fa-trello fa-fw" | partial "plugin/icon.html" -}}
+            {{- dict "Class" "svg-social-icon icon-trello" | partial "plugin/icon.html" -}}
         </a>
                                                     </div>
     {{- end -}}
@@ -250,7 +250,7 @@
     {{- if $share.Mix -}}
                                                         <div class="share-link">
         <a class="share-icon share-mix" href="//mix.com/add?url={{ .Permalink }}&amp;description={{ .Title }}" target="_blank" title="{{ T `shareOn` }} Mix">
-            {{- dict "Class" "fab fa-mix fa-fw" | partial "plugin/icon.html" -}}
+            {{- dict "Class" "svg-social-icon icon-mix" | partial "plugin/icon.html" -}}
         </a>
                                                         </div>
     {{- end -}}
@@ -258,7 +258,7 @@
     {{- /* 029: Hacker News */ -}}
     {{- if $share.Hackernews -}}
     <a class="share-icon share-hackernews" href="javascript:void(0);" title="{{ T `shareOn` }} Hacker News" data-sharer="hackernews" data-url="{{ .Permalink }}" data-title="{{ .Title }}">
-        {{- dict "Class" "fab fa-hacker-news fa-fw" | partial "plugin/icon.html" -}}
+        {{- dict "Class" "svg-social-icon icon-hacker-news" | partial "plugin/icon.html" -}}
     </a>
     {{- end -}}
 {{- end -}}

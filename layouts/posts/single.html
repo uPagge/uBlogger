@@ -89,22 +89,16 @@
 
         <div class="hero-tags">
             {{ if ne $viewCounter nil}}
-            <span class="rendered" id="views_container"><i class="fas fa-eye fa-fw"></i>&nbsp;<span id="views_value" style="margin-right: 0">{{ if ne $params.Views nil}} {{ $params.Views }} {{ else }} Нет просмотров {{ end }}</span></span>
+            <span class="rendered" id="views_container"><i class="svg-icon icon-eye-big"></i>&nbsp;<span id="views_value" style="margin-right: 0">{{ if ne $params.Views nil}} {{ $params.Views }} {{ else }} Нет просмотров {{ end }}</span></span>
             {{- end -}}
 
             {{- with $.Site.Params.dateformat | default "2006-01-02" | $.PublishDate.Format -}}
             {{- $timeAgoDate:= $.Site.Params.TimeAgo.DateFormat | default "2006-01-02" | $.PublishDate.Format -}}
-            <span id="post-date" class="rendered"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time class="timeago" datetime="{{ $timeAgoDate }}">{{ . }}</time></span>
+            <span id="post-date" class="rendered"><i class="svg-icon icon-clock-big"></i>&nbsp;<time class="timeago" datetime="{{ $timeAgoDate }}">{{ . }}</time></span>
             {{- end -}}
 
-            <span class="rendered"><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;{{ T "wordCount" $.WordCount }}</span>
-            <span class="rendered"><i class="far fa-clock fa-fw"></i>&nbsp;{{ T "readingTime" $.ReadingTime }}</span>
-            {{- $comment := $.Scratch.Get "comment" | default dict -}}
-            {{- if $comment.enable | and $comment.valine.enable | and $comment.valine.visitor -}}
-            <span id="{{ .RelPermalink }}" class="leancloud_visitors" data-flag-title="{{ .Title }}">
-                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;{{ T "views" }}
-                    </span>&nbsp;
-            {{- end -}}
+            <span class="rendered"><i class="svg-icon icon-pencil-big"></i>&nbsp;{{ T "wordCount" $.WordCount }}</span>
+            <span class="rendered"><i class="svg-icon icon-stopwatch-big"></i>&nbsp;{{ T "readingTime" $.ReadingTime }}</span>
         </div>
         {{ end }}
 
@@ -129,7 +123,7 @@
                             {{- $categories := slice -}}
                             {{- range $.Params.categories -}}
                             {{- $category := partialCached "function/path.html" . . | printf "/categories/%v" | $.Site.GetPage -}}
-                            {{- $categories = $categories | append (printf `<a href="%v"><i class="far fa-folder fa-fw"></i>&nbsp;%v</a>` $category.RelPermalink $category.Title) -}}
+                            {{- $categories = $categories | append (printf `<a href="%v"><i class="svg-icon icon-folder"></i>&nbsp;%v</a>` $category.RelPermalink $category.Title) -}}
                             {{- end -}}
                             {{- with delimit $categories "&nbsp;" -}}
                             <span class="post-category">
@@ -138,21 +132,15 @@
                             {{- end -}}
 
                             {{ if ne $viewCounter nil}}
-                            &nbsp;&nbsp;&nbsp;&nbsp;<span id="views_container"><i class="fas fa-eye fa-fw"></i>&nbsp;<span id="views_value" style="margin-right: 0">Нет</span> просмотров</span>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span id="views_container"><i class="svg-icon icon-eye"></i>&nbsp;<span id="views_value" style="margin-right: 0">Нет</span> просмотров</span>
                             {{- end -}}
 
                             {{- with $.Site.Params.dateformat | default "2006-01-02" | $.PublishDate.Format -}}
                             {{- $timeAgoDate:= $.Site.Params.TimeAgo.DateFormat | default "2006-01-02" | $.PublishDate.Format -}}
-                            &nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time class="timeago" datetime="{{ $timeAgoDate }}">{{ . }}</time>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<i class="svg-icon icon-clock"></i>&nbsp;<time class="timeago" datetime="{{ $timeAgoDate }}">{{ . }}</time>
                             {{- end -}}
-                            &nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;{{ T "wordCount" $.WordCount }}
-                            &nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-clock fa-fw"></i>&nbsp;{{ T "readingTime" $.ReadingTime }}
-                            {{- $comment := $.Scratch.Get "comment" | default dict -}}
-                            {{- if $comment.enable | and $comment.valine.enable | and $comment.valine.visitor -}}
-                            <span id="{{ .RelPermalink }}" class="leancloud_visitors" data-flag-title="{{ .Title }}">
-                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;{{ T "views" }}
-                    </span>&nbsp;
-                            {{- end -}}
+                            &nbsp;&nbsp;&nbsp;&nbsp;<i class="svg-icon icon-pencil"></i>&nbsp;{{ T "wordCount" $.WordCount }}
+                            &nbsp;&nbsp;&nbsp;&nbsp;<i class="svg-icon icon-stopwatch"></i>&nbsp;{{ T "readingTime" $.ReadingTime }}
                         </div>
                     </div>
                 </div>
@@ -188,10 +176,9 @@
             <div class="details toc" id="toc-static"  data-kept="{{ if $toc.keepStatic }}true{{ end }}">
                 <div class="details-summary toc-title">
                     <span>{{ T "contents" }}</span>
-                    <span><i class="details-icon fas fa-angle-right"></i></span>
                 </div>
                 <div class="details-content toc-content" id="toc-content-static">
-                    {{- dict "Content" .TableOfContents "Ruby" $params.ruby "Fraction" $params.fraction "Fontawesome" $params.fontawesome | partial "function/content.html" | safeHTML -}}
+                    {{- dict "Content" .TableOfContents "Ruby" $params.ruby "Fraction" $params.fraction | partial "function/content.html" | safeHTML -}}
                 </div>
             </div>
             {{- end -}}
@@ -213,7 +200,7 @@
                 {{- end -}}
                 {{- end -}}
 
-                {{- dict "Content" .Content "Ruby" $params.ruby "Fraction" $params.fraction "Fontawesome" $params.fontawesome | partial "function/content.html" | safeHTML -}}
+                {{- dict "Content" .Content "Ruby" $params.ruby "Fraction" $params.fraction | partial "function/content.html" | safeHTML -}}
 
             {{ $posts := where .Site.RegularPages "Section" "blog"}}
             {{ $related :=  .Site.RegularPages.RelatedIndices . "tags" | first 3 }}

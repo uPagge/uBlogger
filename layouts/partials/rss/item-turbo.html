@@ -24,10 +24,10 @@
         {{- end -}}
         {{- $content := .Page.Description -}}
         {{- if $params.rssFullText -}}
-            {{- $content = dict "Content" .Page.Content "Ruby" $params.ruby "Fraction" $params.fraction "Fontawesome" $params.fontawesome | partial "function/content.html" -}}
+            {{- $content = dict "Content" .Page.Content "Ruby" $params.ruby "Fraction" $params.fraction | partial "function/content.html" -}}
         {{- else -}}
             {{- with .Page.Summary -}}
-                {{- $content = dict "Content" . "Ruby" $params.ruby "Fraction" $params.fraction "Fontawesome" $params.fontawesome | partial "function/content.html" -}}
+                {{- $content = dict "Content" . "Ruby" $params.ruby "Fraction" $params.fraction | partial "function/content.html" -}}
             {{- end -}}
         {{- end -}}
         {{- $content | replaceRE `<figure[^>]*>.*</figure>` "" | replaceRE `<img[^>]*( /)?>` "" | safeHTML -}}

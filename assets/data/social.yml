@@ -4,7 +4,7 @@ github:
   Prefix: https://github.com/
   Title: GitHub
   Icon:
-    Class: fab fa-github-alt fa-fw
+    Class: svg-social-icon-color icon-github
 
 # 002: LinkedIn
 linkedin:
@@ -12,7 +12,7 @@ linkedin:
   Prefix: https://linkedin.com/in/
   Title: LinkedIn
   Icon:
-    Class: fab fa-linkedin fa-fw
+    Class: svg-social-icon-color icon-linkedin
 
 # 003: Twitter
 twitter:
@@ -20,7 +20,7 @@ twitter:
   Prefix: https://twitter.com/
   Title: Twitter
   Icon:
-    Class: fab fa-twitter fa-fw
+    Class: svg-social-icon-color icon-twitter
 
 # 004: Instagram
 instagram:
@@ -28,7 +28,7 @@ instagram:
   Prefix: https://www.instagram.com/
   Title: Instagram
   Icon:
-    Class: fab fa-instagram fa-fw
+    Class: svg-social-icon-color icon-instagram
 
 # 005: facebook
 facebook:
@@ -36,7 +36,7 @@ facebook:
   Prefix: https://facebook.com/
   Title: facebook
   Icon:
-    Class: fab fa-facebook fa-fw
+    Class: svg-social-icon-color icon-facebook
 
 # 006: Telegram
 telegram:
@@ -44,7 +44,7 @@ telegram:
   Prefix: https://t.me/
   Title: Telegram
   Icon:
-    Class: fab fa-telegram-plane fa-fw
+    Class: svg-social-icon-color icon-telegram
 
 # 007: Medium
 medium:
@@ -52,7 +52,7 @@ medium:
   Prefix: https://medium.com/
   Title: Medium
   Icon:
-    Class: fab fa-medium fa-fw
+    Class: svg-social-icon-color icon-medium
 
 # 008: GitLab
 gitlab:
@@ -60,7 +60,7 @@ gitlab:
   Prefix: https://gitlab.com/
   Title: GitLab
   Icon:
-    Class: fab fa-gitlab fa-fw
+    Class: svg-social-icon-color icon-gitlab
 
 # 009: YouTube Legacy
 youtubelegacy:
@@ -68,7 +68,7 @@ youtubelegacy:
   Prefix: https://www.youtube.com/user/
   Title: YouTube
   Icon:
-    Class: fab fa-youtube fa-fw
+    Class: svg-social-icon-color icon-youtube
 
 # 010: YouTube Custom
 youtubecustom:
@@ -76,7 +76,7 @@ youtubecustom:
   Prefix: https://www.youtube.com/c/
   Title: YouTube
   Icon:
-    Class: fab fa-youtube fa-fw
+    Class: svg-social-icon-color icon-youtube
 
 # 011: YouTube Channel
 youtubechannel:
@@ -84,7 +84,7 @@ youtubechannel:
   Prefix: https://www.youtube.com/channel/
   Title: YouTube
   Icon:
-    Class: fab fa-youtube fa-fw
+    Class: svg-social-icon-color icon-youtube
 
 # 012: Tumblr
 tumblr:
@@ -92,7 +92,7 @@ tumblr:
   Template: https://%v.tumblr.com/
   Title: Tumblr
   Icon:
-    Class: fab fa-tumblr fa-fw
+    Class: svg-social-icon-color icon-tumblr
 
 # 013: Quora
 quora:
@@ -100,7 +100,7 @@ quora:
   Prefix: https://www.quora.com/profile/
   Title: Quora
   Icon:
-    Class: fab fa-quora fa-fw
+    Class: svg-social-icon-color icon-quora
 
 # 014: Keybase
 keybase:
@@ -108,7 +108,7 @@ keybase:
   Prefix: https://keybase.io/
   Title: Keybase
   Icon:
-    Class: fab fa-keybase fa-fw
+    Class: svg-social-icon-color icon-keybase
 
 # 015: Pinterest
 pinterest:
@@ -116,7 +116,7 @@ pinterest:
   Prefix: https://www.pinterest.com/
   Title: Pinterest
   Icon:
-    Class: fab fa-pinterest fa-fw
+    Class: svg-social-icon-color icon-pinterest
 
 # 016: Reddit
 reddit:
@@ -124,7 +124,7 @@ reddit:
   Prefix: https://www.reddit.com/user/
   Title: Reddit
   Icon:
-    Class: fab fa-reddit fa-fw
+    Class: svg-social-icon-color icon-reddit
 
 # 017: CodePen
 codepen:
@@ -132,7 +132,7 @@ codepen:
   Prefix: https://codepen.io/
   Title: CodePen
   Icon:
-    Class: fab fa-codepen fa-fw
+    Class: svg-social-icon-color icon-codepen
 
 # 018: freeCodeCamp
 freecodecamp:
@@ -140,7 +140,7 @@ freecodecamp:
   Prefix: https://freecodecamp.org/
   Title: freeCodeCamp
   Icon:
-    Class: fab fa-free-code-camp fa-fw
+    Class: svg-social-icon-color icon-free-code-camp
 
 # 019: Bitbucket
 bitbucket:
@@ -148,7 +148,7 @@ bitbucket:
   Prefix: https://bitbucket.org/
   Title: Bitbucket
   Icon:
-    Class: fab fa-bitbucket fa-fw
+    Class: svg-social-icon-color icon-bitbucket
 
 # 020: Stack Overflow
 stackoverflow:
@@ -156,7 +156,7 @@ stackoverflow:
   Prefix: https://stackoverflow.com/users/
   Title: Stack Overflow
   Icon:
-    Class: fab fa-codepen fa-fw
+    Class: svg-social-icon-color icon-codepen
 
 # 021: 微博
 weibo:
@@ -164,7 +164,7 @@ weibo:
   Prefix: https://weibo.com/
   Title: 微博
   Icon:
-    Class: fab fa-weibo fa-fw
+    Class: svg-social-icon-color icon-weibo
 
 # 022: OK.RU
 odnoklassniki:
@@ -172,7 +172,7 @@ odnoklassniki:
   Prefix: https://ok.ru/
   Title: OK.RU
   Icon:
-    Class: fab fa-odnoklassniki fa-fw
+    Class: svg-social-icon-color icon-odnoklassniki
 
 # 023: VK
 vk:
@@ -180,7 +180,7 @@ vk:
   Prefix: https://vk.com/
   Title: VK
   Icon:
-    Class: fab fa-vk fa-fw
+    Class: svg-social-icon-color icon-vk
 
 # 024: Flickr
 flickr:
@@ -188,7 +188,7 @@ flickr:
   Prefix: https://www.flickr.com/photos/
   Title: Flickr
   Icon:
-    Class: fab fa-flickr fa-fw
+    Class: svg-social-icon-color icon-flickr
 
 # 025: Xing
 xing:
@@ -196,7 +196,7 @@ xing:
   Prefix: https://www.xing.com/profile/
   Title: Xing
   Icon:
-    Class: fab fa-xing fa-fw
+    Class: svg-social-icon-color icon-xing
 
 # 026: Snapchat
 snapchat:
@@ -204,7 +204,7 @@ snapchat:
   Prefix: https://www.snapchat.com/add/
   Title: Snapchat
   Icon:
-    Class: fab fa-snapchat fa-fw
+    Class: svg-social-icon-color icon-snapchat
 
 # 027: SoundCloud
 soundcloud:
@@ -212,7 +212,7 @@ soundcloud:
   Prefix: https://soundcloud.com/
   Title: SoundCloud
   Icon:
-    Class: fab fa-soundcloud fa-fw
+    Class: svg-social-icon-color icon-soundcloud
 
 # 028: Spotify
 spotify:
@@ -220,7 +220,7 @@ spotify:
   Prefix: https://open.spotify.com/user/
   Title: Spotify
   Icon:
-    Class: fab fa-spotify fa-fw
+    Class: svg-social-icon-color icon-spotify
 
 # 029: Bandcamp
 bandcamp:
@@ -228,7 +228,7 @@ bandcamp:
   Template: https://%v.bandcamp.com/
   Title: Bandcamp
   Icon:
-    Class: fab fa-bandcamp fa-fw
+    Class: svg-social-icon-color icon-bandcamp
 
 # 030: PayPal
 paypal:
@@ -236,7 +236,7 @@ paypal:
   Prefix: https://paypal.me/
   Title: PayPal
   Icon:
-    Class: fab fa-paypal fa-fw
+    Class: svg-social-icon-color icon-paypal
 
 # 031: 500px
 fivehundredpx:
@@ -244,7 +244,7 @@ fivehundredpx:
   Prefix: https://500px.com/
   Title: 500px
   Icon:
-    Class: fab fa-500px fa-fw
+    Class: svg-social-icon-color icon-500px
 
 # 032: Mix
 mix:
@@ -252,7 +252,7 @@ mix:
   Prefix: https://mix.com/
   Title: Mix
   Icon:
-    Class: fab fa-mix fa-fw
+    Class: svg-social-icon-color icon-mix
 
 # 033: Goodreads
 goodreads:
@@ -260,7 +260,7 @@ goodreads:
   Prefix: https://www.goodreads.com/user/show/
   Title: Goodreads
   Icon:
-    Class: fab fa-goodreads fa-fw
+    Class: svg-social-icon-color icon-goodreads
 
 # 034: Last.fm
 lastfm:
@@ -268,7 +268,7 @@ lastfm:
   Prefix: https://www.last.fm/user/
   Title: Last.fm
   Icon:
-    Class: fab fa-lastfm fa-fw
+    Class: svg-social-icon-color icon-lastfm
 
 # 035: Foursquare
 foursquare:
@@ -276,7 +276,7 @@ foursquare:
   Prefix: https://foursquare.com/
   Title: Foursquare
   Icon:
-    Class: fab fa-foursquare fa-fw
+    Class: svg-social-icon-color icon-foursquare
 
 # 036: Hacker News
 hackernews:
@@ -284,7 +284,7 @@ hackernews:
   Template: https://news.ycombinator.com/user?id=%v
   Title: Hacker News
   Icon:
-    Class: fab fa-hacker-news fa-fw
+    Class: svg-social-icon-color icon-hacker-news
 
 # 037: Kickstarter
 kickstarter:
@@ -292,7 +292,7 @@ kickstarter:
   Prefix: https://kickstarter.com/profile/
   Title: Kickstarter
   Icon:
-    Class: fab fa-kickstarter fa-fw
+    Class: svg-social-icon-color icon-kickstarter
 
 # 038: Patreon
 patreon:
@@ -300,7 +300,7 @@ patreon:
   Prefix: https://patreon.com/
   Title: Patreon
   Icon:
-    Class: fab fa-patreon fa-fw
+    Class: svg-social-icon-color icon-patreon
 
 # 039: Steam
 steam:
@@ -308,7 +308,7 @@ steam:
   Prefix: https://steamcommunity.com/id/
   Title: Steam
   Icon:
-    Class: fab fa-steam fa-fw
+    Class: svg-social-icon-color icon-steam
 
 # 040: Twitch
 twitch:
@@ -316,7 +316,7 @@ twitch:
   Prefix: https://www.twitch.tv/
   Title: Twitch
   Icon:
-    Class: fab fa-twitch fa-fw
+    Class: svg-social-icon-color icon-twitch
 
 # 041: Strava
 strava:
@@ -324,7 +324,7 @@ strava:
   Prefix: https://www.strava.com/athletes/
   Title: Strava
   Icon:
-    Class: fab fa-strava fa-fw
+    Class: svg-social-icon-color icon-strava
 
 # 042: Skype
 skype:
@@ -332,7 +332,7 @@ skype:
   Template: "skype:"
   Title: Skype
   Icon:
-    Class: fab fa-skype fa-fw
+    Class: svg-social-icon-color icon-skype
 
 # 043: WhatsApp
 whatsapp:
@@ -340,23 +340,7 @@ whatsapp:
   Prefix: https://wa.me/
   Title: WhatsApp
   Icon:
-    Class: fab fa-whatsapp fa-fw
-
-# 044: 知乎
-zhihu:
-  Weight: 44
-  Prefix: https://www.zhihu.com/people/
-  Title: 知乎
-  Icon:
-    Simpleicons: zhihu
-
-# 045: 豆瓣
-douban:
-  Weight: 45
-  Prefix: https://www.douban.com/people/
-  Title: 豆瓣
-  Icon:
-    Simpleicons: douban
+    Class: svg-social-icon-color icon-whatsapp
 
 # 046: Angellist
 angellist:
@@ -364,15 +348,8 @@ angellist:
   Prefix: https://angel.co/
   Title: Angellist
   Icon:
-    Class: fab fa-angellist fa-fw
+    Class: svg-social-icon-color icon-angellist
 
-# 047: SlideShare
-slideshare:
-  Weight: 47
-  Prefix: https://slideshare.com/
-  Title: SlideShare
-  Icon:
-    Class: fab fa-slideshare fa-fw
 
 # 048: JSFiddle
 jsfiddle:
@@ -380,7 +357,7 @@ jsfiddle:
   Prefix: https://jsfiddle.com/
   Title: JSFiddle
   Icon:
-    Class: fab fa-jsfiddle fa-fw
+    Class: svg-social-icon-color icon-jsfiddle
 
 # 049: DeviantArt
 deviantart:
@@ -388,7 +365,7 @@ deviantart:
   Template: https://%v.deviantart.com/
   Title: DeviantArt
   Icon:
-    Class: fab fa-deviantart fa-fw
+    Class: svg-social-icon-color icon-deviantart
 
 # 050: Behance
 behance:
@@ -396,7 +373,7 @@ behance:
   Prefix: https://behance.net/
   Title: Behance
   Icon:
-    Class: fab fa-behance fa-fw
+    Class: svg-social-icon-color icon-behance
 
 # 051: Dribbble
 dribbble:
@@ -404,7 +381,7 @@ dribbble:
   Prefix: https://dribbble.com/
   Title: Dribbble
   Icon:
-    Class: fab fa-dribbble fa-fw
+    Class: svg-social-icon-color icon-dribbble
 
 # 052: WordPress
 wordpress:
@@ -412,7 +389,7 @@ wordpress:
   Template: https://%v.wordpress.com/
   Title: WordPress
   Icon:
-    Class: fab fa-wordpress fa-fw
+    Class: svg-social-icon-color icon-wordpress
 
 # 053: Vine
 vine:
@@ -420,15 +397,7 @@ vine:
   Prefix: https://vine.co/
   Title: Vine
   Icon:
-    Class: fab fa-vine fa-fw
-
-# 054: Google Scholar
-googlescholar:
-  Weight: 54
-  Template: https://scholar.google.com/citations?%v
-  Title: Google Scholar
-  Icon:
-    Simpleicons: googlescholar
+    Class: svg-social-icon-color icon-vine
 
 # 055: ResearchGate
 researchgate:
@@ -436,7 +405,7 @@ researchgate:
   Prefix: https://www.researchgate.net/profile/
   Title: ResearchGate
   Icon:
-    Class: fab fa-researchgate fa-fw
+    Class: svg-social-icon-color icon-researchgate
 
 # 056: Mastodon
 mastodon:
@@ -444,54 +413,21 @@ mastodon:
   Prefix: https://mastodon.social/
   Title: Mastodon
   Icon:
-    Class: fab fa-mastodon fa-fw
-
-# 057: Thingiverse
-thingiverse:
-  Weight: 57
-  Prefix: https://www.thingiverse.com/
-  Title: Thingiverse
-  Icon:
-    Src: svg/icons/thingiverse.svg
-
-# 058: Dev.To
-devto:
-  Weight: 58
-  Prefix: https://dev.to/
-  Title: Dev.To
-  Icon:
-    Class: fab fa-dev fa-fw
+    Class: svg-social-icon-color icon-mastodon
 
 # 059: Gitea
 gitea:
   Weight: 59
   Title: Gitea
   Icon:
-    Simpleicons: gitea
+    Class: svg-social-icon-color icon-gitea
 
 # 060: XMPP
 xmpp:
   Weight: 60
   Template: xmpp:%v
   Title: XMPP
-  Icon:
-    Simpleicons: xmpp
-
-# 061: Matrix
-matrix:
-  Weight: 61
-  Prefix: https://matrix.to/#/
-  Title: Matrix
-  Icon:
-    Simpleicons: matrix
-
-# 062: bilibili
-bilibili:
-  Weight: 62
-  Prefix: https://space.bilibili.com/
-  Title: bilibili
-  Icon:
-    Src: svg/icons/bilibili.svg
+  Class: svg-social-icon-color icon-xmpp
 
 # 063: DockerHub
 dockerhub:
@@ -499,7 +435,7 @@ dockerhub:
   Prefix: https://hub.docker.com/u/
   Title: DockerHub
   Icon:
-    Class: fab fa-docker fa-fw
+    Class: svg-social-icon-color icon-docker
 
 # 064: Discord
 discord:
@@ -507,7 +443,7 @@ discord:
   Prefix: https://discord.gg/
   Title: Discord
   Icon:
-    Class: fab fa-discord fa-fw
+    Class: svg-social-icon-color icon-discord
 
 # 065: Leanpub
 leanpub:
@@ -515,15 +451,14 @@ leanpub:
   Prefix: https://leanpub.com/u/
   Title: Leanpub
   Icon:
-    Class: fab fa-leanpub fa-fw
+    Class: svg-social-icon-color icon-leanpub
 
 # 066: udemy
 udemy:
   Weight: 66
   Prefix: https://www.udemy.com/user/
   Title: Udemy
-  Icon:
-    Src: svg/icons/udemy.svg
+  Class: svg-social-icon-color icon-udemi
 
 # 067: Email
 email:
@@ -531,7 +466,7 @@ email:
   Template: mailto:%v
   Title: Email
   Icon:
-    Class: far fa-envelope fa-fw
+    Class: svg-social-icon-color icon-mail-dot-ru
 
 # 068: RSS
 rss:
@@ -540,4 +475,4 @@ rss:
   Title: RSS
   Newtab: true
   Icon:
-    Class: fas fa-rss fa-fw
+    Class: svg-social-icon-color icon-rss

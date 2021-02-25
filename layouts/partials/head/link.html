@@ -47,11 +47,6 @@
 {{- $style = dict "Context" . "ToCSS" $options | merge $style -}}
 {{- partial "plugin/style.html" $style -}}
 
-{{- /* Font Awesome */ -}}
-{{- $source := $cdn.fontawesomeFreeCSS | default "lib/fontawesome-free/all.min.css" -}}
-{{- $style := dict "Source" $source "Fingerprint" $fingerprint -}}
-{{- partial "plugin/style.html" $style -}}
-
 {{- /* Animate.css */ -}}
 {{- $source := $cdn.animateCSS | default "lib/animate/animate.min.css" -}}
 {{- $style := dict "Source" $source "Fingerprint" $fingerprint -}}
