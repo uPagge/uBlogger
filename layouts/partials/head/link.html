@@ -17,12 +17,6 @@
 {{- end -}}
 
 <link rel="canonical" href="{{ .Permalink }}" />
-{{- if .PrevInSection -}}
-    <link rel="prev" href="{{ .PrevInSection.Permalink }}" />
-{{- end -}}
-{{- if .NextInSection -}}
-    <link rel="next" href="{{ .NextInSection.Permalink }}" />
-{{- end -}}
 
 {{- with .OutputFormats.Get "RSS" -}}
     <link rel="alternate" href="{{ .RelPermalink }}" type="application/rss+xml" title="{{ $.Site.Title }}">
