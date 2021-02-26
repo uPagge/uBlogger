@@ -6,9 +6,9 @@ description: "Discover what the Hugo - uBlog theme is all about and the core-con
 resources:
 - name: "featured-image"
   src: "featured-image.jpg"
-  
+
 upd: "Since the template began to support uPagge, you can not do without names. You can find the changes by tag 1.x.x."
-  
+
 page:
     theme: "wide"
 
@@ -19,7 +19,7 @@ lightgallery: true
 
 toc:
   auto: false
-  
+
 ---
 
 Discover what the Hugo - **uBlog** theme is all about and the core-concepts behind it.
@@ -544,7 +544,7 @@ Please open the code block below to view the complete sample configuration :(far
       [params.page.seo.publisher]
         name = ""
         logoUrl = ""
-  
+
     # {{< version 1.1.0 changed >}} Comment config
     [params.comment]
       enable = true
@@ -826,7 +826,7 @@ Or You can set more options through a dict:
     title = "Mastodon"
 ```
 
-The default data of all supported social links is located in `themes/uBlogger/assets/data/social.yaml`,
+The default data of all supported social links is located in `themes/uBlogger/assets/data/social.yml`,
 which is you can refer to.
 {{< /admonition >}}
 
