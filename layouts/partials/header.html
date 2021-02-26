@@ -2,10 +2,16 @@
 <header class="desktop" id="header-desktop">
     <div class="header-wrapper">
         <div class="header-title">
-            <a href="{{ .Site.Home.RelPermalink }}" title="{{ .Site.Title }}" class="header-logo">
+            <a href="{{ .Site.Home.RelPermalink }}" title="{{ .Site.Title }}" class="header-logo logo-svg">
                 {{- with .Site.Params.header.title -}}
                     {{- with .logo -}}
                         {{- dict "Src" . "Class" "logo" | partial "plugin/image.html" -}}
+                    {{- end -}}
+                    {{- with .logoSvg }}
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 36" width="96" height="36" style="vertical-align: middle">
+                            <style>tspan{white-space:pre}</style>
+                            <path class="logo-svg" d="{{ . }}"/>
+                        </svg>
                     {{- end -}}
                     {{- with .pre -}}
                         <span class="header-title-pre">{{ . | safeHTML }}</span>
@@ -91,6 +97,12 @@
                     {{- with .Site.Params.header.title -}}
                         {{- with .logo -}}
                             {{- dict "Src" . "Class" "logo" | partial "plugin/image.html" -}}
+                        {{- end -}}
+                        {{- with .logoSvg }}
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 36" width="96" height="36" style="vertical-align: middle">
+                            <style>tspan{white-space:pre}</style>
+                            <path class="logo-svg" d="{{ . }}"/>
+                        </svg>
                         {{- end -}}
                         {{- with .pre -}}
                             <span class="header-title-pre">{{ . | safeHTML }}</span>

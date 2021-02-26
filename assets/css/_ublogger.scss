@@ -1,8 +1,6 @@
 // ==============================
 // uBlogger style
 // ==============================
-@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
-
 body {
   line-height: 1.9rem;
 }
@@ -25,10 +23,12 @@ header {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.header-logo {
-  color: $global-color-accent;
-  font-family: 'Lobster', sans-serif;
-  font-size: 1.8rem;
+.logo-svg {
+  fill: $global-color-accent;
+
+  [theme=dark] & {
+    fill: $global-font-color-dark;
+  }
 }
 
 article {
