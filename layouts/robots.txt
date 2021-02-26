@@ -2,6 +2,13 @@ User-agent: *
 
 Allow: /index.xml
 
+Disallow: *.js
+Disallow: *.css
+
+User-agent: Googlebot
+Allow: *.js
+Allow: *.css
+
 User-agent: MJ12bot
 Disallow: /
 
