@@ -5,7 +5,7 @@
 {{- define "content" -}}
     <div class="page archive">
         {{- /* Title */ -}}
-        <h2 class="single-title animated pulse faster">
+        <h2 class="single-title pulse faster">
             {{- $taxonomy := .Data.Singular -}}
             {{- printf "%v - %v" (T $taxonomy | default $taxonomy) .Title -}}
         </h2>
