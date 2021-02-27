@@ -35,7 +35,7 @@
                 {{- if ne $authorName " " -}}
                 {{ $author := index .Site.Data.authors $authorName }}
                 {{- $authorLink := $author.link | default .Site.Home.RelPermalink -}}
-                    <span class="author" itemprop="copyrightHolder">&nbsp;<a href="{{ $authorLink }}" target="_blank">{{ $author.nickname }}</a></span>
+                    <span class="author">&nbsp;<a href="{{ $authorLink }}" target="_blank">{{ $author.nickname }}</a></span>
                 {{- end -}}
 
                 {{- /* License */ -}}
