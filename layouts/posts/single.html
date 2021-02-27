@@ -43,9 +43,7 @@
     {{- /* Featured image */ -}}
     {{- $image := $params.featuredimage -}}
     {{- $pageImageHidden := $params.hiddenFeaturedImage -}}
-    {{- $heroImage := "" -}}
     {{- with .Resources.GetMatch "featured-image" -}}
-    {{- $heroImage = (.Resize "1000x").Permalink -}}
     {{- $image = .Permalink -}}
     {{- end -}}
 
@@ -55,6 +53,12 @@
     <div class="header-post">
 
         {{ if eq $pageTheme "hero" }}
+
+        {{- $heroImage := "" -}}
+        {{- with .Resources.GetMatch "featured-image" -}}
+        {{- $heroImage = (.Resize "1000x").Permalink -}}
+        {{- end -}}
+
         <div class="post-hero-grid">
             <div class="post-hero-info">
                 <div class="hero-text-container">
@@ -105,7 +109,15 @@
         {{ if not (eq $pageTheme "hero") }}
         {{ if or (eq $pageTheme "full") (eq $pageTheme "mega-full") }}
         {{- with $image -}}
-        <div class="featured-image" style="background-image: url('{{ $image }}');">
+
+        {{- $fullImage := $image -}}
+        {{- if eq $pageTheme "full" -}}
+        {{- with $.Resources.GetMatch "featured-image" -}}
+        {{- $fullImage = (.Resize "1500x").Permalink -}}
+        {{- end -}}
+        {{- end -}}
+
+        <div class="featured-image" style="background-image: url('{{ $fullImage }}');">
             {{- end -}}
             {{- end -}}
             <div class="post-title">
