@@ -5,13 +5,14 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="robots" content="noodp" />
+        {{- block "robots" . }}<meta name="robots" content="noodp" />{{ end -}}
         <title>
             {{- block "title" . }}{{ .Site.Title }}{{ end -}}
         </title>
 
         {{- partial "head/meta.html" . -}}
         {{- partial "head/link.html" . -}}
+
         {{- partial "head/seo.html" . -}}
         {{- block "dnsPrefetch" . }}
         {{- with $.Site.Params.Seo.dnsPrefetch -}}

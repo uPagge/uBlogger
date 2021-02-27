@@ -2,6 +2,10 @@
     {{- .Params.Title | default (T .Data.Plural) | default .Data.Plural | dict "Some" | T "allSome" }} - {{ .Site.Title -}}
 {{- end -}}
 
+{{- define "robots" -}}
+<meta name="robots" content="noindex, follow" />
+{{- end -}}
+
 {{- define "content" -}}
     {{- $taxonomies := .Data.Plural -}}
     {{- $terms := .Data.Terms.ByCount -}}
