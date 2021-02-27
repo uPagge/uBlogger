@@ -56,7 +56,7 @@
 
         {{- $heroImage := "" -}}
         {{- with .Resources.GetMatch "featured-image" -}}
-        {{- $heroImage = (.Resize "1000x").Permalink -}}
+        {{- $heroImage = (.Resize "1000x q100").Permalink -}}
         {{- end -}}
 
         <div class="post-hero-grid">
@@ -113,7 +113,7 @@
         {{- $fullImage := $image -}}
         {{- if eq $pageTheme "full" -}}
         {{- with $.Resources.GetMatch "featured-image" -}}
-        {{- $fullImage = (.Resize "1500x").Permalink -}}
+        {{- $fullImage = (.Resize "1500x q100").Permalink -}}
         {{- end -}}
         {{- end -}}
 
