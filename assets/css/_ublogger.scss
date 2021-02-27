@@ -1152,18 +1152,8 @@ figure {
   }
 }
 
-.lazyload {
-  opacity: 0;
-}
-
-.lazyloading {
-  opacity: 1;
-  transition: opacity 300ms;
-  background: #f7f7f7 url("/loading.svg") no-repeat center;
-}
-
-img.lazyload:not([src]) {
-  visibility: hidden;
+.render-image {
+  text-align: center;
 }
 
 @import "_partial/share-icon";

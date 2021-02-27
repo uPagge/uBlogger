@@ -14,7 +14,7 @@
 {{ $imageOriginal = .Destination }}
 {{ end }}
 
-<div style="text-align: center">
+<div class="render-image">
 {{- if $figcap -}}
 <figure>
     {{- dict "Src" $imageOriginal "Title" $figcap "Alt" $alt "Caption" $caption "Linked" true "Resources" .Page.Resources | partial "plugin/image.html" -}}
