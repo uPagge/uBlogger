@@ -6,15 +6,23 @@
 {{- end -}}
 
 {{ $imageOriginal := .Page.Resources.GetMatch (printf "%s" (.Destination | safeURL)) }}
+{{ if $imageOriginal }}
+{{ if lt 1600 $imageOriginal.Width }}
+{{ $imageOriginal = ($imageOriginal.Resize "1600x q100").Permalink }}
+{{ end }}
+{{ else }}
+{{ $imageOriginal = .Destination }}
+{{ end }}
+
 <div style="text-align: center">
 {{- if $figcap -}}
 <figure>
-    {{- dict "Src" .Destination "Title" $figcap "Alt" $alt "Caption" $caption "Linked" true "Resources" .Page.Resources | partial "plugin/image.html" -}}
+    {{- dict "Src" $imageOriginal "Title" $figcap "Alt" $alt "Caption" $caption "Linked" true "Resources" .Page.Resources | partial "plugin/image.html" -}}
     <figcaption class="image-caption">
         {{- $figcap | safeHTML -}}
     </figcaption>
 </figure>
 {{- else -}}
-{{- dict "Src" .Destination "Title" (path.Base .Destination) "Alt" $alt "Resources" .Page.Resources | partial "plugin/image.html" -}}
+{{- dict "Src" $imageOriginal "Title" (path.Base .Destination) "Alt" $alt "Resources" .Page.Resources | partial "plugin/image.html" -}}
 {{- end -}}
 </div>
