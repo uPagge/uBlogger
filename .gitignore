@@ -1,6 +1,7 @@
 # Hugo default output directory
 public/
 /exampleSite/resources/
+/resources
 
 node_modules/
 build/
