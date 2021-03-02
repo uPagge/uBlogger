@@ -191,7 +191,8 @@
   img {
     max-width: 100%;
     min-height: 1em;
-    content-visibility: auto
+    content-visibility: auto;
+    box-shadow: 0 0 15px rgba(122,122,122,0.3);
   }
 
   .lazyloading {
