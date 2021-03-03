@@ -325,10 +325,6 @@ class Theme {
         });
     }
 
-    initLightGallery() {
-        if (this.config.lightGallery) lightGallery(document.getElementById('content'), this.config.lightGallery);
-    }
-
     initHighlight() {
         this.util.forEach(document.querySelectorAll('.highlight > pre.chroma'), $preChroma => {
             const $chroma = document.createElement('div');
@@ -731,7 +727,6 @@ class Theme {
             this.initSwitchTheme();
             this.initSearch();
             this.initDetails();
-            this.initLightGallery();
             this.initHighlight();
             this.initTable();
             this.initHeaderLink();

@@ -3,7 +3,7 @@ title: "About uBlogger"
 date: 2019-08-02T11:04:49+08:00
 draft: false
 
-lightgallery: true
+
 
 math:
   enable: true
@@ -65,8 +65,6 @@ math:
 * :(far fa-grin-tongue-wink fa-fw): **Twemoji** supported
 * :(fas fa-code fa-fw): Automatically **highlighting** code
 * :(far fa-copy fa-fw): **Copy code** to clipboard with one click
-* :(far fa-images fa-fw): **Images gallery** supported by [lightgallery.js](https://github.com/sachinchoolur/lightgallery.js)
-* :(fab fa-font-awesome fa-fw): Extended Markdown syntax for **[Font Awesome](https://fontawesome.com/) icons**
 * :(far fa-sticky-note fa-fw): Extended Markdown syntax for **ruby annotation**
 * :(fas fa-percentage fa-fw): Extended Markdown syntax for **fraction**
 * :(fas fa-square-root-alt fa-fw): **Mathematical formula** supported by [$ \KaTeX $](https://katex.org/)

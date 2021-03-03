@@ -15,7 +15,7 @@ page:
 tags: ["installation", "configuration"]
 categories: ["documentation"]
 
-lightgallery: true
+
 
 toc:
   auto: false

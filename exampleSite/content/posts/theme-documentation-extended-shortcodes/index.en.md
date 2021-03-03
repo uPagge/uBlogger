@@ -14,7 +14,7 @@ resources:
 tags: ["shortcodes"]
 categories: ["documentation"]
 
-lightgallery: true
+
 ---
 
 **uBlogger** theme provides multiple shortcodes on top of built-in ones in Hugo.
