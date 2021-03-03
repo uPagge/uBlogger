@@ -486,6 +486,14 @@ a.post-tag-summary {
     a {
       color: #a9a9b3;
     }
+
+    span {
+      margin-right: 13px;
+
+      i.svg-icon {
+        margin-right: 1px;
+      }
+    }
   }
 
 }
@@ -884,6 +892,14 @@ figure {
 
   .author {
     font-size: 0.8rem;
+  }
+
+  span {
+    margin-right: 13px;
+
+    i.svg-icon {
+      margin-right: 1px;
+    }
   }
 }
 

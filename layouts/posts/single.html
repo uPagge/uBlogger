@@ -97,16 +97,16 @@
 
         <div class="hero-tags">
             {{ if ne $viewCounter nil}}
-            <span class="rendered" id="views_container"><i class="svg-icon icon-eye-big"></i>&nbsp;<span id="views_value" style="margin-right: 0">{{ if ne $params.Views nil}} {{ $params.Views }} {{ else }} Нет просмотров {{ end }}</span></span>
+            <span class="rendered tag-none-display" id="views_container"><i class="svg-icon icon-eye-big"></i><span id="views_value" style="margin-right: 0">{{ if ne $params.Views nil}} {{ $params.Views }} {{ else }} Нет просмотров {{ end }}</span></span>
             {{- end -}}
 
             {{- with $.Site.Params.dateformat | default "2006-01-02" | $.PublishDate.Format -}}
             {{- $timeAgoDate:= $.Site.Params.TimeAgo.DateFormat | default "2006-01-02" | $.PublishDate.Format -}}
-            <span id="post-date" class="rendered"><i class="svg-icon icon-clock-big"></i>&nbsp;<time class="timeago" datetime="{{ $timeAgoDate }}">{{ . }}</time></span>
+            <span id="post-date" class="rendered"><i class="svg-icon icon-clock-big"></i><time class="timeago" datetime="{{ $timeAgoDate }}">{{ . }}</time></span>
             {{- end -}}
 
-            <span class="rendered"><i class="svg-icon icon-pencil-big"></i>&nbsp;{{ T "wordCount" $.WordCount }}</span>
-            <span class="rendered"><i class="svg-icon icon-stopwatch-big"></i>&nbsp;{{ T "readingTime" $.ReadingTime }}</span>
+            <span class="rendered"><i class="svg-icon icon-pencil-big"></i>{{ T "wordCount" $.WordCount }}</span>
+            <span class="rendered"><i class="svg-icon icon-stopwatch-big"></i>{{ T "readingTime" $.ReadingTime }}</span>
         </div>
         {{ end }}
 
@@ -143,28 +143,33 @@
                             {{- $categories := slice -}}
                             {{- range $.Params.categories -}}
                             {{- $category := partialCached "function/path.html" . . | printf "/categories/%v" | $.Site.GetPage -}}
-                            {{- $categories = $categories | append (printf `<a href="%v"><i class="svg-icon icon-folder"></i>&nbsp;%v</a>` $category.RelPermalink $category.Title) -}}
+                            {{- $categories = $categories | append (printf `<a href="%v"><i class="svg-icon icon-folder"></i>%v</a>` $category.RelPermalink $category.Title) -}}
                             {{- end -}}
                             {{- with delimit $categories "&nbsp;" -}}
                             <span class="post-category">
                                 {{ . }}
                             </span>
                             {{- end -}}
-
                             {{ if ne $viewCounter nil}}
-                            &nbsp;&nbsp;&nbsp;&nbsp;<span id="views_container"><i class="svg-icon icon-eye"></i>&nbsp;<span id="views_value" style="margin-right: 0">Нет</span> просмотров</span>
+                            <span class="post-meta-views tag-none-display" id="views_container">
+                                <i class="svg-icon icon-eye"></i><span id="views_value" style="margin-right: 0">Нет</span> просмотров</span>
+                            </span>
                             {{- end -}}
-
                             {{- with $.Site.Params.dateformat | default "2006-01-02" | $.PublishDate.Format -}}
                             {{- $timeAgoDate:= $.Site.Params.TimeAgo.DateFormat | default "2006-01-02" | $.PublishDate.Format -}}
-                            &nbsp;&nbsp;&nbsp;&nbsp;<i class="svg-icon icon-clock"></i>&nbsp;<time class="timeago" datetime="{{ $timeAgoDate }}">{{ . }}</time>
+                            <span class="post-meta-date">
+                                <i class="svg-icon icon-clock"></i><time class="timeago" datetime="{{ $timeAgoDate }}">{{ . }}</time>
+                            </span>
                             {{- end -}}
-                            &nbsp;&nbsp;&nbsp;&nbsp;<i class="svg-icon icon-pencil"></i>&nbsp;{{ T "wordCount" $.WordCount }}
-                            &nbsp;&nbsp;&nbsp;&nbsp;<i class="svg-icon icon-stopwatch"></i>&nbsp;{{ T "readingTime" $.ReadingTime }}
+                            <span class="post-meta-words">
+                                <i class="svg-icon icon-pencil"></i>{{ T "wordCount" $.WordCount }}
+                            </span>
+                            <span class="post-meta-reading">
+                                <i class="svg-icon icon-stopwatch"></i>{{ T "readingTime" $.ReadingTime }}
+                            </span>
                         </div>
                     </div>
                 </div>
-
 
             </div>
 

@@ -317,6 +317,10 @@
     display: block;
   }
 
+  .breadcrumbs, span.tag-none-display {
+    display: none;
+  }
+
 }
 
 @media only screen and (max-width: 400px) {
