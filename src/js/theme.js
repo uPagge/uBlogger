@@ -575,39 +575,6 @@ class Theme {
         }
     }
 
-    initTypeit() {
-        if (this.config.typeit) {
-            const typeitConfig = this.config.typeit;
-            const speed = typeitConfig.speed ? typeitConfig.speed : 100;
-            const cursorSpeed = typeitConfig.cursorSpeed ? typeitConfig.cursorSpeed : 1000;
-            const cursorChar = typeitConfig.cursorChar ? typeitConfig.cursorChar : '|';
-            Object.values(typeitConfig.data).forEach(group => {
-                const typeone = (i) => {
-                    const id = group[i];
-                    const instance = new TypeIt(`#${id}`, {
-                        strings: this.data[id],
-                        speed: speed,
-                        lifeLike: true,
-                        cursorSpeed: cursorSpeed,
-                        cursorChar: cursorChar,
-                        waitUntilVisible: true,
-                        afterComplete: () => {
-                            if (i === group.length - 1) {
-                                if (typeitConfig.duration >= 0) window.setTimeout(() => {
-                                    instance.destroy();
-                                }, typeitConfig.duration);
-                                return;
-                            }
-                            instance.destroy();
-                            typeone(i + 1);
-                        },
-                    }).go();
-                };
-                typeone(0);
-            });
-        }
-    }
-
     initComment() {
         if (this.config.comment) {
             if (this.config.comment.gitalk) {
@@ -735,7 +702,6 @@ class Theme {
             this.initMath();
             this.initMermaid();
             this.initEcharts();
-            this.initTypeit();
             this.initMapbox();
             this.initCookieconsent();
         } catch (err) {

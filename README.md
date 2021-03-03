@@ -116,7 +116,6 @@ I hope you will uBlogger ❤️!
 * Kinds of **admonitions** shortcode
 * **Custom style** shortcode
 * **Custom script** shortcode
-* **Animated typing** supported by [TypeIt](https://typeitjs.com/)
 * **Dynamic scroll** supported by [Smooth Scroll](https://github.com/cferdinandi/smooth-scroll)
 * **Cookie consent banner** supported by [cookieconsent](https://github.com/osano/cookieconsent)
 * ...
@@ -170,7 +169,6 @@ Thanks to the authors of following resources included in the theme:
 * [Twemoji](https://github.com/twitter/twemoji)
 * [clipboard.js](https://github.com/zenorocha/clipboard.js)
 * [Sharer.js](https://github.com/ellisonleao/sharer.js)
-* [TypeIt](https://typeitjs.com/)
 * [KaTeX](https://katex.org/)
 * [mermaid](https://github.com/knsv/mermaid)
 * [ECharts](https://echarts.apache.org/)

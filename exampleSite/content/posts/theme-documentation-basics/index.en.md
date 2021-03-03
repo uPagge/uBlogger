@@ -269,8 +269,6 @@ Please open the code block below to view the complete sample configuration :(far
       pre = ""
       # you can add extra information after the name (HTML format is supported), such as icons
       post = ""
-      # {{< version 0.2.5 >}} whether to use typeit animation for title name
-      typeit = false
 
   # Footer config
   [params.footer]
@@ -323,8 +321,6 @@ Please open the code block below to view the complete sample configuration :(far
       title = ""
       # subtitle shown in home page
       subtitle = "This is My New Hugo Site"
-      # whether to use typeit animation for subtitle
-      typeit = true
       # whether to show social links
       social = true
       # {{< version 0.2.0 >}} disclaimer (HTML format is supported)
@@ -626,17 +622,6 @@ Please open the code block below to view the complete sample configuration :(far
         label = ""
         lightTheme = "github-light"
         darkTheme = "github-dark"
-
-  # {{< version 0.2.5 >}} TypeIt config
-  [params.typeit]
-    # typing speed between each step (measured in milliseconds)
-    speed = 100
-    # blinking speed of the cursor (measured in milliseconds)
-    cursorSpeed = 1000
-    # character used for the cursor (HTML format is supported)
-    cursorChar = "|"
-    # cursor duration after typing finishing (measured in milliseconds, "-1" means unlimited)
-    duration = -1
 
   # Site verification code config for Google/Bing/Yandex/Pinterest/Baidu
   [params.verification]
