@@ -1,0 +1,201 @@
+# Translations for Bulgarian
+# https://gohugo.io/content-management/multilingual/#translation-of-strings
+
+# === baseof ==
+[backToTop]
+other = "Нагоре"
+
+[viewComments]
+other = "Коментари"
+# === baseof ==
+
+# === Post ===
+[posts]
+other = "Публикации"
+
+[navNext]
+other = "Слдващата Статия"
+
+[navPrev]
+other = "Предишна Статия"
+# === Post ===
+
+# === Taxonomy ===
+[allSome]
+other = "Всички {{ .Some }}"
+
+[tag]
+other = "Таг"
+
+[tags]
+other = "Тагове"
+
+[category]
+other = "Категория"
+
+[categories]
+other = "Категории"
+# === Taxonomy ===
+
+# === Pagination ===
+[more]
+other = "Повече"
+# === Pagination ===
+
+# === partials/header.html ===
+[selectLanguage]
+other = "Избери Език"
+
+[switchTheme]
+other = "Смени Тема"
+# === partials/header.html ===
+
+# === partials/footer.html ===
+[poweredBySome]
+other = "Задвижвано от {{ .Hugo }} | Тема - {{ .Theme }}"
+# === partials/footer.html ===
+
+# === partials/comment.html ===
+[valineLang]
+other = "bg"
+
+[valinePlaceholder]
+other = "Вашият коментар ..."
+
+[facebookLanguageCode]
+other = "bg_BG"
+# === partials/comment.html ===
+
+# === partials/assets.html ===
+[search]
+other = "Търсене"
+
+[searchPlaceholder]
+other = "Търси ..."
+
+[clear]
+other = "Изчисти"
+
+[cancel]
+other = "Откажи"
+
+[noResultsFound]
+other = "Няма намерени резултати"
+
+[lunrLanguageCode]
+other = "bg"
+
+[copyToClipboard]
+other = "Копирай"
+
+[cookieconsentMessage]
+other = "Този сайт използва бисквитки."
+
+[cookieconsentDismiss]
+other = "Разбрах!"
+
+[cookieconsentLink]
+other = "Научи Повече"
+# === partials/assets.html ===
+
+# === partials/plugin/share.html ===
+[shareOn]
+other = "Сподели в"
+# === partials/plugin/share.html ===
+
+# === posts/single.html ===
+[contents]
+other = "Съдържание"
+
+[publishedOnDate]
+other = "публикувано на {{ .Date }}"
+
+[includedInCategories]
+other = "в категории {{ .Categories }}"
+
+[wordCount]
+one = "Една дума"
+other = "{{ .Count }} думи"
+
+[readingTime]
+one = "Една минута"
+other = "{{ .Count }} минути"
+
+[views]
+other = "Преглеждания"
+
+[author]
+other = "Автор"
+
+[updatedOnDate]
+other = "Обновено на {{ .Date }}"
+
+[readMarkdown]
+other = "Прочети Markdown"
+
+[back]
+other = "Назад"
+
+[home]
+other = "Начало"
+
+[readMore]
+other = "Прочети повече"
+# === posts/single.html ===
+
+# === 404.html ===
+[pageNotFound]
+other = "Страницата не е Открита"
+
+[pageNotFoundText]
+other = "Страницата която търсите не беше открита. Използвайте търсачката или се върнете в началото."
+# === 404.html ===
+
+# === shortcodes/admonition.html ===
+[note]
+other = "Бележка"
+
+[abstract]
+other = "Откъс"
+
+[info]
+other = "Информация"
+
+[tip]
+other = "Подсказка"
+
+[success]
+other = "Успешно"
+
+[question]
+other = "Въпрос"
+
+[warning]
+other = "Внимание"
+
+[failure]
+other = "Проблем"
+
+[danger]
+other = "Опасност"
+
+[bug]
+other = "Недостатък"
+
+[example]
+other = "Пример"
+
+[quote]
+other = "Цитат"
+# === shortcodes/admonition.html ===
+
+# === shortcodes/version.html ===
+[new]
+other = "НОВ"
+
+[changed]
+other = "ПРОМЕНЕНО"
+
+[deleted]
+other = "ИЗТРИТО"
+# === codes/version.html ===
