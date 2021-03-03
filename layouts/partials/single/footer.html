@@ -1,9 +1,10 @@
 {{- $params := .Scratch.Get "params" -}}
 {{- $pageTheme := $params.Theme | default .Site.Params.Page.theme | default "classic" -}}
 
-{{ with $params.button }}
+{{ $button := $params.button}}
+{{ if eq $button.enable true }}
 <div class="post-info-share">
-    <a href="{{ .link }}" class="button button-big button-red">{{ .text }}</a>
+    <a href="{{ $button.link }}" class="button button-big button-red">{{ $button.text }}</a>
 </div>
 {{ end }}
 

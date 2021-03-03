@@ -196,6 +196,7 @@
             {{- end -}}
             {{- end -}}
 
+            {{ if eq ($params.authorHidden | default false) false  }}
             {{- $authorName := $params.author | default .Site.Author.name | default " " -}}
             {{- if and (not (eq $authorName " ")) (not (eq $pageTheme "hero")) -}}
             {{ $author := index .Site.Data.authors $authorName }}
@@ -206,6 +207,7 @@
                     <div class="number-posts">{{ $author.about }}</span></div>
                 </div>
             </div>
+            {{- end -}}
             {{- end -}}
 
             {{- /* Static TOC */ -}}
@@ -255,8 +257,8 @@
     </div>
 
 
-    {{- $comment := .Site.Params.Comment -}}
-    {{- if $comment.enable -}}
+    {{- $comment := .Site.Params.Comment  -}}
+    {{- if ($params.comment.enable | default $comment.enable) -}}
     <div class="page single comments content-block-position">
         {{- $authorComment := $params.authorComment -}}
         {{- if not (eq $authorName " ") -}}
