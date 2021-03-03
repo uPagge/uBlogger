@@ -33,23 +33,22 @@ header {
 
 article {
 
-  .post {
-    a:visited {
+  a:visited {
+    color: #70a0b0;
+
+    [theme=dark] & {
       color: #70a0b0;
-
-      [theme=dark] & {
-        color: #70a0b0;
-      }
-    }
-
-    a {
-      border-bottom: dashed 1px;
-    }
-
-    a[class="header-mark"], .post-footer a {
-      border-bottom: none;
     }
   }
+
+  a {
+    border-bottom: dashed 1px;
+  }
+
+  a[class="header-mark"], .post-footer a {
+    border-bottom: none;
+  }
+
 
   .content-block {
     border-radius: $article-border-radius;
@@ -114,6 +113,8 @@ article {
     border-top-left-radius: $article-border-radius;
     border-top-right-radius: $article-border-radius;
   }
+
+  @import "_buttom";
 }
 
 .article-mini {
@@ -373,7 +374,7 @@ a.post-tag-summary {
   border-bottom: none;
 
   [theme=dark] & {
-    background-color: white;
+    background-color: $global-background-secondary-color;
   }
 }
 
