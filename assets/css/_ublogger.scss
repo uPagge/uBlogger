@@ -101,8 +101,9 @@ article {
 
   em {
     background: #fff3bc;
-    padding-bottom: 1px;
     font-style: inherit;
+    padding: 4px 7px 6px;
+    box-decoration-break: clone;
 
     [theme=dark] & {
       background: #AE8029;
