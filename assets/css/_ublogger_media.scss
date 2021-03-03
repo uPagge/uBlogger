@@ -35,7 +35,7 @@
     width: 100%;
   }
 
-  .post-tags-toc {
+  .post-share-toc {
     margin: 1rem auto;
   }
 }
@@ -335,8 +335,7 @@
 
 @media print {
 
-  div.menu, .fixed-button, .toc, #toc-auto, .post-info-share,
-  .footer-donate, .post-footer, .comments, .post-tags, footer, .breadcrumbs {
+  div.menu, .fixed-button, .toc, #toc-auto, .post-info-share, .post-footer, .comments, .post-tags, footer, .breadcrumbs {
     display: none !important;
   }
 

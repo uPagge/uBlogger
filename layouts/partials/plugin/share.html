@@ -1,8 +1,6 @@
 {{- $share := (.Scratch.Get "params").share | default dict -}}
 
 {{- if $share.enable -}}
-
-<div class="share-text">Поделиться статьей</div>
     {{- /* 000: Telegram */ -}}
     {{- if $share.Telegram -}}
     <div class="share-link">

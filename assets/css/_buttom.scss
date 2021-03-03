@@ -1,4 +1,4 @@
-.button {
+a.button {
   display: inline-block;
   padding: 10px 20px;
   max-width: 90%;
@@ -15,50 +15,50 @@
   }
 }
 
-.button:hover {
+a.button:hover {
   color: #333;
   background-color: #FFF;
 }
 
-.button-big {
+a.button-big {
   padding: 15px 30px;
   font-size: 160%;
   font-weight: bold;
 }
 
-.button-white {
+a.button-white {
   background-color: #FFF;
   color: #333;
   border-color: #333;
 }
 
-.button-white:hover {
+a.button-white:hover {
   background-color: #000;
   color: #FFF;
 }
 
-.button-black {
+a.button-black {
   background-color: #000;
   color: #FFF;
   border-color: #FFF;
 }
 
-.button-black:hover {
+a.button-black:hover {
   background-color: #FFF;
   color: #333;
 }
 
-.button-red {
+a.button-red {
   background-color: #fb0021;
   border: solid 2px #fb0021;
 }
 
-.button-red:hover {
+a.button-red:hover {
   background-color: #FFF;
   color: #fb0021;
 }
 
-.big-grey-button {
+a.big-grey-button {
   display: inline-block;
   max-width: 90%;
   box-sizing: border-box;
@@ -74,7 +74,7 @@
   margin: 50px auto 0;
 }
 
-.big-grey-button:hover {
+a.big-grey-button:hover {
   background-color: #FFF;
   color: #666;
 }

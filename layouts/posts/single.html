@@ -196,6 +196,18 @@
             {{- end -}}
             {{- end -}}
 
+            {{- $authorName := $params.author | default .Site.Author.name | default " " -}}
+            {{- if and (not (eq $authorName " ")) (not (eq $pageTheme "hero")) -}}
+            {{ $author := index .Site.Data.authors $authorName }}
+            <div class="footer-post-author">
+                <div class="author-avatar"><a href="{{ with $author.link }} {{- . | safeHTML -}}{{ end }}" target="_blank"><img alt="" src="{{ with $author.avatar }} {{- . | safeHTML -}}{{ end }}" border="0"></a></div>
+                <div class="author-info">
+                    <div class="name"><a href="{{ with $author.link }} {{- . | safeHTML -}}{{ end }}" target="_blank">{{ $author.full_name }}</a></div>
+                    <div class="number-posts">{{ $author.about }}</span></div>
+                </div>
+            </div>
+            {{- end -}}
+
             {{- /* Static TOC */ -}}
             {{- if ne $toc.enable false -}}
             <div class="details toc" id="toc-static"  data-kept="{{ if $toc.keepStatic }}true{{ end }}">
@@ -237,14 +249,11 @@
     <div id="toc-final"></div>
     </article>
 
-{{- with .Params.tags -}}
-    <div class="{{ if $toc.keepStatic }} post-tags {{ else }} post-tags post-tags-toc {{ end }}">
-            {{- range $index, $value := . -}}
-                {{- $tag := partialCached "function/path.html" $value $value | printf "/tags/%v" | $.Site.GetPage -}}
-                <a href="{{ $tag.RelPermalink }}" class="tag">{{ $tag.Title }}</a>
-            {{- end -}}
+
+    <div class="{{ if $toc.keepStatic }} post-share {{ else }} post-share post-share-toc {{ end }}">
+        {{- partial "plugin/share.html" . -}}
     </div>
-{{- end -}}
+
 
     {{- $comment := .Site.Params.Comment -}}
     {{- if $comment.enable -}}

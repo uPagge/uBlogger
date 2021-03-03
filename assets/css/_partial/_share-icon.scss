@@ -1,7 +1,9 @@
 .post-info-share {
   text-align: center;
   padding: 40px 0 40px 0;
+}
 
+.post-share {
   a.share-icon {
     border-bottom: none;
     color: white;
@@ -31,9 +33,8 @@
 }
 
 .share-icon {
-  color: white;
   border-radius: 6px;
-  padding: 8px 16px 6px;
+  padding: 8px 16px 6px 16px;
 }
 
 .share-telegram {

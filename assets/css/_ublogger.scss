@@ -33,22 +33,23 @@ header {
 
 article {
 
-  a:visited {
-    color: #70a0b0;
-
-    [theme=dark] & {
+  .content-block {
+    a:visited {
       color: #70a0b0;
+
+      [theme=dark] & {
+        color: #70a0b0;
+      }
+    }
+
+    a {
+      border-bottom: dashed 1px;
+    }
+
+    a[class="header-mark"], .post-footer a {
+      border-bottom: none;
     }
   }
-
-  a {
-    border-bottom: dashed 1px;
-  }
-
-  a[class="header-mark"], .post-footer a {
-    border-bottom: none;
-  }
-
 
   .content-block {
     border-radius: $article-border-radius;
@@ -362,31 +363,19 @@ a.post-tag-summary {
 }
 
 .footer-post-author {
-  margin: 20px 0 0 0;
   padding: 20px;
   background-color: $global-background-secondary-color;
   color: black;
-  border-radius: 10px 10px 0 0;
   display: inline-block;
   width: 100%;
   box-sizing: border-box;
   border: solid 2px $global-secondary-color;
-  border-bottom: none;
+  border-radius: 10px;
+  border-bottom: solid 2px #DDD;
 
   [theme=dark] & {
     background-color: $global-background-secondary-color;
   }
-}
-
-.footer-donate {
-  border: solid 2px $global-secondary-color;
-  display: inline-block;
-  width: 100%;
-  box-sizing: border-box;
-  background-color: $global-background-secondary-color;
-  color: black;
-  border-radius: 0 0 10px 10px;
-  padding: 10px;
 }
 
 .author-avatar {
@@ -736,31 +725,33 @@ footer {
 
 }
 
-.post-tags {
+.post-share {
   max-width: 900px;
   width: 100%;
   min-width: 200px;
-  box-sizing: border-box;
   text-align: center;
   margin: 1rem auto;
+}
+
+.post-tags {
+  box-sizing: border-box;
 
   .tag {
     margin-top: 10px;
     margin-right: 10px;
     padding: 5px 10px 5px 10px;
-    background: $global-color-accent;
     border-radius: 4px;
-    color: white;
+    color: #DDD;
     display: inline-block;
+    border: 2px solid #DDD;
 
     [theme=dark] & {
-      background-color: $global-font-color-dark;
-      color: black;
+      color: #DDD;
     }
   }
 }
 
-.post-tags-toc {
+.post-share-toc {
   margin: 1rem 0;
 }
 

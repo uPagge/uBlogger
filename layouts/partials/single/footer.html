@@ -1,27 +1,11 @@
 {{- $params := .Scratch.Get "params" -}}
 {{- $pageTheme := $params.Theme | default .Site.Params.Page.theme | default "classic" -}}
 
+{{ with $params.button }}
 <div class="post-info-share">
-    {{- partial "plugin/share.html" . -}}
-    <a class="button button-big button-red" style="margin-top: 20px">Поблагодарить автора</a>
+    <a href="{{ .link }}" class="button button-big button-red">{{ .text }}</a>
 </div>
-
-{{- $authorName := $params.author | default .Site.Author.name | default " " -}}
-{{- if and (not (eq $authorName " ")) (not (eq $pageTheme "hero")) -}}
-{{ $author := index .Site.Data.authors $authorName }}
-<div class="footer-post-author" {{- if not $author.ps -}} style="border-radius: 10px;border-bottom: solid 2px #DDD" {{- end -}}>
-    <div class="author-avatar"><a href="{{ with $author.link }} {{- . | safeHTML -}}{{ end }}" target="_blank"><img alt="" src="{{ with $author.avatar }} {{- . | safeHTML -}}{{ end }}" border="0"></a></div>
-    <div class="author-info">
-        <div class="name"><a href="{{ with $author.link }} {{- . | safeHTML -}}{{ end }}" target="_blank">{{ $author.full_name }}</a></div>
-        <div class="number-posts">{{ $author.about }}</span></div>
-    </div>
-</div>
-{{- if $author.ps -}}
-<div class="footer-donate">
-    <div>{{- $author.ps | safeHTML -}}</div>
-</div>
-{{- end -}}
-{{- end -}}
+{{ end }}
 
 <div class="post-footer" id="post-footer">
     {{- if and (or .PrevInSection .NextInSection) $params.showPostNav -}}
@@ -39,3 +23,12 @@
     </div>
     {{- end -}}
 </div>
+
+{{- with .Params.tags -}}
+<div class="post-tags">
+    {{- range $index, $value := . -}}
+    {{- $tag := partialCached "function/path.html" $value $value | printf "/tags/%v" | $.Site.GetPage -}}
+    <a href="{{ $tag.RelPermalink }}" class="tag">{{ $tag.Title }}</a>
+    {{- end -}}
+</div>
+{{- end -}}
