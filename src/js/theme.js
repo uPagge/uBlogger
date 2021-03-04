@@ -40,6 +40,7 @@ class Theme {
         this.resizeEventSet = new Set();
         this.switchThemeEventSet = new Set();
         this.clickMaskEventSet = new Set();
+        this.tocSelected = -1;
         if (window.objectFitImages) objectFitImages();
     }
 
@@ -454,18 +455,6 @@ class Theme {
                     $toc.style.position = 'fixed';
                     $toc.style.top = `${TOP_SPACING}px`;
                 }
-                // Check if there's subtitle
-                const $subtitleLinkElem = document.getElementsByClassName("single-subtitle headerLink");
-                let tocSubtract = $subtitleLinkElem.length > 0 ? 2 : 1;
-
-                // Check if there's embedded gist markdown
-                let $embeddedGists = []
-                this.util.forEach($headerLinkElements, $headerElem => {
-                    if ($headerElem.parentNode.nodeName === "ARTICLE") {
-                        $embeddedGists.push($headerElem);
-                    }
-                })
-                tocSubtract += $embeddedGists.length;
                 this.util.forEach($tocLinkElements, $tocLink => {
                     $tocLink.classList.remove('active');
                 });
@@ -482,13 +471,28 @@ class Theme {
                         break;
                     }
                 }
-                activeTocIndex -= tocSubtract;
                 if (activeTocIndex !== -1) {
-                    $tocLinkElements[activeTocIndex].classList.add('active');
-                    let $parent = $tocLinkElements[activeTocIndex].parentElement;
-                    while ($parent !== $tocCore) {
-                        $parent.classList.add('has-active');
-                        $parent = $parent.parentElement.parentElement;
+                    const $selHeader = $headerLinkElements[activeTocIndex];
+                    let $selectedToC;
+                    for (let i = 0; i < $tocLinkElements.length; i++) {
+                        if ($tocLinkElements[i].hash.slice(1) === $selHeader.id) {
+                            $selectedToC = $tocLinkElements[i];
+                            if (i !== this.tocSelected) {
+                                this.tocSelected = i;
+                            }
+                            break;
+                        }
+                    }
+                    if (typeof $selectedToC === "undefined" && this.tocSelected !== -1) {
+                        $selectedToC = $tocLinkElements[this.tocSelected];
+                    }
+                    if (typeof $selectedToC !== "undefined") {
+                        $selectedToC.classList.add('active');
+                        let $parent = $selectedToC.parentElement;
+                        while ($parent !== $tocCore) {
+                            $parent.classList.add('has-active');
+                            $parent = $parent.parentElement.parentElement;
+                        }
                     }
                 }
             });
