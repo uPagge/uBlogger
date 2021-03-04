@@ -454,7 +454,18 @@ class Theme {
                     $toc.style.position = 'fixed';
                     $toc.style.top = `${TOP_SPACING}px`;
                 }
+                // Check if there's subtitle
+                const $subtitleLinkElem = document.getElementsByClassName("single-subtitle headerLink");
+                let tocSubtract = $subtitleLinkElem.length > 0 ? 2 : 1;
 
+                // Check if there's embedded gist markdown
+                let $embeddedGists = []
+                this.util.forEach($headerLinkElements, $headerElem => {
+                    if ($headerElem.parentNode.nodeName === "ARTICLE") {
+                        $embeddedGists.push($headerElem);
+                    }
+                })
+                tocSubtract += $embeddedGists.length;
                 this.util.forEach($tocLinkElements, $tocLink => {
                     $tocLink.classList.remove('active');
                 });
@@ -471,6 +482,7 @@ class Theme {
                         break;
                     }
                 }
+                activeTocIndex -= tocSubtract;
                 if (activeTocIndex !== -1) {
                     $tocLinkElements[activeTocIndex].classList.add('active');
                     let $parent = $tocLinkElements[activeTocIndex].parentElement;
