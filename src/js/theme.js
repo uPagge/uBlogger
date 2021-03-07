@@ -475,7 +475,7 @@ class Theme {
                     const $selHeader = $headerLinkElements[activeTocIndex];
                     let $selectedToC;
                     for (let i = 0; i < $tocLinkElements.length; i++) {
-                        if ($tocLinkElements[i].hash.slice(1) === $selHeader.id) {
+                        if ($tocLinkElements[i].hash.slice(1) === encodeURI($selHeader.id)) {
                             $selectedToC = $tocLinkElements[i];
                             if (i !== this.tocSelected) {
                                 this.tocSelected = i;
