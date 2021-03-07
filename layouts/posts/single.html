@@ -76,8 +76,8 @@
                     <a href="{{ with $author.site }} {{- . | safeHTML -}}{{ end }}" class="hero-author-profile">
                         <img class="hero-author-avatar" src="{{ with $author.avatar }} {{- . | safeHTML -}}{{ end }}" alt="Bruno Krebs">
                         <div class="profile-text-wrapper">
-                            <h4 class="hero-author-profile-name">{{ $author.full_name }}</h4>
-                            <h4 class="hero-author-profile-title">{{ $params.customAuthor.short_about | default $author.short_about }}</h4>
+                            <span class="hero-author-profile-name">{{ $author.full_name }}</span>
+                            <span class="hero-author-profile-title">{{ $params.customAuthor.short_about | default $author.short_about }}</span>
                         </div>
                     </a>
 
