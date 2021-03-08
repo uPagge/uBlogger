@@ -8,10 +8,15 @@ code {
   font-family: $code-font-family;
   color: $code-color;
   border-radius: 3px;
-  line-height: 1.8rem;
 
   [theme=dark] & {
     color: $code-color-dark;
+  }
+}
+
+em {
+  code {
+    line-height: 1.8rem;
   }
 }
 
