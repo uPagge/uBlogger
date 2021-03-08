@@ -1,13 +1,14 @@
 code {
   display:inline-block;
   max-width: 100%;
-  padding: 0 .4rem;
+  padding: .1rem .4rem 0 .4rem;;
   @include overflow-wrap(break-word);
   @include line-break(anywhere);
   font-size: $code-font-size;
   font-family: $code-font-family;
   color: $code-color;
   border-radius: 3px;
+  line-height: 1.8rem;
 
   [theme=dark] & {
     color: $code-color-dark;

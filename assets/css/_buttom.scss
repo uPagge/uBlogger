@@ -53,6 +53,10 @@ a.button-red {
   border: solid 2px #fb0021;
 }
 
+a.button-red:visited {
+  color: #ffffff;
+}
+
 a.button-red:hover {
   background-color: #FFF;
   color: #fb0021;
