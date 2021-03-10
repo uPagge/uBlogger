@@ -1,7 +1,7 @@
-{{- .Scratch.Set "version" "1.2.0" -}}
+{{- .Scratch.Set "version" "2.0.0" -}}
 
 {{- /* uBlogger theme version detection */ -}}
-{{- $VERSION := "1.3.X" -}}
+{{- $VERSION := "2.0.X" -}}
 {{- if eq .Site .Sites.First -}}
     {{- if not .Site.Params.version -}}
         {{- errorf "Configuration Error 配置文件错误\n\nYou haven't configured the uBlogger version param correctly yet. See #basic-configuration\n你还没有正确配置 uBlogger 的版本参数. 参考 #basic-configuration\n" -}}
