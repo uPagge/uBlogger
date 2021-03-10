@@ -1,12 +1,148 @@
-svg.icon {
-  display: inline-block;
-  width: 1.25em;
-  height: 1em;
-  text-align: center;
+//svg.icon {
+//  display: inline-block;
+//  width: 20px;
+//  height: 20px;
+//  text-align: center;
+//
+//  path {
+//    fill: currentColor;
+//  }
+//}
 
-  path {
-    fill: currentColor;
+.svg-icon {
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-image: url(/img/icon/sprite.svg);
+  [theme=dark] & {
+    background-image: url(/img/icon/sprite-dark.svg);
   }
+}
+.icon-moon {
+  width: 18px;
+  height: 24px;
+  background-position: 0 0;
+  vertical-align: middle;
+}
+.icon-search {
+  width: 20px;
+  height: 24px;
+  background-position: -18px 0;
+  vertical-align: middle;
+}
+.icon-cancel {
+  width: 20px;
+  height: 24px;
+  background-position: -39px 0;
+  vertical-align: middle;
+}
+.icon-loading {
+  width: 20px;
+  height: 24px;
+  background-position: -60px 0;
+  vertical-align: middle;
+}
+.icon-arrow-right {
+  width: 20px;
+  height: 24px;
+  background-position: -80px 0;
+  vertical-align: middle;
+}
+.icon-arrow-up {
+  width: 16px;
+  height: 22px;
+  background-position: -100px 0;
+  vertical-align: middle;
+}
+
+.icon-comments-fixed {
+  width: 16px;
+  height: 22px;
+  background-position: -122px 0;
+  vertical-align: middle;
+}
+
+.icon-eye {
+  width: 14px;
+  height: 12px;
+  background-position: -155px 0;
+}
+.icon-folder {
+  width: 14px;
+  height: 12px;
+  background-position: -173px 0;
+}
+.icon-clock {
+  width: 14px;
+  height: 12px;
+  background-position: -190px 0;
+}
+.icon-user {
+  width: 14px;
+  height: 12px;
+  background-position: -205px 0;
+}
+.icon-comments {
+  width: 14px;
+  height: 12px;
+  background-position: -220px 0;
+}
+.icon-pencil {
+  width: 14px;
+  height: 12px;
+  background-position: -235px 0;
+}
+.icon-stopwatch {
+  width: 14px;
+  height: 11px;
+  background-position: -248px 0;
+}
+.icon-copyright {
+  width: 14px;
+  height: 12px;
+  background-position: -263px 0;
+}
+
+.icon-eye-big {
+  width: 20px;
+  height: 24px;
+  background-position: -300px 0;
+  vertical-align: middle;
+}
+.icon-clock-big {
+  width: 20px;
+  height: 24px;
+  background-position: -325px 0;
+  vertical-align: middle;
+}
+.icon-pencil-big {
+  width: 20px;
+  height: 24px;
+  background-position: -345px 0;
+  vertical-align: middle;
+}
+.icon-stopwatch-big {
+  width: 25px;
+  height: 23px;
+  background-position: -362px 0;
+  vertical-align: middle;
+}
+.icon-copy {
+  width: 20px;
+  height: 25px;
+  background-position: -390px 0;
+  vertical-align: middle;
+}
+.icon-ellipsis {
+  width: 20px;
+  height: 25px;
+  background-position: -415px 0;
+  vertical-align: middle;
+}
+.icon-code-right {
+  width: 20px;
+  height: 25px;
+  background-position: -428px 0;
+  vertical-align: middle;
 }
 
 img.emoji {

@@ -15,8 +15,6 @@ categories: ["documentation"]
 page:
     theme: full
 
-lightgallery: true
-
 toc:
   auto: false
 math:
@@ -119,7 +117,7 @@ featuredImagePreview: ""
 hiddenFromHomePage: false
 hiddenFromSearch: false
 twemoji: false
-lightgallery: true
+
 ruby: true
 fraction: true
 fontawesome: true

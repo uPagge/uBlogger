@@ -1,8 +1,24 @@
 {{- define "title" }}{{ .Title }} | {{ .Site.Params.Title }}{{ end -}}
 
+{{- define "dnsPrefetch" -}}
+{{- $params := .Scratch.Get "params" -}}
+{{- with $params.Seo.dnsPrefetch -}}
+{{- range $index, $value := . -}}
+<link rel="dns-prefetch" href="{{ $value }}">
+{{- end -}}
+{{- end -}}
+{{- with $.Site.Params.Seo.dnsPrefetch -}}
+{{- range $index, $value := . -}}
+<link rel="dns-prefetch" href="{{ $value }}">
+{{- end -}}
+{{- end -}}
+{{- end -}}
+
 {{- define "no-content" -}}
 
 {{- $params := .Scratch.Get "params" -}}
+
+{{ $viewCounter := .Site.Params.ViewCounter }}
 
 {{- $toc := $params.toc -}}
 {{- if eq $toc true -}}
@@ -12,7 +28,7 @@
 {{- end -}}
 
 {{- $pageTheme := $params.Theme | default .Site.Params.Page.theme | default "classic" -}}
-
+{{ $params.UniqueId }}
 <div class="container content-article {{ if eq $toc.keepStatic false }}page-toc{{ end }} theme-{{ $pageTheme }}">
 
     {{- /* Auto TOC */ -}}
@@ -28,67 +44,143 @@
     {{- $image := $params.featuredimage -}}
     {{- $pageImageHidden := $params.hiddenFeaturedImage -}}
     {{- with .Resources.GetMatch "featured-image" -}}
-    {{- $image = .RelPermalink -}}
+    {{- $image = .Permalink -}}
     {{- end -}}
 
+    {{- $authorName := $params.author | default .Site.Author.name | default " " -}}
+    {{ $author := index .Site.Data.authors $authorName }}
 
     <div class="header-post">
-        {{ if or (eq $pageTheme "full") (eq $pageTheme "mega-full") }}
-        {{- with $image -}}
-    <div class="featured-image" style="background-image: url('{{ $image }}');">
+
+        {{ if eq $pageTheme "hero" }}
+
+        {{- $heroImage := "" -}}
+        {{- with .Resources.GetMatch "featured-image" -}}
+        {{- if lt 1600 .Width -}}
+        {{- $heroImage = (.Resize "1600x q100").Permalink -}}
+        {{- else -}}
+        {{- $heroImage = .Permalink -}}
         {{- end -}}
         {{- end -}}
-        <div class="post-title">
 
-            <div class="post-all-meta">
-            {{ partial "breadcrumbs.html" . | safeHTML }}
-            <h1 class="single-title animated flipInX">{{ $.Title }}</h1>
-            {{- /* Subtitle */ -}}
-            {{- with $params.subtitle -}}
-            <h2 class="single-subtitle">{{ . }}</h2>
-            {{- end -}}
-            {{- /* Meta */ -}}
-            <div class="post-meta">
-                <div class="post-meta-line">
-                    {{- $categories := slice -}}
-                    {{- range $.Params.categories -}}
-                    {{- $category := partialCached "function/path.html" . . | printf "/categories/%v" | $.Site.GetPage -}}
-                    {{- $categories = $categories | append (printf `<a href="%v"><i class="far fa-folder fa-fw"></i>&nbsp;%v</a>` $category.RelPermalink $category.Title) -}}
-                    {{- end -}}
-                    {{- with delimit $categories "&nbsp;" -}}
-                    <span class="post-category">
-                                {{ . }}
-                            </span>
-                    {{- end -}}
+        <div class="post-hero-grid">
+            <div class="post-hero-info">
+                <div class="hero-text-container">
 
-                    {{- with $.Site.Params.dateformat | default "2006-01-02" | $.PublishDate.Format -}}
-                    {{- $timeAgoDate:= $.Site.Params.TimeAgo.DateFormat | default "2006-01-02" | $.PublishDate.Format -}}
-                    &nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time class="timeago" datetime="{{ $timeAgoDate }}">{{ . }}</time>
-                    {{- end -}}
-                    &nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;{{ T "wordCount" $.WordCount }}
-                    &nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-clock fa-fw"></i>&nbsp;{{ T "readingTime" $.ReadingTime }}
-                    {{- $comment := $.Scratch.Get "comment" | default dict -}}
-                    {{- if $comment.enable | and $comment.valine.enable | and $comment.valine.visitor -}}
-                    <span id="{{ .RelPermalink }}" class="leancloud_visitors" data-flag-title="{{ .Title }}">
-                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;{{ T "views" }}
-                    </span>&nbsp;
-                    {{- end -}}
+                    <h1>{{ $.Title }}</h1>
+                    <p class="hero-text-description">{{ $params.subtitle }}</p>
                 </div>
+
+                <div class="hero-author">
+
+                    <a href="{{ with $author.site }} {{- . | safeHTML -}}{{ end }}" class="hero-author-profile">
+                        <img class="hero-author-avatar" src="{{ with $author.avatar }} {{- . | safeHTML -}}{{ end }}" alt="Bruno Krebs">
+                        <div class="profile-text-wrapper">
+                            <span class="hero-author-profile-name">{{ $author.full_name }}</span>
+                            <span class="hero-author-profile-title">{{ $params.customAuthor.short_about | default $author.short_about }}</span>
+                        </div>
+                    </a>
+
+                </div>
+
             </div>
+
+            <div class="post-hero-logo">
+
+                <figure class="hero-img">
+                    {{- dict "Src" $heroImage "Title" .Title "Resources" .Resources | partial "plugin/image.html" -}}
+                </figure>
+
+            </div>
+
         </div>
 
+        <div class="hero-tags">
+            {{ if ne $viewCounter nil}}
+            <span class="rendered tag-none-display" id="views_container"><i class="svg-icon icon-eye-big"></i><span id="views_value" style="margin-right: 0">{{ if ne $params.Views nil}} {{ $params.Views }} {{ else }} Нет просмотров {{ end }}</span></span>
+            {{- end -}}
 
-    </div>
+            {{- with $.Site.Params.dateformat | default "2006-01-02" | $.PublishDate.Format -}}
+            {{- $timeAgoDate:= $.Site.Params.TimeAgo.DateFormat | default "2006-01-02" | $.PublishDate.Format -}}
+            <span id="post-date" class="rendered"><i class="svg-icon icon-clock-big"></i><time class="timeago" datetime="{{ $timeAgoDate }}">{{ . }}</time></span>
+            {{- end -}}
 
-    </div>
+            <span class="rendered"><i class="svg-icon icon-pencil-big"></i>{{ T "wordCount" $.WordCount }}</span>
+            <span class="rendered"><i class="svg-icon icon-stopwatch-big"></i>{{ T "readingTime" $.ReadingTime }}</span>
+        </div>
+        {{ end }}
 
+        {{ if not (eq $pageTheme "hero") }}
         {{ if or (eq $pageTheme "full") (eq $pageTheme "mega-full") }}
         {{- with $image -}}
+
+        {{- $fullImage := $image -}}
+        {{- if eq $pageTheme "full" -}}
+        {{- with $.Resources.GetMatch "featured-image" -}}
+        {{- if lt 1600 .Width -}}
+            {{- $fullImage = (.Resize "1600x q100").Permalink -}}
+        {{- else -}}
+            {{- $fullImage = .Permalink -}}
+        {{- end -}}
+        {{- end -}}
+        {{- end -}}
+
+        <div class="featured-image" style="background-image: url('{{ $fullImage }}');">
+            {{- end -}}
+            {{- end -}}
+            <div class="post-title">
+
+                <div class="post-all-meta">
+                    {{ partial "breadcrumbs.html" . | safeHTML }}
+                    <h1 class="single-title flipInX">{{ $.Title }}</h1>
+                    {{- /* Subtitle */ -}}
+                    {{- with $params.subtitle -}}
+                    <h2 class="single-subtitle">{{ . }}</h2>
+                    {{- end -}}
+                    {{- /* Meta */ -}}
+                    <div class="post-meta">
+                        <div class="post-meta-line">
+                            {{- $categories := slice -}}
+                            {{- range $.Params.categories -}}
+                            {{- $category := partialCached "function/path.html" . . | printf "/categories/%v" | $.Site.GetPage -}}
+                            {{- $categories = $categories | append (printf `<a href="%v"><i class="svg-icon icon-folder"></i>%v</a>` $category.RelPermalink $category.Title) -}}
+                            {{- end -}}
+                            {{- with delimit $categories "&nbsp;" -}}
+                            <span class="post-category">
+                                {{ . }}
+                            </span>
+                            {{- end -}}
+                            {{ if ne $viewCounter nil}}
+                            <span class="post-meta-views tag-none-display" id="views_container">
+                                <i class="svg-icon icon-eye"></i><span id="views_value" style="margin-right: 0">Нет</span> просмотров</span>
+                            </span>
+                            {{- end -}}
+                            {{- with $.Site.Params.dateformat | default "2006-01-02" | $.PublishDate.Format -}}
+                            {{- $timeAgoDate:= $.Site.Params.TimeAgo.DateFormat | default "2006-01-02" | $.PublishDate.Format -}}
+                            <span class="post-meta-date">
+                                <i class="svg-icon icon-clock"></i><time class="timeago" datetime="{{ $timeAgoDate }}">{{ . }}</time>
+                            </span>
+                            {{- end -}}
+                            <span class="post-meta-words">
+                                <i class="svg-icon icon-pencil"></i>{{ T "wordCount" $.WordCount }}
+                            </span>
+                            <span class="post-meta-reading">
+                                <i class="svg-icon icon-stopwatch"></i>{{ T "readingTime" $.ReadingTime }}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            {{ if or (eq $pageTheme "full") (eq $pageTheme "mega-full") }}
+            {{- with $image -}}
+        </div>
+        {{- end -}}
+        {{- end -}}
+        {{- end -}}
+
     </div>
-            {{- end -}}
-            {{- end -}}
-
-
 
     <article class="single toc-start">
 
@@ -104,15 +196,28 @@
             {{- end -}}
             {{- end -}}
 
+            {{ if eq ($params.authorHidden | default false) false  }}
+            {{- $authorName := $params.author | default .Site.Author.name | default " " -}}
+            {{- if and (not (eq $authorName " ")) (not (eq $pageTheme "hero")) -}}
+            {{ $author := index .Site.Data.authors $authorName }}
+            <div class="footer-post-author">
+                <div class="author-avatar"><a href="{{ with $author.link }} {{- . | safeHTML -}}{{ end }}" target="_blank"><img alt="" src="{{ with $author.avatar }} {{- . | safeHTML -}}{{ end }}" border="0"></a></div>
+                <div class="author-info">
+                    <div class="name"><a href="{{ with $author.link }} {{- . | safeHTML -}}{{ end }}" target="_blank">{{ $author.full_name }}</a></div>
+                    <div class="number-posts">{{ $author.about }}</span></div>
+                </div>
+            </div>
+            {{- end -}}
+            {{- end -}}
+
             {{- /* Static TOC */ -}}
             {{- if ne $toc.enable false -}}
             <div class="details toc" id="toc-static"  data-kept="{{ if $toc.keepStatic }}true{{ end }}">
                 <div class="details-summary toc-title">
                     <span>{{ T "contents" }}</span>
-                    <span><i class="details-icon fas fa-angle-right"></i></span>
                 </div>
                 <div class="details-content toc-content" id="toc-content-static">
-                    {{- dict "Content" .TableOfContents "Ruby" $params.ruby "Fraction" $params.fraction "Fontawesome" $params.fontawesome | partial "function/content.html" | safeHTML -}}
+                    {{- dict "Content" .TableOfContents "Ruby" $params.ruby "Fraction" $params.fraction | partial "function/content.html" | safeHTML -}}
                 </div>
             </div>
             {{- end -}}
@@ -134,11 +239,11 @@
                 {{- end -}}
                 {{- end -}}
 
-                {{- dict "Content" .Content "Ruby" $params.ruby "Fraction" $params.fraction "Fontawesome" $params.fontawesome | partial "function/content.html" | safeHTML -}}
+                {{- dict "Content" .Content "Ruby" $params.ruby "Fraction" $params.fraction | partial "function/content.html" | safeHTML -}}
 
         </div>
 
-            <div class="post">
+            <div class="post" style="padding-top: 0">
                 {{- /* Footer Post */ -}}
                 {{- partial "single/footer.html" . -}}
             </div>
@@ -146,26 +251,21 @@
     <div id="toc-final"></div>
     </article>
 
-{{- with .Params.tags -}}
-    <div class="{{ if $toc.keepStatic }} post-tags {{ else }} post-tags post-tags-toc {{ end }}">
-            {{- range $index, $value := . -}}
-                {{- $tag := partialCached "function/path.html" $value $value | printf "/tags/%v" | $.Site.GetPage -}}
-                <a href="{{ $tag.RelPermalink }}" class="tag">{{ $tag.Title }}</a>
-            {{- end -}}
-    </div>
-{{- end -}}
 
-    {{- $comment := .Site.Params.Comment -}}
-    {{- if $comment.enable -}}
+    <div class="{{ if $toc.keepStatic }} post-share {{ else }} post-share post-share-toc {{ end }}">
+        {{- partial "plugin/share.html" . -}}
+    </div>
+
+
+    {{- $comment := .Site.Params.Comment  -}}
+    {{- if ($params.comment.enable | default $comment.enable) -}}
     <div class="page single comments content-block-position">
         {{- $authorComment := $params.authorComment -}}
-        {{- $authorName := $params.author | default .Site.Author.name | default " " -}}
         {{- if not (eq $authorName " ") -}}
-        {{ $author := index .Site.Data.authors $authorName }}
         {{- if $authorComment -}}
         <div class="author-comment">
             <div class="author-avatar" style="float: left"><a href="{{ with $author.site }} {{- . | safeHTML -}}{{ end }}" target="_blank"><img alt="" src="{{ with $author.avatar }} {{- . | safeHTML -}}{{ end }}" border="0"></a></div>
-            <div class="name">{{ $author.name }}</div>
+            <div class="name">{{ $author.full_name }}</div>
             <div class="author-comment-text">{{ $authorComment }}</span></div>
         </div>
         {{- end -}}
@@ -175,4 +275,33 @@
     </div>
     {{- end -}}
 </div>
+
+{{ if ne $viewCounter nil}}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const host = '{{ $viewCounter.url }}';
+        const pathName = window.location.pathname.replaceAll('/', '_')
+        const url = host + '/hit/{{ $viewCounter.key }}/' + pathName.substring(1).slice(0, -1);
+        const request = new XMLHttpRequest();
+        request.open('GET', url, true);
+        request.onload = function () {
+            if (this.status >= 200 && this.status < 400) {
+                const response = JSON.parse(this.response);
+                const views = response.value;
+                if (views >= 1 && document.querySelector("#views_value") != null) {
+                    document.querySelector("#views_value").textContent = response.value.toLocaleString(undefined, {minimumFractionDigits: 0});
+                    document.querySelector("#views_container").style.display = '';
+                }
+            } else {
+                console.log("Call to " + url + " failed with status code " + this.status + ".");
+            }
+        };
+        request.onerror = function () {
+            console.log("Call to " + url + " failed with a connection error of some sort.");
+        };
+        request.send();
+    });
+</script>
+{{- end -}}
+
 {{- end -}}

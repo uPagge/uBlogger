@@ -27,7 +27,7 @@ $global-font-color-dark: #a9a9b3 !default;
 
 // Color of the secondary text
 $global-font-secondary-color: #a9a9b3 !default;
-$global-font-secondary-color-dark: #5d5d5f !default;
+$global-font-secondary-color-dark: #939090 !default;
 
 // Color of the link
 $global-link-color: #161209 !default;
@@ -136,6 +136,8 @@ $code-font-size: .875rem !default;
 
 // Font family of the code
 $code-font-family: Source Code Pro, Menlo, Consolas, Monaco, monospace, $global-font-family !default;
+
+$margin-article: 1.5rem 0;
 
 // Code type map
 $code-type-map: (

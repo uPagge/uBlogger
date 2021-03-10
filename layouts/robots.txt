@@ -2,9 +2,12 @@ User-agent: *
 
 Allow: /index.xml
 
-Disallow: /images/
-Disallow: /js/
-Disallow: /css/
+Disallow: *.js
+Disallow: *.css
+
+User-agent: Googlebot
+Allow: *.js
+Allow: *.css
 
 User-agent: MJ12bot
 Disallow: /
@@ -18,11 +21,59 @@ Disallow: /
 # Block SISTRIX
 User-agent: SISTRIX Crawler
 Disallow: /
+
 User-agent: sistrix
 Disallow: /
+
 User-agent: 007ac9
 Disallow: /
+
 User-agent: 007ac9 Crawler
+Disallow: /
+
+User-agent: Nutch
+Disallow: /
+
+User-agent: ia_archiver
+Disallow: /
+
+User-agent: WebCopier
+Disallow: /
+
+User-agent: WebStripper
+Disallow: /
+
+User-agent: Teleport
+Disallow: /
+
+User-agent: Offline Explorer
+Disallow: /
+
+User-agent: SiteSnagger
+Disallow: /
+
+User-agent: psbot
+Disallow: /
+
+User-agent: TeleportPro
+Disallow: /
+
+User-agent: EmailSiphon
+Disallow: /
+
+User-agent: EmailCollector
+Disallow: /
+
+User-agent: larbin
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MSIECrawler
+Disallow: /
+
+User-agent: moget
 Disallow: /
 
 # Block Uptime robot

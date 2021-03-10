@@ -13,7 +13,7 @@
         {{- if .Content -}}
             <div class="single">
                 <div class="content" id="content">
-                    {{- dict "Content" .Content "Ruby" $params.ruby "Fraction" $params.fraction "Fontawesome" $params.fontawesome | partial "function/content.html" | safeHTML -}}
+                    {{- dict "Content" .Content "Ruby" $params.ruby "Fraction" $params.fraction | partial "function/content.html" | safeHTML -}}
                 </div>
             </div>
         {{- end -}}
@@ -27,11 +27,31 @@
             {{- else -}}
                 {{- $pages = where $pages "Params.hiddenfromhomepage" "!=" true -}}
             {{- end -}}
+
+            {{ $pinnedPostRelPermalinks := split .Site.Params.pinnedPost "," }}
+            {{ $pinnedPosts := where $pages "RelPermalink" "in" $pinnedPostRelPermalinks }}
+            {{ $pages := where $pages "RelPermalink" "not in" $pinnedPostRelPermalinks }}
+
             {{- with $posts.paginate | default .Site.Params.paginate -}}
                 {{- $pages = $.Paginate $pages . -}}
             {{- else -}}
                 {{- $pages = .Paginate $pages -}}
             {{- end -}}
+
+            {{ if .Site.Params.pinnedPost }}
+            {{ if (and .Site.Params.pinOnlyToFirstPage (ne $pages.PageNumber 1)) }}
+            {{/* Do nothing if the pinOnlyToFirstPage flag is set and we're not on page 1. */}}
+            {{else}}
+
+            {{ range $pinnedPosts }}
+            <div class="post-pinned">
+            {{- .Render "summary" -}}
+            </div>
+
+            {{end}}
+            {{end}}
+            {{end}}
+
             {{- range $pages.Pages -}}
                 {{- .Render "summary" -}}
             {{- end -}}

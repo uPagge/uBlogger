@@ -1,7 +1,7 @@
 code {
   display:inline-block;
   max-width: 100%;
-  padding: 0 .4rem;
+  padding: .1rem .4rem 0 .4rem;;
   @include overflow-wrap(break-word);
   @include line-break(anywhere);
   font-size: $code-font-size;
@@ -11,6 +11,12 @@ code {
 
   [theme=dark] & {
     color: $code-color-dark;
+  }
+}
+
+em {
+  code {
+    line-height: 1.8rem;
   }
 }
 
@@ -57,7 +63,7 @@ code, pre, .highlight table, .highlight tr, .highlight td {
 
 .highlight {
   line-height: 1.4em;
-  margin: .5rem 0;
+  margin: $margin-article;
 
   > .chroma {
     position: relative;
@@ -73,11 +79,8 @@ code, pre, .highlight table, .highlight tr, .highlight td {
       color: $code-info-color;
       background: darken($code-background-color, 8%);
       border-radius: 6px;
-
-      [theme=dark] & {
-        color: $code-info-color-dark;
-        background: darken($code-background-color-dark, 6%);
-      }
+      transition-property: background-color, color;
+      transition-duration: 0.5s;
 
       &:hover {
         cursor: pointer;

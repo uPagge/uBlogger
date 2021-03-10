@@ -38,11 +38,12 @@
     }
 
     .links {
-      padding: .5rem;
+      padding: 0 .5rem;;
       font-size: 1.5rem;
 
       a * {
         vertical-align: text-bottom;
+        margin-right: 6px;
       }
 
       img {
@@ -100,7 +101,6 @@
         height: 100%;
         left: 0;
         top: 0;
-        @include object-fit(none);
       }
 
       img.lazyloaded {

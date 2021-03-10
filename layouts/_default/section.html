@@ -2,10 +2,14 @@
     {{- .Params.Title | default (T .Section) | default .Section | dict "Some" | T "allSome" }} - {{ .Site.Title -}}
 {{- end -}}
 
+{{- define "robots" -}}
+<meta name="robots" content="noindex, follow" />
+{{- end -}}
+
 {{- define "content" -}}
     <div class="page archive">
         {{- /* Title */ -}}
-        <h2 class="single-title animated pulse faster">
+        <h2 class="single-title pulse faster">
             {{- .Params.Title | default (T .Section) | default .Section | dict "Some" | T "allSome" -}}
         </h2>
 

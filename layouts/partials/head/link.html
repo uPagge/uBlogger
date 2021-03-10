@@ -8,6 +8,8 @@
         <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+        <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
     {{- end -}}
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     {{- with .Site.Params.app.iconColor -}}
@@ -17,12 +19,6 @@
 {{- end -}}
 
 <link rel="canonical" href="{{ .Permalink }}" />
-{{- if .PrevInSection -}}
-    <link rel="prev" href="{{ .PrevInSection.Permalink }}" />
-{{- end -}}
-{{- if .NextInSection -}}
-    <link rel="next" href="{{ .NextInSection.Permalink }}" />
-{{- end -}}
 
 {{- with .OutputFormats.Get "RSS" -}}
     <link rel="alternate" href="{{ .RelPermalink }}" type="application/rss+xml" title="{{ $.Site.Title }}">
@@ -31,7 +27,7 @@
 
 {{- /* Advertising */ -}}
 {{- if .Site.Params.Advertising.Enable -}}
-{{- with .Site.Params.Advertising.Google -}}
+{{- with .Site.Params.Advertising.Google.Client -}}
 <script data-ad-client="{{ . }}" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 {{- end -}}
 {{- end -}}
@@ -45,11 +41,6 @@
 {{- $style := dict "Source" "css/style.scss" "Fingerprint" $fingerprint -}}
 {{- $options := dict "targetPath" "css/style.min.css" "enableSourceMap" true -}}
 {{- $style = dict "Context" . "ToCSS" $options | merge $style -}}
-{{- partial "plugin/style.html" $style -}}
-
-{{- /* Font Awesome */ -}}
-{{- $source := $cdn.fontawesomeFreeCSS | default "lib/fontawesome-free/all.min.css" -}}
-{{- $style := dict "Source" $source "Fingerprint" $fingerprint -}}
 {{- partial "plugin/style.html" $style -}}
 
 {{- /* Animate.css */ -}}

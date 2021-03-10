@@ -40,6 +40,7 @@ class Theme {
         this.resizeEventSet = new Set();
         this.switchThemeEventSet = new Set();
         this.clickMaskEventSet = new Set();
+        this.tocSelected = -1;
         if (window.objectFitImages) objectFitImages();
     }
 
@@ -57,7 +58,9 @@ class Theme {
                     if ($titleElements.length) $svg.removeChild($titleElements[0]);
                     $icon.parentElement.replaceChild($svg, $icon);
                 })
-                .catch(err => { console.error(err); });
+                .catch(err => {
+                    console.error(err);
+                });
         });
     }
 
@@ -167,7 +170,7 @@ class Theme {
                 autoselect: true,
                 dropdownMenuContainer: `#search-dropdown-${suffix}`,
                 clearOnSelected: true,
-                cssClasses: { noPrefix: true },
+                cssClasses: {noPrefix: true},
                 debug: true,
             }, {
                 name: 'search',
@@ -183,12 +186,12 @@ class Theme {
                         const search = () => {
                             if (lunr.queryHandler) query = lunr.queryHandler(query);
                             const results = {};
-                            this._index.search(query).forEach(({ ref, matchData: { metadata } }) => {
+                            this._index.search(query).forEach(({ref, matchData: {metadata}}) => {
                                 const matchData = this._indexData[ref];
-                                let { uri, title, content: context } = matchData;
+                                let {uri, title, content: context} = matchData;
                                 if (results[uri]) return;
                                 let position = 0;
-                                Object.values(metadata).forEach(({ content }) => {
+                                Object.values(metadata).forEach(({content}) => {
                                     if (content) {
                                         const matchPosition = content.position[0][0];
                                         if (matchPosition < position || position === 0) position = matchPosition;
@@ -207,9 +210,9 @@ class Theme {
                                 });
                                 results[uri] = {
                                     'uri': uri,
-                                    'title' : title,
-                                    'date' : matchData.date,
-                                    'context' : context,
+                                    'title': title,
+                                    'date': matchData.date,
+                                    'context': context,
                                 };
                             });
                             return Object.values(results).slice(0, maxResultLength);
@@ -222,10 +225,10 @@ class Theme {
                                     this._index = lunr(function () {
                                         if (searchConfig.lunrLanguageCode) this.use(lunr[searchConfig.lunrLanguageCode]);
                                         this.ref('objectID');
-                                        this.field('title', { boost: 50 });
-                                        this.field('tags', { boost: 20 });
-                                        this.field('categories', { boost: 20 });
-                                        this.field('content', { boost: 10 });
+                                        this.field('title', {boost: 50});
+                                        this.field('tags', {boost: 20});
+                                        this.field('categories', {boost: 20});
+                                        this.field('content', {boost: 10});
                                         this.metadataWhitelist = ['position'];
                                         data.forEach((record) => {
                                             indexData[record.objectID] = record;
@@ -235,9 +238,9 @@ class Theme {
                                     this._indexData = indexData;
                                     finish(search());
                                 }).catch(err => {
-                                    console.error(err);
-                                    finish([]);
-                                });
+                                console.error(err);
+                                finish([]);
+                            });
                         } else finish(search());
                     } else if (searchConfig.type === 'algolia') {
                         this._algoliaIndex = this._algoliaIndex || algoliasearch(searchConfig.algoliaAppID, searchConfig.algoliaSearchKey).initIndex(searchConfig.algoliaIndex);
@@ -250,9 +253,9 @@ class Theme {
                                 highlightPreTag: `<${highlightTag}>`,
                                 highlightPostTag: `</${highlightTag}>`,
                             })
-                            .then(({ hits }) => {
+                            .then(({hits}) => {
                                 const results = {};
-                                hits.forEach(({ uri, date, _highlightResult: { title }, _snippetResult: { content } }) => {
+                                hits.forEach(({uri, date, _highlightResult: {title}, _snippetResult: {content}}) => {
                                     if (results[uri] && results[uri].context.length > content.value) return;
                                     results[uri] = {
                                         uri: uri,
@@ -270,10 +273,10 @@ class Theme {
                     }
                 },
                 templates: {
-                    suggestion: ({ title, date, context }) => `<div><span class="suggestion-title">${title}</span><span class="suggestion-date">${date}</span></div><div class="suggestion-context">${context}</div>`,
-                    empty: ({ query }) => `<div class="search-empty">${searchConfig.noResultsFound}: <span class="search-query">"${query}"</span></div>`,
+                    suggestion: ({title, date, context}) => `<div><span class="suggestion-title">${title}</span><span class="suggestion-date">${date}</span></div><div class="suggestion-context">${context}</div>`,
+                    empty: ({query}) => `<div class="search-empty">${searchConfig.noResultsFound}: <span class="search-query">"${query}"</span></div>`,
                     footer: ({}) => {
-                        const { searchType, icon, href } = searchConfig.type === 'algolia' ? {
+                        const {searchType, icon, href} = searchConfig.type === 'algolia' ? {
                             searchType: 'algolia',
                             icon: '<i class="fab fa-algolia fa-fw"></i>',
                             href: 'https://www.algolia.com/',
@@ -282,7 +285,8 @@ class Theme {
                             icon: '',
                             href: 'https://lunrjs.com/',
                         };
-                        return `<div class="search-footer">Search by <a href="${href}" rel="noopener noreffer" target="_blank">${icon} ${searchType}</a></div>`;},
+                        return `<div class="search-footer">Search by <a href="${href}" rel="noopener noreffer" target="_blank">${icon} ${searchType}</a></div>`;
+                    },
                 },
             });
             autosearch.on('autocomplete:selected', (_event, suggestion, _dataset, _context) => {
@@ -299,7 +303,7 @@ class Theme {
             script.async = true;
             if (script.readyState) {
                 script.onreadystatechange = () => {
-                    if (script.readyState == 'loaded' || script.readyState == 'complete'){
+                    if (script.readyState == 'loaded' || script.readyState == 'complete') {
                         script.onreadystatechange = null;
                         initAutosearch();
                     }
@@ -320,10 +324,6 @@ class Theme {
                 $details.classList.toggle('open');
             }, false);
         });
-    }
-
-    initLightGallery() {
-        if (this.config.lightGallery) lightGallery(document.getElementById('content'), this.config.lightGallery);
     }
 
     initHighlight() {
@@ -349,20 +349,20 @@ class Theme {
                 $header.className = 'code-header ' + $code.className.toLowerCase();
                 const $title = document.createElement('span');
                 $title.classList.add('code-title');
-                $title.insertAdjacentHTML('afterbegin', '<i class="arrow fas fa-chevron-right fa-fw"></i>');
+                $title.insertAdjacentHTML('afterbegin', '<i class="arrow svg-icon icon-code-right"></i>');
                 $title.addEventListener('click', () => {
                     $chroma.classList.toggle('open');
                 }, false);
                 $header.appendChild($title);
                 const $ellipses = document.createElement('span');
-                $ellipses.insertAdjacentHTML('afterbegin', '<i class="fas fa-ellipsis-h fa-fw"></i>');
+                $ellipses.insertAdjacentHTML('afterbegin', '<i class="svg-icon icon-ellipsis"></i>');
                 $ellipses.classList.add('ellipses');
                 $ellipses.addEventListener('click', () => {
                     $chroma.classList.add('open');
                 }, false);
                 $header.appendChild($ellipses);
                 const $copy = document.createElement('span');
-                $copy.insertAdjacentHTML('afterbegin', '<i class="far fa-copy fa-fw"></i>');
+                $copy.insertAdjacentHTML('afterbegin', '<i class="svg-icon icon-copy"></i>');
                 $copy.classList.add('copy');
                 const code = $code.innerText;
                 if (this.config.code.maxShownLines < 0 || code.split('\n').length < this.config.code.maxShownLines + 2) $chroma.classList.add('open');
@@ -396,6 +396,19 @@ class Theme {
                 $header.insertAdjacentHTML('afterbegin', `<a href="#${$header.id}" class="header-mark"></a>`);
             });
         }
+    }
+
+    initShareHeader() {
+        this.util.forEach(document.querySelectorAll('.content-break h2'), $header => {
+            $header.insertAdjacentHTML('afterend', `
+<div class="header-title-share">
+<a href="${document.URL}#${$header.id}" target="_blank">ссылка</a>
+<a href="https://t.me/share/url?url=${document.URL}#${$header.id}" target="_blank">telegram</a>
+<a href="https://vk.com/share.php?url=${document.URL}#${$header.id}" target="_blank">vk</a>
+<a href="https://twitter.com/intent/tweet?text=${document.URL}#${$header.id}" target="_blank">twitter</a>
+<a href="https://www.facebook.com/sharer/sharer.php?u=${document.URL}#${$header.id}">fb</a>
+</div>`);
+        });
     }
 
     initToc() {
@@ -442,9 +455,12 @@ class Theme {
                     $toc.style.position = 'fixed';
                     $toc.style.top = `${TOP_SPACING}px`;
                 }
-
-                this.util.forEach($tocLinkElements, $tocLink => { $tocLink.classList.remove('active'); });
-                this.util.forEach($tocLiElements, $tocLi => { $tocLi.classList.remove('has-active'); });
+                this.util.forEach($tocLinkElements, $tocLink => {
+                    $tocLink.classList.remove('active');
+                });
+                this.util.forEach($tocLiElements, $tocLi => {
+                    $tocLi.classList.remove('has-active');
+                });
                 const INDEX_SPACING = 20 + (headerIsFixed ? headerHeight : 0);
                 let activeTocIndex = $headerLinkElements.length - 1;
                 for (let i = 0; i < $headerLinkElements.length - 1; i++) {
@@ -456,11 +472,27 @@ class Theme {
                     }
                 }
                 if (activeTocIndex !== -1) {
-                    $tocLinkElements[activeTocIndex].classList.add('active');
-                    let $parent = $tocLinkElements[activeTocIndex].parentElement;
-                    while ($parent !== $tocCore) {
-                        $parent.classList.add('has-active');
-                        $parent = $parent.parentElement.parentElement;
+                    const $selHeader = $headerLinkElements[activeTocIndex];
+                    let $selectedToC;
+                    for (let i = 0; i < $tocLinkElements.length; i++) {
+                        if ($tocLinkElements[i].hash.slice(1) === encodeURI($selHeader.id)) {
+                            $selectedToC = $tocLinkElements[i];
+                            if (i !== this.tocSelected) {
+                                this.tocSelected = i;
+                            }
+                            break;
+                        }
+                    }
+                    if (typeof $selectedToC === "undefined" && this.tocSelected !== -1) {
+                        $selectedToC = $tocLinkElements[this.tocSelected];
+                    }
+                    if (typeof $selectedToC !== "undefined") {
+                        $selectedToC.classList.add('active');
+                        let $parent = $selectedToC.parentElement;
+                        while ($parent !== $tocCore) {
+                            $parent.classList.add('has-active');
+                            $parent = $parent.parentElement.parentElement;
+                        }
                     }
                 }
             });
@@ -514,7 +546,7 @@ class Theme {
             mapboxgl.setRTLTextPlugin(this.config.mapbox.RTLTextPlugin);
             this._mapboxArr = this._mapboxArr || [];
             this.util.forEach(document.getElementsByClassName('mapbox'), $mapbox => {
-                const { lng, lat, zoom, lightStyle, darkStyle, marked, navigation, geolocate, scale, fullscreen } = this.data[$mapbox.id];
+                const {lng, lat, zoom, lightStyle, darkStyle, marked, navigation, geolocate, scale, fullscreen} = this.data[$mapbox.id];
                 const mapbox = new mapboxgl.Map({
                     container: $mapbox,
                     center: [lng, lat],
@@ -550,45 +582,12 @@ class Theme {
             this._mapboxOnSwitchTheme = this._mapboxOnSwitchTheme || (() => {
                 this.util.forEach(this._mapboxArr, mapbox => {
                     const $mapbox = mapbox.getContainer();
-                    const { lightStyle, darkStyle } = this.data[$mapbox.id];
+                    const {lightStyle, darkStyle} = this.data[$mapbox.id];
                     mapbox.setStyle(this.isDark ? darkStyle : lightStyle);
                     mapbox.addControl(new MapboxLanguage());
                 });
             });
             this.switchThemeEventSet.add(this._mapboxOnSwitchTheme);
-        }
-    }
-
-    initTypeit() {
-        if (this.config.typeit) {
-            const typeitConfig = this.config.typeit;
-            const speed = typeitConfig.speed ? typeitConfig.speed : 100;
-            const cursorSpeed = typeitConfig.cursorSpeed ? typeitConfig.cursorSpeed : 1000;
-            const cursorChar = typeitConfig.cursorChar ? typeitConfig.cursorChar : '|';
-            Object.values(typeitConfig.data).forEach(group => {
-                const typeone = (i) => {
-                    const id = group[i];
-                    const instance = new TypeIt(`#${id}`, {
-                        strings: this.data[id],
-                        speed: speed,
-                        lifeLike: true,
-                        cursorSpeed: cursorSpeed,
-                        cursorChar: cursorChar,
-                        waitUntilVisible: true,
-                        afterComplete: () => {
-                            if (i === group.length - 1) {
-                                if (typeitConfig.duration >= 0) window.setTimeout(() => {
-                                    instance.destroy();
-                                }, typeitConfig.duration);
-                                return;
-                            }
-                            instance.destroy();
-                            typeone(i + 1);
-                        },
-                    }).go();
-                };
-                typeone(0);
-            });
         }
     }
 
@@ -626,7 +625,11 @@ class Theme {
     }
 
     initSmoothScroll() {
-        if (SmoothScroll) new SmoothScroll('[href^="#"]', { speed: 300, speedAsDuration: true, header: '#header-desktop' });
+        if (SmoothScroll) new SmoothScroll('[href^="#"]', {
+            speed: 300,
+            speedAsDuration: true,
+            header: '#header-desktop'
+        });
     }
 
     initCookieconsent() {
@@ -652,7 +655,7 @@ class Theme {
                 if (scroll > ACCURACY) {
                     $header.classList.remove('fadeInDown');
                     this.util.animateCSS($header, ['fadeOutUp', 'faster'], true);
-                } else if (scroll < - ACCURACY) {
+                } else if (scroll < -ACCURACY) {
                     $header.classList.remove('fadeOutUp');
                     this.util.animateCSS($header, ['fadeInDown', 'faster'], true);
                 }
@@ -661,7 +664,7 @@ class Theme {
                 if (isMobile && scroll > ACCURACY) {
                     $fixedButtons.classList.remove('fadeIn');
                     this.util.animateCSS($fixedButtons, ['fadeOut', 'faster'], true);
-                } else if (!isMobile || scroll < - ACCURACY) {
+                } else if (!isMobile || scroll < -ACCURACY) {
                     $fixedButtons.style.display = 'block';
                     $fixedButtons.classList.remove('fadeOut');
                     this.util.animateCSS($fixedButtons, ['fadeIn', 'faster'], true);
@@ -707,15 +710,14 @@ class Theme {
             this.initSwitchTheme();
             this.initSearch();
             this.initDetails();
-            this.initLightGallery();
             this.initHighlight();
             this.initTable();
             this.initHeaderLink();
+            this.initShareHeader();
             this.initSmoothScroll();
             this.initMath();
             this.initMermaid();
             this.initEcharts();
-            this.initTypeit();
             this.initMapbox();
             this.initCookieconsent();
         } catch (err) {

@@ -2,6 +2,10 @@
     {{- .Params.Title | default (T .Data.Plural) | default .Data.Plural | dict "Some" | T "allSome" }} - {{ .Site.Title -}}
 {{- end -}}
 
+{{- define "robots" -}}
+<meta name="robots" content="noindex, follow" />
+{{- end -}}
+
 {{- define "content" -}}
     {{- $taxonomies := .Data.Plural -}}
     {{- $terms := .Data.Terms.ByCount -}}
@@ -9,8 +13,8 @@
 
     <div class="page archive">
         {{- /* Title */ -}}
-        <h2 class="single-title animated pulse faster">
-            {{- .Params.Title | default (T $taxonomies) | default $taxonomies | dict "Some" | T "allSome" -}}
+        <h2 class="single-title pulse faster">
+            {{- .Params.Title | default (T $taxonomies) | dict "Some" | T $taxonomies -}}
         </h2>
 
         {{- /* Categories Page */ -}}
@@ -24,7 +28,7 @@
                         <div class="card-item-wrapper">
                             <h3 class="card-item-title">
                                 <a href="{{ .RelPermalink }}">
-                                    <i class="far fa-folder fa-fw"></i>&nbsp;{{ .Page.Title }}
+                                    <i class="svg-icon icon-folder"></i>&nbsp;{{ .Page.Title }}
                                 </a>
                             </h3>
                             {{- range first 5 $pages -}}

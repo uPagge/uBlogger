@@ -2,18 +2,16 @@
 {{- .Title }} | {{ .Site.Title -}}
 {{- end -}}
 
+{{- define "robots" -}}
+<meta name="robots" content="noindex, follow" />
+{{- end -}}
+
 {{- define "content" -}}
     <div class="page archive">
         {{- /* Title */ -}}
-        <h2 class="single-title animated pulse faster">
+        <h2 class="single-title pulse faster">
             {{- $taxonomy := .Data.Singular -}}
-            {{- if eq $taxonomy "category" -}}
-                <i class="far fa-folder-open fa-fw"></i>&nbsp;{{ .Title }}
-            {{- else if eq $taxonomy "tag" -}}
-                <i class="fas fa-tag fa-fw"></i>&nbsp;{{ .Title }}
-            {{- else -}}
-                {{- printf "%v - %v" (T $taxonomy | default $taxonomy) .Title -}}
-            {{- end -}}
+            {{- printf "%v - %v" (T $taxonomy | default $taxonomy) .Title -}}
         </h2>
 
         {{- /* Paginate */ -}}

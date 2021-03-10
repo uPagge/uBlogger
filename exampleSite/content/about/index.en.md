@@ -3,7 +3,7 @@ title: "About uBlogger"
 date: 2019-08-02T11:04:49+08:00
 draft: false
 
-lightgallery: true
+
 
 math:
   enable: true
@@ -65,8 +65,6 @@ math:
 * :(far fa-grin-tongue-wink fa-fw): **Twemoji** supported
 * :(fas fa-code fa-fw): Automatically **highlighting** code
 * :(far fa-copy fa-fw): **Copy code** to clipboard with one click
-* :(far fa-images fa-fw): **Images gallery** supported by [lightgallery.js](https://github.com/sachinchoolur/lightgallery.js)
-* :(fab fa-font-awesome fa-fw): Extended Markdown syntax for **[Font Awesome](https://fontawesome.com/) icons**
 * :(far fa-sticky-note fa-fw): Extended Markdown syntax for **ruby annotation**
 * :(fas fa-percentage fa-fw): Extended Markdown syntax for **fraction**
 * :(fas fa-square-root-alt fa-fw): **Mathematical formula** supported by [$ \KaTeX $](https://katex.org/)
@@ -78,7 +76,6 @@ math:
 * :(far fa-bell fa-fw): Kinds of **admonitions** shortcode
 * :(fas fa-align-left fa-fw): **Custom style** shortcode
 * :(fab fa-js-square fa-fw): **Custom script** shortcode
-* :(fas fa-i-cursor fa-fw): **Animated typing** supported by [TypeIt](https://typeitjs.com/)
 * :(fas fa-arrow-down fa-fw): **Dynamic scroll** supported by [Smooth Scroll](https://github.com/cferdinandi/smooth-scroll)
 * :(fas fa-cookie-bite fa-fw): **Cookie consent banner** supported by [cookieconsent](https://github.com/osano/cookieconsent)
 * ...
@@ -105,7 +102,6 @@ Thanks to the authors of following resources included in the theme:
 * [lightgallery.js](https://github.com/sachinchoolur/lightgallery.js)
 * [clipboard.js](https://github.com/zenorocha/clipboard.js)
 * [Sharer.js](https://github.com/ellisonleao/sharer.js)
-* [TypeIt](https://typeitjs.com/)
 * [$ \KaTeX $](https://katex.org/)
 * [mermaid](https://github.com/knsv/mermaid)
 * [ECharts](https://echarts.apache.org/)

@@ -13,8 +13,8 @@ page:
 upd: ""
 authorComment: ""
 
-tags: [""]
-categories: [""]
+tags: []
+categories: []
 
 hiddenFromHomePage: false
 hiddenFromSearch: false
@@ -33,7 +33,7 @@ toc:
   enable: true
 math:
   enable: false
-lightgallery: false
+
 license: ""
 ---
 

@@ -2,21 +2,23 @@
 <header class="desktop" id="header-desktop">
     <div class="header-wrapper">
         <div class="header-title">
-            <a href="{{ .Site.Home.RelPermalink }}" title="{{ .Site.Title }}" class="header-logo">
+            <a href="{{ .Site.Home.RelPermalink }}" title="{{ .Site.Title }}" class="header-logo logo-svg">
                 {{- with .Site.Params.header.title -}}
                     {{- with .logo -}}
                         {{- dict "Src" . "Class" "logo" | partial "plugin/image.html" -}}
                     {{- end -}}
+                    {{- with .logoSvg }}
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 36" width="96" height="36" style="vertical-align: middle">
+                            <style>tspan{white-space:pre}</style>
+                            <path class="logo-svg" d="{{ . }}"/>
+                        </svg>
+                    {{- end -}}
                     {{- with .pre -}}
                         <span class="header-title-pre">{{ . | safeHTML }}</span>
                     {{- end -}}
-                    {{- if .typeit -}}
-                        {{- $id := dict "Content" .name "Scratch" $.Scratch | partial "function/id.html" -}}
-                        <span id="{{ $id }}" class="typeit"></span>
-                        {{- dict $id (slice $id) | dict "typeitMap" | merge ($.Scratch.Get "this") | $.Scratch.Set "this" -}}
-                    {{- else -}}
-                        {{- .name -}}
-                    {{- end -}}
+
+                    {{- .name -}}
+
                     {{- with .post -}}
                         <span class="header-title-post">{{ . | safeHTML }}</span>
                     {{- end -}}
@@ -42,7 +44,6 @@
                 {{- if .Site.IsMultiLingual -}}
                     <a href="javascript:void(0);" class="menu-item language" title="{{ T "selectLanguage" }}">
                         {{- .Language.LanguageName -}}
-                        <i class="fas fa-chevron-right fa-fw"></i>
                         <select class="language-select" id="language-select-desktop" onchange="location = this.value;">
                             {{- if eq .Kind "404" -}}
                                 {{- range .Sites -}}
@@ -65,18 +66,18 @@
                     <span class="menu-item search" id="search-desktop">
                         <input type="text" placeholder="{{ .Site.Params.search.placeholder | default (T `searchPlaceholder`) }}" id="search-input-desktop">
                         <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="{{ T `search` }}">
-                            <i class="fas fa-search fa-fw"></i>
+                            <span class="svg-icon icon-search"></span>
                         </a>
                         <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="{{ T `clear` }}">
-                            <i class="fas fa-times-circle fa-fw"></i>
+                            <span class="svg-icon icon-cancel"></span>
                         </a>
                         <span class="search-button search-loading" id="search-loading-desktop">
-                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                            <span class="svg-icon icon-loading"></span>
                         </span>
                     </span>
                 {{- end -}}
                 <a href="javascript:void(0);" class="menu-item theme-switch" title="{{ T "switchTheme" }}">
-                    <i class="fas fa-adjust fa-fw"></i>
+                    <span class="svg-icon icon-moon"></span>
                 </a>
             </div>
         </div>
@@ -93,16 +94,18 @@
                         {{- with .logo -}}
                             {{- dict "Src" . "Class" "logo" | partial "plugin/image.html" -}}
                         {{- end -}}
+                        {{- with .logoSvg }}
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 36" width="96" height="36" style="vertical-align: middle">
+                            <style>tspan{white-space:pre}</style>
+                            <path class="logo-svg" d="{{ . }}"/>
+                        </svg>
+                        {{- end -}}
                         {{- with .pre -}}
                             <span class="header-title-pre">{{ . | safeHTML }}</span>
                         {{- end -}}
-                        {{- if .typeit -}}
-                            {{- $id := dict "Content" .name "Scratch" $.Scratch | partial "function/id.html" -}}
-                            <span id="{{ $id }}" class="typeit"></span>
-                            {{- dict $id (slice $id) | dict "typeitMap" | merge ($.Scratch.Get "this") | $.Scratch.Set "this" -}}
-                        {{- else -}}
-                            {{- .name -}}
-                        {{- end -}}
+
+                        {{- .name -}}
+
                         {{- with .post -}}
                             <span class="header-title-post">{{ . | safeHTML }}</span>
                         {{- end -}}
@@ -121,13 +124,13 @@
                     <div class="search mobile" id="search-mobile">
                         <input type="text" placeholder="{{ .Site.Params.search.placeholder | default (T `searchPlaceholder`) }}" id="search-input-mobile">
                         <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="{{ T `search` }}">
-                            <i class="fas fa-search fa-fw"></i>
+                            <span class="svg-icon icon-search"></span>
                         </a>
                         <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="{{ T `clear` }}">
-                            <i class="fas fa-times-circle fa-fw"></i>
+                            <span class="svg-icon icon-cancel"></span>
                         </a>
                         <span class="search-button search-loading" id="search-loading-mobile">
-                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                            <span class="svg-icon icon-loading"></span>
                         </span>
                     </div>
                     <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
@@ -146,12 +149,11 @@
                 </a>
             {{- end -}}
             <a href="javascript:void(0);" class="menu-item theme-switch" title="{{ T "switchTheme" }}">
-                <i class="fas fa-adjust fa-fw"></i>
+                <span class="svg-icon icon-moon"></span>
             </a>
             {{- if .Site.IsMultiLingual -}}
                 <a href="javascript:void(0);" class="menu-item" title="{{ T "selectLanguage" }}">
                     {{- .Language.LanguageName -}}
-                    <i class="fas fa-chevron-right fa-fw"></i>
                     <select class="language-select" onchange="location = this.value;">
                         {{- if eq .Kind "404" -}}
                             {{- range .Sites -}}

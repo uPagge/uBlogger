@@ -14,7 +14,7 @@ resources:
 tags: ["shortcodes"]
 categories: ["documentation"]
 
-lightgallery: true
+
 ---
 
 **uBlogger** theme provides multiple shortcodes on top of built-in ones in Hugo.
@@ -1185,33 +1185,13 @@ Simple content is allowed in `Markdown` format and **without** rich block conten
 
 Example `typeit` input:
 
-```markdown
-{{</* typeit */>}}
-This is a *paragraph* with **typing animation** based on [TypeIt](https://typeitjs.com/)...
-{{</* /typeit */>}}
-```
-
 The rendered output looks like this:
-
-{{< typeit >}}
-This is a *paragraph* with **typing animation** based on [TypeIt](https://typeitjs.com/)...
-{{< /typeit >}}
 
 Alternatively, you can use custom **HTML tags**.
 
 Example `typeit` input with `h4` tag:
 
-```markdown
-{{</* typeit tag=h4 */>}}
-This is a *paragraph* with **typing animation** based on [TypeIt](https://typeitjs.com/)...
-{{</* /typeit */>}}
-```
-
 The rendered output looks like this:
-
-{{< typeit tag=h4 >}}
-This is a *paragraph* with **typing animation** based on [TypeIt](https://typeitjs.com/)...
-{{< /typeit >}}
 
 ### 10.2 Code Content {#code-content}
 
@@ -1219,25 +1199,9 @@ Code content is allowed and will be highlighted by named parameter `code` for th
 
 Example `typeit` input with `code`:
 
-```markdown
-{{</* typeit code=java */>}}
-public class HelloWorld {
-    public static void main(String []args) {
-        System.out.println("Hello World");
-    }
-}
-{{</* /typeit */>}}
-```
 
 The rendered output looks like this:
 
-{{< typeit code=java >}}
-public class HelloWorld {
-    public static void main(String []args) {
-        System.out.println("Hello World");
-    }
-}
-{{< /typeit >}}
 
 ### 10.3 Group Content {#group-content}
 
@@ -1248,25 +1212,9 @@ A set of `typeit` contents with the same value of named parameter `group` will s
 
 Example `typeit` input with `group`:
 
-```markdown
-{{</* typeit group=paragraph */>}}
-**First** this paragraph begins
-{{</* /typeit */>}}
-
-{{</* typeit group=paragraph */>}}
-**Then** this paragraph begins
-{{</* /typeit */>}}
-```
 
 The rendered output looks like this:
 
-{{< typeit group=paragraph >}}
-**First** this paragraph begins
-{{< /typeit >}}
-
-{{< typeit group=paragraph >}}
-**Then** this paragraph begins
-{{< /typeit >}}
 
 ## 11 script
 

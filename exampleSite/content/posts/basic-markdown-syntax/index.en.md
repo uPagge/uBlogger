@@ -11,7 +11,7 @@ resources:
 tags: ["Markdown", "HTML"]
 categories: ["Markdown"]
 
-lightgallery: true
+
 ---
 
 This article offers a sample of basic Markdown syntax that can be used in Hugo content files.
