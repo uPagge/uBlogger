@@ -48,7 +48,14 @@
     {{- end -}}
 
     {{- $authorName := $params.author | default .Site.Author.name | default " " -}}
-    {{ $author := index .Site.Data.authors $authorName }}
+    {{ $author := "" }}
+    {{- $authorPath := print "data/authors/" $authorName ".json" -}}
+    {{ if (fileExists $authorPath) -}}
+    {{ $author = index .Site.Data.authors $authorName }}
+    {{ end }}
+
+
+    {{ $authorPath | safeHTML }}
 
     <div class="header-post">
 
@@ -71,17 +78,19 @@
                     <p class="hero-text-description">{{ $params.subtitle }}</p>
                 </div>
 
+                {{ with $author }}
                 <div class="hero-author">
 
-                    <a href="{{ with $author.site }} {{- . | safeHTML -}}{{ end }}" class="hero-author-profile">
-                        <img class="hero-author-avatar" src="{{ with $author.avatar }} {{- . | safeHTML -}}{{ end }}" alt="Bruno Krebs">
+                    <a href="{{ with .site }} {{- . | safeHTML -}}{{ end }}" class="hero-author-profile">
+                        <img class="hero-author-avatar" src="{{ with .avatar }} {{- . | safeHTML -}}{{ end }}" alt="{{ .full_name }}">
                         <div class="profile-text-wrapper">
-                            <span class="hero-author-profile-name">{{ $author.full_name }}</span>
-                            <span class="hero-author-profile-title">{{ $params.customAuthor.short_about | default $author.short_about }}</span>
+                            <span class="hero-author-profile-name">{{ .full_name }}</span>
+                            <span class="hero-author-profile-title">{{ $params.customAuthor.short_about | default .short_about }}</span>
                         </div>
                     </a>
 
                 </div>
+                {{ end }}
 
             </div>
 
@@ -199,14 +208,15 @@
             {{ if eq ($params.authorHidden | default false) false  }}
             {{- $authorName := $params.author | default .Site.Author.name | default " " -}}
             {{- if and (not (eq $authorName " ")) (not (eq $pageTheme "hero")) -}}
-            {{ $author := index .Site.Data.authors $authorName }}
+            {{- with $author -}}
             <div class="footer-post-author">
-                <div class="author-avatar"><a href="{{ with $author.link }} {{- . | safeHTML -}}{{ end }}" target="_blank"><img alt="" src="{{ with $author.avatar }} {{- . | safeHTML -}}{{ end }}" border="0"></a></div>
+                <div class="author-avatar"><a href="{{ with .link }} {{- . | safeHTML -}}{{ end }}" target="_blank"><img alt="" src="{{ with .avatar }} {{- . | safeHTML -}}{{ end }}" border="0"></a></div>
                 <div class="author-info">
-                    <div class="name"><a href="{{ with $author.link }} {{- . | safeHTML -}}{{ end }}" target="_blank">{{ $author.full_name }}</a></div>
-                    <div class="number-posts">{{ $author.about }}</span></div>
+                    <div class="name"><a href="{{ with .link }} {{- . | safeHTML -}}{{ end }}" target="_blank">{{ .full_name }}</a></div>
+                    <div class="number-posts">{{ .about }}</span></div>
                 </div>
             </div>
+            {{- end -}}
             {{- end -}}
             {{- end -}}
 
@@ -261,11 +271,11 @@
     {{- if ($params.comment.enable | default $comment.enable) -}}
     <div class="page single comments content-block-position">
         {{- $authorComment := $params.authorComment -}}
-        {{- if not (eq $authorName " ") -}}
         {{- if $authorComment -}}
+        {{- with $author -}}
         <div class="author-comment">
-            <div class="author-avatar" style="float: left"><a href="{{ with $author.site }} {{- . | safeHTML -}}{{ end }}" target="_blank"><img alt="" src="{{ with $author.avatar }} {{- . | safeHTML -}}{{ end }}" border="0"></a></div>
-            <div class="name">{{ $author.full_name }}</div>
+            <div class="author-avatar" style="float: left"><a href="{{ with .link }} {{- . | safeHTML -}}{{ end }}" target="_blank"><img alt="" src="{{ with .avatar }} {{- . | safeHTML -}}{{ end }}" border="0"></a></div>
+            <div class="name">{{ .full_name }}</div>
             <div class="author-comment-text">{{ $authorComment }}</span></div>
         </div>
         {{- end -}}

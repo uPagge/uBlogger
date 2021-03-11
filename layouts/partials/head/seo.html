@@ -127,6 +127,8 @@
             "license": {{ . | safeHTML }},
         {{- end -}}
         {{- $publisherName := default .Site.Author.name | default " " -}}
+        {{- $publisherPath := print "data/authors/" $publisherName ".json" -}}
+        {{ if (fileExists $publisherPath) -}}
         {{ $publisher := index .Site.Data.authors $publisherName }}
         "publisher": {
             "@type": "Person",
@@ -140,13 +142,17 @@
             ]
             {{- end -}}
         },
+        {{- end -}}
         {{- $authorName := $params.author | default .Site.Author.name | default " " -}}
+        {{- $authorPath := print "data/authors/" $authorName ".json" -}}
+        {{ if (fileExists $authorPath) -}}
         {{ $author := index .Site.Data.authors $authorName }}
         {{- with $author -}}
             "author": {
                 "@type": "Person",
                 "name": {{ .full_name | safeHTML }}
             },
+        {{- end -}}
         {{- end -}}
         "description": {{ .Description | safeHTML }}
     }
