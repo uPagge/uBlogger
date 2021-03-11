@@ -14,6 +14,22 @@
 {{- end -}}
 {{- end -}}
 
+{{- define "twitter-card" -}}
+{{- $params := .Scratch.Get "params" -}}
+{{ $twitterImage := ""}}
+{{- with .Resources.GetMatch "featured-image" -}}
+{{- if lt 4095 .Width -}}
+{{- $twitterImage = (.Resize "4095x q100").Permalink -}}
+{{- else -}}
+{{- $twitterImage = .Permalink -}}
+{{- end -}}
+{{- end -}}
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="{{ $twitterImage }}"/>
+<meta name="twitter:title" content="{{ $params.Title }}"/>
+<meta name="twitter:description" content="{{ $params.Description }}"/>
+{{- end -}}
+
 {{- define "no-content" -}}
 
 {{- $params := .Scratch.Get "params" -}}

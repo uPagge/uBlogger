@@ -9,7 +9,14 @@
         <title>
             {{- block "title" . }}{{ .Site.Title }}{{ end -}}
         </title>
-
+        {{- block "twitter-card" . }}
+        <meta name="twitter:card" content="summary_large_image"/>
+        {{- with .Site.Params.Seo.Images -}}
+        <meta name="twitter:image" content="{{ index . 1 }}"/>
+        {{- end -}}
+        <meta name="twitter:title" content="{{ .Site.Params.Title }}"/>
+        <meta name="twitter:description" content="{{ .Site.Params.Description }}"/>
+        {{ end -}}
         {{- partial "head/meta.html" . -}}
         {{- partial "head/link.html" . -}}
 
