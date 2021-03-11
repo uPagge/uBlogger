@@ -28,16 +28,21 @@
             </a>
         </div>
         <div class="menu">
-            <div class="menu-inner">
-                {{- range .Site.Menus.main -}}
+            <nav>
+                <ul class="menu-inner">
+                    {{- range .Site.Menus.main -}}
                     {{- $url := .URL | relLangURL -}}
                     {{- with .Page -}}
-                        {{- $url = .RelPermalink -}}
+                    {{- $url = .RelPermalink -}}
                     {{- end -}}
-                    <a class="menu-item{{ if $.IsMenuCurrent `main` . | or ($.HasMenuCurrent `main` .) | or (eq $.RelPermalink $url) }} active{{ end }}" href="{{ $url }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if (urls.Parse $url).Host }} rel="noopener noreffer" target="_blank"{{ end }}>
-                        {{- .Pre | safeHTML }} {{ .Name }} {{ .Post | safeHTML -}}
-                    </a>
-                {{- end -}}
+                    <li>
+                        <a class="menu-item{{ if $.IsMenuCurrent `main` . | or ($.HasMenuCurrent `main` .) | or (eq $.RelPermalink $url) }} active{{ end }}" href="{{ $url }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if (urls.Parse $url).Host }} rel="noopener noreffer" target="_blank"{{ end }}>
+                            {{- .Pre | safeHTML }} {{ .Name }} {{ .Post | safeHTML -}}
+                        </a>
+                    </li>
+                    {{- end -}}
+                </ul>
+            </nav>
                 {{- if .Site.Menus.main -}}
                     <span class="menu-item delimiter"></span>
                 {{- end -}}
@@ -80,7 +85,7 @@
                     <span class="svg-icon icon-moon"></span>
                 </a>
             </div>
-        </div>
+        </nav>
     </div>
 </header>
 
@@ -139,15 +144,21 @@
                 </div>
             {{- end -}}
             {{- $currentPage := . -}}
-            {{- range .Site.Menus.main -}}
-                {{- $url := .URL | relLangURL -}}
-                {{- with .Page -}}
+            <nav>
+                <ul>
+                    {{- range .Site.Menus.main -}}
+                    {{- $url := .URL | relLangURL -}}
+                    {{- with .Page -}}
                     {{- $url = .RelPermalink -}}
-                {{- end -}}
-                <a class="menu-item" href="{{ $url }}" title="{{ .Title }}"{{ if (urls.Parse $url).Host }} rel="noopener noreffer" target="_blank"{{ end }}>
-                    {{- .Pre | safeHTML }}{{ .Name }}{{ .Post | safeHTML -}}
-                </a>
-            {{- end -}}
+                    {{- end -}}
+                    <li>
+                        <a class="menu-item" href="{{ $url }}" title="{{ .Title }}"{{ if (urls.Parse $url).Host }} rel="noopener noreffer" target="_blank"{{ end }}>
+                            {{- .Pre | safeHTML }}{{ .Name }}{{ .Post | safeHTML -}}
+                        </a>
+                    </li>
+                    {{- end -}}
+                </ul>
+            </nav>
             <a href="javascript:void(0);" class="menu-item theme-switch" title="{{ T "switchTheme" }}">
                 <span class="svg-icon icon-moon"></span>
             </a>

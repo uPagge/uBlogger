@@ -579,6 +579,20 @@ footer {
   a {
     color: #a9a9b3;
   }
+
+  ol {
+    margin: 0;
+    padding: 0;
+    li {
+      display: inline-block;
+      list-style: none;
+    }
+
+    li:not(:first-child):before {
+      content: "/";
+      margin: 0 3px 0 3px;
+    }
+  }
 }
 
 .page-toc {

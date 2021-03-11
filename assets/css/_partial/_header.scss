@@ -166,8 +166,19 @@ header {
       overflow: hidden;
       white-space: nowrap;
 
+      nav {
+        display: inline-block;
+      }
+
+      ul {
+        li {
+          list-style: none;
+          display: inline-block;
+        }
+      }
+
       .menu-inner {
-        float: right;
+        margin: 0;
       }
 
       .menu-item {
@@ -283,6 +294,13 @@ header {
       display: none;
       padding-top: .5rem;
       @include box-shadow(0 .125rem .25rem rgba(0, 0, 0, .1));
+
+      ul {
+        padding: 0;
+        li {
+          list-style: none;
+        }
+      }
 
       .search-wrapper {
         display: flex;
