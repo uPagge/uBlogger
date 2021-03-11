@@ -12,7 +12,10 @@
         {{- block "twitter-card" . }}
         <meta name="twitter:card" content="summary_large_image"/>
         {{- with .Site.Params.Seo.Images -}}
-        <meta name="twitter:image" content="{{ index . 1 }}"/>
+        <meta name="twitter:image" content="{{ index . 0 }}"/>
+        {{- end -}}
+        {{- with .Site.Params.Social.Twitter -}}
+        <meta name="twitter:creator" content="@{{ . }}"/>
         {{- end -}}
         <meta name="twitter:title" content="{{ .Site.Params.Title }}"/>
         <meta name="twitter:description" content="{{ .Site.Params.Description }}"/>

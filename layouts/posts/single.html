@@ -28,6 +28,9 @@
 <meta name="twitter:image" content="{{ $twitterImage }}"/>
 <meta name="twitter:title" content="{{ $params.Title }}"/>
 <meta name="twitter:description" content="{{ $params.Description }}"/>
+{{- with ($params.twitter | default .Site.Params.Social.Twitter ) -}}
+<meta name="twitter:creator" content="@{{ . }}"/>
+{{- end -}}
 {{- end -}}
 
 {{- define "no-content" -}}
