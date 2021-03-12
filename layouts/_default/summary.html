@@ -2,7 +2,7 @@
 {{- $tagsStyle := $params.summaryStyle.tags -}}
 {{- $tagsTheme := $params.summaryStyle.tags.theme | default "image" -}}
 
-<article onclick="window.open('{{ $.RelPermalink }}')" class="summary summary-animation" itemscope itemtype="http://schema.org/Article" style="margin-bottom:0">
+<article class="summary summary-animation" itemscope itemtype="http://schema.org/Article" style="margin-bottom:0">
     {{- /* Featured image */ -}}
     {{- if not $params.summaryStyle.hiddenImage -}}
     {{- $image := $params.featuredimagepreview | default $params.featuredimage -}}
@@ -24,15 +24,17 @@
             </div>
             {{- end -}}
             {{- end -}}
-            {{- dict "Src" . "Title" $.Description "Resources" $.Resources "Height" 798 "Width" 238 | partial "plugin/image.html" -}}
+            <a href="{{ $.RelPermalink }}" target="_blank">
+                {{- dict "Src" . "Title" $.Description "Resources" $.Resources "Height" 798 "Width" 238 | partial "plugin/image.html" -}}
+            </a>
         </div>
     {{- end -}}
     {{- end -}}
     <div class="article-text">
         {{- /* Title */ -}}
-        <h2 class="summary-title" itemprop="name headline">
-            {{ .Title }}
-        </h2>
+        <h1 class="summary-title" itemprop="name headline">
+            <a href="{{ $.RelPermalink }}" target="_blank">{{ .Title }}</a>
+        </h1>
 
         {{- if not $params.summaryStyle.hiddenMeta -}}
         {{- /* Meta */ -}}
