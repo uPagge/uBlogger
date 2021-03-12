@@ -179,4 +179,35 @@
     {{- partial "plugin/script.html" . -}}
 {{- end -}}
 
+{{- with .Site.Params.Advertising.adblockHtml -}}
+<script async>
+    const ads = "no-adb";
+    const msg = '<div class="no-adb">{{ . | safeHTML }}</div>';
+    onload=function(){
+        if (document.getElementsByClassName === undefined) {
+            document.getElementsByClassName = function(className)
+            {
+                const hasClassName = new RegExp("(?:^|\s)" + className + "(?:$|\s)");
+                const allElements = document.getElementsByTagName("*");
+                const results = [];
+                let element;
+                for (let i = 0; (element = allElements[i]) != null; i++) {
+                    const elementClass = element.className;
+                    if (elementClass && elementClass.indexOf(className) !== -1 && hasClassName.test(elementClass))
+                        results.push(element);
+                }
+                return results;
+            }
+        }
+        let blocked = 0;
+        const ad_nodes = document.getElementsByClassName(ads);
+        for(const i in ad_nodes){
+            if (ad_nodes[i].offsetHeight === 0){
+                blocked = 1;
+                ad_nodes[i].innerHTML = msg;
+            }
+        }
+}</script>
+{{- end -}}
+
 {{- partial "plugin/analytics.html" . -}}
