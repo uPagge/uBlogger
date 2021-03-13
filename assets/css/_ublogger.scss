@@ -7,6 +7,7 @@ body {
 
 .summary-title {
   margin: 0;
+  font-size: 1.6em;
 }
 
 .summary-content {
@@ -369,18 +370,44 @@ a.post-tag-summary {
   display: inline-block;
   width: 100%;
   box-sizing: border-box;
-  border: solid 2px $global-secondary-color;
-  border-radius: 10px;
-  border-bottom: solid 2px #DDD;
+  border-radius: 6px;
 
   [theme=dark] & {
     background-color: $global-background-secondary-color;
   }
+
+  .author-avatar {
+    width: 75px;
+    padding: 0 15px 0 0;
+  }
+
+  .author-info {
+    vertical-align: middle;
+    display: inline-block;
+    box-sizing: border-box;
+    line-height: 1.6rem;
+    font-size: 16px;
+
+    a {
+      color: black;
+
+      &:hover {
+        color: $global-link-hover-color;
+      }
+    }
+
+    .name {
+      a {
+        border-bottom: none;
+        color: $global-font-color;
+        font-weight: 700;
+      }
+    }
+  }
+
 }
 
 .author-avatar {
-  width: 105px;
-  padding: 0 25px 0 0;
   vertical-align: middle;
   box-sizing: border-box;
   display: inline-block;
@@ -392,26 +419,9 @@ a.post-tag-summary {
   }
 }
 
-.author-info {
-  vertical-align: middle;
-  display: inline-block;
-  box-sizing: border-box;
-
-  a {
-    color: black;
-
-    &:hover {
-      color: $global-link-hover-color;
-    }
-  }
-
-  .name {
-    a {
-      border-bottom: none;
-      color: $global-font-color;
-      font-weight: 700;
-    }
-  }
+.author-avatar-comment{
+  width: 105px;
+  padding: 0 25px 0 0;
 }
 
 .article-text {

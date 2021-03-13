@@ -222,7 +222,6 @@
             {{- end -}}
 
             {{ if eq ($params.authorHidden | default false) false  }}
-            {{- $authorName := $params.author | default .Site.Author.name | default " " -}}
             {{- if and (not (eq $authorName " ")) (not (eq $pageTheme "hero")) -}}
             {{- with $author -}}
             <div class="footer-post-author">
@@ -290,7 +289,7 @@
         {{- if $authorComment -}}
         {{- with $author -}}
         <div class="author-comment">
-            <div class="author-avatar" style="float: left"><a href="{{ with .link }} {{- . | safeHTML -}}{{ end }}" target="_blank"><img alt="" src="{{ with .avatar }} {{- . | safeHTML -}}{{ end }}" border="0"></a></div>
+            <div class="author-avatar author-avatar-comment" style="float: left"><a href="{{ with .link }} {{- . | safeHTML -}}{{ end }}" target="_blank"><img alt="" src="{{ with .avatar }} {{- . | safeHTML -}}{{ end }}" border="0"></a></div>
             <div class="name">{{ .full_name }}</div>
             <div class="author-comment-text">{{ $authorComment }}</div>
         </div>
