@@ -225,7 +225,7 @@
             {{- if and (not (eq $authorName " ")) (not (eq $pageTheme "hero")) -}}
             {{- with $author -}}
             <div class="footer-post-author">
-                <div class="author-avatar"><a href="{{ with .link }} {{- . | safeHTML -}}{{ end }}" target="_blank"><img alt="" src="{{ with .avatar }} {{- . | safeHTML -}}{{ end }}" border="0"></a></div>
+                <div class="author-avatar"><a href="{{ with .link }} {{- . | safeHTML -}}{{ end }}" target="_blank"><img alt="{{ .about }}" src="{{ with .avatar }} {{- . | safeHTML -}}{{ end }}"></a></div>
                 <div class="author-info">
                     <div class="name"><a href="{{ with .link }} {{- . | safeHTML -}}{{ end }}" target="_blank">{{ .full_name }}</a></div>
                     <div class="number-posts">{{ .about }}</span></div>
@@ -257,9 +257,11 @@
                     <b>{{- dict "Date" $updateDate | T "updatedOnDate" -}}:</b> {{ $params.upd }}
                 </p>
                 {{- else -}}
-                <span class="post-update">
-                    <b>{{- dict "Date" . | T "updatedOnDate" -}}</b>
-                </span>
+                <div style="margin: 20px 0 20px 0;">
+                    <span class="post-update">
+                        <b>{{- dict "Date" . | T "updatedOnDate" -}}</b>
+                    </span>
+                </div>
                 {{- end -}}
                 {{- end -}}
                 {{- end -}}
