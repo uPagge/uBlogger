@@ -73,9 +73,6 @@
     {{ $author = index .Site.Data.authors $authorName }}
     {{ end }}
 
-
-    {{ $authorPath | safeHTML }}
-
     <div class="header-post">
 
         {{ if eq $pageTheme "hero" }}
