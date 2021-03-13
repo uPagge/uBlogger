@@ -4,7 +4,6 @@
 {{- if eq $figcap $caption -}}
 {{ $caption = " " }}
 {{- end -}}
-
 {{ $imageOriginal := .Page.Resources.GetMatch (printf "%s" (.Destination | safeURL)) }}
 {{ if $imageOriginal }}
 {{ if lt 1600 $imageOriginal.Width }}
@@ -13,8 +12,6 @@
 {{ else }}
 {{ $imageOriginal = .Destination }}
 {{ end }}
-
-<div class="render-image">
 {{- if $figcap -}}
 <figure>
     {{- dict "Src" $imageOriginal "Title" $figcap "Alt" $alt "Caption" $caption "Linked" true "Resources" .Page.Resources | partial "plugin/image.html" -}}
@@ -25,4 +22,3 @@
 {{- else -}}
 {{- dict "Src" $imageOriginal "Title" (path.Base .Destination) "Alt" $alt "Resources" .Page.Resources | partial "plugin/image.html" -}}
 {{- end -}}
-</div>
