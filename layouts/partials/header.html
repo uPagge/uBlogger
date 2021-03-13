@@ -47,7 +47,7 @@
                     <span class="menu-item delimiter"></span>
                 {{- end -}}
                 {{- if .Site.IsMultiLingual -}}
-                    <a href="javascript:void(0);" class="menu-item language" title="{{ T "selectLanguage" }}">
+                    <span onclick="javascript:void(0);" class="menu-item language" title="{{ T "selectLanguage" }}">
                         {{- .Language.LanguageName -}}
                         <select class="language-select" id="language-select-desktop" onchange="location = this.value;">
                             {{- if eq .Kind "404" -}}

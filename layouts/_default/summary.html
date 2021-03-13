@@ -32,9 +32,9 @@
     {{- end -}}
     <div class="article-text">
         {{- /* Title */ -}}
-        <h1 class="summary-title" itemprop="name headline">
+        <h2 class="summary-title" itemprop="name headline">
             <a href="{{ $.RelPermalink }}" target="_blank">{{ .Title }}</a>
-        </h1>
+        </h2>
 
         {{- if not $params.summaryStyle.hiddenMeta -}}
         {{- /* Meta */ -}}
