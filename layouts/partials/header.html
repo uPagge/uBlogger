@@ -162,7 +162,7 @@
                 <span class="svg-icon icon-moon"></span>
             </a>
             {{- if .Site.IsMultiLingual -}}
-                <span href="javascript:void(0);" class="menu-item" title="{{ T "selectLanguage" }}">
+                <span onclick="javascript:void(0);" class="menu-item" title="{{ T "selectLanguage" }}">
                     {{- .Language.LanguageName -}}
                     <select class="language-select" onchange="location = this.value;">
                         {{- if eq .Kind "404" -}}
