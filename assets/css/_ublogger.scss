@@ -744,20 +744,17 @@ a.post-tag-summary {
 }
 
 .post-share {
-  max-width: 900px;
-  width: 100%;
-  min-width: 200px;
-  text-align: center;
-  margin: 1rem auto;
+  margin-bottom: 10px
 }
 
 .post-tags {
   box-sizing: border-box;
+  font-size: 14px;
 
   .tag {
     margin-top: 10px;
-    margin-right: 10px;
-    padding: 5px 10px 5px 10px;
+    margin-right: 8px;
+    padding: 1px 10px 1px 10px;
     border-radius: 4px;
     color: #DDD;
     display: inline-block;

@@ -9,15 +9,20 @@ a.button {
   border: solid 2px #333;
   color: #FFF;
   text-align: center;
+  @include transition(all 0.2s ease);
 
   [theme=dark] & {
-    color: #FFF;
+    color: #FFF !important;
   }
 }
 
 a.button:hover {
   color: #333;
   background-color: #FFF;
+
+  [theme=dark] & {
+    background: $global-background-secondary-color-dark;
+  }
 }
 
 a.button-big {

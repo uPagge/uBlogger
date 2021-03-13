@@ -5,13 +5,12 @@
 
 .post-share {
   a.share-icon {
-    border-bottom: none;
     color: white;
   }
 
   a.share-icon:hover {
     background: white;
-    border: solid 2px #2c678d;
+    border: solid 2px #2c678d !important;
     @include transition(background 0.2s ease);
 
     .svg-social-icon {
@@ -23,7 +22,6 @@
 .share-link {
   margin-top: 15px;
   margin-right: 8px;
-  font-size: 20px;
   display: inline-block;
 }
 
@@ -34,7 +32,8 @@
 
 .share-icon {
   border-radius: 6px;
-  padding: 8px 16px 6px 16px;
+  padding: 8px 12px 4px 12px;
+  border-bottom: none !important;
 }
 
 .share-telegram {

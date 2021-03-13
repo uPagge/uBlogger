@@ -58,7 +58,6 @@
         </div>
     {{- end -}}
 
-
     {{- /* Featured image */ -}}
     {{- $image := $params.featuredimage -}}
     {{- $pageImageHidden := $params.hiddenFeaturedImage -}}
@@ -221,20 +220,6 @@
             {{- end -}}
             {{- end -}}
 
-            {{ if eq ($params.authorHidden | default false) false  }}
-            {{- if and (not (eq $authorName " ")) (not (eq $pageTheme "hero")) -}}
-            {{- with $author -}}
-            <div class="footer-post-author">
-                <div class="author-avatar"><a href="{{ with .link }} {{- . | safeHTML -}}{{ end }}" target="_blank"><img alt="{{ .about }}" src="{{ with .avatar }} {{- . | safeHTML -}}{{ end }}"></a></div>
-                <div class="author-info">
-                    <div class="name"><a href="{{ with .link }} {{- . | safeHTML -}}{{ end }}" target="_blank">{{ .full_name }}</a></div>
-                    <div class="number-posts">{{ .about }}</span></div>
-                </div>
-            </div>
-            {{- end -}}
-            {{- end -}}
-            {{- end -}}
-
             {{- /* Static TOC */ -}}
             {{- if ne $toc.enable false -}}
             <div class="details toc" id="toc-static"  data-kept="{{ if $toc.keepStatic }}true{{ end }}">
@@ -277,12 +262,6 @@
         </div>
     <div id="toc-final"></div>
     </article>
-
-
-    <div class="{{ if $toc.keepStatic }} post-share {{ else }} post-share post-share-toc {{ end }}">
-        {{- partial "plugin/share.html" . -}}
-    </div>
-
 
     {{- $comment := .Site.Params.Comment  -}}
     {{- if ($params.comment.enable | default $comment.enable) -}}
