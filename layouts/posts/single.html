@@ -100,13 +100,13 @@
                 {{ with $author }}
                 <div class="hero-author">
 
-                    <a href="{{ with .site }} {{- . | safeHTML -}}{{ end }}" class="hero-author-profile">
+                    {{ with .link }}<a href=" {{- . | safeHTML -}}" class="hero-author-profile">{{ end }}
                         <img class="hero-author-avatar" src="{{ with .avatar }} {{- . | safeHTML -}}{{ end }}" alt="{{ .full_name }}">
                         <div class="profile-text-wrapper">
                             <span class="hero-author-profile-name">{{ .full_name }}</span>
                             <span class="hero-author-profile-title">{{ $params.customAuthor.short_about | default .short_about }}</span>
                         </div>
-                    </a>
+                    {{ with .link }}</a>{{ end }}
 
                 </div>
                 {{ end }}

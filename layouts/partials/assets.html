@@ -180,7 +180,7 @@
 {{- end -}}
 
 {{- with .Site.Params.Advertising.adblockHtml -}}
-<script async>
+<script>
     const ads = "no-adb";
     const msg = '<div class="no-adb">{{ . | safeHTML }}</div>';
     onload=function(){
