@@ -1,6 +1,6 @@
 @media only screen and (min-width: 1300px) {
   .page-toc {
-    article {
+    .article-post {
       margin-right: auto;
       margin-left: auto;
 
@@ -45,11 +45,11 @@
     width: 100%;
   }
 
-  article.single {
+  .article-post {
     font-size: 18px;
 
     .post {
-      padding: 40px 60px 40px;
+      padding: 45px 60px;
     }
 
   }
@@ -93,7 +93,7 @@
   }
 
   .page-toc {
-    article {
+    .article-post {
       margin-right: auto;
       margin-left: auto;
     }
@@ -113,11 +113,11 @@
     }
   }
 
-  article.single {
+  .article-post {
     font-size: 18px;
 
     .post {
-      padding: 40px 60px 40px;
+      padding: 45px 60px;
     }
   }
 
@@ -138,11 +138,11 @@
     width: 100%;
   }
 
-  article.single {
+  .article-post {
     font-size: 18px;
 
     .post {
-      padding: 40px 60px 40px;
+      padding: 45px 60px;
     }
   }
 
@@ -169,7 +169,9 @@
     }
   }
 
-  article.single {
+
+
+  .article-post {
     font-size: 16px;
 
     .post {
@@ -216,7 +218,7 @@
   }
 
   .theme-classic, .theme-wide, .theme-full, .theme-mega-full, .theme-hero {
-    article {
+    .article-post {
       margin-top: 0;
     }
   }
@@ -320,7 +322,7 @@
 
 @media only screen and (max-width: 400px) {
   .home {
-    article {
+    .article-post {
       .featured-image-preview {
         display: none;
       }
@@ -411,7 +413,7 @@
     }
   }
 
-  article {
+  .article-post {
     .content-block {
       box-shadow: none;
     }

@@ -14,11 +14,11 @@
 {{ end }}
 {{- if $figcap -}}
 <figure>
-    {{- dict "Src" $imageOriginal "Title" $figcap "Alt" $alt "Caption" $caption "Linked" true "Resources" .Page.Resources | partial "plugin/image.html" -}}
+    {{- dict "Src" $imageOriginal "Class" "render-image" "Title" $figcap "Alt" $alt "Caption" $caption "Linked" true "Resources" .Page.Resources | partial "plugin/image.html" -}}
     <figcaption class="image-caption">
         {{- $figcap | safeHTML -}}
     </figcaption>
 </figure>
 {{- else -}}
-{{- dict "Src" $imageOriginal "Title" (path.Base .Destination) "Alt" $alt "Resources" .Page.Resources | partial "plugin/image.html" -}}
+{{- dict "Src" $imageOriginal "Title" (path.Base .Destination) "Class" "render-image" "Alt" $alt "Resources" .Page.Resources | partial "plugin/image.html" -}}
 {{- end -}}

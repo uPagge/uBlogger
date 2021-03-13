@@ -5,16 +5,19 @@
 
 .post-share {
   a.share-icon {
-    color: white;
+    border-bottom: none;
   }
 
   a.share-icon:hover {
     background: white;
-    border: solid 2px #2c678d !important;
     @include transition(background 0.2s ease);
 
     .svg-social-icon {
       background-image: url(/img/icon/sprite-social-color.svg);
+    }
+
+    [theme=dark] & {
+      background: $global-background-secondary-color-dark;
     }
   }
 }
@@ -33,17 +36,17 @@
 .share-icon {
   border-radius: 6px;
   padding: 10px 12px 4px 12px;
-  border-bottom: none !important;
+  border: 2px solid !important;
 }
 
 .share-telegram {
   background: #2CA5E0;
-  border: solid 2px #2CA5E0;
+  border-color: #2CA5E0 !important;
 }
 
 .share-twitter {
   background: #1DA1F2;
-  border: solid 2px #1DA1F2;
+  border-color: #1DA1F2;
 }
 
 .share-vk {

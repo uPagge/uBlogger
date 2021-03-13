@@ -43,7 +43,7 @@
             {{- if not (eq $authorName " ") -}}
             {{ $author := index .Site.Data.authors $authorName }}
             {{- $authorLink := $author.link | default .Site.Home.RelPermalink -}}
-            <span class="post-author">
+            <span class="meta-item post-author">
             {{- $options := dict "Class" "author" "Destination" $authorLink "Title" "Author" "Rel" "author" "Icon" (dict "Class" "svg-icon icon-user") "Content" $author.nickname -}}
             {{- partial "plugin/link.html" $options -}}
             </span>
@@ -51,7 +51,7 @@
 
             {{- with .Site.Params.dateFormat | default "2006-01-02" | .PublishDate.Format -}}
             {{- $timeAgoDate:= $.Site.Params.TimeAgo.DateFormat | default "2006-01-02" | $.PublishDate.Format -}}
-            <span class="post-publish"><i class="svg-icon icon-clock"></i>
+            <span class="meta-item post-publish"><i class="svg-icon icon-clock"></i>
                 {{- printf `<time class="timeago" datetime="%v">%v</time>` $timeAgoDate . | safeHTML -}}
             </span>
             {{- end -}}
@@ -62,13 +62,13 @@
             {{- $categories = $categories | append (printf `<a href="%v"><i class="svg-icon icon-folder"></i>%v</a>` $category.RelPermalink $category.Title) -}}
             {{- end -}}
             {{- with delimit $categories "&nbsp;" -}}
-            <span class="post-category">
+            <span class="meta-item post-category">
                 {{ . }}
             </span>
             {{- end -}}
 
             {{- with .Params.Views -}}
-            <span class="post-meta-views">
+            <span class="meta-item post-meta-views">
                 <i class="svg-icon icon-eye"></i>{{ . }}
             </span>
             {{- end -}}
@@ -76,7 +76,7 @@
             {{- $comment := .Site.Params.Comment -}}
             {{- $remark42 := $comment.remark42 | default dict -}}
             {{- if $remark42.enable -}}
-            <span class="post-meta-comments">
+            <span class="meta-item post-meta-comments">
                 <i class="svg-icon icon-comments"></i><span class="remark42__counter" data-url="{{ .Permalink }}"></span>
             </span>
             {{- end -}}

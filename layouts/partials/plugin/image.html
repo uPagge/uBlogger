@@ -8,13 +8,14 @@
 {{- if .Linked -}}
     <a target="_blank" href="{{ .Src | safeURL }}" title="{{ .Title | default $alt }}" {{ with .Rel }} rel="{{ . }}"{{ end }}>
         <img loading="lazy" decoding="async"
-            data-sizes="auto"
+             {{ with .Class }}class="{{ . }}"{{ end }}
              src="{{ .Src | safeURL }}"
             alt="{{ $alt }}"{{ with .Height }} height="{{ . }}"{{ end }}{{ with .Width }} width="{{ . }}"{{ end }}
         />
     </a>
 {{- else -}}
     <img loading="lazy" decoding="async"
+         {{ with .Class }}class="{{ . }}"{{ end }}
          src="{{ .Src | safeURL }}"
          alt="{{ $alt }}"
          title="{{ .Title | default $alt }}"{{ with .Height }} height="{{ . }}"{{ end }}{{ with .Width }} width="{{ . }}"{{ end }}
