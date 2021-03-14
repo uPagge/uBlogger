@@ -6,7 +6,7 @@ a.button {
   text-decoration: none;
   border-radius: 10px;
   background-color: #333;
-  border: solid 2px #333;
+  border: solid 4px #333;
   color: #FFF;
   text-align: center;
   @include transition(all 0.2s ease);
@@ -18,7 +18,7 @@ a.button {
 
 a.button:hover {
   color: #333;
-  background-color: #FFF;
+  background-color: inherit;
 
   [theme=dark] & {
     background: $global-background-secondary-color-dark;
@@ -32,14 +32,14 @@ a.button-big {
 }
 
 a.button-white {
-  background-color: #FFF;
-  color: #333;
-  border-color: #333;
+  background-color: inherit;
+  border-color: white;
+  color: #FFF;
 }
 
 a.button-white:hover {
-  background-color: #000;
-  color: #FFF;
+  color: #333;
+  border-color: #333;
 }
 
 a.button-black {

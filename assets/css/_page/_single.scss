@@ -111,10 +111,23 @@
 
   a {
     @include overflow-wrap(break-word);
+    border-bottom: dashed 1px;
 
     [theme=dark] & b, [theme=dark] & strong {
       color: $single-link-color-dark;
     }
+  }
+
+  a:visited {
+    color: #70a0b0;
+
+    [theme=dark] & {
+      color: #70a0b0;
+    }
+  }
+
+  a[class="header-mark"], .post-footer a {
+    border-bottom: none;
   }
 
   [theme=dark] a:hover b, [theme=dark] a:hover strong {

@@ -32,40 +32,25 @@ header {
   }
 }
 
-.article-post {
+.content-block {
+  border-radius: $article-border-radius;
+  box-shadow: (0 0 1.5rem 0 rgba(0, 0, 0, .1));
 
-  .content-block {
-    border-radius: $article-border-radius;
-    box-shadow: (0 0 1.5rem 0 rgba(0, 0, 0, .1));
-
-    [theme=dark] & {
-      background: $global-background-secondary-color-dark;
-    }
-
-    h2:first-child, h3:first-child {
-      margin-top: 20px;
-    }
-
-    #toc-static + p {
-      margin-top: 0;
-    }
-
-    a:visited {
-      color: #70a0b0;
-
-      [theme=dark] & {
-        color: #70a0b0;
-      }
-    }
-
-    a {
-      border-bottom: dashed 1px;
-    }
-
-    a[class="header-mark"], .post-footer a {
-      border-bottom: none;
-    }
+  [theme=dark] & {
+    background: $global-background-secondary-color-dark;
   }
+
+  h2:first-child, h3:first-child {
+    margin-top: 20px;
+  }
+
+  #toc-static + p {
+    margin-top: 0;
+  }
+
+}
+
+.article-post {
 
   .content-block-position:last-child {
     margin-bottom: 0;

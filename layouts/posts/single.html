@@ -269,14 +269,7 @@
 
     </article>
 
-    <div class="article-post">
-        <div class="content-block content-block-position">
-            <div class="post">
-                тест
-            </div>
-        </div>
-    </div>
-
+    {{- partial "under-post.html" . -}}
 
     {{- $comment := .Site.Params.Comment  -}}
     {{- if ($params.comment.enable | default $comment.enable) -}}

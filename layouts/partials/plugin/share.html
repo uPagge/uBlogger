@@ -255,9 +255,9 @@
     {{- /* 029: Hacker News */ -}}
     {{- if $share.Hackernews -}}
     <div class="share-link">
-    <a class="share-icon share-hackernews" href="javascript:void(0);" title="{{ T `shareOn` }} Hacker News" data-sharer="hackernews" data-url="{{ .Permalink }}" data-title="{{ .Title }}">
-        {{- dict "Class" "svg-social-icon icon-hacker-news" | partial "plugin/icon.html" -}}
-    </a>
+        <a class="share-icon share-hackernews" href="javascript:void(0);" title="{{ T `shareOn` }} Hacker News" data-sharer="hackernews" data-url="{{ .Permalink }}" data-title="{{ .Title }}">
+            {{- dict "Class" "svg-social-icon icon-hacker-news" | partial "plugin/icon.html" -}}
+        </a>
     </div>
     {{- end -}}
 {{- end -}}
