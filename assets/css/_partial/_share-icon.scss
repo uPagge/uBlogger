@@ -5,7 +5,7 @@
 
 .post-share {
   a.share-icon {
-    border-bottom: none;
+    border-bottom: 2px solid;
   }
 
   a.share-icon:hover {
@@ -26,6 +26,152 @@
   margin-top: 15px;
   margin-right: 8px;
   display: inline-block;
+
+  a.share-telegram {
+    background: #2CA5E0;
+    border-color: #2CA5E0;
+  }
+
+  a.share-twitter {
+    background: #1DA1F2;
+    border-color: #1DA1F2;
+  }
+
+  a.share-vk {
+    background: #4680C2;
+    border-color: #4680C2;
+  }
+
+  a.share-facebook {
+    background: #1877F2;
+    border-color: #1877F2;
+  }
+
+  a.share-whatsapp {
+    background: #25D366;
+    border-color: #25D366;
+  }
+
+  a.share-pocket {
+    background: #EF3F56;
+    border-color: #EF3F56;
+  }
+
+  a.share-linkedin {
+    background: #0077B5;
+    border-color: #0077B5;
+  }
+
+  a.share-viber {
+    background: #665CAC;
+    border-color: #665CAC;
+  }
+
+  a.share-pinterest {
+    background: #BD081C;
+    border-color: #BD081C;
+  }
+
+  a.share-tumblr {
+    background: #36465D;
+    border-color: #36465D;
+  }
+
+  a.share-reddit {
+    background: #FF4500;
+    border-color: #FF4500;
+  }
+
+  a.share-buffer {
+    background: #168EEA;
+    border-color: #168EEA;
+  }
+
+  a.share-xing {
+    background: #006567;
+    border-color: #006567;
+  }
+
+  a.share-line {
+    background: #00C300;
+    border-color: #00C300;
+  }
+
+  a.share-instapaper {
+    background: #1F1F1F;
+    border-color: #1F1F1F;
+  }
+
+  a.share-digg {
+    background: #000000;
+    border-color: #000000;
+  }
+
+  a.share-stumbleupon {
+    background: #FD8235;
+    border-color: #FD8235;
+  }
+
+  a.share-flipboard {
+    background: #E12828;
+    border-color: #E12828;
+  }
+
+  a.share-weibo {
+    background: #20B8E5;
+    border-color: #20B8E5;
+  }
+
+  a.share-renren {
+    background: #217DC6;
+    border-color: #217DC6;
+  }
+
+  a.share-myspace {
+    background: #030303;
+    border-color: #030303;
+  }
+
+  a.share-blogger {
+    background: #FF5722;
+    border-color: #FF5722;
+  }
+
+  a.share-baidu {
+    background: #2319DC;
+    border-color: #2319DC;
+  }
+
+  a.share-ok {
+    background: #EE8208;
+    border-color: #EE8208;
+  }
+
+  a.share-evernote {
+    background: #00A82D;
+    border-color: #00A82D;
+  }
+
+  a.share-skype {
+    background: #00AFF0;
+    border-color: #00AFF0;
+  }
+
+  a.share-trello {
+    background: #0079BF;
+    border-color: #0079BF;
+  }
+
+  a.share-mix {
+    background: #FF8126;
+    border-color: #FF8126;
+  }
+
+  a.share-hackernews {
+    background: #FF8126;
+    border-color: #FF8126;
+  }
+
 }
 
 .share-text {
@@ -36,542 +182,250 @@
 .share-icon {
   border-radius: 6px;
   padding: 10px 12px 4px 12px;
-  border: 2px solid !important;
-}
-
-.share-telegram {
-  background: #2CA5E0;
-  border-color: #2CA5E0 !important;
-}
-
-.share-twitter {
-  background: #1DA1F2;
-  border-color: #1DA1F2;
-}
-
-.share-vk {
-  background: #4680C2;
-  border: solid 2px #4680C2;
-}
-
-.share-facebook {
-  background: #1877F2;
-  border: solid 2px #1877F2;
-}
-
-.share-whatsapp {
-  background: #25D366;
-  border: solid 2px #25D366;
-}
-
-.share-pocket {
-  background: #EF3F56;
-  border: solid 2px #EF3F56;
-}
-
-.share-linkedin {
-  background: #0077B5;
-  border: solid 2px #0077B5;
-}
-
-.share-viber {
-  background: #665CAC;
-  border: solid 2px #665CAC;
-}
-
-.share-pinterest {
-  background: #BD081C;
-  border: solid 2px #BD081C;
-}
-
-.share-tumblr {
-  background: #36465D;
-  border: solid 2px #36465D;
-}
-
-.share-reddit {
-  background: #FF4500;
-  border: solid 2px #FF4500;
-}
-
-.share-buffer {
-  background: #168EEA;
-  border: solid 2px #168EEA;
-}
-
-.share-xing {
-  background: #006567;
-  border: solid 2px #006567;
-}
-
-.share-line {
-  background: #00C300;
-  border: solid 2px #00C300;
-}
-
-.share-instapaper {
-  background: #1F1F1F;
-  border: solid 2px #1F1F1F;
-}
-
-.share-digg {
-  background: #000000;
-  border: solid 2px #000000;
-}
-
-.share-stumbleupon {
-  background: #FD8235;
-  border: solid 2px #FD8235;
-}
-
-.share-flipboard {
-  background: #E12828;
-  border: solid 2px #E12828;
-}
-
-.share-weibo {
-  background: #20B8E5;
-  border: solid 2px #20B8E5;
-}
-
-.share-renren {
-  background: #217DC6;
-  border: solid 2px #217DC6;
-}
-
-.share-myspace {
-  background: #030303;
-  border: solid 2px #030303;
-}
-
-.share-blogger {
-  background: #FF5722;
-  border: solid 2px #FF5722;
-}
-
-.share-baidu {
-  background: #2319DC;
-  border: solid 2px #2319DC;
-}
-
-.share-ok {
-  background: #EE8208;
-  border: solid 2px #EE8208;
-}
-
-.share-evernote {
-  background: #00A82D;
-  border: solid 2px #00A82D;
-}
-
-.share-skype {
-  background: #00AFF0;
-  border: solid 2px #00AFF0;
-}
-
-.share-trello {
-  background: #0079BF;
-  border: solid 2px #0079BF;
-}
-
-.share-mix {
-  background: #FF8126;
-  border: solid 2px #FF8126;
-}
-
-.share-hackernews {
-  background: #FF8126;
-  border: solid 2px #FF8126;
+  border: 2px solid;
 }
 
 .svg-social-icon {
   display: inline-block;
   background-repeat: no-repeat;
   background-image: url(/img/icon/sprite-social.svg);
+  width: 20px;
+  height: 20px;
 }
 .svg-social-icon-color {
   display: inline-block;
   background-repeat: no-repeat;
   background-image: url(/img/icon/sprite-social-color.svg);
-}
-.icon-rss {
   width: 20px;
   height: 20px;
+}
+
+.icon-rss {
   background-position: 0 0;
 }
 .icon-mail-dot-ru {
-  width: 20px;
-  height: 20px;
   background-position: -25px 0;
 }
 .icon-udemy {
-  width: 20px;
-  height: 20px;
   background-position: -50px 0;
 }
 .icon-discord {
-  width: 20px;
-  height: 20px;
   background-position: -75px 0;
 }
 .icon-docker {
-  width: 20px;
-  height: 20px;
   background-position: -100px 0;
 }
 .icon-matrix {
-  width: 20px;
-  height: 20px;
   background-position: -125px 0;
 }
 .icon-xmpp {
-  width: 20px;
-  height: 20px;
   background-position: -150px 0;
 }
 .icon-gitea {
-  width: 20px;
-  height: 20px;
   background-position: -175px 0;
 }
 .icon-mastodon {
-  width: 20px;
-  height: 20px;
   background-position: -200px 0;
 }
 .icon-researchgate {
-  width: 20px;
-  height: 20px;
   background-position: -225px 0;
 }
 .icon-google {
-  width: 20px;
-  height: 20px;
   background-position: 0 -25px;
 }
 .icon-vine {
-  width: 20px;
-  height: 20px;
   background-position: -25px -25px;
 }
 .icon-wordpress {
-  width: 20px;
-  height: 20px;
   background-position: -50px -25px;
 }
 .icon-dribbble {
-  width: 20px;
-  height: 20px;
   background-position: -75px -25px;
 }
 .icon-behance {
-  width: 20px;
-  height: 20px;
   background-position: -100px -25px;
 }
 .icon-deviantart {
-  width: 20px;
-  height: 20px;
   background-position: -125px -25px;
 }
 .icon-jsfiddle {
-  width: 20px;
-  height: 20px;
   background-position: -150px -25px;
 }
 .icon-angellist {
-  width: 20px;
-  height: 20px;
   background-position: -175px -25px;
 }
 .icon-zhihu {
-  width: 20px;
-  height: 20px;
   background-position: -200px -25px;
 }
 .icon-strava {
-  width: 20px;
-  height: 20px;
   background-position: -225px -25px;
 }
 .icon-twitch {
-  width: 20px;
-  height: 20px;
   background-position: 0 -50px;
 }
 .icon-steam {
-  width: 20px;
-  height: 20px;
   background-position: -25px -50px;
 }
 .icon-patreon {
-  width: 20px;
-  height: 20px;
   background-position: -50px -50px;
 }
 .icon-kickstarter {
-  width: 20px;
-  height: 20px;
   background-position: -75px -50px;
 }
 .icon-foursquare {
-  width: 20px;
-  height: 20px;
   background-position: -100px -50px;
 }
 .icon-last-dot-fm {
-  width: 20px;
-  height: 20px;
   background-position: -125px -50px;
 }
 .icon-goodreads {
-  width: 20px;
-  height: 20px;
   background-position: -150px -50px;
 }
 .icon-500px {
-  width: 20px;
-  height: 20px;
   background-position: -175px -50px;
 }
 .icon-paypal {
-  width: 20px;
-  height: 20px;
   background-position: -200px -50px;
 }
 .icon-bandcamp {
-  width: 20px;
-  height: 20px;
   background-position: -225px -50px;
 }
 .icon-spotify {
-  width: 20px;
-  height: 20px;
   background-position: 0 -75px;
 }
 .icon-soundcloud {
-  width: 20px;
-  height: 20px;
   background-position: -25px -75px;
 }
 .icon-snapchat {
-  width: 20px;
-  height: 20px;
   background-position: -50px -75px;
 }
 .icon-xing {
-  width: 20px;
-  height: 20px;
   background-position: -75px -75px;
 }
 .icon-flickr {
-  width: 20px;
-  height: 20px;
   background-position: -100px -75px;
 }
 .icon-stackoverflow {
-  width: 20px;
-  height: 20px;
   background-position: -125px -75px;
 }
 .icon-bitbucket {
-  width: 20px;
-  height: 20px;
   background-position: -150px -75px;
 }
 .icon-freecodecamp {
-  width: 20px;
-  height: 20px;
   background-position: -175px -75px;
 }
 .icon-codepen {
-  width: 20px;
-  height: 20px;
   background-position: -200px -75px;
 }
 .icon-pinterest {
-  width: 20px;
-  height: 20px;
   background-position: -225px -75px;
 }
 .icon-keybase {
-  width: 20px;
-  height: 20px;
   background-position: 0 -100px;
 }
 .icon-quora {
-  width: 20px;
-  height: 20px;
   background-position: -25px -100px;
 }
 .icon-tumblr {
-  width: 20px;
-  height: 20px;
   background-position: -50px -100px;
 }
 .icon-youtube {
-  width: 20px;
-  height: 20px;
   background-position: -75px -100px;
 }
 .icon-gitlab {
-  width: 20px;
-  height: 20px;
   background-position: -100px -100px;
 }
 .icon-medium {
-  width: 20px;
-  height: 20px;
   background-position: -125px -100px;
 }
 .icon-instagram {
-  width: 20px;
-  height: 20px;
   background-position: -150px -100px;
 }
 .icon-linkedin {
-  width: 20px;
-  height: 20px;
   background-position: -175px -100px;
 }
 .icon-github {
-  width: 20px;
-  height: 20px;
   background-position: -200px -100px;
 }
 .icon-mixer {
-  width: 20px;
-  height: 20px;
   background-position: -225px -100px;
 }
 .icon-trello {
-  width: 20px;
-  height: 20px;
   background-position: 0 -125px;
 }
 .icon-skype {
-  width: 20px;
-  height: 20px;
   background-position: -25px -125px;
 }
 .icon-evernote {
-  width: 20px;
-  height: 20px;
   background-position: -50px -125px;
 }
 .icon-odnoklassniki {
-  width: 20px;
-  height: 20px;
   background-position: -75px -125px;
 }
 .icon-baidu {
-  width: 20px;
-  height: 20px;
   background-position: -100px -125px;
 }
 .icon-blogger {
-  width: 20px;
-  height: 20px;
   background-position: -125px -125px;
 }
 .icon-myspace {
-  width: 20px;
-  height: 20px;
   background-position: -150px -125px;
 }
 .icon-renren {
-  width: 20px;
-  height: 20px;
   background-position: -175px -125px;
 }
 .icon-sinaweibo {
-  width: 20px;
-  height: 20px;
   background-position: -200px -125px;
 }
 .icon-flipboard {
-  width: 20px;
-  height: 20px;
   background-position: -225px -125px;
 }
 .icon-digg {
-  width: 20px;
-  height: 20px;
   background-position: 0 -150px;
 }
 .icon-pocket {
-  width: 20px;
-  height: 20px;
   background-position: -25px -150px;
 }
 .icon-instapaper {
-  width: 20px;
-  height: 20px;
   background-position: -50px -150px;
 }
 .icon-line {
-  width: 20px;
-  height: 20px;
   background-position: -75px -150px;
 }
 .icon-xing1 {
-  width: 20px;
-  height: 20px;
   background-position: -100px -150px;
 }
 .icon-buffer {
-  width: 20px;
-  height: 20px;
   background-position: -125px -150px;
 }
 .icon-reddit {
-  width: 20px;
-  height: 20px;
   background-position: -150px -150px;
 }
 .icon-tumblr1 {
-  width: 20px;
-  height: 20px;
   background-position: -175px -150px;
 }
 .icon-pinterest1 {
-  width: 20px;
-  height: 20px;
   background-position: -200px -150px;
 }
 .icon-viber {
-  width: 20px;
-  height: 20px;
   background-position: -225px -150px;
 }
 .icon-linkedin1 {
-  width: 20px;
-  height: 20px;
   background-position: 0 -175px;
 }
 .icon-telegram {
-  width: 20px;
-  height: 20px;
   background-position: -25px -175px;
 }
 .icon-whatsapp {
-  width: 20px;
-  height: 20px;
   background-position: -50px -175px;
 }
 .icon-facebook {
-  width: 20px;
-  height: 20px;
   background-position: -75px -175px;
 }
 .icon-vk {
-  width: 20px;
-  height: 20px;
   background-position: -100px -175px;
 }
 .icon-twitter {
-  width: 20px;
-  height: 20px;
   background-position: -125px -175px;
 }
 .icon-leanpub {
