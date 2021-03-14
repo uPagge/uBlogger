@@ -257,19 +257,23 @@
 
                 </div>
 
+                {{- if not $params.hiddenFooter -}}
                 <footer>
                         <div class="post">
                             {{- /* Footer Post */ -}}
                             {{- partial "single/footer.html" . -}}
                         </div>
                 </footer>
+                {{- end -}}
             </div>
         <div id="toc-final"></div>
         </div>
 
     </article>
 
-    {{- partial "under-post.html" . -}}
+    {{- if not $params.hiddenUnderPost -}}
+        {{- partial "under-post.html" . -}}
+    {{- end -}}
 
     {{- $comment := .Site.Params.Comment  -}}
     {{- if ($params.comment.enable | default $comment.enable) -}}
