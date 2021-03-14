@@ -46,7 +46,7 @@ header {
       margin-top: 20px;
     }
 
-    p:first-child, #toc-static + p {
+    #toc-static + p {
       margin-top: 0;
     }
 
@@ -287,27 +287,6 @@ a.post-tag-summary {
 }
 
 .single {
-
-  blockquote {
-    margin: auto;
-    background: none;
-    border: none;
-    display: block;
-    text-align: center;
-    font-size: 160%;
-    width: 90%;
-    padding: 40px 20px;
-    box-sizing: border-box;
-    font-weight: 400;
-    line-height: 2rem;
-    text-transform: uppercase;
-
-    [theme="dark"] & {
-      background: none;
-      border: none;
-    }
-  }
-
 
   figure {
     margin: 0;

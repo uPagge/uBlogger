@@ -1,2 +1,9 @@
-</div></div>
-<div class="content-block content-block-position"><div class="post">
+{{- $type := "section" -}}
+{{- if .Get `article` -}}
+    {{- $type = "article" -}}
+{{- end -}}
+{{- $typeOpen := (printf `<%s>` $type) | safeHTML -}}
+{{- $typeClose := (printf `</%s>` $type) | safeHTML -}}
+
+</div></div></div>{{- if ne (.Get `first`) true -}}{{ $typeClose }}{{- end -}}{{ $typeOpen }}<div class="article-post"><div class="content-break content-block-position">
+</div><div class="content-block content-block-position"><div class="post single">

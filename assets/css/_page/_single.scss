@@ -268,18 +268,36 @@
     vertical-align: text-bottom;
   }
 
-  blockquote {
-    blockquote {
+  .essence {
+    margin: auto;
+    background: none;
+    border: none;
+    display: block;
+    text-align: center;
+    font-size: 160%;
+    width: 90%;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    font-weight: 400;
+    line-height: 2rem;
+    text-transform: uppercase;
+
+    [theme="dark"] & {
+      background: none;
+      border: none;
+    }
+
+    .essence {
       padding: 0;
       width: 100%;
       line-height: 3.5rem;
 
-      blockquote {
+      .essence {
         width: 100%;
         padding: 0;
         line-height: 6rem;
 
-        blockquote {
+        .essence {
           width: 100%;
           padding: 0;
           line-height: 8rem;
@@ -287,6 +305,7 @@
       }
     }
   }
+
 }
 
 .lg-toolbar .lg-icon::after {

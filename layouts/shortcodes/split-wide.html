@@ -1,1 +1,6 @@
-</div></div></div></article><article><div class="article-post"><div class="content-break content-block-position">
+{{- $typeOpen := cond $.IsNamedParams ($.Get "open") "" | default "section" -}}
+{{- $typeClose := cond $.IsNamedParams ($.Get "close") "" | default "section" -}}
+{{- $typeOpen := (printf `<%s>` $typeOpen) | safeHTML -}}
+{{- $typeClose := (printf `</%s>` $typeClose) | safeHTML -}}
+
+</div></div></div>{{- if ne (.Get `first`) true -}}{{ $typeClose }}{{- end -}}{{ $typeOpen }}<div class="article-post"><div class="content-break content-block-position">
