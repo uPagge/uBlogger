@@ -18,7 +18,7 @@
     font-size: $toc-content-font-size;
     border-radius: 0 0 6px 6px;
 
-    ul {
+    ol, ul {
       text-indent: -0.85rem;
       padding-left: .8rem;
       list-style: none;
@@ -39,7 +39,7 @@
         }
       }
 
-      ul {
+      ol, ul {
         padding-left: 1.5rem;
       }
     }
@@ -90,20 +90,20 @@
   }
 
   .toc-content {
-    &.always-active ul {
+    &.always-active ol, &.always-active ul {
       display: block;
     }
 
-    > nav > ul {
+    > nav > ol, > nav > ul {
       margin: .625rem 0;
     }
 
-    ul {
-      ul {
+    ol, ul {
+      ol, ul {
         display: none;
       }
 
-      .has-active > ul {
+      .has-active > ol, .has-active > ul {
         display: block;
       }
     }
@@ -150,7 +150,7 @@
   .toc-content {
     background-color: $code-background-color;
 
-    > nav > ul {
+    > nav > ol, > nav > ul {
       margin: 0;
       padding: .4rem 1rem .4rem 1.8rem;
     }
