@@ -13,6 +13,8 @@
         {{- partial "head/meta.html" . -}}
         {{- partial "head/link.html" . -}}
 
+        {{ partial "google-fonts" . }}
+
         {{- partial "head/seo.html" . -}}
         {{- block "dnsPrefetch" . }}
         {{- with $.Site.Params.Seo.dnsPrefetch -}}
