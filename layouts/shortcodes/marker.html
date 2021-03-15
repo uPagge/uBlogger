@@ -1,0 +1,2 @@
+{{ $text := cond $.IsNamedParams ($.Get "text") "" }}
+<span class="m">{{ $text }}</span>

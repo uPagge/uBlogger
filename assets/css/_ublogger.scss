@@ -88,7 +88,15 @@ header {
 
   }
 
-  em {
+  .s {
+    font-weight: bold;
+
+    [theme=dark] & {
+      color: #ddd;
+    }
+  }
+
+  .m {
     background: #fff3bc;
     font-style: inherit;
     padding: 4px 7px 6px;
