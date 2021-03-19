@@ -72,7 +72,10 @@
     {{ $author = index .Site.Data.authors $authorName }}
     {{ end }}
 
+    {{ $postArticle := $params.seo.postArticle | default true }}
+    {{ if $postArticle }}
     <article>
+    {{ end }}
 
         <header class="header-post">
 
@@ -277,7 +280,9 @@
         <div id="toc-final"></div>
         </div>
 
+    {{ if $postArticle }}
     </article>
+    {{ end }}
 
     {{- if not $params.hiddenUnderPost -}}
         {{- partial "under-post.html" . -}}
@@ -303,7 +308,7 @@
     {{- end -}}
 </div>
 
-{{ if ne $viewCounter nil}}
+{{ if ne $viewCounter nil }}
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const host = '{{ $viewCounter.url }}';
