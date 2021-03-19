@@ -1,55 +1,173 @@
 {{- /* Desktop header */ -}}
-<header class="desktop" id="header-desktop">
-    <div class="header-wrapper">
-        <div class="header-title">
-            <a href="{{ .Site.Home.RelPermalink }}" title="{{ .Site.Title }}" class="header-logo logo-svg">
-                {{- with .Site.Params.header.title -}}
+<header>
+    <div class="desktop header" id="header-desktop">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="{{ .Site.Home.RelPermalink }}" title="{{ .Site.Title }}" class="header-logo logo-svg">
+                    {{- with .Site.Params.header.title -}}
                     {{- with .logo -}}
-                        {{- dict "Src" . "Class" "logo" | partial "plugin/image.html" -}}
+                    {{- dict "Src" . "Class" "logo" | partial "plugin/image.html" -}}
                     {{- end -}}
                     {{- with .logoSvg }}
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 36" width="96" height="36" style="vertical-align: middle">
-                            <style>tspan{white-space:pre}</style>
-                            <path class="logo-svg" d="{{ . }}"/>
-                        </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 36" width="96" height="36" style="vertical-align: middle">
+                        <style>tspan{white-space:pre}</style>
+                        <path class="logo-svg" d="{{ . }}"/>
+                    </svg>
                     {{- end -}}
                     {{- with .pre -}}
-                        <span class="header-title-pre">{{ . | safeHTML }}</span>
+                    <span class="header-title-pre">{{ . | safeHTML }}</span>
                     {{- end -}}
 
                     {{- .name -}}
 
                     {{- with .post -}}
-                        <span class="header-title-post">{{ . | safeHTML }}</span>
+                    <span class="header-title-post">{{ . | safeHTML }}</span>
                     {{- end -}}
-                {{- else -}}
+                    {{- else -}}
                     {{- .Site.Title -}}
-                {{- end -}}
-            </a>
-        </div>
-        <div class="menu">
-            <nav>
-                <ul class="menu-inner">
-                    {{- range .Site.Menus.main -}}
-                    {{- $url := .URL | relLangURL -}}
-                    {{- with .Page -}}
-                    {{- $url = .RelPermalink -}}
                     {{- end -}}
-                    <li>
-                        <a class="menu-item{{ if $.IsMenuCurrent `main` . | or ($.HasMenuCurrent `main` .) | or (eq $.RelPermalink $url) }} active{{ end }}" href="{{ $url }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if (urls.Parse $url).Host }} rel="noopener noreffer" target="_blank"{{ end }}>
-                            {{- .Pre | safeHTML }} {{ .Name }} {{ .Post | safeHTML -}}
-                        </a>
-                    </li>
-                    {{- end -}}
-                </ul>
-            </nav>
+                </a>
+            </div>
+            <div class="menu">
+                <nav>
+                    <h2 class="display-hidden">Основная навигация</h2>
+                    <ul class="menu-inner">
+                        {{- range .Site.Menus.main -}}
+                        {{- $url := .URL | relLangURL -}}
+                        {{- with .Page -}}
+                        {{- $url = .RelPermalink -}}
+                        {{- end -}}
+                        <li>
+                            <a class="menu-item{{ if $.IsMenuCurrent `main` . | or ($.HasMenuCurrent `main` .) | or (eq $.RelPermalink $url) }} active{{ end }}" href="{{ $url }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if (urls.Parse $url).Host }} rel="noopener noreffer" target="_blank"{{ end }}>
+                                {{- .Pre | safeHTML }} {{ .Name }} {{ .Post | safeHTML -}}
+                            </a>
+                        </li>
+                        {{- end -}}
+                    </ul>
+                </nav>
                 {{- if .Site.Menus.main -}}
-                    <span class="menu-item delimiter"></span>
+                <span class="menu-item delimiter"></span>
                 {{- end -}}
                 {{- if .Site.IsMultiLingual -}}
-                    <span onclick="javascript:void(0);" class="menu-item language" title="{{ T "selectLanguage" }}">
+                <span onclick="javascript:void(0);" class="menu-item language" title="{{ T "selectLanguage" }}">
+                {{- .Language.LanguageName -}}
+                <select class="language-select" id="language-select-desktop" onchange="location = this.value;">
+                    {{- if eq .Kind "404" -}}
+                    {{- range .Sites -}}
+                    {{- $link := printf "%v/404.html" .LanguagePrefix -}}
+                    <option value="{{ $link }}"{{ if eq . $.Site }} selected{{ end }}>
                         {{- .Language.LanguageName -}}
-                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;">
+                    </option>
+                    {{- end -}}
+                    {{- else -}}
+                    {{- range .AllTranslations -}}
+                    <option value="{{ .RelPermalink }}"{{ if eq .Lang $.Lang }} selected{{ end }}>
+                        {{- .Language.LanguageName -}}
+                    </option>
+                    {{- end -}}
+                    {{- end -}}
+                </select>
+                </span>
+                {{- end -}}
+                {{- if .Site.Params.search.enable -}}
+                <span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="{{ .Site.Params.search.placeholder | default (T `searchPlaceholder`) }}" id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="{{ T `search` }}">
+                            <span class="svg-icon icon-search"></span>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="{{ T `clear` }}">
+                            <span class="svg-icon icon-cancel"></span>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <span class="svg-icon icon-loading"></span>
+                        </span>
+                    </span>
+                {{- end -}}
+                <a href="javascript:void(0);" class="menu-item theme-switch" title="{{ T "switchTheme" }}">
+                <span class="svg-icon icon-moon"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    {{- /* Mobile header */ -}}
+    <div class="mobile header" id="header-mobile">
+        <div class="header-container">
+            <div class="header-wrapper">
+                <div class="header-title">
+                    <a href="{{ .Site.Home.RelPermalink }}" title="{{ .Site.Title }}" class="header-logo">
+                        {{- with .Site.Params.header.title -}}
+                            {{- with .logo -}}
+                                {{- dict "Src" . "Class" "logo" | partial "plugin/image.html" -}}
+                            {{- end -}}
+                            {{- with .logoSvg }}
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 36" width="96" height="36" style="vertical-align: middle">
+                                <style>tspan{white-space:pre}</style>
+                                <path class="logo-svg" d="{{ . }}"/>
+                            </svg>
+                            {{- end -}}
+                            {{- with .pre -}}
+                                <span class="header-title-pre">{{ . | safeHTML }}</span>
+                            {{- end -}}
+
+                            {{- .name -}}
+
+                            {{- with .post -}}
+                                <span class="header-title-post">{{ . | safeHTML }}</span>
+                            {{- end -}}
+                        {{- else -}}
+                            {{- .Site.Title -}}
+                        {{- end -}}
+                    </a>
+                </div>
+                <div class="menu-toggle" id="menu-toggle-mobile">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+            <div class="menu" id="menu-mobile">
+                {{- if .Site.Params.search.enable -}}
+                    <div class="search-wrapper">
+                        <div class="search mobile" id="search-mobile">
+                            <input type="text" placeholder="{{ .Site.Params.search.placeholder | default (T `searchPlaceholder`) }}" id="search-input-mobile">
+                            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="{{ T `search` }}">
+                                <span class="svg-icon icon-search"></span>
+                            </a>
+                            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="{{ T `clear` }}">
+                                <span class="svg-icon icon-cancel"></span>
+                            </a>
+                            <span class="search-button search-loading" id="search-loading-mobile">
+                                <span class="svg-icon icon-loading"></span>
+                            </span>
+                        </div>
+                        <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                            {{ T `cancel` }}
+                        </a>
+                    </div>
+                {{- end -}}
+                {{- $currentPage := . -}}
+                <nav>
+                    <h2 class="display-hidden">Основная навигация</h2>
+                    <ul>
+                        {{- range .Site.Menus.main -}}
+                        {{- $url := .URL | relLangURL -}}
+                        {{- with .Page -}}
+                        {{- $url = .RelPermalink -}}
+                        {{- end -}}
+                        <li>
+                            <a class="menu-item" href="{{ $url }}" title="{{ .Title }}"{{ if (urls.Parse $url).Host }} rel="noopener noreffer" target="_blank"{{ end }}>
+                                {{- .Pre | safeHTML }}{{ .Name }}{{ .Post | safeHTML -}}
+                            </a>
+                        </li>
+                        {{- end -}}
+                    </ul>
+                </nav>
+                <a href="javascript:void(0);" class="menu-item theme-switch" title="{{ T "switchTheme" }}">
+                    <span class="svg-icon icon-moon"></span>
+                </a>
+                {{- if .Site.IsMultiLingual -}}
+                    <span onclick="javascript:void(0);" class="menu-item" title="{{ T "selectLanguage" }}">
+                        {{- .Language.LanguageName -}}
+                        <select class="language-select" onchange="location = this.value;">
                             {{- if eq .Kind "404" -}}
                                 {{- range .Sites -}}
                                     {{- $link := printf "%v/404.html" .LanguagePrefix -}}
@@ -67,124 +185,9 @@
                         </select>
                     </span>
                 {{- end -}}
-                {{- if .Site.Params.search.enable -}}
-                    <span class="menu-item search" id="search-desktop">
-                        <input type="text" placeholder="{{ .Site.Params.search.placeholder | default (T `searchPlaceholder`) }}" id="search-input-desktop">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="{{ T `search` }}">
-                            <span class="svg-icon icon-search"></span>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="{{ T `clear` }}">
-                            <span class="svg-icon icon-cancel"></span>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-desktop">
-                            <span class="svg-icon icon-loading"></span>
-                        </span>
-                    </span>
-                {{- end -}}
-                <a href="javascript:void(0);" class="menu-item theme-switch" title="{{ T "switchTheme" }}">
-                    <span class="svg-icon icon-moon"></span>
-                </a>
-            </div>
-    </div>
-</header>
-
-{{- /* Mobile header */ -}}
-<header class="mobile" id="header-mobile">
-    <div class="header-container">
-        <div class="header-wrapper">
-            <div class="header-title">
-                <a href="{{ .Site.Home.RelPermalink }}" title="{{ .Site.Title }}" class="header-logo">
-                    {{- with .Site.Params.header.title -}}
-                        {{- with .logo -}}
-                            {{- dict "Src" . "Class" "logo" | partial "plugin/image.html" -}}
-                        {{- end -}}
-                        {{- with .logoSvg }}
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 36" width="96" height="36" style="vertical-align: middle">
-                            <style>tspan{white-space:pre}</style>
-                            <path class="logo-svg" d="{{ . }}"/>
-                        </svg>
-                        {{- end -}}
-                        {{- with .pre -}}
-                            <span class="header-title-pre">{{ . | safeHTML }}</span>
-                        {{- end -}}
-
-                        {{- .name -}}
-
-                        {{- with .post -}}
-                            <span class="header-title-post">{{ . | safeHTML }}</span>
-                        {{- end -}}
-                    {{- else -}}
-                        {{- .Site.Title -}}
-                    {{- end -}}
-                </a>
-            </div>
-            <div class="menu-toggle" id="menu-toggle-mobile">
-                <span></span><span></span><span></span>
             </div>
         </div>
-        <div class="menu" id="menu-mobile">
-            {{- if .Site.Params.search.enable -}}
-                <div class="search-wrapper">
-                    <div class="search mobile" id="search-mobile">
-                        <input type="text" placeholder="{{ .Site.Params.search.placeholder | default (T `searchPlaceholder`) }}" id="search-input-mobile">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="{{ T `search` }}">
-                            <span class="svg-icon icon-search"></span>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="{{ T `clear` }}">
-                            <span class="svg-icon icon-cancel"></span>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-mobile">
-                            <span class="svg-icon icon-loading"></span>
-                        </span>
-                    </div>
-                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
-                        {{ T `cancel` }}
-                    </a>
-                </div>
-            {{- end -}}
-            {{- $currentPage := . -}}
-            <nav>
-                <ul>
-                    {{- range .Site.Menus.main -}}
-                    {{- $url := .URL | relLangURL -}}
-                    {{- with .Page -}}
-                    {{- $url = .RelPermalink -}}
-                    {{- end -}}
-                    <li>
-                        <a class="menu-item" href="{{ $url }}" title="{{ .Title }}"{{ if (urls.Parse $url).Host }} rel="noopener noreffer" target="_blank"{{ end }}>
-                            {{- .Pre | safeHTML }}{{ .Name }}{{ .Post | safeHTML -}}
-                        </a>
-                    </li>
-                    {{- end -}}
-                </ul>
-            </nav>
-            <a href="javascript:void(0);" class="menu-item theme-switch" title="{{ T "switchTheme" }}">
-                <span class="svg-icon icon-moon"></span>
-            </a>
-            {{- if .Site.IsMultiLingual -}}
-                <span onclick="javascript:void(0);" class="menu-item" title="{{ T "selectLanguage" }}">
-                    {{- .Language.LanguageName -}}
-                    <select class="language-select" onchange="location = this.value;">
-                        {{- if eq .Kind "404" -}}
-                            {{- range .Sites -}}
-                                {{- $link := printf "%v/404.html" .LanguagePrefix -}}
-                                <option value="{{ $link }}"{{ if eq . $.Site }} selected{{ end }}>
-                                    {{- .Language.LanguageName -}}
-                                </option>
-                            {{- end -}}
-                        {{- else -}}
-                            {{- range .AllTranslations -}}
-                                <option value="{{ .RelPermalink }}"{{ if eq .Lang $.Lang }} selected{{ end }}>
-                                    {{- .Language.LanguageName -}}
-                                </option>
-                            {{- end -}}
-                        {{- end -}}
-                    </select>
-                </span>
-            {{- end -}}
-        </div>
     </div>
-</header>
 {{- if .Site.Params.search.enable -}}
 <div class="search-dropdown desktop">
     <div id="search-dropdown-desktop"></div>
@@ -193,3 +196,4 @@
     <div id="search-dropdown-mobile"></div>
 </div>
 {{- end -}}
+</header>

@@ -13,14 +13,13 @@ body {
 .summary-content {
   color: #a9a9b3;
   display: block;
-  margin-top: 1rem;
 
   p {
     margin: 0;
   }
 }
 
-header {
+.header {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -645,6 +644,12 @@ a.post-tag-summary {
   }
 }
 
+.content-block-first {
+  p:first-child {
+    margin-top: 0;
+  }
+}
+
 .theme-mega-full.page-toc {
   .content-block-first {
     margin-top: 2rem;
@@ -860,6 +865,10 @@ figure {
     display: inline-block;
   }
 
+  span.svg-icon {
+    margin-right: 3px;
+  }
+
   [theme=dark] & {
     color: $global-font-secondary-color-dark;
   }
@@ -1071,8 +1080,6 @@ figure {
 }
 
 .rendered {
-  margin-top: 32px;
-  margin-bottom: 0;
   opacity: 0.7;
   font-weight: 400;
   font-size: 13px;
@@ -1080,6 +1087,7 @@ figure {
   letter-spacing: 0.08px;
   text-align: left;
   line-height: 24px;
+  margin: 32px 1.5rem 0;
 
   [theme=dark] & {
     color: $global-font-color-dark;
@@ -1097,12 +1105,8 @@ figure {
 }
 
 .hero-tags {
-  margin-top: 3rem;
   text-align: center;
-
-  span {
-    margin-right: 3rem;
-  }
+  margin-top: 3rem;
 
   [theme=dark] & {
     color: $global-font-color-dark;
@@ -1151,6 +1155,19 @@ figure {
       border: 3px solid $global-color-accent;
     }
   }
+}
+
+.display-hidden{
+  clip: rect(1px,1px,1px,1px);
+  height: 1px;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  z-index: -1000;
+  user-select: none;
 }
 
 @import "_partial/share-icon";

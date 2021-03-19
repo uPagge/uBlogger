@@ -74,7 +74,7 @@
 
     <article>
 
-        <div class="header-post">
+        <header class="header-post">
 
             {{ if eq $pageTheme "hero" }}
 
@@ -123,16 +123,24 @@
 
             <div class="hero-tags">
                 {{ if ne $viewCounter nil}}
-                <span class="rendered tag-none-display" id="views_container"><i class="svg-icon icon-eye-big"></i><span id="views_value" style="margin-right: 0">{{ if ne $params.Views nil}} {{ $params.Views }} {{ else }} Нет просмотров {{ end }}</span></span>
+                <span class="rendered tag-none-display" id="views_container">
+                    <span class="svg-icon icon-eye-big"></span><span id="views_value" style="margin-right: 0">{{ if ne $params.Views nil}} {{ $params.Views }} {{ else }} Нет просмотров {{ end }}</span>
+                </span>
                 {{- end -}}
 
                 {{- with $.Site.Params.dateformat | default "2006-01-02" | $.PublishDate.Format -}}
                 {{- $timeAgoDate:= $.Site.Params.TimeAgo.DateFormat | default "2006-01-02" | $.PublishDate.Format -}}
-                <span id="post-date" class="rendered"><i class="svg-icon icon-clock-big"></i><time class="timeago" datetime="{{ $timeAgoDate }}">{{ . }}</time></span>
+                <span id="post-date" class="rendered">
+                    <span class="svg-icon icon-clock-big"></span><time class="timeago" datetime="{{ $timeAgoDate }}">{{ . }}</time>
+                </span>
                 {{- end -}}
 
-                <span class="rendered"><i class="svg-icon icon-pencil-big"></i>{{ T "wordCount" $.WordCount }}</span>
-                <span class="rendered"><i class="svg-icon icon-stopwatch-big"></i>{{ T "readingTime" $.ReadingTime }}</span>
+                <span class="rendered">
+                    <span class="svg-icon icon-pencil-big"></span>{{ T "wordCount" $.WordCount }}
+                </span>
+                <span class="rendered">
+                    <span class="svg-icon icon-stopwatch-big"></span>{{ T "readingTime" $.ReadingTime }}
+                </span>
             </div>
             {{ end }}
 
@@ -164,37 +172,37 @@
                         <h2 class="single-subtitle">{{ . }}</h2>
                         {{- end -}}
                         {{- /* Meta */ -}}
-                        <div class="post-meta">
-                            <div class="post-meta-line">
-                                {{- $categories := slice -}}
-                                {{- range $.Params.categories -}}
-                                {{- $category := partialCached "function/path.html" . . | printf "/categories/%v" | $.Site.GetPage -}}
-                                {{- $categories = $categories | append (printf `<a href="%v"><i class="svg-icon icon-folder"></i>%v</a>` $category.RelPermalink $category.Title) -}}
-                                {{- end -}}
-                                {{- with delimit $categories "&nbsp;" -}}
-                                <span class="post-category">
-                                    {{ . }}
-                                </span>
-                                {{- end -}}
-                                {{ if ne $viewCounter nil}}
-                                <span class="post-meta-views tag-none-display" id="views_container">
-                                    <i class="svg-icon icon-eye"></i><span id="views_value" style="margin-right: 0">Нет</span> просмотров</span>
-                                </span>
-                                {{- end -}}
-                                {{- with $.Site.Params.dateformat | default "2006-01-02" | $.PublishDate.Format -}}
-                                {{- $timeAgoDate:= $.Site.Params.TimeAgo.DateFormat | default "2006-01-02" | $.PublishDate.Format -}}
-                                <span class="post-meta-date">
-                                    <i class="svg-icon icon-clock"></i><time class="timeago" datetime="{{ $timeAgoDate }}">{{ . }}</time>
-                                </span>
-                                {{- end -}}
-                                <span class="post-meta-words">
-                                    <i class="svg-icon icon-pencil"></i>{{ T "wordCount" $.WordCount }}
-                                </span>
-                                <span class="post-meta-reading">
-                                    <i class="svg-icon icon-stopwatch"></i>{{ T "readingTime" $.ReadingTime }}
-                                </span>
-                            </div>
+
+                        <div class="post-meta summary-post-meta">
+                            {{- $categories := slice -}}
+                            {{- range $.Params.categories -}}
+                            {{- $category := partialCached "function/path.html" . . | printf "/categories/%v" | $.Site.GetPage -}}
+                            {{- $categories = $categories | append (printf `<a href="%v"><span class="svg-icon icon-folder"></span>%v</a>` $category.RelPermalink $category.Title) -}}
+                            {{- end -}}
+                            {{- with delimit $categories "&nbsp;" -}}
+                            <span class="post-category meta-item">
+                                {{ . }}
+                            </span>
+                            {{- end -}}
+                            {{ if ne $viewCounter nil}}
+                            <span class="post-meta-views meta-item tag-none-display" id="views_container">
+                                <span class="svg-icon icon-eye"></span><span id="views_value" style="margin-right: 0">Нет</span> просмотров
+                            </span>
+                            {{- end -}}
+                            {{- with $.Site.Params.dateformat | default "2006-01-02" | $.PublishDate.Format -}}
+                            {{- $timeAgoDate:= $.Site.Params.TimeAgo.DateFormat | default "2006-01-02" | $.PublishDate.Format -}}
+                            <span class="post-meta-date meta-item">
+                                <span class="svg-icon icon-clock"></span><time class="timeago" datetime="{{ $timeAgoDate }}">{{ . }}</time>
+                            </span>
+                            {{- end -}}
+                            <span class="post-meta-words meta-item">
+                                <span class="svg-icon icon-pencil"></span>{{ T "wordCount" $.WordCount }}
+                            </span>
+                            <span class="post-meta-reading meta-item">
+                                <span class="svg-icon icon-stopwatch"></span>{{ T "readingTime" $.ReadingTime }}
+                            </span>
                         </div>
+
                     </div>
 
                 </div>
@@ -206,7 +214,7 @@
             {{- end -}}
             {{- end -}}
 
-        </div>
+        </header>
 
         <div class="article-post toc-start">
 
@@ -241,12 +249,12 @@
                     {{- if not (eq  . ($.Site.Params.dateformat | default "2006-01-02" | $.PublishDate.Format)) -}}
                     {{- with $params.upd -}}
                     <p class="is-style-explanation">
-                        <b>{{- dict "Date" $updateDate | T "updatedOnDate" -}}:</b> {{ $params.upd }}
+                        <span class="s">{{- dict "Date" $updateDate | T "updatedOnDate" -}}:</span> {{ $params.upd }}
                     </p>
                     {{- else -}}
                     <div style="margin: 20px 0 20px 0;">
                         <span class="post-update">
-                            <b>{{- dict "Date" . | T "updatedOnDate" -}}</b>
+                            <span class="s">{{- dict "Date" . | T "updatedOnDate" -}}</span>
                         </span>
                     </div>
                     {{- end -}}
@@ -277,7 +285,8 @@
 
     {{- $comment := .Site.Params.Comment  -}}
     {{- if ($params.comment.enable | default $comment.enable) -}}
-    <div class="page single comments content-block-position">
+    <section class="page single comments content-block-position">
+        <h1 class="display-hidden">Комментарии</h1>
         {{- $authorComment := $params.authorComment -}}
         {{- if $authorComment -}}
         {{- with $author -}}
@@ -290,7 +299,7 @@
         {{- end -}}
         {{- /* Comment */ -}}
         {{- partial "comment.html" . -}}
-    </div>
+    </section>
     {{- end -}}
 </div>
 

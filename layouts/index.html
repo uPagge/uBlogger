@@ -3,7 +3,7 @@
     {{- $profile := .Site.Params.home.profile -}}
     {{- $posts := .Site.Params.home.posts -}}
 
-    <div class="page home"{{ if ne $posts.enable false }} data-home="posts"{{ end }}>
+    <article class="page home"{{ if ne $posts.enable false }} data-home="posts"{{ end }}>
         {{- /* Profile */ -}}
         {{- if ne $profile.enable false -}}
             {{- partial "home/profile.html" . -}}
@@ -57,7 +57,7 @@
             {{- end -}}
             {{- partial "paginator.html" . -}}
         {{- end -}}
-    </div>
+    </article>
 
     {{- $comment := .Site.Params.Comment -}}
     {{- $remark42 := $comment.remark42 | default dict -}}
