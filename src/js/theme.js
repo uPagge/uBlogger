@@ -389,15 +389,6 @@ class Theme {
         });
     }
 
-    initHeaderLink() {
-        for (let num = 1; num <= 6; num++) {
-            this.util.forEach(document.querySelectorAll('h' + num), $header => {
-                $header.classList.add('headerLink');
-                $header.insertAdjacentHTML('afterbegin', `<a href="#${$header.id}" class="header-mark"></a>`);
-            });
-        }
-    }
-
     initShareHeader() {
         this.util.forEach(document.querySelectorAll('.content-break h2'), $header => {
             $header.insertAdjacentHTML('afterend', `
@@ -712,7 +703,6 @@ class Theme {
             this.initDetails();
             this.initHighlight();
             this.initTable();
-            this.initHeaderLink();
             this.initShareHeader();
             this.initSmoothScroll();
             this.initMath();
