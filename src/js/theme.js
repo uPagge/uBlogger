@@ -349,7 +349,7 @@ class Theme {
                 $header.className = 'code-header ' + $code.className.toLowerCase();
                 const $title = document.createElement('span');
                 $title.classList.add('code-title');
-                $title.insertAdjacentHTML('afterbegin', '<i class="arrow svg-icon icon-code-right"></i>');
+                $title.insertAdjacentHTML('afterbegin', '<span class="arrow svg-icon icon-code-right"></span>');
                 $title.addEventListener('click', () => {
                     $chroma.classList.toggle('open');
                 }, false);

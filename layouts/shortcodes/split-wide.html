@@ -3,4 +3,4 @@
 {{- $typeOpen := (printf `<%s>` $typeOpen) | safeHTML -}}
 {{- $typeClose := (printf `</%s>` $typeClose) | safeHTML -}}
 
-</div></div></div>{{- if ne (.Get `first`) true -}}{{ $typeClose }}{{- end -}}{{ $typeOpen }}<div class="article-post"><div class="content-break content-block-position">
+</div></div></div>{{- if ne (.Get `noSection`) true -}}{{- if ne (.Get `first`) true -}}{{ $typeClose }}{{- end -}}{{ $typeOpen }}{{- end -}}<div class="article-post"><div class="content-break content-block-position">
