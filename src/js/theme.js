@@ -393,7 +393,7 @@ class Theme {
         this.util.forEach(document.querySelectorAll('.content-break h2'), $header => {
             $header.insertAdjacentHTML('afterend', `
 <div class="header-title-share">
-<a href="${document.URL}#${$header.id}" target="_blank">ссылка</a>
+<a href="${document.URL}#${$header.id}" target="_blank">link</a>
 <a href="https://t.me/share/url?url=${document.URL}#${$header.id}" target="_blank">telegram</a>
 <a href="https://vk.com/share.php?url=${document.URL}#${$header.id}" target="_blank">vk</a>
 <a href="https://twitter.com/intent/tweet?text=${document.URL}#${$header.id}" target="_blank">twitter</a>
