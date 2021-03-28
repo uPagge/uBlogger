@@ -1,6 +1,28 @@
+{{- with .Page.Scratch.Get "counter" -}}
+{{- $.Page.Scratch.Set "counter" (add . 1) -}}
+{{- else -}}
+{{- $.Page.Scratch.Set "counter" 1 -}}
+{{- end -}}
+{{- $counter := .Page.Scratch.Get "counter" -}}
+
 {{- $typeOpen := cond $.IsNamedParams ($.Get "open") "" | default "section" -}}
 {{- $typeClose := cond $.IsNamedParams ($.Get "close") "" | default "section" -}}
 {{- $typeOpen := (printf `<%s>` $typeOpen) | safeHTML -}}
 {{- $typeClose := (printf `</%s>` $typeClose) | safeHTML -}}
+{{ $class := cond $.IsNamedParams ($.Get "class") "" }}
 
-</div></div></div>{{- if ne (.Get `noSection`) true -}}{{- if ne (.Get `first`) true -}}{{ $typeClose }}{{- end -}}{{ $typeOpen }}{{- end -}}<div class="article-post"><div class="content-break content-block-position">
+</div></div>
+{{- if ne (.Get `noSection`) true -}}
+{{- if ge $counter 2 -}}
+{{- if ne (.Get `noSectionClose`) true -}}
+{{ $typeClose }}
+{{- end -}}
+{{- end -}}
+{{- if ne (.Get `noSectionOpen`) true -}}
+{{ $typeOpen }}
+{{- end -}}
+{{- end -}}
+<div class="article-post"><div class="content-break content-block-position">
+    {{ .Inner }}
+</div></div>
+<div class="content-block content-block-position {{ with $class }}{{ . }}{{ end }}"><div class="post single">

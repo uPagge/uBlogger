@@ -1,10 +1,9 @@
+{{- $cols := split .Inner "<!--split-->" -}}
 <div class="block-media block-media_column">
-    {{ $cols := split .Inner "<!--split-->" }}
-
-    {{ range $cols }}
+    {{- range $cols -}}
     <div class="content-column">
-        {{ . | $.Page.RenderString }}
+        {{- . | $.Page.RenderString -}}
     </div>
-    {{ end }}
+    {{- end -}}
 </div>
 

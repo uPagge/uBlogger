@@ -46,7 +46,7 @@
   }
 
   .article-post {
-    font-size: 18px;
+    font-size: 19px;
 
     .post {
       padding: 45px 60px;
@@ -114,7 +114,7 @@
   }
 
   .article-post {
-    font-size: 18px;
+    font-size: 19px;
 
     .post {
       padding: 45px 60px;
@@ -139,7 +139,7 @@
   }
 
   .article-post {
-    font-size: 18px;
+    font-size: 19px;
 
     .post {
       padding: 45px 60px;
@@ -185,6 +185,10 @@
     }
 
     .content-block-position:first-child {
+      margin-top: 0;
+    }
+
+    .content-break h2 {
       margin-top: 0;
     }
   }
@@ -234,6 +238,17 @@
 
   .padding-article {
     padding: 40px 10px 0 10px;
+  }
+
+  figure.render-image {
+    display: block;
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+
+  .split-post {
+    margin-right: -10px;
+    margin-left: -10px;
   }
 
   .post-all-meta {

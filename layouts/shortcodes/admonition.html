@@ -13,7 +13,10 @@
 {{- $iconMap  = dict "example" "admonition-icon icon-example" | merge $iconMap -}}
 {{- $iconMap  = dict "quote" "admonition-icon icon-quote" | merge $iconMap -}}
 {{- $iconDetails := "admonition-icon admonition-icon-arrow-right" -}}
+{{- $aside := (.Get `aside`) | default false }}
 
+
+{{- if $aside -}}<aside>{{- end -}}
 {{- if .IsNamedParams -}}
     {{- $type := .Get "type" | default "note" -}}
     <div class="details admonition {{ $type }}{{ if .Get `open` | ne false }} open{{ end }}">
@@ -41,3 +44,4 @@
         </div>
     </div>
 {{- end -}}
+{{- if $aside -}}</aside>{{- end -}}

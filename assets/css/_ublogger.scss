@@ -39,10 +39,6 @@ body {
     background: $global-background-secondary-color-dark;
   }
 
-  h2:first-child, h3:first-child {
-    margin-top: 20px;
-  }
-
   #toc-static + p {
     margin-top: 0;
   }
@@ -72,10 +68,6 @@ body {
 
     h2 > .content-block-position:first-child {
       margin-top: 0;
-    }
-
-    figure {
-      margin: 0;
     }
 
     img {
@@ -278,11 +270,20 @@ a.post-tag-summary {
   line-height: 3.2rem;
 }
 
-.single {
-
-  figure {
-    margin: 0;
+.img-frame {
+  img {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   }
+}
+
+.list-smile {
+  ul, ol {
+    list-style-type: none;
+    text-indent: -1.5rem;
+  }
+}
+
+.single {
 
   p + ul {
     margin-top: -1.2rem;
@@ -291,15 +292,6 @@ a.post-tag-summary {
 
   br + img {
     margin-top: 1.2rem;
-  }
-
-  h2 {
-    font-size: 2rem;
-    margin-top: 7rem;
-
-    code {
-      font-size: 90%;
-    }
   }
 
   h2[id^=u-],
@@ -311,11 +303,6 @@ a.post-tag-summary {
       content: none;
     }
   }
-
-  h3 {
-    font-size: 1.5rem;
-  }
-
 
 }
 
@@ -393,7 +380,7 @@ a.post-tag-summary {
   }
 }
 
-.author-avatar-comment{
+.author-avatar-comment {
   width: 105px;
   padding: 0 25px 0 0;
 }
@@ -562,6 +549,7 @@ a.post-tag-summary {
   ol {
     margin: 0;
     padding: 0;
+
     li {
       display: inline-block;
       list-style: none;
@@ -792,6 +780,7 @@ a.post-tag-summary {
 .block-media_column {
 
   display: inline-block;
+  width: 100%;
 
   .content-column {
     display: block;
@@ -804,6 +793,10 @@ a.post-tag-summary {
       width: 100%;
     }
 
+    :first-child {
+      margin-top: 0;
+    }
+
   }
 
 }
@@ -811,7 +804,6 @@ a.post-tag-summary {
 .block-media_right {
   width: 50%;
   float: right;
-  text-align: right;
   padding-right: 0;
   margin-left: 40px;
   margin-bottom: 10px;
@@ -909,6 +901,10 @@ figure {
 }
 
 .split-post {
+
+  margin-right: -60px;
+  margin-left: -60px;
+
   .code-header, .table-wrapper, .admonition {
     border-radius: 0 !important;
   }
@@ -1157,8 +1153,8 @@ figure {
   }
 }
 
-.display-hidden{
-  clip: rect(1px,1px,1px,1px);
+.display-hidden {
+  clip: rect(1px, 1px, 1px, 1px);
   height: 1px;
   margin: 0;
   overflow: hidden;

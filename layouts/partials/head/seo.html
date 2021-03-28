@@ -16,9 +16,11 @@
     <meta name="baidu-site-verification" content="{{ . }}" />
 {{- end -}}
 
-
-
 {{- /* Home SEO */ -}}
+{{- if .IsHome -}}
+
+{{- end -}}
+
 {{- if .IsHome -}}
     <script type="application/ld+json">
     {
@@ -61,6 +63,46 @@
         {{- end -}}
         {{- with .Site.Copyright -}}
             "license": "{{ . | safeHTML }}",
+        {{- end -}}
+        {{- if .Site.Params.home.profile.social -}}
+            "sameAs": [
+                    {{- $socialMap := resources.Get "data/social.yml" | transform.Unmarshal -}}
+                    {{- $socialArr := slice -}}
+                    {{- range $key, $value := .Site.Params.social -}}
+                    {{- $social := $key | lower | index $socialMap | default dict -}}
+                    {{- if and $value (ne $key "email") (ne $key "rss") -}}
+                    {{- if reflect.IsMap $value -}}
+                    {{- with $value.weight -}}
+                    {{- $social = dict "Weight" . | merge $social -}}
+                    {{- end -}}
+                    {{- with $value.prefix -}}
+                    {{- $social = dict "Prefix" . | merge $social -}}
+                    {{- end -}}
+                    {{- with $value.template -}}
+                    {{- $social = dict "Template" . | merge $social -}}
+                    {{- end -}}
+                    {{- with $value.id -}}
+                    {{- $social = dict "Id" . | merge $social -}}
+                    {{- end -}}
+                    {{- with $value.url -}}
+                    {{- $social = dict "Url" . | merge $social -}}
+                    {{- end -}}
+                    {{- else if ne $value true -}}
+                    {{- $social = dict "Id" $value | merge $social -}}
+                    {{- end -}}
+                    {{- $socialArr = $socialArr | append $social -}}
+                    {{- end -}}
+                    {{- end -}}
+                    {{- $len := (len $socialArr) -}}
+                    {{- range $index, $value := $socialArr -}}
+                        {{- $template := .Template | default "%v" -}}
+                        {{- with .Prefix -}}
+                        {{- $template = . | strings.TrimSuffix "/" | printf "%v/%%v" -}}
+                        {{- end -}}
+                        {{- printf (string $template) .Id | safeHTML -}}
+                        {{- if ne (add $index 1) $len -}}, {{- end -}}
+                    {{- end -}}
+            ],
         {{- end -}}
         "name": {{ .Site.Title | safeHTML }}
     }

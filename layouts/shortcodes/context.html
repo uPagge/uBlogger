@@ -1,11 +1,6 @@
-{{- $type := "section" -}}
-{{- if (.Get `article` | default false) -}}
-    {{- $type = "article" -}}
-{{- end -}}
-{{- $tag := "" }}
-{{- if (.Get `close` | default false) -}}
-    {{- $tag = printf `</%s>` $type -}}
-{{- else -}}
-    {{- $tag = printf `<%s>` $type -}}
-{{- end -}}
-{{- $tag | safeHTML -}}
+{{- $tag := cond $.IsNamedParams ($.Get "tag") "" | default "section" -}}
+{{- $tagClose := printf `</%s>` $tag -}}
+{{- $tagOpen := printf `<%s>` $tag -}}
+{{- $tagOpen | safeHTML -}}
+{{ .Inner }}
+{{- $tagClose | safeHTML -}}

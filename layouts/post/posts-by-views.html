@@ -1,0 +1,83 @@
+{{- define "content" -}}
+{{- $params := .Scratch.Get "params" -}}
+{{- $profile := .Site.Params.home.profile -}}
+{{- $posts := .Site.Params.home.posts -}}
+
+<article class="page home"{{ if ne $posts.enable false }} data-home="posts"{{ end }}>
+    {{- /* Profile */ -}}
+    {{- if ne $profile.enable false -}}
+    {{- partial "home/profile.html" . -}}
+    {{- end -}}
+
+    {{- /* Content */ -}}
+    {{- if .Content -}}
+    <div class="single">
+        <div class="content" id="content">
+            {{- dict "Content" .Content "Ruby" $params.ruby "Fraction" $params.fraction | partial "function/content.html" | safeHTML -}}
+        </div>
+    </div>
+    {{- end -}}
+
+    {{- /* Posts */ -}}
+    {{- if ne $posts.enable false | and .Site.RegularPages -}}
+    {{- /* Paginate */ -}}
+    {{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections -}}
+    {{- if .Site.Params.page.hiddenFromHomePage -}}
+    {{- $pages = where $pages "Params.hiddenfromhomepage" false -}}
+    {{- else -}}
+    {{- $pages = where $pages "Params.hiddenfromhomepage" "!=" true -}}
+    {{- end -}}
+
+    {{ $pinnedPostRelPermalinks := split .Site.Params.pinnedPost "," }}
+    {{ $pinnedPosts := where $pages "RelPermalink" "in" $pinnedPostRelPermalinks }}
+    {{ $pages := where $pages "RelPermalink" "not in" $pinnedPostRelPermalinks }}
+
+    {{- with $posts.paginate | default .Site.Params.paginate -}}
+    {{- $pages = $.Paginate $pages . -}}
+    {{- else -}}
+    {{- $pages = .Paginate $pages -}}
+    {{- end -}}
+
+    {{ if .Site.Params.pinnedPost }}
+    {{ if (and .Site.Params.pinOnlyToFirstPage (ne $pages.PageNumber 1)) }}
+    {{/* Do nothing if the pinOnlyToFirstPage flag is set and we're not on page 1. */}}
+    {{else}}
+
+    {{ range $pinnedPosts }}
+    <div class="post-pinned">
+        {{- .Render "summary" -}}
+    </div>
+
+    {{end}}
+    {{end}}
+    {{end}}
+
+
+    {{- range ($pages.Pages.ByParam "views").Reverse -}}
+    {{- .Render "summary" -}}
+    {{- end -}}
+    {{- partial "paginator.html" . -}}
+    {{- end -}}
+</article>
+
+{{- $comment := .Site.Params.Comment -}}
+{{- $remark42 := $comment.remark42 | default dict -}}
+{{- if $remark42.enable -}}
+<script>
+    var remark_config = {
+        host: '{{ $remark42.host }}',
+        site_id: '{{ $remark42.site }}',
+        components: ['counter']
+    };
+
+    (function(c) {
+        for(var i = 0; i < c.length; i++){
+            var d = document, s = d.createElement('script');
+            s.src = remark_config.host + '/web/' +c[i] +'.js';
+            s.defer = true;
+            (d.head || d.body).appendChild(s);
+        }
+    })(remark_config.components || ['embed']);
+</script>
+{{- end -}}
+{{- end -}}

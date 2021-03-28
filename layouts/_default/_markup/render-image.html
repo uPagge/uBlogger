@@ -13,7 +13,7 @@
 {{ $imageOriginal = .Destination }}
 {{ end }}
 {{- if $figcap -}}
-<figure>
+<figure class="render-image">
     {{- dict "Src" $imageOriginal "Class" "render-image" "Title" $figcap "Alt" $alt "Caption" $caption "Linked" true "Resources" .Page.Resources | partial "plugin/image.html" -}}
     <figcaption class="image-caption">
         {{- $figcap | safeHTML -}}

@@ -1,6 +1,13 @@
 @import "../_partial/_single/toc";
 
+.content-block {
+  .single > :first-child {
+    margin-top: 0;
+  }
+}
+
 .single {
+
   .single-title {
     margin: 1rem 0 .5rem;
     font-size: 1.6rem;
@@ -58,19 +65,38 @@
     font-size: 1rem;
   }
 
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  h2, h3, h4, h5, h6 {
     font-weight: bold;
-    margin-bottom: 1.2rem;
-    margin-top: 3.2rem;
 
     [theme=dark] & {
       font-weight: bolder;
     }
   }
+
+  h3, h4, h5, h6 {
+    font-weight: bold;
+    margin-bottom: 1rem;
+    margin-top: 3.2rem;
+
+    & + * {
+      margin-top: 0 !important;
+    }
+  }
+
+  h2 {
+    margin-bottom: 1.2rem;
+    font-size: 2rem;
+    margin-top: 7rem;
+
+    code {
+      font-size: 90%;
+    }
+  }
+
+  h3 {
+    font-size: 1.6rem;
+  }
+
 
   h2,
   h3,
@@ -159,6 +185,11 @@
 
   .table-wrapper {
     overflow-x: auto;
+    border-radius: 6px 6px 0 0;
+
+    & + .table-wrapper {
+      margin-top: 1rem;
+    }
 
     &::-webkit-scrollbar {
       background-color: $table-background-color;
@@ -171,10 +202,8 @@
     > table {
       width: 100%;
       max-width: 100%;
-      margin: .625rem 0;
       border-spacing: 0;
       background: $table-background-color;
-      border-collapse: collapse;
 
       [theme=dark] & {
         background: $table-background-color-dark;
@@ -189,12 +218,20 @@
       }
 
       th, td {
-        padding: .3rem 1rem;
+        padding: .18rem 1rem;
         border: 1px solid darken($table-thead-color, 2%);
 
         [theme=dark] & {
           border-color: darken($table-thead-color-dark, 2%);
         }
+      }
+
+      tr:last-child td:first-child {
+        border-bottom-left-radius: 6px;
+      }
+
+      tr:last-child td:last-child {
+        border-bottom-right-radius: 6px;
       }
     }
   }
@@ -315,6 +352,10 @@
         }
       }
     }
+  }
+
+  figure {
+    margin: 3rem 0 3rem 0;
   }
 
 }
