@@ -1,7 +1,7 @@
 {{- if gt .Paginator.TotalPages 1 -}}
 <footer>
     <nav>
-        <h1 class="display-hidden">Пагинация</h1>
+        <h3 class="display-hidden">Пагинация</h3>
         <ul class="pagination">
             {{- .Scratch.Set "paginator.ellipsed" false -}}
             {{- range $.Paginator.Pagers -}}
