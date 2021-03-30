@@ -186,6 +186,7 @@ a.post-tag-summary {
   width: 100%;
   min-width: 200px;
   box-sizing: border-box;
+  margin-top: 5rem;
 }
 
 .page.home {
@@ -518,10 +519,6 @@ a.post-tag-summary {
   .header-post {
     margin: 6rem 1rem 0;
   }
-}
-
-.content-block-position {
-  margin-top: 3rem;
 }
 
 .page-toc {
@@ -919,6 +916,18 @@ figure {
   }
 }
 
+.split-post-center {
+  .admonition {
+    padding: 0 3.4rem;
+  }
+}
+
+.split-post-center-border {
+  .admonition {
+    border-left-width: 0;
+    padding: 0 3.7rem;
+  }
+}
 
 .theme-hero {
   .header-post {

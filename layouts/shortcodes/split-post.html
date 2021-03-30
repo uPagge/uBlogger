@@ -1,3 +1,4 @@
-<div class="split-post single">
+{{ $class := cond $.IsNamedParams ($.Get "class") "" }}
+<div class="split-post single {{ with $class }}{{ . }}{{ end }}">
     {{ .Inner }}
 </div>
