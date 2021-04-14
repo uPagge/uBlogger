@@ -140,7 +140,7 @@ freecodecamp:
   Prefix: https://freecodecamp.org/
   Title: freeCodeCamp
   Icon:
-    Class: svg-social-icon-color icon-free-code-camp
+    Class: svg-social-icon-color icon-freecodecamp
 
 # 019: Bitbucket
 bitbucket:
