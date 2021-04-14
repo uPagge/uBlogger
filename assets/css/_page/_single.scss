@@ -8,6 +8,12 @@
 
 .single {
 
+  li {
+    ul {
+      margin: 0;
+    }
+  }
+
   .single-title {
     margin: 1rem 0 .5rem;
     font-size: 1.6rem;
