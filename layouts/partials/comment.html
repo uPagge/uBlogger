@@ -113,8 +113,8 @@
                     components: ['embed'],
                     theme: themeRemark,
                     locale: '{{ $remark42.locale }}',
-                    show_email_subscription: '{{ $remark42.emailSubscribe }}',
-                    page_title: '{{ .Title }}'
+                    show_email_subscription: {{- $remark42.emailSubscribe -}},
+                    page_title: '{{ .Title }}',
                 };
 
                 (function(c) {
