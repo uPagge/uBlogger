@@ -24,6 +24,9 @@
 {{- $twitterImage = .Permalink -}}
 {{- end -}}
 {{- end -}}
+{{- with $params.Images -}}
+{{- $twitterImage = index . 0 -}}
+{{- end -}}
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="{{ $twitterImage }}"/>
 <meta name="twitter:title" content="{{ $params.Title }}"/>
