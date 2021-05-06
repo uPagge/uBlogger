@@ -48,7 +48,7 @@ The following steps are here to help you initialize your new website. If you don
 
 Hugo provides a `new` command to create a new website:
 
-```shell script
+```shell
 hugo new site my_website
 cd my_website
 ```
@@ -61,13 +61,13 @@ You can download the [latest release :(far fa-file-archive fa-fw): .zip file](ht
 
 Alternatively, clone this repository to the `themes` directory:
 
-```shell script
+```shell
 git clone https://github.com/upagge/uBlogger.git themes/uBlogger
 ```
 
 Or, create an empty git repository and make this repository a submodule of your site directory:
 
-```shell script
+```shell
 git init
 git submodule add https://github.com/upagge/uBlogger.git themes/uBlogger
 ```
@@ -136,7 +136,7 @@ When building the website, you can set a theme by using `--theme` option. Howeve
 
 Here is the way to create your first post:
 
-```shell script
+```shell
 hugo new posts/first_post.md
 ```
 
@@ -154,7 +154,7 @@ You can copy /uBlogger/archetypes/default.md to your archetypes folder to create
 
 Launch by using the following command:
 
-```shell script
+```shell
 hugo serve
 ```
 
@@ -168,7 +168,7 @@ When you run `hugo serve`, when the contents of the files change, the page autom
 Since the theme use `.Scratch` in Hugo to implement some features,
 it is highly recommended that you add `--disableFastRender` parameter to `hugo server` command for the live preview of the page you are editing.
 
-```shell script
+```shell
 hugo serve --disableFastRender
 ```
 {{< /admonition >}}
@@ -177,7 +177,7 @@ hugo serve --disableFastRender
 
 When your site is ready to deploy, run the following command:
 
-```shell script
+```shell
 hugo
 ```
 

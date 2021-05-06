@@ -79,7 +79,7 @@ body {
 
   }
 
-  .s {
+  .str {
     font-weight: bold;
 
     [theme=dark] & {
@@ -87,7 +87,7 @@ body {
     }
   }
 
-  .m {
+  .marker-text {
     background: #fff3bc;
     font-style: inherit;
     padding: 4px 7px 6px;
@@ -272,8 +272,15 @@ a.post-tag-summary {
 }
 
 .img-frame {
+
+  margin-bottom: 1.5rem;
+
   img {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  p {
+    margin: 0;
   }
 }
 
@@ -902,7 +909,7 @@ figure {
   margin-right: -60px;
   margin-left: -60px;
 
-  .code-header, .table-wrapper, .admonition {
+  pre, .table-wrapper, .admonition {
     border-radius: 0 !important;
   }
 
@@ -1173,6 +1180,33 @@ figure {
   width: 1px;
   z-index: -1000;
   user-select: none;
+}
+
+code:not([class*="language-"]) {
+  background: #f5f2f0;
+  padding: .4rem;
+  border-radius: 3px;
+  font-size: .9rem;
+  [theme=dark] & {
+    color: #161209;
+  }
+}
+
+pre[class*="language-"] {
+  border-radius: 10px;
+}
+
+code[class*="language-"], pre[class*="language-"] {
+  line-height: 1.4;
+  font-size: 1.05rem;
+
+  marker {
+    background: rgba(242,201,76,0.35);
+    border-radius: 3px;
+    color: inherit;
+    margin: 1px 0;
+    padding: 3.2px 0;
+  }
 }
 
 @import "_partial/share-icon";

@@ -4,6 +4,11 @@
   .single > :first-child {
     margin-top: 0 !important;
   }
+
+  .single > section:first-child > :first-child,
+  .single > article:first-child > :first-child {
+    margin-top: 0 !important;
+  }
 }
 
 .single {
@@ -41,26 +46,14 @@
 
   h2 {
     font-size: 1.6rem;
-
-    & code {
-      font-size: 1.25rem;
-    }
   }
 
   h3 {
     font-size: 1.375rem;
-
-    & code {
-      font-size: 1.125rem;
-    }
   }
 
   h4 {
     font-size: 1.25rem;
-
-    & code {
-      font-size: 1rem;
-    }
   }
 
   h5 {
@@ -76,6 +69,12 @@
 
     [theme=dark] & {
       font-weight: bolder;
+    }
+
+    code {
+      background: #f5f2f0;
+      padding: .4rem;
+      border-radius: 3px;
     }
   }
 
@@ -93,10 +92,6 @@
     margin-bottom: 1.2rem;
     font-size: 2rem;
     margin-top: 7rem;
-
-    code {
-      font-size: 90%;
-    }
   }
 
   h3 {
@@ -277,7 +272,6 @@
     }
   }
 
-  @import "../_partial/_single/code";
   @import "../_partial/_single/instagram";
   @import "../_partial/_single/admonition";
   @import "../_partial/_single/echarts";
