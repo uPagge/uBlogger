@@ -1209,5 +1209,18 @@ code[class*="language-"], pre[class*="language-"] {
   }
 }
 
+.post-sort {
+  text-align: right;
+  margin-bottom: 5px;
+
+  ol {
+    li {
+      margin-left: 7px;
+      list-style: none;
+      display: inline-block;
+    }
+  }
+}
+
 @import "_partial/share-icon";
 @import "ublogger_media";

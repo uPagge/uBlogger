@@ -22,38 +22,14 @@
     {{- if ne $posts.enable false | and .Site.RegularPages -}}
     {{- /* Paginate */ -}}
     {{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections -}}
-    {{- if .Site.Params.page.hiddenFromHomePage -}}
-    {{- $pages = where $pages "Params.hiddenfromhomepage" false -}}
-    {{- else -}}
-    {{- $pages = where $pages "Params.hiddenfromhomepage" "!=" true -}}
-    {{- end -}}
-
-    {{ $pinnedPostRelPermalinks := split .Site.Params.pinnedPost "," }}
-    {{ $pinnedPosts := where $pages "RelPermalink" "in" $pinnedPostRelPermalinks }}
-    {{ $pages := where $pages "RelPermalink" "not in" $pinnedPostRelPermalinks }}
 
     {{- with $posts.paginate | default .Site.Params.paginate -}}
-    {{- $pages = $.Paginate $pages . -}}
+    {{- $pages = $.Paginate ($pages.ByLastmod) . -}}
     {{- else -}}
-    {{- $pages = .Paginate $pages -}}
+    {{- $pages = .Paginate ($pages.ByLastmod) -}}
     {{- end -}}
 
-    {{ if .Site.Params.pinnedPost }}
-    {{ if (and .Site.Params.pinOnlyToFirstPage (ne $pages.PageNumber 1)) }}
-    {{/* Do nothing if the pinOnlyToFirstPage flag is set and we're not on page 1. */}}
-    {{else}}
-
-    {{ range $pinnedPosts }}
-    <div class="post-pinned">
-        {{- .Render "summary" -}}
-    </div>
-
-    {{end}}
-    {{end}}
-    {{end}}
-
-
-    {{- range $pages.Pages.ByLastmod -}}
+    {{- range $pages.Pages -}}
     {{- .Render "summary" -}}
     {{- end -}}
     {{- partial "paginator.html" . -}}
