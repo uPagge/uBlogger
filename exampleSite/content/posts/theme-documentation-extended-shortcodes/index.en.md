@@ -869,6 +869,13 @@ The rendered output looks like this:
 }
 {{< /echarts >}}
 
+Pro tip: build your graphs faster by picking an example from the [echarts gallery](https://echarts.apache.org/examples/en/index.html), and use the interactive editor to quickly adapt it to your desired graph.
+When you're done, you can copy the resulting graph specification and paste it over into the uBlogger shortcode. Just make sure you correct the JSON syntax by:
+
+1. Removing the `option =` prefix to the graph specification.
+1. Removing the `;` suffix to the graph specification.
+1. Enclosing all symbols in quotes in the graph specification (e.g. `xAxis:` &rarr; `"xAxis":`).
+
 The `echarts` shortcode has also the following named parameters:
 
 * **width** *[optional]* (**first** positional parameter)
