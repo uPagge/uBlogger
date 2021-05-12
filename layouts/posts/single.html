@@ -86,8 +86,8 @@
 
             {{- $heroImage := "" -}}
             {{- with .Resources.GetMatch "featured-image" -}}
-            {{- if lt 1600 .Width -}}
-            {{- $heroImage = (.Resize "1600x q100").Permalink -}}
+            {{- if lt 2000 .Width -}}
+            {{- $heroImage = (.Resize "2000x q100").Permalink -}}
             {{- else -}}
             {{- $heroImage = .Permalink -}}
             {{- end -}}
@@ -157,8 +157,8 @@
             {{- $fullImage := $image -}}
             {{- if eq $pageTheme "full" -}}
             {{- with $.Resources.GetMatch "featured-image" -}}
-            {{- if lt 1600 .Width -}}
-                {{- $fullImage = (.Resize "1600x q100").Permalink -}}
+            {{- if lt 2000 .Width -}}
+                {{- $fullImage = (.Resize "2000x q100").Permalink -}}
             {{- else -}}
                 {{- $fullImage = .Permalink -}}
             {{- end -}}

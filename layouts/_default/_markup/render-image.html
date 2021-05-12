@@ -6,8 +6,8 @@
 {{- end -}}
 {{ $imageOriginal := .Page.Resources.GetMatch (printf "%s" (.Destination | safeURL)) }}
 {{ if $imageOriginal }}
-{{ if lt 1600 $imageOriginal.Width }}
-{{ $imageOriginal = ($imageOriginal.Resize "1600x q100").Permalink }}
+{{ if lt 2000 $imageOriginal.Width }}
+{{ $imageOriginal = ($imageOriginal.Resize "2000x q100").Permalink }}
 {{ end }}
 {{ else }}
 {{ $imageOriginal = .Destination }}
