@@ -1187,6 +1187,7 @@ code:not([class*="language-"]) {
   padding: .4rem;
   border-radius: 3px;
   font-size: .9rem;
+
   [theme=dark] & {
     color: #161209;
   }
@@ -1201,7 +1202,7 @@ code[class*="language-"], pre[class*="language-"] {
   font-size: 1.05rem;
 
   marker {
-    background: rgba(242,201,76,0.35);
+    background: rgba(242, 201, 76, 0.35);
     border-radius: 3px;
     color: inherit;
     margin: 1px 0;
@@ -1220,6 +1221,27 @@ code[class*="language-"], pre[class*="language-"] {
       display: inline-block;
     }
   }
+}
+
+
+.see-also {
+  border: 4px double #2c6789;
+  padding: 15px 20px;
+  margin-top: 2em;
+  margin-bottom: 2em;
+
+  .see-title {
+    margin: 0 0 0.5em;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  ul {
+    margin-bottom: 0;
+    list-style: none;
+    padding-left: 0;
+  }
+
 }
 
 @import "_partial/share-icon";

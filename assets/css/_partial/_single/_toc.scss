@@ -111,6 +111,7 @@
     a.active {
       font-weight: bold;
       color: $single-link-color;
+      font-size: 0.99rem;
 
       [theme=dark] & {
         color: $single-link-color-dark;

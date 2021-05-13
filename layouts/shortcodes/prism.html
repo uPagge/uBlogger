@@ -1,0 +1,9 @@
+{{ $lang := cond $.IsNamedParams ($.Get "lang") "text" }}
+{{ $dataLine := cond $.IsNamedParams ($.Get "line-num") "" }}
+{{ $cmdOut := cond $.IsNamedParams ($.Get "cmd-out") "" }}
+{{ $cmdUser := cond $.IsNamedParams ($.Get "cmd-user") "user" }}
+{{ $cmdHost := cond $.IsNamedParams ($.Get "cmd-host") "localhost" }}
+
+<pre class="language-{{ if ($.Get `diff`) }}diff-{{ end }}{{ $lang }} {{ if ($.Get `line`) }}line-numbers{{ end }} {{ if ($.Get `diff-color`) }}diff-highlight{{ end }}{{ if ($.Get `cmd`) }}command-line{{ end }}" {{ with $dataLine }}data-line="{{ . }}"{{ end }} {{ if ($.Get `cmd`) }}data-user="{{ $cmdUser }}" data-host="{{ $cmdHost }}" data-output="{{ $cmdOut }}"{{ end }}>
+<code>{{ .Inner }}</code>
+</pre>
