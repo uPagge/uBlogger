@@ -52,18 +52,20 @@
             <div class="post-pinned">
             {{- .Render "summary" -}}
             </div>
+            {{end}}
+            {{end}}
+            {{end}}
+            {{ if .Site.Params.PostSort }}
             <hr/>
-            {{end}}
-            {{end}}
-            {{end}}
-            <div class="post-sort">
-                <ol>
-                    <li><a href="/posts/">Все посты</a> </li>
-                    <li><a href="/">Основные посты</a></li>
-                    <li><a href="/views">Лучшее</a></li>
-                    <li><a href="/feed">Фид</a></li>
-                </ol>
-            </div>
+                <div class="post-sort">
+                    <ol>
+                        {{- range .Site.Params.PostSort -}}
+                                {{- $url := .url | relLangURL -}}
+                                <li><a href="{{ $url }}">{{ .name }}</a></li>
+                        {{ end }}
+                    </ol>
+                </div>
+            {{ end }}
             {{- range $pages.Pages -}}
                 {{- .Render "summary" -}}
             {{- end -}}

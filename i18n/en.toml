@@ -18,6 +18,9 @@ other = "Next article"
 
 [navPrev]
 other = "Previous article"
+
+[seeAlso]
+other = "See also"
 # === Post ===
 
 # === Taxonomy ===

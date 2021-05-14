@@ -1,0 +1,15 @@
+{{ $posts := where .Site.RegularPages "Section" "blog"}}
+{{ $related :=  .Site.RegularPages.RelatedIndices .Page "tags" | first 3 }}
+{{ if eq (len $related) 0 }}
+{{ $related = $posts.ByDate | first 3 }}
+{{ end }}
+{{ with $related }}
+<div class="see-also">
+    <span class="see-title">{{ T `seeAlso` }}</span>
+    <ul>
+        {{ range . }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+        {{ end }}
+    </ul>
+    {{ end }}
+</div>

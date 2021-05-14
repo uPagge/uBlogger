@@ -19,6 +19,9 @@ other = "Следующая статья"
 
 [navPrev]
 other = "Предыдущая статья"
+
+[seeAlso]
+other = "Посмотрите также"
 # === Post ===
 
 # === Taxonomy ===
