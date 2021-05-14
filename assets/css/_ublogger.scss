@@ -39,10 +39,6 @@ body {
     background: $global-background-secondary-color-dark;
   }
 
-  #toc-static + p {
-    margin-top: 0;
-  }
-
 }
 
 .article-post {
@@ -332,7 +328,7 @@ a.post-tag-summary {
   }
 }
 
-.footer-post-author {
+.block-author {
   padding: 20px;
   background-color: $global-background-secondary-color;
   color: black;
@@ -1186,7 +1182,7 @@ code:not([class*="language-"]) {
   background: #f5f2f0;
   padding: .4rem;
   border-radius: 3px;
-  font-size: .9rem;
+  font-size: 0.8em;
 
   [theme=dark] & {
     color: #161209;
@@ -1229,6 +1225,7 @@ code[class*="language-"], pre[class*="language-"] {
   padding: 15px 20px;
   margin-top: 2em;
   margin-bottom: 2em;
+  border-radius: 10px;
 
   .see-title {
     margin: 0 0 0.5em;
@@ -1240,6 +1237,31 @@ code[class*="language-"], pre[class*="language-"] {
     margin-bottom: 0;
     list-style: none;
     padding-left: 0;
+  }
+
+  a {
+    @include overflow-wrap(break-word);
+    border-bottom: dashed 1px;
+
+    [theme=dark] & b, [theme=dark] & strong {
+      color: $single-link-color-dark;
+    }
+  }
+
+  a:visited {
+    color: #70a0b0;
+
+    [theme=dark] & {
+      color: #70a0b0;
+    }
+  }
+
+  a[class="header-mark"], .post-footer a {
+    border-bottom: none;
+  }
+
+  [theme=dark] a:hover b, [theme=dark] a:hover strong {
+    color: $single-link-hover-color-dark;
   }
 
 }

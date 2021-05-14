@@ -1,10 +1,10 @@
-{{ $posts := where .Site.RegularPages "Section" "blog"}}
-{{ $related :=  .Site.RegularPages.RelatedIndices .Page "tags" | first 3 }}
+{{ $posts := where site.RegularPages "Section" "blog"}}
+{{ $related :=  site.RegularPages.RelatedIndices . "tags" | first 3 }}
 {{ if eq (len $related) 0 }}
 {{ $related = $posts.ByDate | first 3 }}
 {{ end }}
 {{ with $related }}
-<aside class="see-also">
+<aside class="see-also" style="margin:0">
     <span class="see-title">{{ T `seeAlso` }}</span>
     <ul>
         {{ range . }}

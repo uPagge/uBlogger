@@ -12,25 +12,16 @@
     {{- partial "plugin/share.html" . -}}
 </div>
 
+{{ $authorFooter := and (eq ($params.Page.hiddenAuthor | default .Site.Params.Page.hiddenAuthor | default false) false) (eq ($params.Page.authorFooter | default .Site.Params.Page.authorFooter | default true) true)}}
+{{ if $authorFooter }}
 {{- $authorName := $params.author | default .Site.Author.name | default " " -}}
-{{ $author := "" }}
-{{- $authorPath := print "data/authors/" $authorName ".json" -}}
-{{ if (fileExists $authorPath) -}}
-{{ $author = index .Site.Data.authors $authorName }}
+{{- partial "block/author.html" $authorName -}}
 {{ end }}
-{{ if eq ($params.authorHidden | default false) false  }}
-{{- if ne $authorName " " -}}
-{{- with $author -}}
-<div class="footer-post-author">
-    <div class="author-avatar"><a href="{{ with .link }} {{- . | safeHTML -}}{{ end }}" target="_blank"><img alt="{{ .about }}" src="{{ with .avatar }} {{- . | safeHTML -}}{{ end }}"></a></div>
-    <div class="author-info">
-        <div class="name"><a href="{{ with .link }} {{- . | safeHTML -}}{{ end }}" target="_blank">{{ .full_name }}</a></div>
-        <div class="number-posts">{{ .about }}</span></div>
-    </div>
-</div>
-{{- end -}}
-{{- end -}}
-{{- end -}}
+
+{{ $seeAlsoFooter := ($params.Page.seeAlsoFooter | default .Site.Params.Page.seeAlsoFooter | default false) }}
+{{ if and (eq $authorFooter false) $seeAlsoFooter }}
+{{- partial "block/see-also.html" . -}}
+{{ end }}
 
 {{- with .Params.tags -}}
 <div class="post-tags">

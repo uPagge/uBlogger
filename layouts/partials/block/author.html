@@ -1,0 +1,17 @@
+{{ $authorName := . }}
+{{ $author := "" }}
+{{- $authorPath := print "data/authors/" $authorName ".json" -}}
+{{ if (fileExists $authorPath) -}}
+{{ $author = index site.Data.authors $authorName }}
+{{ end }}
+{{- if ne $authorName " " -}}
+{{- with $author -}}
+<div class="block-author">
+    <div class="author-avatar"><a href="{{ with .link }} {{- . | safeHTML -}}{{ end }}" target="_blank"><img alt="{{ .about }}" src="{{ with .avatar }} {{- . | safeHTML -}}{{ end }}"></a></div>
+    <div class="author-info">
+        <div class="name"><a href="{{ with .link }} {{- . | safeHTML -}}{{ end }}" target="_blank">{{ .full_name }}</a></div>
+        <div class="number-posts">{{ .about }}</span></div>
+    </div>
+</div>
+{{- end -}}
+{{- end -}}

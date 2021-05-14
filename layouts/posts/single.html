@@ -236,6 +236,11 @@
                     {{- end -}}
                     {{- end -}}
 
+                    {{ if and (eq ($params.Page.hiddenAuthor | default .Site.Params.Page.hiddenAuthor | default false) false) (eq ($params.Page.authorFooter | default .Site.Params.Page.authorFooter | default true) false) (ne $pageTheme "hero")  }}
+                    {{- $authorName := $params.author | default .Site.Author.name | default " " -}}
+                    {{- partial "block/author.html" $authorName -}}
+                    {{ end }}
+
                     {{- /* Static TOC */ -}}
                     {{- if ne $toc.enable false -}}
                     <div class="details toc" id="toc-static"  data-kept="{{ if $toc.keepStatic }}true{{ end }}">
@@ -271,7 +276,7 @@
 
                 </div>
 
-                {{- if not $params.hiddenFooter -}}
+                {{- if not $params.Page.hiddenFooter -}}
                 <footer>
                         <div class="post">
                             {{- /* Footer Post */ -}}
@@ -288,7 +293,7 @@
     </article>
     {{ end }}
 
-    {{- if not $params.hiddenUnderPost -}}
+    {{- if not $params.Page.hiddenUnderPost -}}
         {{- partial "under-post.html" . -}}
     {{- end -}}
 
