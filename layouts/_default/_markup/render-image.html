@@ -2,23 +2,24 @@
 {{ $caption := or .Text " " }}
 {{ $alt := or .Text $figcap }}
 {{- if eq $figcap $caption -}}
-{{ $caption = " " }}
+    {{ $caption = " " }}
 {{- end -}}
 {{ $imageOriginal := .Page.Resources.GetMatch (printf "%s" (.Destination | safeURL)) }}
 {{ if $imageOriginal }}
-{{ if lt 2000 $imageOriginal.Width }}
-{{ $imageOriginal = ($imageOriginal.Resize "2000x q100").Permalink }}
-{{ end }}
+    {{ if lt 2000 $imageOriginal.Width }}
+        {{ $imageOriginal = ($imageOriginal.Resize "2000x q100") }}
+    {{ end }}
+    {{ $imageOriginal = $imageOriginal.RelPermalink }}
 {{ else }}
-{{ $imageOriginal = .Destination }}
+    {{ $imageOriginal = .Destination }}
 {{ end }}
 {{- if $figcap -}}
-<figure class="render-image">
-    {{- dict "Src" $imageOriginal "Class" "render-image" "Title" $figcap "Alt" $alt "Caption" $caption "Linked" true "Resources" .Page.Resources | partial "plugin/image.html" -}}
-    <figcaption class="image-caption">
-        {{- $figcap | safeHTML -}}
-    </figcaption>
-</figure>
+    <figure class="render-image">
+        {{- dict "Src" $imageOriginal "Class" "render-image" "Title" $figcap "Alt" $alt "Caption" $caption "Linked" true "Resources" .Page.Resources | partial "plugin/image.html" -}}
+        <figcaption class="image-caption">
+            {{- $figcap | safeHTML -}}
+        </figcaption>
+    </figure>
 {{- else -}}
-{{- dict "Src" $imageOriginal "Title" (path.Base .Destination) "Class" "render-image" "Alt" $alt "Resources" .Page.Resources | partial "plugin/image.html" -}}
+    {{- dict "Src" $imageOriginal "Title" (path.Base .Destination) "Class" "render-image" "Alt" $alt "Resources" .Page.Resources | partial "plugin/image.html" -}}
 {{- end -}}
