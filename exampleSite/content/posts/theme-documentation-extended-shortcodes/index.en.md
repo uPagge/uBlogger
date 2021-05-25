@@ -523,9 +523,11 @@ pie
 
 ## 6 echarts
 
-[ECharts](https://echarts.apache.org/) is a library helping you to generate interactive data visualization.
+[ECharts](https://echarts.apache.org/) is a library helping you to generate interactive data visualization. uBlogger uses echarts version 5.
 
 The basic chart types ECharts supports include [line series](https://echarts.apache.org/en/option.html#series-line), [bar series](https://echarts.apache.org/en/option.html#series-line), [scatter series](https://echarts.apache.org/en/option.html#series-scatter), [pie charts](https://echarts.apache.org/en/option.html#series-pie), [candle-stick series](https://echarts.apache.org/en/option.html#series-candlestick), [boxplot series](https://echarts.apache.org/en/option.html#series-boxplot) for statistics, [map series](https://echarts.apache.org/en/option.html#series-map), [heatmap series](https://echarts.apache.org/en/option.html#series-heatmap), [lines series](https://echarts.apache.org/en/option.html#series-lines) for directional information, [graph series](https://echarts.apache.org/en/option.html#series-graph) for relationships, [treemap series](https://echarts.apache.org/en/option.html#series-treemap), [sunburst series](https://echarts.apache.org/en/option.html#series-sunburst), [parallel series](https://echarts.apache.org/en/option.html#series-parallel) for multi-dimensional data, [funnel series](https://echarts.apache.org/en/option.html#series-funnel), [gauge series](https://echarts.apache.org/en/option.html#series-gauge). And it's extremely easy to create a combinition of them with ECharts.
+
+See the [echarts gallery](https://echarts.apache.org/examples/en/index.html) for inspiration on what you can do with echarts.
 
 Just insert your ECharts option in `JSON`/`YAML`/`TOML` format in the `echarts` shortcode and that’s it.
 
@@ -534,72 +536,67 @@ Example `echarts` input in `JSON` format:
 ```json
 {{</* echarts */>}}
 {
-  "title": {
-    "text": "Summary Line Chart",
-    "top": "2%",
-    "left": "center"
-  },
-  "tooltip": {
-    "trigger": "axis"
-  },
-  "legend": {
-    "data": ["Email Marketing", "Affiliate Advertising", "Video Advertising", "Direct View", "Search Engine"],
-    "top": "10%"
-  },
-  "grid": {
-    "left": "5%",
-    "right": "5%",
-    "bottom": "5%",
-    "top": "20%",
-    "containLabel": true
-  },
-  "toolbox": {
-    "feature": {
-      "saveAsImage": {
-        "title": "Save as Image"
-      }
-    }
-  },
-  "xAxis": {
-    "type": "category",
-    "boundaryGap": false,
-    "data": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-  },
-  "yAxis": {
-    "type": "value"
-  },
-  "series": [
-    {
-      "name": "Email Marketing",
-      "type": "line",
-      "stack": "Total",
-      "data": [120, 132, 101, 134, 90, 230, 210]
+    "title": {
+        "text": "Summary Line Chart"
     },
-    {
-      "name": "Affiliate Advertising",
-      "type": "line",
-      "stack": "Total",
-      "data": [220, 182, 191, 234, 290, 330, 310]
+    "tooltip": {
+        "trigger": "axis"
     },
-    {
-      "name": "Video Advertising",
-      "type": "line",
-      "stack": "Total",
-      "data": [150, 232, 201, 154, 190, 330, 410]
+    "legend": {
+        "show": true,
+        "right": "5%"
     },
-    {
-      "name": "Direct View",
-      "type": "line",
-      "stack": "Total",
-      "data": [320, 332, 301, 334, 390, 330, 320]
+    "grid": {
+        "left": "3%",
+        "right": "4%",
+        "bottom": "3%",
+        "containLabel": true
     },
-    {
-      "name": "Search Engine",
-      "type": "line",
-      "stack": "Total",
-      "data": [820, 932, 901, 934, 1290, 1330, 1320]
-    }
-  ]
+    "toolbox": {
+        "feature": {
+            "saveAsImage": {}
+        }
+    },
+    "xAxis": {
+        "type": "category",
+        "boundaryGap": false,
+        "data": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    },
+    "yAxis": {
+        "type": "value"
+    },
+    "series": [
+        {
+            "name": "Email",
+            "type": "line",
+            "stack": "total",
+            "data": [120, 132, 101, 134, 90, 230, 210]
+        },
+        {
+            "name": "Affiliate",
+            "type": "line",
+            "stack": "total",
+            "data": [220, 182, 191, 234, 290, 330, 310]
+        },
+        {
+            "name": "Video",
+            "type": "line",
+            "stack": "total",
+            "data": [150, 232, 201, 154, 190, 330, 410]
+        },
+        {
+            "name": "Direct",
+            "type": "line",
+            "stack": "total",
+            "data": [320, 332, 301, 334, 390, 330, 320]
+        },
+        {
+            "name": "Search Engine",
+            "type": "line",
+            "stack": "total",
+            "data": [820, 932, 901, 934, 1290, 1330, 1320]
+        }
+    ]
 }
 {{</* /echarts */>}}
 ```
@@ -609,98 +606,89 @@ The same in `YAML` format:
 ```yaml
 {{</* echarts */>}}
 title:
-    text: Summary Line Chart
-    top: 2%
-    left: center
+  text: Summary Line Chart
 tooltip:
-    trigger: axis
+  trigger: axis
 legend:
-    data:
-        - Email Marketing
-        - Affiliate Advertising
-        - Video Advertising
-        - Direct View
-        - Search Engine
-    top: 10%
+  show: true
+  right: 5%
 grid:
-    left: 5%
-    right: 5%
-    bottom: 5%
-    top: 20%
-    containLabel: true
+  left: 3%
+  right: 4%
+  bottom: 3%
+  containLabel: true
 toolbox:
-    feature:
-        saveAsImage:
-            title: Save as Image
+  feature:
+    saveAsImage: {}
 xAxis:
-    type: category
-    boundaryGap: false
-    data:
-        - Monday
-        - Tuesday
-        - Wednesday
-        - Thursday
-        - Friday
-        - Saturday
-        - Sunday
+  type: category
+  boundaryGap: false
+  data:
+  - Monday
+  - Tuesday
+  - Wednesday
+  - Thursday
+  - Friday
+  - Saturday
+  - Sunday
 yAxis:
-    type: value
+  type: value
 series:
-    - name: Email Marketing
-      type: line
-      stack: Total
-      data:
-          - 120
-          - 132
-          - 101
-          - 134
-          - 90
-          - 230
-          - 210
-    - name: Affiliate Advertising
-      type: line
-      stack: Total
-      data:
-          - 220
-          - 182
-          - 191
-          - 234
-          - 290
-          - 330
-          - 310
-    - name: Video Advertising
-      type: line
-      stack: Total
-      data:
-          - 150
-          - 232
-          - 201
-          - 154
-          - 190
-          - 330
-          - 410
-    - name: Direct View
-      type: line
-      stack: Total
-      data:
-          - 320
-          - 332
-          - 301
-          - 334
-          - 390
-          - 330
-          - 320
-    - name: Search Engine
-      type: line
-      stack: Total
-      data:
-          - 820
-          - 932
-          - 901
-          - 934
-          - 1290
-          - 1330
-          - 1320
+- name: Email
+  type: line
+  stack: total
+  data:
+  - 120
+  - 132
+  - 101
+  - 134
+  - 90
+  - 230
+  - 210
+- name: Affiliate
+  type: line
+  stack: total
+  data:
+  - 220
+  - 182
+  - 191
+  - 234
+  - 290
+  - 330
+  - 310
+- name: Video
+  type: line
+  stack: total
+  data:
+  - 150
+  - 232
+  - 201
+  - 154
+  - 190
+  - 330
+  - 410
+- name: Direct
+  type: line
+  stack: total
+  data:
+  - 320
+  - 332
+  - 301
+  - 334
+  - 390
+  - 330
+  - 320
+- name: Search Engine
+  type: line
+  stack: total
+  data:
+  - 820
+  - 932
+  - 901
+  - 934
+  - 1290
+  - 1330
+  - 1320
 {{</* /echarts */>}}
 ```
 
@@ -709,119 +697,106 @@ The same in `TOML` format:
 ```toml
 {{</* echarts */>}}
 [title]
-text = "Summary Line Chart"
-top = "2%"
-left = "center"
+text = 'Summary Line Chart'
 
 [tooltip]
-trigger = "axis"
+trigger = 'axis'
 
 [legend]
-data = [
-  "Email Marketing",
-  "Affiliate Advertising",
-  "Video Advertising",
-  "Direct View",
-  "Search Engine"
-]
-top = "10%"
+show = true
+right = '5%'
 
 [grid]
-left = "5%"
-right = "5%"
-bottom = "5%"
-top = "20%"
+left = '3%'
+right = '4%'
+bottom = '3%'
 containLabel = true
-
-[toolbox]
-[toolbox.feature]
 [toolbox.feature.saveAsImage]
-title = "Save as Image"
 
 [xAxis]
-type = "category"
+type = 'category'
 boundaryGap = false
 data = [
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-  "Sunday"
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+    'Sunday',
 ]
 
 [yAxis]
-type = "value"
+type = 'value'
 
 [[series]]
-name = "Email Marketing"
-type = "line"
-stack = "Total"
+name = 'Email'
+type = 'line'
+stack = 'total'
 data = [
-  120.0,
-  132.0,
-  101.0,
-  134.0,
-  90.0,
-  230.0,
-  210.0
+    120,
+    132,
+    101,
+    134,
+    90,
+    230,
+    210,
 ]
 
 [[series]]
-name = "Affiliate Advertising"
-type = "line"
-stack = "Total"
+name = 'Affiliate'
+type = 'line'
+stack = 'total'
 data = [
-  220.0,
-  182.0,
-  191.0,
-  234.0,
-  290.0,
-  330.0,
-  310.0
+    220,
+    182,
+    191,
+    234,
+    290,
+    330,
+    310,
 ]
 
 [[series]]
-name = "Video Advertising"
-type = "line"
-stack = "Total"
+name = 'Video'
+type = 'line'
+stack = 'total'
 data = [
-  150.0,
-  232.0,
-  201.0,
-  154.0,
-  190.0,
-  330.0,
-  410.0
+    150,
+    232,
+    201,
+    154,
+    190,
+    330,
+    410,
 ]
 
 [[series]]
-name = "Direct View"
-type = "line"
-stack = "Total"
+name = 'Direct'
+type = 'line'
+stack = 'total'
 data = [
-  320.0,
-  332.0,
-  301.0,
-  334.0,
-  390.0,
-  330.0,
-  320.0
+    320,
+    332,
+    301,
+    334,
+    390,
+    330,
+    320,
 ]
 
 [[series]]
-name = "Search Engine"
-type = "line"
-stack = "Total"
+name = 'Search Engine'
+type = 'line'
+stack = 'total'
 data = [
-  820.0,
-  932.0,
-  901.0,
-  934.0,
-  1290.0,
-  1330.0,
-  1320.0
+    820,
+    932,
+    901,
+    934,
+    1290,
+    1330,
+    1320,
 ]
 {{</* /echarts */>}}
 ```
@@ -830,74 +805,76 @@ The rendered output looks like this:
 
 {{< echarts >}}
 {
-  "title": {
-    "text": "Summary Line Chart",
-    "top": "2%",
-    "left": "center"
-  },
-  "tooltip": {
-    "trigger": "axis"
-  },
-  "legend": {
-    "data": ["Email Marketing", "Affiliate Advertising", "Video Advertising", "Direct View", "Search Engine"],
-    "top": "10%"
-  },
-  "grid": {
-    "left": "5%",
-    "right": "5%",
-    "bottom": "5%",
-    "top": "20%",
-    "containLabel": true
-  },
-  "toolbox": {
-    "feature": {
-      "saveAsImage": {
-        "title": "Save as Image"
-      }
-    }
-  },
-  "xAxis": {
-    "type": "category",
-    "boundaryGap": false,
-    "data": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-  },
-  "yAxis": {
-    "type": "value"
-  },
-  "series": [
-    {
-      "name": "Email Marketing",
-      "type": "line",
-      "stack": "Total",
-      "data": [120, 132, 101, 134, 90, 230, 210]
+    "title": {
+        "text": "Summary Line Chart"
     },
-    {
-      "name": "Affiliate Advertising",
-      "type": "line",
-      "stack": "Total",
-      "data": [220, 182, 191, 234, 290, 330, 310]
+    "tooltip": {
+        "trigger": "axis"
     },
-    {
-      "name": "Video Advertising",
-      "type": "line",
-      "stack": "Total",
-      "data": [150, 232, 201, 154, 190, 330, 410]
+    "legend": {
+        "show": true,
+        "right": "5%"
     },
-    {
-      "name": "Direct View",
-      "type": "line",
-      "stack": "Total",
-      "data": [320, 332, 301, 334, 390, 330, 320]
+    "grid": {
+        "left": "3%",
+        "right": "4%",
+        "bottom": "3%",
+        "containLabel": true
     },
-    {
-      "name": "Search Engine",
-      "type": "line",
-      "stack": "Total",
-      "data": [820, 932, 901, 934, 1290, 1330, 1320]
-    }
-  ]
+    "toolbox": {
+        "feature": {
+            "saveAsImage": {}
+        }
+    },
+    "xAxis": {
+        "type": "category",
+        "boundaryGap": false,
+        "data": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    },
+    "yAxis": {
+        "type": "value"
+    },
+    "series": [
+        {
+            "name": "Email",
+            "type": "line",
+            "stack": "total",
+            "data": [120, 132, 101, 134, 90, 230, 210]
+        },
+        {
+            "name": "Affiliate",
+            "type": "line",
+            "stack": "total",
+            "data": [220, 182, 191, 234, 290, 330, 310]
+        },
+        {
+            "name": "Video",
+            "type": "line",
+            "stack": "total",
+            "data": [150, 232, 201, 154, 190, 330, 410]
+        },
+        {
+            "name": "Direct",
+            "type": "line",
+            "stack": "total",
+            "data": [320, 332, 301, 334, 390, 330, 320]
+        },
+        {
+            "name": "Search Engine",
+            "type": "line",
+            "stack": "total",
+            "data": [820, 932, 901, 934, 1290, 1330, 1320]
+        }
+    ]
 }
 {{< /echarts >}}
+
+Pro tip: build your graphs faster by picking an example from the [echarts gallery](https://echarts.apache.org/examples/en/index.html), and use the interactive editor to quickly adapt it to your desired graph.
+When you're done, you can copy the resulting graph specification and paste it over into the uBlogger shortcode. Just make sure you correct the JSON syntax by:
+
+1. Removing the `option =` prefix to the graph specification.
+1. Removing the `;` suffix to the graph specification.
+1. Enclosing all symbols in quotes in the graph specification (e.g. `xAxis:` &rarr; `"xAxis":`).
 
 The `echarts` shortcode has also the following named parameters:
 
