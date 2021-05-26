@@ -6,7 +6,7 @@
 <article class="page home"{{ if ne $posts.enable false }} data-home="posts"{{ end }}>
     {{- /* Profile */ -}}
     {{- if ne $profile.enable false -}}
-    {{- partial "home/profile.html" . -}}
+    {{- partialCached "home/profile.html" . -}}
     {{- end -}}
 
     {{- /* Content */ -}}

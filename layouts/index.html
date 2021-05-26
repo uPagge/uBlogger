@@ -27,7 +27,7 @@
         {{ if (and $profile.onlyToFirstPage (ne $pages.PageNumber 1)) }}
         {{/* Do nothing if the pinOnlyToFirstPage flag is set and we're not on page 1. */}}
         {{else}}
-        {{- partial "home/profile.html" . -}}
+        {{- partialCached "home/profile.html" . -}}
         {{- end -}}
         {{- end -}}
 

@@ -802,7 +802,6 @@ a.post-tag-summary {
 }
 
 .block-media_right {
-  width: 50%;
   float: right;
   padding-right: 0;
   margin-left: 40px;
@@ -1264,6 +1263,16 @@ code[class*="language-"], pre[class*="language-"] {
     color: $single-link-hover-color-dark;
   }
 
+}
+
+.mermaid {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5rem;
+
+  p{
+    margin: .5rem 0 !important;
+  }
 }
 
 @import "_partial/share-icon";

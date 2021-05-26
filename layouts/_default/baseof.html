@@ -21,7 +21,7 @@
         <meta name="twitter:description" content="{{ .Site.Params.Description }}"/>
         {{ end -}}
         {{- partial "head/meta.html" . -}}
-        {{- partial "head/link.html" . -}}
+        {{- partialCached "head/link.html" . -}}
 
         {{- partial "head/seo.html" . -}}
         {{- block "dnsPrefetch" . }}
@@ -41,7 +41,7 @@
 
         {{- /* Body wrapper */ -}}
         <div class="wrapper">
-            {{- partial "header.html" . -}}
+            {{- partialCached "header.html" . -}}
             <main class="main">
                 {{- block "no-content" . }}
                 <div class="container">
@@ -49,7 +49,7 @@
                 </div>
                 {{ end -}}
             </main>
-            {{- partial "footer.html" . -}}
+            {{- partialCached "footer.html" . -}}
         </div>
 
         <aside id="fixed-buttons">
