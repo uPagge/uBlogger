@@ -267,6 +267,28 @@ a.post-tag-summary {
   line-height: 3.2rem;
 }
 
+.img-style {
+  margin: 1.5rem 0;
+}
+
+.img-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.img-size-30 {
+  width: 30%;
+}
+
+.img-size-50 {
+  width: 50%;
+}
+
+.img-right {
+  float: right;
+  margin-left: 10px;
+}
+
 .img-frame {
 
   margin-bottom: 1.5rem;
@@ -803,6 +825,7 @@ a.post-tag-summary {
 
 .block-media_right {
   float: right;
+  text-align: right;
   padding-right: 0;
   margin-left: 40px;
   margin-bottom: 10px;
@@ -1270,7 +1293,7 @@ code[class*="language-"], pre[class*="language-"] {
   font-size: 16px;
   line-height: 1.5rem;
 
-  p{
+  p {
     margin: .5rem 0 !important;
   }
 }

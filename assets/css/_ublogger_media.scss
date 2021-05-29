@@ -157,6 +157,16 @@
     padding: 40px 60px 20px 60px;
   }
 
+  .img-right {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .img-size-30, .img-size-50 {
+    width: 100%;
+  }
+
 }
 
 @media only screen and (max-width: 680px) {

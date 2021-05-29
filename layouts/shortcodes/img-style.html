@@ -1,0 +1,5 @@
+{{- $size := cond $.IsNamedParams ($.Get "size") "" | default "" -}}
+{{- $position := cond $.IsNamedParams ($.Get "position") "" | default "center" -}}
+<div class="img-style {{ with $position }}img-{{ . }}{{ end }} {{ if ($.Get `frame`) }}img-frame{{ end }} {{ with $size }}img-size-{{ . }}{{ end }} {{ if ($.Get `right`) }}img-right{{ end }}">
+        {{ .Inner }}
+</div>
