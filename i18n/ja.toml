@@ -1,0 +1,197 @@
+# Translations for Japanese
+# 日本語への翻訳
+# https://gohugo.io/content-management/multilingual/#translation-of-strings
+
+# === baseof ==
+[backToTop]
+other = "トップページへ戻る"
+
+[viewComments]
+other = "コメントを見る"
+# === baseof ==
+
+# === Post ===
+[posts]
+other = "記事"
+
+[navNext]
+other = "次の記事へ"
+
+[navPrev]
+other = "前の記事へ"
+# === Post ===
+
+# === Taxonomy ===
+[allSome]
+other = "全ての {{ .Some }}"
+
+[tag]
+other = "タグ"
+
+[tags]
+other = "タグ一覧"
+
+[category]
+other = "カテゴリ"
+
+[categories]
+other = "カテゴリ一覧"
+# === Taxonomy ===
+
+# === Pagination ===
+[more]
+other = "もっと見る"
+# === Pagination ===
+
+# === partials/header.html ===
+[selectLanguage]
+other = "言語を選択"
+
+[switchTheme]
+other = "テーマを変更する"
+# === partials/header.html ===
+
+# === partials/footer.html ===
+[poweredBySome]
+other = "このテーマは {{ .Hugo }} によって作られています| テーマ - {{ .Theme }}"
+# === partials/footer.html ===
+
+# === partials/comment.html ===
+[valineLang]
+other = "en"
+
+[valinePlaceholder]
+other = "あなたのコメント..."
+
+[facebookLanguageCode]
+other = "ja"
+# === partials/comment.html ===
+
+# === partials/assets.html ===
+[search]
+other = "検索"
+
+[searchPlaceholder]
+other = "タイトルやコンテンツの検索 ..."
+
+[clear]
+other = "クリア"
+
+[cancel]
+other = "キャンセル"
+
+[noResultsFound]
+other = "該当する結果はありません"
+
+[lunrLanguageCode]
+other = "ja"
+
+[lunrLanguageLib]
+other = "lib/lunr/lunr.ja.js"
+
+[copyToClipboard]
+other = "クリップボードにコピー"
+
+[cookieconsentMessage]
+other = "このウェブサイトでは、お客様の利便性を高めるためにクッキーを使用しています."
+
+[cookieconsentDismiss]
+other = "同意"
+
+[cookieconsentLink]
+other = "さらに詳しく"
+# === partials/assets.html ===
+
+# === partials/plugin/share.html ===
+[shareOn]
+other = "共有する"
+# === partials/plugin/share.html ===
+
+# === posts/single.html ===
+[contents]
+other = "コンテンツ"
+
+[wordCount]
+one = "文字数"
+other = "{{ .Count }} 文字"
+
+[readingTime]
+one = "推定読了時間"
+other = "{{ .Count }} 分"
+
+[views]
+other = "閲覧数"
+
+[author]
+other = "作成者"
+
+[updatedOnDate]
+other = "更新日時 {{ .Date }}"
+
+[readMarkdown]
+other = "マークダウンで読む"
+
+[back]
+other = "戻る"
+
+[home]
+other = "ホーム"
+
+# === posts/single.html ===
+
+# === 404.html ===
+[pageNotFound]
+other = "ページが見つかりません"
+
+[pageNotFoundText]
+other = "お探しのページは存在しません. 申し訳ありません."
+# === 404.html ===
+
+# === shortcodes/admonition.html ===
+[note]
+other = "ノート"
+
+[abstract]
+other = "概要"
+
+[info]
+other = "Info"
+
+[tip]
+other = "チップ"
+
+[success]
+other = "正常"
+
+[question]
+other = "質問"
+
+[warning]
+other = "危険"
+
+[failure]
+other = "失敗"
+
+[danger]
+other = "警告"
+
+[bug]
+other = "バグ"
+
+[example]
+other = "例"
+
+[quote]
+other = "クォート"
+# === shortcodes/admonition.html ===
+
+# === shortcodes/version.html ===
+[new]
+other = "新着"
+
+[changed]
+other = "更新"
+
+[deleted]
+other = "削除"
+# === shortcodes/version.html ===
