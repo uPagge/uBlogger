@@ -21,7 +21,7 @@
         <meta name="twitter:description" content="{{ .Site.Params.Description }}"/>
         {{ end -}}
         {{- partial "head/meta.html" . -}}
-        {{- partialCached "head/link.html" . -}}
+        {{- partial "head/link.html" . -}}
 
         {{- partial "head/seo.html" . -}}
         {{- block "dnsPrefetch" . }}
