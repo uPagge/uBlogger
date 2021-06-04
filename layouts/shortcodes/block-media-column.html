@@ -1,9 +1,9 @@
 {{- $cols := split .Inner "<!--split-->" -}}
-<div class="block-media block-media_column">
+{{- $col := len $cols -}}
+<div class="block-media block-media_column" style="width: 100%">
     {{- range $cols -}}
-    <div class="content-column">
+    <div class="content-column" style="{{if eq $col 3}} width:33%; {{else}} width: 50%;{{end}} display: inline-block">
         {{- . | $.Page.RenderString -}}
     </div>
     {{- end -}}
 </div>
-
