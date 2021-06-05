@@ -1149,10 +1149,6 @@ figure {
   border: 2.5px dashed $global-color-accent;
   padding: 10px;
 
-  [theme=dark] & {
-    background: #dddddd;
-  }
-
   .no-adb {
     color: black;
   }
