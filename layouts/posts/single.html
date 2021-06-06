@@ -255,6 +255,7 @@
 
                     {{- /* Content */ -}}
 
+                    {{ if eq ($params.Page.hiddenDateUpdate | default false) false }}
                     {{- with .Site.Params.dateformat | default "2006-01-02" | .Lastmod.Format -}}
                     {{- $updateDate := . -}}
                     {{- if not (eq  . ($.Site.Params.dateformat | default "2006-01-02" | $.PublishDate.Format)) -}}
@@ -268,6 +269,7 @@
                             <span class="s">{{- dict "Date" . | T "updatedOnDate" -}}</span>
                         </span>
                     </div>
+                    {{- end -}}
                     {{- end -}}
                     {{- end -}}
                     {{- end -}}
