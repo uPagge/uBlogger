@@ -52,6 +52,7 @@
 
     {{- /* Plausible Analytics */ -}}
     {{- if $analytics.plausible.domain -}}
-        <script async defer data-domain="{{ $analytics.plausible.domain }}" src="https://plausible.io/js/plausible.js"></script>
+    {{ $plausibleScript := $analytics.plausible.script | default "https://plausible.io/js/plausible.js" }}
+    <script async defer data-domain="{{ $analytics.plausible.domain }}" src="{{ $plausibleScript }}"></script>
     {{- end -}}
 {{- end -}}
