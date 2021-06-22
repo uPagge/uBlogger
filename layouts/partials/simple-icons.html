@@ -1,0 +1,2 @@
+{{ $svg := resources.Get (print "lib/simple-icons/icons/" . ".svg") }}
+<i class="simple-icons" >{{ $svg.Content | safeHTML }}</i>
