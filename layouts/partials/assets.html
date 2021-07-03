@@ -58,7 +58,7 @@
 {{- end -}}
 
 {{- /* Prism.js */ -}}
-{{- if $params.share.enable -}}
+{{- if .Site.Params.Prismjs.Enable -}}
 {{- $source := "lib/prismjs/prism.js" -}}
 {{- dict "Source" $source "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
 {{- end -}}
