@@ -1,4 +1,4 @@
-{{- define "title" }}{{ .Title }} | {{ .Site.Params.Title }}{{ end -}}
+{{- define "title" }}{{ .Title }} | {{ .Site.Title }}{{ end -}}
 
 {{- define "dnsPrefetch" -}}
 {{- $params := .Scratch.Get "params" -}}
