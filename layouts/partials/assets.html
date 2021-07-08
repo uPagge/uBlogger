@@ -185,6 +185,7 @@
     {{- partial "plugin/script.html" . -}}
 {{- end -}}
 
+{{- if .Site.Params.Advertising.Enable -}}
 {{- with .Site.Params.Advertising.adblockHtml -}}
 <script>
     const ads = "no-adb";
@@ -214,6 +215,7 @@
             }
         }
 }</script>
+{{- end -}}
 {{- end -}}
 
 {{- partialCached "plugin/analytics.html" . -}}

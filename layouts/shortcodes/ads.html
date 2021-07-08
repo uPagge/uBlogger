@@ -1,3 +1,4 @@
+{{ if eq $.Site.Params.Advertising.enable true }}
 {{ with cond $.IsNamedParams ($.Get "slot") "" | default $.Site.Params.Advertising.Google.Slot }}
 <aside>
     <div class="{{ if $.Get `circuit` | ne false }}cat-cit{{ end }}">
@@ -15,4 +16,5 @@
         </div>
     </div>
 </aside>
+{{ end }}
 {{ end }}

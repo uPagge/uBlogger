@@ -280,13 +280,17 @@ a.post-tag-summary {
   width: 30%;
 }
 
+.img-size-40 {
+  width: 40%;
+}
+
 .img-size-50 {
   width: 50%;
 }
 
 .img-right {
   float: right;
-  margin-left: 10px;
+  margin-left: 20px !important;
 }
 
 .img-frame {
@@ -651,6 +655,7 @@ a.post-tag-summary {
   .image-theme-wide {
     margin-right: -60px;
     margin-left: -60px;
+    margin-bottom: 10px;
   }
 }
 
@@ -1149,10 +1154,6 @@ figure {
   border: 2.5px dashed $global-color-accent;
   padding: 10px;
 
-  [theme=dark] & {
-    background: #dddddd;
-  }
-
   .no-adb {
     color: black;
   }
@@ -1240,7 +1241,6 @@ code[class*="language-"], pre[class*="language-"] {
     }
   }
 }
-
 
 .see-also {
   border: 4px double #2c6789;
