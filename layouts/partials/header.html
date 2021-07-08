@@ -72,20 +72,20 @@
                 {{- if .Site.Params.search.enable -}}
                 <span class="menu-item search" id="search-desktop">
                         <input type="text" placeholder="{{ .Site.Params.search.placeholder | default (T `searchPlaceholder`) }}" id="search-input-desktop">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="{{ T `search` }}">
+                        <span class="search-button search-toggle" id="search-toggle-desktop" title="{{ T `search` }}">
                             <span class="svg-icon icon-search"></span>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="{{ T `clear` }}">
+                        </span>
+                        <span class="search-button search-clear" id="search-clear-desktop" title="{{ T `clear` }}">
                             <span class="svg-icon icon-cancel"></span>
-                        </a>
+                        </span>
                         <span class="search-button search-loading" id="search-loading-desktop">
                             <span class="svg-icon icon-loading"></span>
                         </span>
                     </span>
                 {{- end -}}
-                <a href="javascript:void(0);" class="menu-item theme-switch" title="{{ T "switchTheme" }}">
+                <span class="menu-item theme-switch" title="{{ T "switchTheme" }}">
                 <span class="svg-icon icon-moon"></span>
-                </a>
+                </span>
             </div>
         </div>
     </div>
@@ -129,19 +129,19 @@
                     <div class="search-wrapper">
                         <div class="search mobile" id="search-mobile">
                             <input type="text" placeholder="{{ .Site.Params.search.placeholder | default (T `searchPlaceholder`) }}" id="search-input-mobile">
-                            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="{{ T `search` }}">
+                            <span class="search-button search-toggle" id="search-toggle-mobile" title="{{ T `search` }}">
                                 <span class="svg-icon icon-search"></span>
-                            </a>
-                            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="{{ T `clear` }}">
+                            </span>
+                            <span class="search-button search-clear" id="search-clear-mobile" title="{{ T `clear` }}">
                                 <span class="svg-icon icon-cancel"></span>
-                            </a>
+                            </span>
                             <span class="search-button search-loading" id="search-loading-mobile">
                                 <span class="svg-icon icon-loading"></span>
                             </span>
                         </div>
-                        <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        <span class="search-cancel" id="search-cancel-mobile">
                             {{ T `cancel` }}
-                        </a>
+                        </span>
                     </div>
                 {{- end -}}
                 {{- $currentPage := . -}}
@@ -161,9 +161,9 @@
                         {{- end -}}
                     </ul>
                 </nav>
-                <a href="javascript:void(0);" class="menu-item theme-switch" title="{{ T "switchTheme" }}">
+                <span class="menu-item theme-switch" title="{{ T "switchTheme" }}">
                     <span class="svg-icon icon-moon"></span>
-                </a>
+                </span>
                 {{- if .Site.IsMultiLingual -}}
                     <span onclick="javascript:void(0);" class="menu-item" title="{{ T "selectLanguage" }}">
                         {{- .Language.LanguageName -}}
