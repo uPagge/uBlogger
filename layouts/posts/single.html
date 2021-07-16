@@ -19,7 +19,7 @@
 {{ $twitterImage := ""}}
 {{- with .Resources.GetMatch "featured-image" -}}
 {{- if lt 4095 .Width -}}
-{{- $twitterImage = (.Resize "4095x q100").Permalink -}}
+{{- $twitterImage = (.Resize "4095x q70").Permalink -}}
 {{- else -}}
 {{- $twitterImage = .Permalink -}}
 {{- end -}}
