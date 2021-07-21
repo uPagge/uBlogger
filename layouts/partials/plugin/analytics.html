@@ -49,4 +49,10 @@
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/{{ $analytics.yandex.id }}" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     {{- end -}}
+
+    {{- /* Plausible Analytics */ -}}
+    {{- if $analytics.plausible.domain -}}
+    {{ $plausibleScript := $analytics.plausible.script | default "https://plausible.io/js/plausible.js" }}
+    <script async defer data-domain="{{ $analytics.plausible.domain }}" src="{{ $plausibleScript }}"></script>
+    {{- end -}}
 {{- end -}}

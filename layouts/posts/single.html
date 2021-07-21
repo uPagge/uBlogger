@@ -19,7 +19,7 @@
 {{ $twitterImage := ""}}
 {{- with .Resources.GetMatch "featured-image" -}}
 {{- if lt 4095 .Width -}}
-{{- $twitterImage = (.Resize "4095x q100").Permalink -}}
+{{- $twitterImage = (.Resize "4095x q70").Permalink -}}
 {{- else -}}
 {{- $twitterImage = .Permalink -}}
 {{- end -}}
@@ -80,6 +80,7 @@
     <article>
     {{ end }}
 
+    {{- $imageQuality := $params.ImageQuality | default "90" -}}
         <header class="header-post">
 
             {{ if eq $pageTheme "hero" }}
@@ -87,7 +88,7 @@
             {{- $heroImage := "" -}}
             {{- with .Resources.GetMatch "featured-image" -}}
             {{- if lt 2000 .Width -}}
-            {{- $heroImage = (.Resize "2000x q100").Permalink -}}
+            {{- $heroImage = (.Resize (print "2000x q" $imageQuality)).Permalink -}}
             {{- else -}}
             {{- $heroImage = .Permalink -}}
             {{- end -}}
@@ -158,7 +159,7 @@
             {{- if eq $pageTheme "full" -}}
             {{- with $.Resources.GetMatch "featured-image" -}}
             {{- if lt 2000 .Width -}}
-                {{- $fullImage = (.Resize "2000x q100").Permalink -}}
+                {{- $fullImage = (.Resize (print "2000x q" $imageQuality)).Permalink -}}
             {{- else -}}
                 {{- $fullImage = .Permalink -}}
             {{- end -}}
