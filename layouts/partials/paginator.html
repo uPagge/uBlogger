@@ -5,12 +5,12 @@
         <ul class="pagination">
             {{ if .HasPrev }}
             <li class="page-item">
-                <a class="page-link" aria-hidden="true" href="{{ .Prev.URL }}"><< Next</a>
+                <a class="page-link" aria-hidden="true" href="{{ .Prev.URL }}"><< Prev</a>
             </li>
             {{end }}
             {{ if .HasNext }}
             <li class="page-item">
-                <a class="page-link" aria-hidden="true" href="{{ .Next.URL }}">Prev >></a>
+                <a class="page-link" aria-hidden="true" href="{{ .Next.URL }}">Next >></a>
             </li>
             {{end }}
         </ul>
