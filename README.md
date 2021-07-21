@@ -188,6 +188,6 @@ Thanks to the authors of following resources included in the theme:
 
 If you enjoy the theme, please set the star for the project or/and consider buying me a coffee ☕️.
 
-* [PaiPal](https://paypal.me/upagge)
+* [PayPal](https://paypal.me/upagge)
 
 Thanks! ❤️❤️❤️
