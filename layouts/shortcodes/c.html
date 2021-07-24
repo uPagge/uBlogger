@@ -1,0 +1,2 @@
+{{- $color := cond $.IsNamedParams ($.Get "color") "" -}}
+<span style="color:{{ $color }}">{{ .Inner | $.Page.RenderString }}</span>
