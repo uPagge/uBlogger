@@ -186,7 +186,7 @@ class Theme {
                         const search = () => {
                             if (lunr.queryHandler) query = lunr.queryHandler(query);
                             const results = {};
-                            this._index.search(query).forEach(({ref, matchData: {metadata}}) => {
+                            this._index.search(query.trim().split(/\s+/).join('* ') + '*').forEach(({ref, matchData: {metadata}}) => {
                                 const matchData = this._indexData[ref];
                                 let {uri, title, content: context} = matchData;
                                 if (results[uri]) return;
