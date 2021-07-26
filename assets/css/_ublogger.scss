@@ -1298,5 +1298,11 @@ code[class*="language-"], pre[class*="language-"] {
   }
 }
 
+video {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+}
+
 @import "_partial/share-icon";
 @import "ublogger_media";
