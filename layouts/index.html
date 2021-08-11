@@ -1,3 +1,7 @@
+{{- define "title" }}
+{{ with .Site.Params.HomeTitle }}{{ default . }} | {{ end }}{{ .Site.Title -}}
+{{- end -}}
+
 {{- define "content" -}}
     {{- $params := .Scratch.Get "params" -}}
     {{- $profile := .Site.Params.home.profile -}}
