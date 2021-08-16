@@ -3,7 +3,7 @@
 {{- $comment := .Site.Params.Comment | default dict -}}
 {{- $commentConfig := dict -}}
 
-{{- if $comment.enable -}}
+{{- if and $comment.enable (ne .Params.comment false) -}}
     <div id="comments">
         {{- /* Disqus Comment System */ -}}
         {{- $disqus := $comment.disqus | default dict -}}
