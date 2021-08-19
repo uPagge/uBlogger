@@ -503,6 +503,15 @@ a.post-tag-summary {
   content: "\01F37B";
 }
 
+.donate-link-home:after {
+  padding-left: 6px;
+  content: "\01F3DA";
+}
+
+.donate-link-home:hover::after {
+  content: "\01F3E1";
+}
+
 .author-comment {
   padding: 40px 0;
 
@@ -954,7 +963,7 @@ figure {
 
 .split-post-center-border {
   .admonition {
-    padding: 0 3.7rem;
+    padding: 0 3.5rem;
   }
 }
 
@@ -1152,6 +1161,7 @@ figure {
   margin-bottom: 4rem;
   border: 2.5px dashed $global-color-accent;
   padding: 10px;
+  font-size: 18px;
 
   .no-adb {
     color: black;
