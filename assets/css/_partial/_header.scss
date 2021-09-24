@@ -90,6 +90,7 @@
     position: absolute;
     left: auto;
     right: 1rem;
+    cursor: pointer;
   }
 
   .search-toggle {
@@ -139,6 +140,10 @@
       cursor: default;
     }
   }
+}
+
+.theme-switch {
+  cursor: pointer;
 }
 
 .theme-switch i {
