@@ -31,11 +31,13 @@
                 {{- end -}}
 
                 {{- /* Author */ -}}
-                {{- $authorName := .Site.Author.name | default " " -}}
-                {{- if ne $authorName " " -}}
-                {{ $author := index .Site.Data.authors $authorName }}
-                {{- $authorLink := $author.link | default .Site.Home.RelPermalink -}}
-                    <span class="author">&nbsp;<a href="{{ $authorLink }}" target="_blank">{{ $author.nickname }}</a></span>
+                {{- if ne .Site.Params.footer.author false -}}
+                  {{- $authorName := .Site.Author.name | default " " -}}
+                  {{- if ne $authorName " " -}}
+                  {{ $author := index .Site.Data.authors $authorName }}
+                  {{- $authorLink := $author.link | default .Site.Home.RelPermalink -}}
+                      <span class="author">&nbsp;<a href="{{ $authorLink }}" target="_blank">{{ $author.nickname }}</a></span>
+                  {{- end -}}
                 {{- end -}}
 
                 {{- /* License */ -}}
