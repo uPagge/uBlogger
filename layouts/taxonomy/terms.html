@@ -33,7 +33,7 @@
                             </h3>
                             {{- range first 5 $pages -}}
                                 <article class="archive-item">
-                                    <a href="{{ .RelPermalink }}" class="archive-item-link">
+                                    <a target="_self" href="{{ .RelPermalink }}" class="archive-item-link">
                                         {{- .Title -}}
                                     </a>
                                 </article>
