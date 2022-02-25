@@ -222,7 +222,7 @@ $code-type-map: (
   language-makefile: 'Makefile',
   language-markdown: 'Markdown',
   language-matlab: 'Matlab',
-  language-objectivec: 'Objective-C',
+  language-objc: 'Objective-C',
   language-php: 'PHP',
   language-perl: 'Perl',
   language-python: 'Python',
@@ -319,6 +319,7 @@ $code-highlight-color-map: (
   /* GenericTraceback */ 'gt': #e72d40,
   /* TextWhitespace */ 'w': #bbbbbb,
 ) !default;
+
 $code-highlight-color-map-dark: (
   /* Parentheses */ 'p': #a9a9b3,
   /* Keyword */ 'k': #d371e3,
