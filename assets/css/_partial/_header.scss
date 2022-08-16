@@ -150,6 +150,7 @@
   position: fixed;
   height: $header-height;
   line-height: $header-height;
+  border-bottom: 0.1rem solid #ebebeb;
 
   [data-header-desktop=normal] & {
     position: static;

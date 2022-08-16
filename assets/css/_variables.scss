@@ -4,7 +4,58 @@
 
 // ========== Global ========== //
 // Font and Line Height
-$global-font-family: system-ui, -apple-system, BlinkMacSystemFont, PingFang SC, Microsoft YaHei UI, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica, Arial, sans-serif !default;
+/* latin-ext */
+@font-face {
+  font-family: 'Overpass Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/font/overpassmono/_Xmq-H86tzKDdAPa-KPQZ-AC1i-0tt21C34.woff2') format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Overpass Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/font/overpassmono/_Xmq-H86tzKDdAPa-KPQZ-AC1i-0tt21C34.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Overpass Mono';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/font/overpassmono/_Xm3-H86tzKDdAPa-KPQZ-AC3pSRo_CXBlRc4EU.woff2') format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Overpass Mono';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/font/overpassmono/_Xm3-H86tzKDdAPa-KPQZ-AC3pSRo_CXBlRc4EU.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Google Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/font/googlesans/4UaGrENHsxJlGDuGo1OIlL3Owp5eKQtG.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Google Sans';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/font/googlesans/4UabrENHsxJlGDuGo1OIlLU94YtzCwZsPF4o.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+$global-font-family: 'Google Sans', system-ui, -apple-system, BlinkMacSystemFont, PingFang SC, Microsoft YaHei UI, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica, Arial, sans-serif, !default;
 $global-font-size: 16px;
 $global-font-weight: 400;
 $global-line-height: 1.5rem;
@@ -65,8 +116,8 @@ $header-background-color: #f8f8f8 !default;
 $header-background-color-dark: #252627 !default;
 
 // Font style of the header title
-$header-title-font-family: $global-font-family !default;
-$header-title-font-size: 1.5rem !default;
+$header-title-font-family: 'Google Sans', $global-font-family !default;
+$header-title-font-size: 1.25rem !default;
 
 // Color of the hover header item
 $header-hover-color: #161209 !default;
@@ -135,7 +186,7 @@ $code-info-color-dark: #b1b0b0 !default;
 $code-font-size: .875rem !default;
 
 // Font family of the code
-$code-font-family: Source Code Pro, Menlo, Consolas, Monaco, monospace, $global-font-family !default;
+$code-font-family: 'Google Sans', Source Code Pro, Menlo, Consolas, Monaco, monospace, $global-font-family !default;
 
 $margin-article: 1.5rem 0;
 
@@ -171,7 +222,7 @@ $code-type-map: (
   language-makefile: 'Makefile',
   language-markdown: 'Markdown',
   language-matlab: 'Matlab',
-  language-objectivec: 'Objective-C',
+  language-objc: 'Objective-C',
   language-php: 'PHP',
   language-perl: 'Perl',
   language-python: 'Python',
@@ -268,6 +319,7 @@ $code-highlight-color-map: (
   /* GenericTraceback */ 'gt': #e72d40,
   /* TextWhitespace */ 'w': #bbbbbb,
 ) !default;
+
 $code-highlight-color-map-dark: (
   /* Parentheses */ 'p': #a9a9b3,
   /* Keyword */ 'k': #d371e3,
